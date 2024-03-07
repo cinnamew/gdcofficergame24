@@ -8,25 +8,26 @@ public class GenericHitbox : MonoBehaviour
     Vector2 knockbackVector;
 
     private List<Collider2D> triggerList = new List<Collider2D>();
-    public string targetTag; //could be enemy or hero. For testing purposes
+    public string targetTag; //could be enemy or hero
 
-    void OnTriggerStay2D(Collider2D target) //so apparently this only works if the target has a rigidbody
+    void OnTriggerStay2D(Collider2D target)
     {
         if (target.tag.Equals(targetTag)) {
-            if (!triggerList.Contains(target)) { //if the list doesn't already contain the target
+            if (!triggerList.Contains(target)) {
                 OnHit(target); //does a bunch of stuff, please override :)
                 triggerList.Add(target);
                 Debug.Log(triggerList.Count + " targets within hitbox");
-                //This is NOT hit-per-frame!!!
+                //This is NOT hit-per-frame
             }
 
         }
-        //if you want the same attack to hit multiple times, you can just clear the list or spawn a new hitbox.
+        //if you want the same attack to hit multiple times, you can just reset the hitbox or spawn a new one.
     }
 
     void OnHit(Collider2D target) {
         DealDamage(target, damage);
         DealKnockback(target);
+        ApplyStatusEffects(target);
     }
     
     void DealDamage(Collider2D target, int damageVal) {
@@ -44,8 +45,8 @@ public class GenericHitbox : MonoBehaviour
         GetComponent<Collider2D>().enabled = true;
     }
 
-    void ApplyStatusEffects() {
-
+    void ApplyStatusEffects(Collider2D target) {
+        
     }
     
 }
