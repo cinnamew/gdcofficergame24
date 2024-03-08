@@ -1,11 +1,15 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GenericHitbox : MonoBehaviour
 {
-    int damage;
-    Vector2 knockbackVector;
+    [SerializeField] int damage;
+    [SerializeField] float kbMagnitude;
+    [SerializeField] float knockbackDuration;
+    private Vector2 knockbackVector;
+     
 
     private List<Collider2D> triggerList = new List<Collider2D>();
     public string targetTag; //could be enemy or hero
@@ -35,7 +39,9 @@ public class GenericHitbox : MonoBehaviour
     }
 
     void DealKnockback(Collider2D target) {
+        knockbackVector = kbMagnitude * (target.transform.position - transform.position);
         target.GetComponent<Rigidbody2D>().AddForce(knockbackVector);
+        StartCoroutine(knockbackTimer(target));
     }
 
     [ContextMenu("Reset the Hitbox")]
@@ -46,6 +52,16 @@ public class GenericHitbox : MonoBehaviour
     }
 
     void ApplyStatusEffects(Collider2D target) {
+        
+    }
+
+    IEnumerator knockbackTimer(Collider2D target)
+    {
+
+        EnemyMovement em = target.gameObject.GetComponent<EnemyMovement>();
+        if (em != null) em.SetCanMove(false);
+        yield return new WaitForSeconds(knockbackDuration);
+        if (em != null) em.SetCanMove(true);
         
     }
     
