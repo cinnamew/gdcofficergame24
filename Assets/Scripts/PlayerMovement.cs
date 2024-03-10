@@ -6,10 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] 
     float moveSpeed;
-<<<<<<< HEAD
     bool canMove = true;
-=======
->>>>>>> b97a01a044dbcd1d1bc925652876e6e95023376f
     Vector2 moveDirection;
     [SerializeField]
     //float dodgeSpeed;
@@ -27,17 +24,13 @@ public class PlayerMovement : MonoBehaviour
         } else {
             moveDirection.x = Input.GetAxis("Horizontal");
             moveDirection.y = Input.GetAxis("Vertical");
-            //might be useful if we do a winter-themed stage (e.g. WMJ)
         }
-<<<<<<< HEAD
         if(canMove)rb.velocity = moveDirection * moveSpeed * Time.deltaTime;
     }
 
     public void SetCanMove(bool canMove)
     {
         this.canMove = canMove;
-=======
         rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
->>>>>>> b97a01a044dbcd1d1bc925652876e6e95023376f
     }
 }
