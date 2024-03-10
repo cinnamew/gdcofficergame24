@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.y = Input.GetAxis("Vertical");
             //might be useful if we do a winter-themed stage (e.g. WMJ)
         }
+        
+    }
+
+    private void FixedUpdate() {
         rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
     }
 }

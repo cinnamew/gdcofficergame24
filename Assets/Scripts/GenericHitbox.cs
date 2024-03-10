@@ -40,9 +40,7 @@ public class GenericHitbox : MonoBehaviour
 
     [ContextMenu("Reset the Hitbox")]
     void RefreshHitbox() {
-        GetComponent<Collider2D>().enabled = false;
         triggerList.Clear();
-        GetComponent<Collider2D>().enabled = true;
     }
 
     void ApplyStatusEffects(Collider2D target) {
