@@ -22,9 +22,7 @@ public class GenericHitbox : MonoBehaviour
                 Debug.Log(triggerList.Count + " targets within hitbox");
                 //This is NOT hit-per-frame
             }
-
         }
-        //if you want the same attack to hit multiple times, you can just reset the hitbox or spawn a new one.
     }
 
     void OnHit(Collider2D target) {
@@ -46,10 +44,10 @@ public class GenericHitbox : MonoBehaviour
     [ContextMenu("Reset the Hitbox")]
     void RefreshHitbox() {
         Debug.Log("Refreshing the hitbox");
-        GetComponent<BoxCollider2D>().enabled = false;
         triggerList.Clear();
+        GetComponent<BoxCollider2D>().enabled = false;
         Debug.Log(triggerList.Count);
-        StartCoroutine(EnableHitBox(1.0F));
+        GetComponent<BoxCollider2D>().enabled = true;
         //edge case: If the hitbox does not move, refreshing does not work.
     }
 
