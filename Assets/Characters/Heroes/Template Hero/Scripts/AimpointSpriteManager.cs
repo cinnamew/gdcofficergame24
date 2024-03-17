@@ -21,7 +21,7 @@ public class AimpointSpriteManager : MonoBehaviour
         characterSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         orderFlipRightThreshold = 0;
         orderFlipLeftThreshold = 180;
-        bufferDistance = 0.25f;
+        bufferDistance = 0.25f; //keep at around 0.25f
     }
     void Update()
     {
