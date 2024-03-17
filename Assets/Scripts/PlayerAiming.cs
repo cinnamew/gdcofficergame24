@@ -31,7 +31,7 @@ public class PlayerAiming : MonoBehaviour
 
     void ManageSpriteOrder() {
         if (rotZ > 0 && rotZ < 180) {
-            //aimPointerSpriteRenderer.sortingOrder = this,sortingOrder - 1;
+            //aimPointerSpriteRenderer.sortingOrder = Renderer.sortingOrder - 1;
         }
     }
     //ppp
