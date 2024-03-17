@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7ac7dbbfc557d045bca6353e0e37ce7
+guid: 297d853e4e2b32d47a1e36eb388e5f57
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,127 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: template_move_0
+      name: template_aim_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 1
-        width: 14
-        height: 27
+        x: 0
+        y: 0
+        width: 8
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84cc23c292f6a9a4e8d8bed0219c58f2
-      internalID: -1851498187
+      spriteID: c69a6aa81a8b7f6428b7770621fd3743
+      internalID: -1207384211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: template_move_1
+      name: template_aim_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 5
-        width: 17
-        height: 27
+        x: 12
+        y: 0
+        width: 8
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d43c6f0f0a96f5a40ae83cfac63bdf4f
-      internalID: 1691979773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: template_move_2
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 4
-        width: 16
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2e1c9b9a6725314485b3334b4006f6c
-      internalID: 263152118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: template_move_3
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 1
-        width: 14
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 714d3f7f7bfed4740bca05e55d2ebd07
-      internalID: 155904761
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: template_move_4
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 5
-        width: 14
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e156f79aedf85994ea04052205a18ec8
-      internalID: 1880959374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: template_move_5
-      rect:
-        serializedVersion: 2
-        x: 169
-        y: 4
-        width: 14
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7030da3097814304d86a6c0110c66541
-      internalID: -668256822
+      spriteID: 0f4dd74107904684990a156741e1acc2
+      internalID: 1126370961
       vertices: []
       indices: 
       edges: []
@@ -253,12 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      template_move_0: -1851498187
-      template_move_1: 1691979773
-      template_move_2: 263152118
-      template_move_3: 155904761
-      template_move_4: 1880959374
-      template_move_5: -668256822
+      template_aim_spritesheet_0: -1207384211
+      template_aim_spritesheet_1: 1126370961
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
