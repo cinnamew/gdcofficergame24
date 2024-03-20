@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6096182307796889942}
   - component: {fileID: 6096182307796889943}
+  - component: {fileID: 2150493056294063903}
+  - component: {fileID: 5035229110371247019}
   m_Layer: 0
   m_Name: RotatePoint
   m_TagString: Untagged
@@ -43,6 +45,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a229c98e8701ffc428166b31b50bf885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseDistanceFromPlayer: 0
+--- !u!95 &2150493056294063903
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6096182307796889941}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a8a429fe82185c47a71a7c8c8757089, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5035229110371247019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6096182307796889941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4304ff65486a36543914f6651f8077e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6096182308468002711

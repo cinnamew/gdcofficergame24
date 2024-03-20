@@ -8,9 +8,9 @@ public class AnimController : MonoBehaviour
     Rigidbody2D playerRb;
 
     //anim names
-    const string MOVE = "Move";
-    const string IDLE = "Idle";
-    const string BACKMOVE = "BackwardsMove";
+    public const string MOVE = "Move";
+    public const string IDLE = "Idle";
+    public const string BACKMOVE = "BackwardsMove";
 
     Transform prevPos;
     Transform newPos;

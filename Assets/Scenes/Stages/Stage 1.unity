@@ -281,7 +281,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.64
+  orthographic size: 4.97
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -381,6 +381,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4350604611495594296, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6096182307796889941, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
       propertyPath: m_TagString
       value: PlayerAimRotationPoint
@@ -396,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 6096182308468002713, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3d28e44c617e0a04a980d58258973f68, type: 3}
+      objectReference: {fileID: 21300000, guid: 84161470243d3d444a7af1441af49b74, type: 3}
     - target: {fileID: 6096182308468002713, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -479,6 +483,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6096182308657925551, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891616274913045162, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
+      propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

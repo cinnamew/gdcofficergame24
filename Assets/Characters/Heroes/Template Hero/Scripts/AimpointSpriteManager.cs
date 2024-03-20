@@ -10,10 +10,10 @@ public class AimpointSpriteManager : MonoBehaviour
     SpriteRenderer characterSprite;
     Transform rotationPoint;
     SpriteRenderer thisSprite;
-    int flipAngleBuffer;
     float orderFlipRightThreshold;
     float orderFlipLeftThreshold;
-    float bufferDistance;
+    float flipBufferDistance;
+    float orderBufferDistance;
     void Start()
     {
         rotationPoint = GameObject.FindGameObjectWithTag("PlayerAimRotationPoint").GetComponent<Transform>();
@@ -21,7 +21,8 @@ public class AimpointSpriteManager : MonoBehaviour
         characterSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         orderFlipRightThreshold = 0;
         orderFlipLeftThreshold = 180;
-        bufferDistance = 0.25f; //keep at around 0.25f
+        flipBufferDistance = 0.25f; //keep at around 0.25f
+        orderBufferDistance = 0.2f;
     }
     void Update()
     {
@@ -34,26 +35,33 @@ public class AimpointSpriteManager : MonoBehaviour
     }
 
     void SwitchSortingOrder() {
-        if (AimpointIsBehindPlayer() && thisSprite.sortingLayerName != "BehindPlayer") {
-            thisSprite.sortingLayerName = "BehindPlayer";
-        } else if (thisSprite.sortingLayerName != "InFrontPlayer" && !AimpointIsBehindPlayer()) {
-            thisSprite.sortingLayerName = "InFrontPlayer";
+        if (!IsWithinOrderBuffer()) {
+            if (AimpointIsBehindPlayer() && thisSprite.sortingLayerName != "BehindPlayer") {
+                thisSprite.sortingLayerName = "BehindPlayer";
+            } else if (thisSprite.sortingLayerName != "InFrontPlayer" && !AimpointIsBehindPlayer()) {
+                thisSprite.sortingLayerName = "InFrontPlayer";
+            }
         }
     }
+
+    
     public bool AimPointIsOnRightSide() { 
         //return rotationPoint.rotation.z > -90 && rotationPoint.rotation.z < 90; //always returns true for some reason...
-        return thisSprite.transform.position.x > rotationPoint.position.x + bufferDistance;
+        return thisSprite.transform.position.x > rotationPoint.position.x + flipBufferDistance;
     }
     void FlipUpdate() {
-        if (AimPointIsOnRightSide() && !IsWithinBuffer() && thisSprite.flipY) { //if on right and is flipped
+        if (AimPointIsOnRightSide() && !IsWithinFlipBuffer() && thisSprite.flipY) { //if on right and is flipped
             thisSprite.flipY = false; //then unflip
             characterSprite.flipX = false;
-        } else if (!AimPointIsOnRightSide() && !IsWithinBuffer() && !thisSprite.flipY) { //if on left and not already flipped
+        } else if (!AimPointIsOnRightSide() && !IsWithinFlipBuffer() && !thisSprite.flipY) { //if on left and not already flipped
             thisSprite.flipY = true;
             characterSprite.flipX = true;
         }
     }
-    bool IsWithinBuffer() {
-        return Math.Abs(thisSprite.transform.position.x - rotationPoint.position.x) <= bufferDistance;
+    bool IsWithinFlipBuffer() {
+        return Math.Abs(thisSprite.transform.position.x - rotationPoint.position.x) <= flipBufferDistance;
+    }
+    bool IsWithinOrderBuffer() {
+        return Math.Abs(thisSprite.transform.position.y - rotationPoint.position.y) <= orderBufferDistance;
     }
 }
