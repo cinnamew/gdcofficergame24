@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AnimDeadZone : MonoBehaviour
 {
-    //basically this script is for the gun-wobble animations for characters that use a weapon
+    //basically this script is for the gun-wobble animations for characters that use a weapon...
     //separate from the player body sprite (e.g. mine)
     float deadZoneRadius;
     Animator RPointAnimator;
@@ -17,6 +17,7 @@ public class AnimDeadZone : MonoBehaviour
     string pMoveAnimString;
     string pBackMoveAnimString;
     Animator playerAnimator;
+    [SerializeField] public float errorMargin;
     private void Start() {
         RPointAnimator = GetComponent<Animator>();
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
@@ -24,6 +25,7 @@ public class AnimDeadZone : MonoBehaviour
         pMoveAnimString = AnimController.MOVE;
         pBackMoveAnimString = AnimController.BACKMOVE;
         deadZoneRadius = 2.5f;
+        errorMargin = 0.1f;
     }
 
     private void Update() {
@@ -31,8 +33,15 @@ public class AnimDeadZone : MonoBehaviour
             RPointAnimator.enabled = false;
         } else {
             RPointAnimator.enabled = true;
-            HandleIdleSway();
-            HandleMoveSway();
+            if (!IsMoving()) {
+                HandleIdleSway();
+                return;
+            } else {
+                HandleMoveSway(); //WHY TF DOES THIS KEEP DESYNCING AAAAAAAAAAAAAH
+                //ok so it turns out that the desync immediately gets fixed if the sway animation has
+                // one more frame than its respective player body anim
+            }
+            
         }
     }
 
@@ -60,7 +69,7 @@ public class AnimDeadZone : MonoBehaviour
     }
     void HandleIdleSway() {
         if (TimeDifferenceBetween(RPointAnimator, playerAnimator) > 0.1f) {
-            if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(pIdleAnimString)) {
+            if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(AnimController.IDLE)) {
                 SyncIdleAnimation();
                 print("syncing idle");
                 return;
@@ -69,15 +78,14 @@ public class AnimDeadZone : MonoBehaviour
     }
     
     void HandleMoveSway() {
-        if (TimeDifferenceBetween(RPointAnimator, playerAnimator) > 0.2f) {
-            if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(pMoveAnimString)) {
+        if (TimeDifferenceBetween(RPointAnimator, playerAnimator) > errorMargin) {
+            if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(AnimController.MOVE)) {
                 SyncMoveAnimation();
                 print("syncing move");
                 return;
             }
-        }
-        if (TimeDifferenceBetween(RPointAnimator, playerAnimator) > 0.2f) {
-            if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(pBackMoveAnimString)) {
+        
+            if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(AnimController.BACKMOVE)) {
                 SyncBackMoveAnimation();
                 print("syncing backmove");
                 return;
@@ -85,5 +93,9 @@ public class AnimDeadZone : MonoBehaviour
         }
     }
 
+    bool IsMoving() {
+        return playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(AnimController.MOVE) ||
+        playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(AnimController.BACKMOVE);
+    }
 
 }
