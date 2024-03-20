@@ -13,17 +13,12 @@ public class AnimDeadZone : MonoBehaviour
     const string IDLE_STATE = "Idle";
     const string MOVE_STATE = "Move Sway";
     const string BACKMOVE_STATE = "Backwards Move Sway";
-    string pIdleAnimString;
-    string pMoveAnimString;
-    string pBackMoveAnimString;
+
     Animator playerAnimator;
     [SerializeField] public float errorMargin;
     private void Start() {
         RPointAnimator = GetComponent<Animator>();
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        pIdleAnimString =  AnimController.IDLE;
-        pMoveAnimString = AnimController.MOVE;
-        pBackMoveAnimString = AnimController.BACKMOVE;
         deadZoneRadius = 2.5f;
         errorMargin = 0.1f;
     }
@@ -56,7 +51,7 @@ public class AnimDeadZone : MonoBehaviour
         RPointAnimator.Play(MOVE_STATE, 0, GetTimeOfAnimation(playerAnimator));
     }
 
-    void SyncBackMoveAnimation() { //Both the move and backwards move have 6 frames at 12 samples per second.
+    void SyncBackMoveAnimation() { 
         RPointAnimator.Play(BACKMOVE_STATE, 0, GetTimeOfAnimation(playerAnimator));
     }
 
