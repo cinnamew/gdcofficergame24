@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] 
-    float moveSpeed;
+    PlayerStats stats;
+    [SerializeField] float moveSpeed;
     bool canMove = true;
     Vector2 moveDirection;
     [SerializeField]
@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
+        stats = (PlayerStats)ScriptableObject.CreateInstance(typeof(PlayerStats));
     }
 
     private void Update() {
@@ -25,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.x = Input.GetAxis("Horizontal");
             moveDirection.y = Input.GetAxis("Vertical");
         }
+        stats.Spd = moveSpeed;
+        Debug.Log(stats.Spd);
     }
 
     public void SetCanMove(bool canMove)

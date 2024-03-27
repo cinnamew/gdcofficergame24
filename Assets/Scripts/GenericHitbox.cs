@@ -42,7 +42,7 @@ public class GenericHitbox : MonoBehaviour
     }
 
     [ContextMenu("Reset the Hitbox")]
-    void RefreshHitbox() {
+    public void RefreshHitbox() {
         Debug.Log("Refreshing the hitbox");
         triggerList.Clear();
         GetComponent<BoxCollider2D>().enabled = false;
@@ -51,10 +51,10 @@ public class GenericHitbox : MonoBehaviour
         //edge case: If the hitbox does not move, refreshing does not work.
     }
 
-    IEnumerator EnableHitBox(float waitTime) {
-        yield return new WaitForSeconds(waitTime);
-        GetComponent<BoxCollider2D>().enabled = true;
-    }
+    // IEnumerator EnableHitBox(float waitTime) { //for debugging
+    //     yield return new WaitForSeconds(waitTime);
+    //     GetComponent<BoxCollider2D>().enabled = true;
+    // }
 
     void ApplyStatusEffects(Collider2D target) {
         

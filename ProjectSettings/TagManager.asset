@@ -8,6 +8,7 @@ TagManager:
   - Hero
   - AimPointer
   - PlayerAimRotationPoint
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX
