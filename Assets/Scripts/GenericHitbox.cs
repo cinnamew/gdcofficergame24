@@ -8,7 +8,8 @@ public class GenericHitbox : MonoBehaviour
     [SerializeField] float kbMagnitude;
     [SerializeField] float knockbackDuration;
     private Vector2 knockbackVector;
-     
+    [SerializeField]private float refreshEvery;
+     float currCooldown;
 
     private List<Collider2D> triggerList = new List<Collider2D>();
     public string targetTag; //could be enemy or hero
@@ -25,6 +26,8 @@ public class GenericHitbox : MonoBehaviour
         }
     }
 
+
+
     void OnHit(Collider2D target) {
         DealDamage(target, damage);
         DealKnockback(target);
@@ -38,17 +41,18 @@ public class GenericHitbox : MonoBehaviour
     void DealKnockback(Collider2D target) {
         knockbackVector = kbMagnitude * (target.transform.position - transform.position);
         target.GetComponent<Rigidbody2D>().AddForce(knockbackVector);
-        StartCoroutine(knockbackTimer(target));
+        StartCoroutine(KnockbackTimer(target));
     }
 
     [ContextMenu("Reset the Hitbox")]
-    public void RefreshHitbox() {
+     public void RefreshHitbox() {
         Debug.Log("Refreshing the hitbox");
         triggerList.Clear();
         GetComponent<BoxCollider2D>().enabled = false;
         Debug.Log(triggerList.Count);
         GetComponent<BoxCollider2D>().enabled = true;
         //edge case: If the hitbox does not move, refreshing does not work.
+        currCooldown = refreshEvery;
     }
 
     // IEnumerator EnableHitBox(float waitTime) { //for debugging
@@ -60,14 +64,11 @@ public class GenericHitbox : MonoBehaviour
         
     }
 
-    IEnumerator knockbackTimer(Collider2D target)
+    IEnumerator KnockbackTimer(Collider2D target)
     {
         EnemyMovement em = target.gameObject.GetComponent<EnemyMovement>();
         if (em != null) em.SetCanMove(false);
         yield return new WaitForSeconds(knockbackDuration);
         if (em != null) em.SetCanMove(true);
-        
     }
-    
-    
 }
