@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     //Handles the character's HP. Consider converting to ScriptableObject
+    //## test
     int health;
     
     void Start()
