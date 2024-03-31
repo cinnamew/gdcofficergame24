@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    //Handles the character's HP. Consider converting to ScriptableObject!
+    //Handles the character's HP. Consider converting to ScriptableObject
     int health;
     
     void Start()
