@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,11 +6,14 @@ public class PlayerMovement : MonoBehaviour
     PlayerStats stats;
     [SerializeField] float moveSpeed;
     bool canMove = true;
+    //bool canDodge;
     Vector2 moveDirection;
     [SerializeField]
     //float dodgeSpeed;
     Rigidbody2D rb;
     bool isOnSlipperySurface;
+    float dodgeDuration;
+    BoolTimer boolTimer;
     
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -26,18 +28,47 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.x = Input.GetAxis("Horizontal");
             moveDirection.y = Input.GetAxis("Vertical");
         }
-        stats.Spd = moveSpeed;
-        Debug.Log(stats.Spd);
+
+        if (Input.GetKey(KeyCode.D) && CanDodge()) {
+            Dodge();
+        }
+        //stats.Spd = moveSpeed;
+        //Debug.Log(stats.Spd);
     }
+
+    void Dodge() {
+        //stop the player from moving around during dodge
+        //render the player invulnerable during dodge
+        //play dodge animation
+        //boost player speed during dodge
+        //reverse steps 1 and 2
+        
+        
+    }
+
+    IEnumerator PausePlayerMovement(float dodgeTime) {
+        yield return new WaitForSeconds(dodgeTime);
+        SetCanMove(false);
+        
+    }
+
 
     public void SetCanMove(bool canMove)
     {
         this.canMove = canMove;
     }
+    
     private void FixedUpdate() {
         if (canMove) {
             rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
         }
 
+    }
+    bool CanDodge() {
+        return IsIntentionallyMoving();
+    }
+
+    bool IsIntentionallyMoving() { //in case the player will get pushed around.
+        return transform.hasChanged && (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0);
     }
 }

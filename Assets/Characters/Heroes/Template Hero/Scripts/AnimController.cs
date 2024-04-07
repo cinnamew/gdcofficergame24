@@ -12,6 +12,8 @@ public class AnimController : MonoBehaviour
     public const string IDLE = "Idle";
     public const string BACKMOVE = "BackwardsMove";
 
+    public const string DODGE = "Dodge_";
+
     Transform prevPos;
     Transform newPos;
     AimpointSpriteManager aimpointRef;
@@ -36,9 +38,9 @@ public class AnimController : MonoBehaviour
         }
     }
 
-private void LateUpdate() {
-    prevPos = newPos;
-}
+    private void LateUpdate() {
+        prevPos = newPos;
+    }
 
     bool IsIntentionallyMoving() { //in case the player will get pushed around.
         return transform.hasChanged && (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0);
