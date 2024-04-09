@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     PlayerStats stats;
     [SerializeField] float moveSpeed;
-    bool canMove = true;
+    // bool canMove = true;
     //bool canDodge;
     Vector2 moveDirection;
     [SerializeField]
@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     bool isOnSlipperySurface;
     float dodgeDuration;
-    BoolTimer boolTimer;
+    public BoolTimer canMove;
+    public BoolTimer isInvincible;
     
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -42,22 +43,23 @@ public class PlayerMovement : MonoBehaviour
         //play dodge animation
         //boost player speed during dodge
         //reverse steps 1 and 2
-        
-        
+        canMove.Set(0.1f, false);
+        isInvincible.Set(0.1f);
+
+
     }
 
     IEnumerator PausePlayerMovement(float dodgeTime) {
         yield return new WaitForSeconds(dodgeTime);
-        SetCanMove(false);
+        canMove.Set(0.1f, false);
         
     }
 
+    // public void SetCanMove(bool canMove)
+    // {
+    //     this.canMove = canMove;
+    // }
 
-    public void SetCanMove(bool canMove)
-    {
-        this.canMove = canMove;
-    }
-    
     private void FixedUpdate() {
         if (canMove) {
             rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);

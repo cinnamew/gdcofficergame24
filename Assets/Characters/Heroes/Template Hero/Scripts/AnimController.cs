@@ -6,13 +6,14 @@ public class AnimController : MonoBehaviour
 {
     Animator pAnimator;
     Rigidbody2D playerRb;
+    string currentAnimState;
 
     //anim names
     public const string MOVE = "Move";
     public const string IDLE = "Idle";
     public const string BACKMOVE = "BackwardsMove";
 
-    public const string DODGE = "Dodge_";
+    public const string DODGE_PREFIX = "Dodge_";
 
     Transform prevPos;
     Transform newPos;
@@ -29,12 +30,12 @@ public class AnimController : MonoBehaviour
     {
         if (IsIntentionallyMoving()) {
             if (IsMovingForward())  {
-                pAnimator.Play(MOVE);
+                SetAnimState(MOVE);
             } else { //if doing the michael jackson
-                pAnimator.Play(BACKMOVE);
+                SetAnimState(BACKMOVE);
             }
         } else {
-            pAnimator.Play(IDLE);
+            SetAnimState(IDLE);
         }
     }
 
@@ -55,4 +56,21 @@ public class AnimController : MonoBehaviour
     bool IsOnlyMovingVertically() {
         return Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") != 0;
     }
+
+    public void SetAnimState(string newState) {
+        //stops animation from interrupting itself
+        if (currentAnimState == newState)
+        {
+            return;
+        }
+        //plays the new anim
+        pAnimator.Play(newState);
+        //update the currAnimState variable
+        currentAnimState = newState;    
+
+    }
+    public string GetAnimState() {
+        return currentAnimState;
+    }
 }
+

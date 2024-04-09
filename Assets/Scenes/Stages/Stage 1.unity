@@ -673,6 +673,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6096182308657925548, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2015414036, guid: cc912beed3061f24abf94e7a298e9154, type: 3}
+    - target: {fileID: 6096182308657925548, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
@@ -727,6 +731,14 @@ PrefabInstance:
     - target: {fileID: 6096182308657925550, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096182308657925552, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096182308657925552, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 7891616274913045162, guid: ea4e89c2450cfb147b56c5268891dc46, type: 3}
       propertyPath: moveSpeed
