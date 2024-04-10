@@ -29,8 +29,6 @@ public class GenericHitbox : MonoBehaviour
         }
     }
 
-
-
     void OnHit(Collider2D target) {
         DealDamage(target, damage);
         DealKnockback(target);
@@ -52,7 +50,7 @@ public class GenericHitbox : MonoBehaviour
         Debug.Log("Refreshing the hitbox");
         triggerList.Clear();
         GetComponent<BoxCollider2D>().enabled = false;
-        Debug.Log(triggerList.Count);
+        //Debug.Log(triggerList.Count);
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponentInParent<Rigidbody2D>().WakeUp(); //https://forum.unity.com/threads/reenabling-disabled-gameobject-does-not-call-ontriggerenter.765551/ last comment reccomends this as a fix
         //edge case: If the hitbox does not move, refreshing does not work.

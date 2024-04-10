@@ -5,6 +5,7 @@ public class PlayerDodge : MonoBehaviour
     PlayerMovement moveScript;
     float dodgeDuration; //does not necessarily have to be the length of the animation
     AnimController pAnimator;
+    int numOfDodgeAnims;
 
     private void Start() {
         moveScript = GetComponent<PlayerMovement>();
@@ -18,15 +19,10 @@ public class PlayerDodge : MonoBehaviour
         
         //disable inv
     }
-
-    // string GetAnimState() {
-    //     return pAnimator.GetCurrentAnimatorStateInfo(0).ToString();
-    // }
-
-    public string GetRandomAnimString(string animPrefix, int numOfAnims) {
-        return animPrefix + Time.frameCount%numOfAnims; //starts from 0 btw
-    }
+    
     void GetRandomDodgeAnim() {
-        pAnimator.SetAnimState(GetRandomAnimString(AnimController.DODGE_PREFIX, 1));
+        pAnimator.SetAnimState(pAnimator.GetRandomAnimString(AnimController.DODGE_PREFIX, numOfDodgeAnims));
+        //DODGE_0 should always have no animation. Just the visual dodge effect pasted over
+        //a still frame of the move animation. So it doesn't really count as one animation
     }
 }

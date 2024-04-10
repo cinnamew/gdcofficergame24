@@ -72,5 +72,10 @@ public class AnimController : MonoBehaviour
     public string GetAnimState() {
         return currentAnimState;
     }
+
+    public string GetRandomAnimString(string animPrefix, int numOfAnims) {
+        return animPrefix + Time.frameCount%numOfAnims; //starts from 0 btw
+        //applied to dodges and parries (think of Pizza Tower taunts)
+    }
 }
 

@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.y = Input.GetAxis("Vertical");
         }
 
-        if (Input.GetKey(KeyCode.D) && CanDodge()) {
+        if (Input.GetKey(KeyCode.C) && CanDodge()) {
             Dodge();
         }
         //stats.Spd = moveSpeed;
