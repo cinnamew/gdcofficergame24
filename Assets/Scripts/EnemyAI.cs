@@ -2,9 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAiming : BotAiming //THIS CODE IS DEPRECIATED
+public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float detectionRange = 10f; // Adjustable detection range
+    [SerializeField] private float moveSpeed = 5f; // Configurable movement speed
+    [SerializeField] private bool enableAim = true;
+    [SerializeField] private float noMoveRange = 0.1f;
+    public Vector2 aimPoint;
+    private bool inFormation = false;
+
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void GoStraightFormation(float distance, Vector2 dir){
+        inFormation = true; //Set to false so formation can happen
+        aimPoint = (Vector2)(transform.position)+dir*distance;
+        //Set aimPoint 
+    }
 
     GameObject GetHighestPriorityTarget()
     {
@@ -21,13 +39,13 @@ public class EnemyAiming : BotAiming //THIS CODE IS DEPRECIATED
             if (botAiming != null)
             {
                 float distanceToTarget = Vector2.Distance(currentPosition, target.transform.position);
-                if (distanceToTarget <= detectionRange && botAiming.aimPriority > highestPriority)
+                if (distanceToTarget < detectionRange && botAiming.aimPriority > highestPriority)
                 {
                     highestPriority = botAiming.aimPriority;
                     highestPriorityTarget = target;
                     closestDistance = distanceToTarget;
                 }
-                else if (distanceToTarget <= detectionRange && botAiming.aimPriority == highestPriority && distanceToTarget < closestDistance)
+                else if (distanceToTarget < detectionRange && botAiming.aimPriority == highestPriority && distanceToTarget < closestDistance)
                 {
                     // If there are multiple targets with the same highest priority, choose the closest one
                     highestPriorityTarget = target;
@@ -39,8 +57,30 @@ public class EnemyAiming : BotAiming //THIS CODE IS DEPRECIATED
         return highestPriorityTarget;
     }
 
+    void FixedUpdate()
+    {
+        if (enableAim){
+            //every frame, look at the aimpoint
+            if (!inFormation)
+                CheckAimPriority();
+
+            Vector2 direction = (aimPoint - (Vector2)transform.position).normalized;
+            if (direction.x > 0){
+                transform.rotation = Quaternion.Euler(0f, Mathf.Sign(direction.x) * 180f, 0f);
+            } else {
+                transform.rotation = Quaternion.Euler(0f, Mathf.Sign(direction.x) * 0f, 0f);
+            }
+            float distance = ((aimPoint - (Vector2)transform.position)).magnitude;
+            rb.velocity = direction * moveSpeed;
+            if (distance < noMoveRange){
+                rb.velocity = Vector2.zero;
+            }
+        }
+    }
+
     // Update is called once per frame
-    public override void CheckAimPriority() {
+    void CheckAimPriority()
+    {
         //first check for whatever target is closest. Then check aimPriority value
         GameObject target = GetHighestPriorityTarget();
         if (target != null)
@@ -50,8 +90,8 @@ public class EnemyAiming : BotAiming //THIS CODE IS DEPRECIATED
         }
         else
         {
-            // If no target found, do default behavior
-            base.CheckAimPriority();
+            // If no target found, stop moving
+            rb.velocity = Vector2.zero;
         }
     }
 }

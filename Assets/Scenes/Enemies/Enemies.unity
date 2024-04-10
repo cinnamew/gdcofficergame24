@@ -136,11 +136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.9672422
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9689238
+      value: 5.89
       objectReference: {fileID: 0}
     - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
       propertyPath: m_LocalPosition.z
@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Honey-Melon-icon
       objectReference: {fileID: 0}
+    - target: {fileID: 7749691109120816999, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
 --- !u!1 &53183421 stripped
@@ -201,7 +205,7 @@ MonoBehaviour:
   kbMagnitude: 0
   knockbackDuration: 0
   targetTag: 
---- !u!114 &53183429
+--- !u!114 &53183423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,13 +214,349 @@ MonoBehaviour:
   m_GameObject: {fileID: 53183421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e37e827c6ca2d5c42834aab642a82395, type: 3}
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimPoint: {x: 0, y: 0}
-  aimPriority: 0
-  enableAim: 1
   detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  aimPoint: {x: 0, y: 0}
+--- !u!1001 &87866900
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_Name
+      value: Honey-Melon-icon (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749691109120816999, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+--- !u!1001 &430707810
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_Name
+      value: Honey-Melon-icon (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749691109120816999, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+--- !u!1 &689439554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+  m_PrefabInstance: {fileID: 693905426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &689439555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689439554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  aimPoint: {x: 0, y: 0}
+--- !u!114 &689439556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689439554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cceb6bb58654044ab92ff326ccba89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  kbMagnitude: 0
+  knockbackDuration: 0
+  targetTag: 
+--- !u!1001 &693905426
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_Name
+      value: Honey-Melon-icon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749691109120816999, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+--- !u!1 &762424942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+  m_PrefabInstance: {fileID: 2038483288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &762424943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762424942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  aimPoint: {x: 0, y: 0}
+--- !u!114 &762424944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762424942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cceb6bb58654044ab92ff326ccba89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  kbMagnitude: 0
+  knockbackDuration: 0
+  targetTag: 
+--- !u!1 &790622163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+  m_PrefabInstance: {fileID: 1450332426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &790622164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790622163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  aimPoint: {x: 0, y: 0}
+--- !u!114 &790622165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790622163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cceb6bb58654044ab92ff326ccba89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  kbMagnitude: 0
+  knockbackDuration: 0
+  targetTag: 
+--- !u!1 &888315654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+  m_PrefabInstance: {fileID: 430707810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &888315655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888315654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  aimPoint: {x: 0, y: 0}
+--- !u!114 &888315656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888315654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cceb6bb58654044ab92ff326ccba89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  kbMagnitude: 0
+  knockbackDuration: 0
+  targetTag: 
 --- !u!1 &974484499
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +657,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1096203673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_Name
+      value: Honey-Melon-icon (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749691109120816999, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
 --- !u!1 &1258236790
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +902,303 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1450332426
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_Name
+      value: Honey-Melon-icon (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749691109120816999, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+--- !u!1 &1458171496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+  m_PrefabInstance: {fileID: 87866900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1458171497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458171496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  aimPoint: {x: 0, y: 0}
+--- !u!114 &1458171498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458171496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cceb6bb58654044ab92ff326ccba89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  kbMagnitude: 0
+  knockbackDuration: 0
+  targetTag: 
+--- !u!1001 &1561525340
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_Name
+      value: Honey-Melon-icon (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749691109120816999, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+--- !u!1 &1690537788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+  m_PrefabInstance: {fileID: 1561525340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1690537789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690537788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  aimPoint: {x: 0, y: 0}
+--- !u!114 &1690537790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690537788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cceb6bb58654044ab92ff326ccba89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  kbMagnitude: 0
+  knockbackDuration: 0
+  targetTag: 
+--- !u!1 &1705318000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+  m_PrefabInstance: {fileID: 1096203673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1705318001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705318000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  aimPoint: {x: 0, y: 0}
+--- !u!114 &1705318002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705318000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cceb6bb58654044ab92ff326ccba89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  kbMagnitude: 0
+  knockbackDuration: 0
+  targetTag: 
+--- !u!1001 &2038483288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358126662846771853, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179419701901646515, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_Name
+      value: Honey-Melon-icon (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7749691109120816999, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4d54c0e1f271304fabf5300f9537e58, type: 3}
 --- !u!1 &2142715927
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,8 @@ public class BotAiming : MonoBehaviour
     [SerializeField] private bool enableAim = true;
     //e.g. a player will have an aimPriority of 1 but the cherry bomb he deploys will have an aimPriority of 2
     // the enemies will go for whatever object has the higher aimPriority value
-    private void Update() {
+    private void FixedUpdate()
+    {
         if (enableAim){
             //every frame, look at the aimpoint
             CheckAimPriority();
