@@ -4,23 +4,26 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     PlayerStats stats;
-    [SerializeField] float moveSpeed;
-    // bool canMove = true;
-    //bool canDodge;
+    [SerializeField] float defaultMoveSpeed = 5;
+    float moveSpeed;
+    public float dodgeSpeedMultiplier;
     public Vector2 moveDirection;
     [SerializeField]
     //float dodgeSpeed;
     Rigidbody2D rb;
     PlayerDodge dodgeScript;
-    bool isOnSlipperySurface;
+    bool isOnSlipperySurface = false;
     float dodgeDuration;
     public BoolTimer canMove;
     public BoolTimer isInvincible;
+    public BoolTimer isDodging;
     
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         stats = (PlayerStats)ScriptableObject.CreateInstance(typeof(PlayerStats));
         dodgeScript = GetComponent<PlayerDodge>();
+        moveSpeed = 5;
+        dodgeSpeedMultiplier = 1;
     }
 
     private void Update() {
@@ -28,15 +31,15 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.x = Input.GetAxisRaw("Horizontal");
             moveDirection.y = Input.GetAxisRaw("Vertical");
         } else {
-            moveDirection.x = Input.GetAxis("Horizontal");
-            moveDirection.y = Input.GetAxis("Vertical");
+            //moveDirection.x = Input.GetAxis("Horizontal");
+            //moveDirection.y = Input.GetAxis("Vertical");
         }
-
+        moveDirection.Normalize();
         if (Input.GetKeyDown(KeyCode.C) && CanDodge()) {
             Dodge();
         } //if not moving, then parry/taunt
-        //stats.Spd = moveSpeed;
-        //Debug.Log(stats.Spd);
+        
+        
     }
     public Rigidbody2D GetRb() {
         return rb;
@@ -48,8 +51,7 @@ public class PlayerMovement : MonoBehaviour
         //boost player speed during dodge
         //reverse steps 1 and 2
         dodgeScript.Dodge();
-
-
+        
     }
 
     // IEnumerator PausePlayerMovement(float dodgeTime) {
@@ -58,9 +60,30 @@ public class PlayerMovement : MonoBehaviour
         
     // }
 
+    public IEnumerator IncreaseSpeedForSeconds(float seconds) {
+        SetMoveSpeed(dodgeScript.GetDodgeSpeed());
+        yield return new WaitForSeconds(seconds);
+        SetMoveSpeed(defaultMoveSpeed);
+    }
+
+    public IEnumerator SetDodgeSpeedMultiplier(float newMult, float seconds) {
+        dodgeSpeedMultiplier = newMult;
+        yield return new WaitForSeconds(seconds);
+        dodgeSpeedMultiplier = 1;
+    }
+
+    void SetMoveSpeed(float newSpeed) {
+        moveSpeed = newSpeed;
+    }
     private void FixedUpdate() {
         //if (canMove) {
-            rb.velocity = (moveDirection + moveSpeed * Time.fixedDeltaTime * rb.position);
+            //rb.velocity = (moveDirection + moveSpeed * Time.fixedDeltaTime * rb.position);
+            if (!isDodging) {
+                rb.velocity = moveDirection * moveSpeed;
+            } else {
+                rb.velocity = dodgeScript.GetDodgeDirection() * moveSpeed * dodgeSpeedMultiplier;
+            }
+            
         //}
 
     }
