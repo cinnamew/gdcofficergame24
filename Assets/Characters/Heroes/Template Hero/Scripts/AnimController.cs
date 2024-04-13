@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimController : MonoBehaviour
@@ -74,7 +72,8 @@ public class AnimController : MonoBehaviour
     }
 
     public string GetRandomAnimString(string animPrefix, int numOfAnims) {
-        return animPrefix + Time.frameCount%numOfAnims; //starts from 0 btw
+        //Debug.Log("Your random frame is "+ Random.Range(0, numOfAnims));
+        return animPrefix + Random.Range(0, numOfAnims); //starts from 0 btw
         //applied to dodges and parries (think of Pizza Tower taunts)
     }
 }

@@ -1,39 +1,12 @@
 using UnityEngine;
 
-public class GenericWeaponUpgrades : MonoBehaviour
+public class GenericWeaponUpgrades : ScriptableObject
 {
     public int currentUpgradeLvl;
     //UPGRADES
-    //Weapon: size/area, damage, hit rate, knockback, number of projectiles
-    
-    //Items: player health, ATK/move speed, damage, pick-up range, miss-chance, crit-chance, shield hp
-    
+    //Weapon: size/area, damage, hit rate, knockback, number of projectiles    
 
-    void UpgradeToLvl2() {
+    void Upgrade() {
         //do stuff
-    }
-    void UpgradeToLvl3() {
-        
-    }
-    void UpgradeToLvl4() {
-        
-    }
-    void UpgradeToLvl5() {
-        
-    }
-    void UpgradeToLvl6() {
-        
-    }
-    void UpgradeToLvl7() {
-        
-    }
-    void UpgradeToLvl8() {
-        
-    }
-    void UpgradeToLvl9() {
-        
-    }
-    void UpgradeToLvl10() {
-        
     }
 }

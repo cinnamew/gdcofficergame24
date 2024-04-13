@@ -7,10 +7,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed;
     // bool canMove = true;
     //bool canDodge;
-    Vector2 moveDirection;
+    public Vector2 moveDirection;
     [SerializeField]
     //float dodgeSpeed;
     Rigidbody2D rb;
+    PlayerDodge dodgeScript;
     bool isOnSlipperySurface;
     float dodgeDuration;
     public BoolTimer canMove;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         stats = (PlayerStats)ScriptableObject.CreateInstance(typeof(PlayerStats));
+        dodgeScript = GetComponent<PlayerDodge>();
     }
 
     private void Update() {
@@ -30,40 +32,36 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.y = Input.GetAxis("Vertical");
         }
 
-        if (Input.GetKey(KeyCode.C) && CanDodge()) {
+        if (Input.GetKeyDown(KeyCode.C) && CanDodge()) {
             Dodge();
-        }
+        } //if not moving, then parry/taunt
         //stats.Spd = moveSpeed;
         //Debug.Log(stats.Spd);
     }
-
+    public Rigidbody2D GetRb() {
+        return rb;
+    }
     void Dodge() {
         //stop the player from moving around during dodge
         //render the player invulnerable during dodge
         //play dodge animation
         //boost player speed during dodge
         //reverse steps 1 and 2
-        canMove.Set(0.1f, false);
-        isInvincible.Set(0.1f);
+        dodgeScript.Dodge();
 
 
     }
 
-    IEnumerator PausePlayerMovement(float dodgeTime) {
-        yield return new WaitForSeconds(dodgeTime);
-        canMove.Set(0.1f, false);
+    // IEnumerator PausePlayerMovement(float dodgeTime) {
+    //     yield return new WaitForSeconds(dodgeTime);
+    //     canMove.Set(0.1f, false);
         
-    }
-
-    // public void SetCanMove(bool canMove)
-    // {
-    //     this.canMove = canMove;
     // }
 
     private void FixedUpdate() {
-        if (canMove) {
-            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
-        }
+        //if (canMove) {
+            rb.velocity = (moveDirection + moveSpeed * Time.fixedDeltaTime * rb.position);
+        //}
 
     }
     bool CanDodge() {
