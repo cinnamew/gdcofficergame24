@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AimpointSpriteManager : MonoBehaviour
@@ -16,7 +14,10 @@ public class AimpointSpriteManager : MonoBehaviour
     float orderBufferDistance;
     public BoolTimer pointerIsHidden;
     public BoolTimer isDodging;
+    float flipBufferAngle;
     public float rotationAngle;
+    public float rotationPointXShift; //change security later
+    public float rotationPointYShift;
     void Start()
     {
         rotationPoint = GameObject.FindGameObjectWithTag("PlayerAimRotationPoint").GetComponent<Transform>();
@@ -24,9 +25,12 @@ public class AimpointSpriteManager : MonoBehaviour
         characterSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         orderFlipRightThreshold = 30;
         orderFlipLeftThreshold = 165;
-        flipBufferDistance = 0.02f; 
+        flipBufferAngle = 10;
+        flipBufferDistance = 0.001f; 
         orderBufferDistance = 0.00f;
-        
+        rotationPointXShift = 0;
+        rotationPointYShift = 0;
+        rotationPoint.localPosition = new Vector2(rotationPointXShift, rotationPointYShift);
         
     }
     void Update()
@@ -79,12 +83,15 @@ public class AimpointSpriteManager : MonoBehaviour
     }
     public void FlipUpdate() {
         if (!isDodging) {
+            //to turn right
             if (AimPointIsOnRightSide() && !IsWithinFlipBuffer() && thisSprite.flipY) { //if on right and is flipped
                 thisSprite.flipY = false; //then unflip
                 characterSprite.flipX = false;
+                rotationPoint.localPosition = new Vector2(rotationPointXShift, 0);
             } else if (!AimPointIsOnRightSide() && !IsWithinFlipBuffer() && !thisSprite.flipY) { //if on left and not already flipped
                 thisSprite.flipY = true;
                 characterSprite.flipX = true;
+                rotationPoint.localPosition = new Vector2(rotationPointXShift, 0);
             }
         } else {
         }
@@ -100,10 +107,18 @@ public class AimpointSpriteManager : MonoBehaviour
 
 
     bool IsWithinFlipBuffer() {
-        return Math.Abs(thisSprite.transform.position.x - rotationPoint.position.x) <= flipBufferDistance;
+        return Math.Abs(thisSprite.transform.position.x - rotationPoint.position.x) <= flipBufferDistance &&
+        (DistanceFrom90Degrees() > flipBufferAngle || DistanceFrom270Degrees() > flipBufferAngle);
     }
     bool IsWithinOrderBuffer() {
         return Math.Abs(thisSprite.transform.position.y - rotationPoint.position.y) <= orderBufferDistance;
+    }
+
+    float DistanceFrom90Degrees() {
+        return Math.Abs(90 - rotationPoint.eulerAngles.z);
+    }
+    float DistanceFrom270Degrees() {
+        return Math.Abs(270 - rotationPoint.eulerAngles.z);
     }
 
     public SpriteRenderer GetCharSprite() {

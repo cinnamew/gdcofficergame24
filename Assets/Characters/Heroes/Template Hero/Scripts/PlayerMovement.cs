@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         stats = (PlayerStats)ScriptableObject.CreateInstance(typeof(PlayerStats));
         dodgeScript = GetComponent<PlayerDodge>();
-        moveSpeed = 2;
+        moveSpeed = defaultMoveSpeed;
         dodgeSpeedMultiplier = 1;
     }
 
