@@ -19,7 +19,7 @@ public class AnimDeadZone : MonoBehaviour
     private void Start() {
         RPointAnimator = GetComponent<Animator>();
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        deadZoneRadius = 2.5f;
+        deadZoneRadius = 0.7f;
         errorMargin = 0.1f;
     }
 

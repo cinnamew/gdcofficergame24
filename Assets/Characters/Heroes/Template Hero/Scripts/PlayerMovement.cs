@@ -4,12 +4,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     PlayerStats stats;
-    [SerializeField] float defaultMoveSpeed = 5;
+    [SerializeField] float defaultMoveSpeed = 1;
     float moveSpeed;
     public float dodgeSpeedMultiplier;
     public Vector2 moveDirection;
-    [SerializeField]
-    //float dodgeSpeed;
     Rigidbody2D rb;
     PlayerDodge dodgeScript;
     bool isOnSlipperySurface = false;
@@ -22,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         stats = (PlayerStats)ScriptableObject.CreateInstance(typeof(PlayerStats));
         dodgeScript = GetComponent<PlayerDodge>();
-        moveSpeed = 5;
+        moveSpeed = 2;
         dodgeSpeedMultiplier = 1;
     }
 
@@ -35,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
             //moveDirection.y = Input.GetAxis("Vertical");
         }
         moveDirection.Normalize();
-        if (Input.GetKeyDown(KeyCode.C) && CanDodge()) {
+        if (IsIntentionallyMoving() && Input.GetKeyDown(KeyCode.F) && !isDodging) { //was originally C 
             Dodge();
         } //if not moving, then parry/taunt
         
@@ -81,17 +79,15 @@ public class PlayerMovement : MonoBehaviour
             if (!isDodging) {
                 rb.velocity = moveDirection * moveSpeed;
             } else {
-                rb.velocity = dodgeScript.GetDodgeDirection() * moveSpeed * dodgeSpeedMultiplier;
+                rb.velocity = dodgeScript.GetDodgeDirection() * dodgeScript.GetDodgeSpeed();
             }
             
         //}
 
     }
-    bool CanDodge() {
-        return IsIntentionallyMoving();
-    }
 
     bool IsIntentionallyMoving() { //in case the player will get pushed around.
-        return transform.hasChanged && (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0);
+        return transform.hasChanged && (Input.GetAxisRaw("Horizontal") != 0 ||
+        Input.GetAxisRaw("Vertical") != 0);
     }
 }

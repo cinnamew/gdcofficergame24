@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b078cb4e3305f8a49bd2bde16b36986d
-      internalID: 1562373895
+      spriteID: 74705ba9d63e4a441af92beffcae68e5
+      internalID: -856046436
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8678e5fa1d53b304fa44de30cd53d59f
-      internalID: -1569313474
+      spriteID: 7518752963317c241bf816ca1775e5f2
+      internalID: 1536312857
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bc49a6b87ae0f348b1ad8cfa98b9758
-      internalID: -1908067958
+      spriteID: 05e25c85cb84b2f4d8e0174f4e127b41
+      internalID: -1877486567
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jemi_idles_spritesheet_0: 1562373895
-      jemi_idles_spritesheet_1: -1569313474
-      jemi_idles_spritesheet_2: -1908067958
+      jemi_idles_spritesheet_0: -856046436
+      jemi_idles_spritesheet_1: 1536312857
+      jemi_idles_spritesheet_2: -1877486567
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

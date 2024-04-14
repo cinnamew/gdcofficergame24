@@ -5,31 +5,34 @@ public class PlayerDodge : MonoBehaviour
 {
     PlayerMovement moveScript;
     float dodgeDuration; //does not necessarily have to be the length of the animation
-    float dodgeSpeed = 30;
-    float dodgeSpeedMult = 3f;
+    float dodgeSpeed = 3.5f;
     AnimController pAnimator;
     int numOfDodgeAnims = 1;
     //I need to get the last vector2 of the movement right before the dash
     Vector2 dodgeVector2;
+    AimpointSpriteManager aimSpriteScript;
 
     private void Start() {
         moveScript = GetComponent<PlayerMovement>();
         pAnimator = GetComponent<AnimController>();
-        dodgeDuration = 0.5f;
+        aimSpriteScript = GetComponentInChildren<AimpointSpriteManager>();
+        dodgeDuration = 1f;
     }
     public void Dodge() {
         Debug.Log("the string is " + AnimController.DODGE_PREFIX + Random.Range(0,numOfDodgeAnims));
 
         dodgeVector2 = moveScript.moveDirection;
+        pAnimator.DodgeFlip();
         GetRandomDodgeAnim();
-        StartCoroutine(moveScript.SetDodgeSpeedMultiplier(dodgeSpeedMult, dodgeDuration));
+        //StartCoroutine(moveScript.SetDodgeSpeedMultiplier(dodgeSpeedMult, dodgeDuration));
         //at this point, the dodge animation is already playing
         //invincibility during dodge
         //push the player forward toward direction
-        //moveScript.canMove.Set(dodgeDuration, false);
+        aimSpriteScript.pointerIsHidden.Set(dodgeDuration);
         moveScript.isInvincible.Set(dodgeDuration);
         moveScript.isDodging.Set(dodgeDuration);
-        //disable inv
+        
+        aimSpriteScript.isDodging.Set(dodgeDuration); //disables player sprite flipping during dodge
     }
 
 

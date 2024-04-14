@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 6096182308657925551}
   - component: {fileID: 7891616274913045162}
   - component: {fileID: 8737838761139717346}
+  - component: {fileID: 3975118645485041549}
   m_Layer: 0
   m_Name: Template Character
   m_TagString: Untagged
@@ -371,8 +372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c538917ef05374a955649a197d84ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 0}
+  defaultMoveSpeed: 5
+  dodgeSpeedMultiplier: 0
+  moveDirection: {x: 0, y: 0}
 --- !u!114 &8737838761139717346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,5 +385,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98eeaa1bafc0d9c42a5cbeeff7768c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3975118645485041549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6096182308657925547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61a979283ef86d40a4e436d0711e964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

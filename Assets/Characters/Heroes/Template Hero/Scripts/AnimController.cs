@@ -16,24 +16,33 @@ public class AnimController : MonoBehaviour
     Transform prevPos;
     Transform newPos;
     AimpointSpriteManager aimpointRef;
+    bool hasDodgeAnims = true;
+    PlayerMovement moveScript;
+    SpriteRenderer playerSpriteRenderer;
 
     void Start()
     {
         pAnimator = GetComponent<Animator>();
         aimpointRef = GameObject.FindGameObjectWithTag("AimPointer").GetComponent<AimpointSpriteManager>();
+        if (hasDodgeAnims) {
+            moveScript = GetComponent<PlayerMovement>();
+        }
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsIntentionallyMoving()) {
-            if (IsMovingForward())  {
-                SetAnimState(MOVE);
-            } else { //if doing the michael jackson
-                SetAnimState(BACKMOVE);
+        if (!hasDodgeAnims || (hasDodgeAnims && !moveScript.isDodging)) { //if not dodging
+            if (IsIntentionallyMoving()) {
+                if (IsMovingForward())  {
+                    SetAnimState(MOVE);
+                } else { //if doing the michael jackson
+                    SetAnimState(BACKMOVE);
+                }
+            } else {
+                SetAnimState(IDLE);
             }
-        } else {
-            SetAnimState(IDLE);
         }
     }
 
@@ -41,6 +50,12 @@ public class AnimController : MonoBehaviour
         prevPos = newPos;
     }
 
+    public void DodgeFlip() {
+        Debug.Log("animstate is " + GetAnimState());
+        if (!IsMovingForward()) {
+            aimpointRef.GetCharSprite().flipX = !aimpointRef.GetCharSprite().flipX;
+        }
+    }
     bool IsIntentionallyMoving() { //in case the player will get pushed around.
         return transform.hasChanged && (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0);
     }
@@ -69,6 +84,12 @@ public class AnimController : MonoBehaviour
     }
     public string GetAnimState() {
         return currentAnimState;
+    }
+
+    [ContextMenu("Is it dodging?")]
+    bool PlayingDodgeAnim() {
+        Debug.Log(pAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Dodge"));
+        return pAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Dodge");
     }
 
     public string GetRandomAnimString(string animPrefix, int numOfAnims) {
