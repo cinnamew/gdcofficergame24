@@ -497,10 +497,6 @@ PrefabInstance:
       propertyPath: m_SpriteSortPoint
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5797997059213226122, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5797997060451683441, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -551,7 +547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7596381978464283510, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
       propertyPath: defaultMoveSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}

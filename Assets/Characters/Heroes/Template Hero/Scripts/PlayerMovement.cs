@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     PlayerStats stats;
-    [SerializeField] float defaultMoveSpeed = 1;
+    [SerializeField] float defaultMoveSpeed = 2;
     float moveSpeed;
     public float dodgeSpeedMultiplier;
     public Vector2 moveDirection;

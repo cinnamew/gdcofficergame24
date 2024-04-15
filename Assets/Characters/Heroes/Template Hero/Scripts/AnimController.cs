@@ -51,7 +51,6 @@ public class AnimController : MonoBehaviour
     }
 
     public void DodgeFlip() {
-        Debug.Log("animstate is " + GetAnimState());
         if (!IsMovingForward()) {
             aimpointRef.GetCharSprite().flipX = !aimpointRef.GetCharSprite().flipX;
         }

@@ -6,7 +6,7 @@ public class PlayerDodge : MonoBehaviour
     PlayerMovement moveScript;
     float dodgeDuration; //does not necessarily have to be the length of the animation
     float dodgeSpeed = 3.5f;
-    AnimController pAnimator;
+    AnimController animScript;
     int numOfDodgeAnims = 1;
     //I need to get the last vector2 of the movement right before the dash
     Vector2 dodgeVector2;
@@ -14,7 +14,7 @@ public class PlayerDodge : MonoBehaviour
 
     private void Start() {
         moveScript = GetComponent<PlayerMovement>();
-        pAnimator = GetComponent<AnimController>();
+        animScript = GetComponent<AnimController>();
         aimSpriteScript = GetComponentInChildren<AimpointSpriteManager>();
         dodgeDuration = 1f;
     }
@@ -22,7 +22,7 @@ public class PlayerDodge : MonoBehaviour
         Debug.Log("the string is " + AnimController.DODGE_PREFIX + Random.Range(0,numOfDodgeAnims));
 
         dodgeVector2 = moveScript.moveDirection;
-        pAnimator.DodgeFlip();
+        animScript.DodgeFlip();
         GetRandomDodgeAnim();
         //StartCoroutine(moveScript.SetDodgeSpeedMultiplier(dodgeSpeedMult, dodgeDuration));
         //at this point, the dodge animation is already playing
@@ -45,7 +45,7 @@ public class PlayerDodge : MonoBehaviour
     }
 
     void GetRandomDodgeAnim() {
-        pAnimator.SetAnimState(pAnimator.GetRandomAnimString("Dodge_", 1));
+        animScript.SetAnimState(animScript.GetRandomAnimString("Dodge_", 1));
         Debug.Log("PLAYING DODGE ANIMATION");
         //DODGE_0 should always have no animation. Just the visual dodge effect pasted over
         //a still frame of the move animation. So it doesn't really count as one animation

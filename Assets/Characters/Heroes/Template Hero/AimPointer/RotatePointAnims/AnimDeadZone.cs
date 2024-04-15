@@ -66,7 +66,7 @@ public class AnimDeadZone : MonoBehaviour
         if (TimeDifferenceBetween(RPointAnimator, playerAnimator) > 0.1f) {
             if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(AnimController.IDLE)) {
                 SyncIdleAnimation();
-                print("syncing idle");
+                //print("syncing idle");
                 return;
             }
         }
@@ -76,7 +76,7 @@ public class AnimDeadZone : MonoBehaviour
         if (TimeDifferenceBetween(RPointAnimator, playerAnimator) > errorMargin) {
             if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName(AnimController.MOVE)) {
                 SyncMoveAnimation();
-                print("syncing move");
+                //print("syncing move");
                 return;
             }
         
