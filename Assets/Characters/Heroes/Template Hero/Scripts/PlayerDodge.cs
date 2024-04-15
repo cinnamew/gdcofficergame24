@@ -5,7 +5,7 @@ public class PlayerDodge : MonoBehaviour
 {
     PlayerMovement moveScript;
     float dodgeDuration; //does not necessarily have to be the length of the animation
-    float dodgeSpeed = 3.5f;
+    public float dodgeSpeed = 3.5f;
     AnimController animScript;
     int numOfDodgeAnims = 1;
     //I need to get the last vector2 of the movement right before the dash

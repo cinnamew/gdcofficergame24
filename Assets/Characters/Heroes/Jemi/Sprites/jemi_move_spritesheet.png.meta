@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60efecabd933b1940954527b5c7079a9
-      internalID: -977221826
+      spriteID: c8d366dd818104f4fb0bd9b518d0164c
+      internalID: 662618638
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4b444f2212ab744db26b604b8f7b2a9
-      internalID: -1101397436
+      spriteID: 6e7c076c62b121a448ab742b066338f6
+      internalID: 1911874844
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49f77840b5518d644ae941488cdb1d12
-      internalID: 292378947
+      spriteID: 89e001df5bb7ff0498fb311d01d52091
+      internalID: 1914724400
       vertices: []
       indices: 
       edges: []
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdb794c70aaa195449646ad2f30b8a6b
-      internalID: 242911191
+      spriteID: 4af7c2bafd80ca843acf85b884e0296a
+      internalID: -345683340
       vertices: []
       indices: 
       edges: []
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4bffa4e24983f24ca25fca83ef32b77
-      internalID: 2138554436
+      spriteID: f37983dda559c404280443aaf5c87a4e
+      internalID: -676696268
       vertices: []
       indices: 
       edges: []
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf30314511e5ded4ab1332fb56827fd3
-      internalID: -971364967
+      spriteID: e1074b792e636b040bd9fbede4bba894
+      internalID: -570663142
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jemi_move_spritesheet_0: -977221826
-      jemi_move_spritesheet_1: -1101397436
-      jemi_move_spritesheet_2: 292378947
-      jemi_move_spritesheet_3: 242911191
-      jemi_move_spritesheet_4: 2138554436
-      jemi_move_spritesheet_5: -971364967
+      jemi_move_spritesheet_0: 662618638
+      jemi_move_spritesheet_1: 1911874844
+      jemi_move_spritesheet_2: 1914724400
+      jemi_move_spritesheet_3: -345683340
+      jemi_move_spritesheet_4: -676696268
+      jemi_move_spritesheet_5: -570663142
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
