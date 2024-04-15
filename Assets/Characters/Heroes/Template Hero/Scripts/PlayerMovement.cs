@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
     PlayerStats stats;
     [SerializeField] float defaultMoveSpeed = 2;
     float moveSpeed;
-    public float dodgeSpeedMultiplier;
     public Vector2 moveDirection;
     Rigidbody2D rb;
     PlayerDodge dodgeScript;
@@ -21,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
         stats = (PlayerStats)ScriptableObject.CreateInstance(typeof(PlayerStats));
         dodgeScript = GetComponent<PlayerDodge>();
         moveSpeed = defaultMoveSpeed;
-        dodgeSpeedMultiplier = 1;
     }
 
     private void Update() {
@@ -62,12 +60,6 @@ public class PlayerMovement : MonoBehaviour
         SetMoveSpeed(dodgeScript.GetDodgeSpeed());
         yield return new WaitForSeconds(seconds);
         SetMoveSpeed(defaultMoveSpeed);
-    }
-
-    public IEnumerator SetDodgeSpeedMultiplier(float newMult, float seconds) {
-        dodgeSpeedMultiplier = newMult;
-        yield return new WaitForSeconds(seconds);
-        dodgeSpeedMultiplier = 1;
     }
 
     void SetMoveSpeed(float newSpeed) {
