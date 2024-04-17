@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 7596381978464283510}
   - component: {fileID: 9055727400259126590}
   - component: {fileID: 3730413436052584017}
+  - component: {fileID: 3257482214679516248}
   m_Layer: 0
   m_Name: Jemi
   m_TagString: Player
@@ -455,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c538917ef05374a955649a197d84ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMoveSpeed: 1
+  defaultMoveSpeed: 2
   moveDirection: {x: 0, y: 0}
 --- !u!114 &9055727400259126590
 MonoBehaviour:
@@ -482,3 +483,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dodgeSpeed: 3.5
+  numOfDodgeAnims: 3
+--- !u!114 &3257482214679516248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797997060451683447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: b267638f7d1b7ca41bd6977b96b8348e, type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 0}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 0
+  m_TrailActivationCondition: 1
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []

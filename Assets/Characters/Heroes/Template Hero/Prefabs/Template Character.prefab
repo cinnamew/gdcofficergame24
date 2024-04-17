@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 7891616274913045162}
   - component: {fileID: 8737838761139717346}
   - component: {fileID: 3975118645485041549}
+  - component: {fileID: 6534270970991492438}
   m_Layer: 3
   m_Name: Template Character
   m_TagString: Player
@@ -402,3 +403,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61a979283ef86d40a4e436d0711e964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dodgeSpeed: 3.5
+  numOfDodgeAnims: 1
+--- !u!114 &6534270970991492438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6096182308657925547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: b267638f7d1b7ca41bd6977b96b8348e, type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 0}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 1
+  m_TrailActivationCondition: 1
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []

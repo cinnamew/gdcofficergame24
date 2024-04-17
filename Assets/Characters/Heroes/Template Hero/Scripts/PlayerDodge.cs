@@ -7,7 +7,7 @@ public class PlayerDodge : MonoBehaviour
     float dodgeDuration; //does not necessarily have to be the length of the animation
     public float dodgeSpeed = 3.5f;
     AnimController animScript;
-    int numOfDodgeAnims = 1;
+    [SerializeField] private int numOfDodgeAnims;
     //I need to get the last vector2 of the movement right before the dash
     Vector2 dodgeVector2;
     AimpointSpriteManager aimSpriteScript;
@@ -24,6 +24,8 @@ public class PlayerDodge : MonoBehaviour
         dodgeVector2 = moveScript.moveDirection;
         animScript.DodgeFlip();
         GetRandomDodgeAnim();
+        //animScript.SetAnimState(AnimController.DODGE_PREFIX + "2"); //DEBUGGING!
+
         //StartCoroutine(moveScript.SetDodgeSpeedMultiplier(dodgeSpeedMult, dodgeDuration));
         //at this point, the dodge animation is already playing
         //invincibility during dodge
@@ -45,8 +47,8 @@ public class PlayerDodge : MonoBehaviour
     }
 
     void GetRandomDodgeAnim() {
-        animScript.SetAnimState(animScript.GetRandomAnimString("Dodge_", 1));
-        Debug.Log("PLAYING DODGE ANIMATION");
+        animScript.SetAnimState(animScript.GetRandomAnimString(AnimController.DODGE_PREFIX, numOfDodgeAnims));
+        //Debug.Log("PLAYING DODGE ANIMATION");
         //DODGE_0 should always have no animation. Just the visual dodge effect pasted over
         //a still frame of the move animation. So it doesn't really count as one animation
     }
