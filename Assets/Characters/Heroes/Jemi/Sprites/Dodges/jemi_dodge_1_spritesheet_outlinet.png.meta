@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: edb990520386dd043bc9fc9a604a59a0
+guid: 8d035095e84871b45837ce74034a5336
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_0
+      name: jemi_dodge_1_spritesheet_outlinet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 038b016d0f780c146a0df78155711a27
-      internalID: -546680133
+      spriteID: a6def665c922fc9469741d0367e98733
+      internalID: 705798854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_1
+      name: jemi_dodge_1_spritesheet_outlinet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ec370d741f044743b9cd764aec1b329
-      internalID: -2031890549
+      spriteID: 56ad57a2778614f439ef3d3ebcefeff0
+      internalID: 1141017762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_2
+      name: jemi_dodge_1_spritesheet_outlinet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06de459e503459e42872e22639c83533
-      internalID: 998194772
+      spriteID: aae8e367da1d9224da069f6c57123551
+      internalID: -371463837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_3
+      name: jemi_dodge_1_spritesheet_outlinet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adc79f4b40ff81443820aa626a6731ab
-      internalID: -1129649441
+      spriteID: 46076a0fb6e15ea438ef4a01594320e2
+      internalID: 953002021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_4
+      name: jemi_dodge_1_spritesheet_outlinet_4
       rect:
         serializedVersion: 2
         x: 128
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 681a973ce6f2c35438437bbaf3d1e029
-      internalID: -1637202184
+      spriteID: c62b9e6599616cd4c82e16fc4421341b
+      internalID: -1590588915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_5
+      name: jemi_dodge_1_spritesheet_outlinet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc4d2e2ce30d64e4795f69f97b98c3fb
-      internalID: 145349310
+      spriteID: 1774b1f0621697b4eb3181cefe254342
+      internalID: 1947318146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_6
+      name: jemi_dodge_1_spritesheet_outlinet_6
       rect:
         serializedVersion: 2
         x: 192
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c090da321bec74e8275b60b52c29d5
-      internalID: 1382702081
+      spriteID: 9673d270e0f624949bf8da3bdb917943
+      internalID: 1554001235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_7
+      name: jemi_dodge_1_spritesheet_outlinet_7
       rect:
         serializedVersion: 2
         x: 224
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 947af4dfd6a2f7c49acf3611cbf77033
-      internalID: 355359137
+      spriteID: 1c97b156700a00b489739d416d529162
+      internalID: -805553852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_8
+      name: jemi_dodge_1_spritesheet_outlinet_8
       rect:
         serializedVersion: 2
         x: 256
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aae89ac7234e89443a484a4c2a23a38a
-      internalID: -1472337291
+      spriteID: 55aec15be4bf18947ab2df5aec5592e1
+      internalID: 1812655722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jemi_dodge_2_spritesheet_9
+      name: jemi_dodge_1_spritesheet_outlinet_9
       rect:
         serializedVersion: 2
         x: 288
@@ -320,8 +320,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 002b819ac6cba654ab7da77372da7fca
-      internalID: 1861161001
+      spriteID: d99daad083cc8cd4da5fb0376db3ed73
+      internalID: -1528474058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_dodge_1_spritesheet_outlinet_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971f22addde639d44906fecce727ce8b
+      internalID: -8371358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_dodge_1_spritesheet_outlinet_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7723bacedae3843abfe38d5dde21f1
+      internalID: 1019388719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_dodge_1_spritesheet_outlinet_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719e0009a3b8b5a4d9b1757ce4030366
+      internalID: -1098961138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_dodge_1_spritesheet_outlinet_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8b57923aa1d8c47bc80fb2245a8ff0
+      internalID: 1112189762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_dodge_1_spritesheet_outlinet_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59960793a0469084783479b64a67c11b
+      internalID: -963971876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_dodge_1_spritesheet_outlinet_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5193e797408d2ae46ac0abca4c5e6313
+      internalID: 777433615
       vertices: []
       indices: 
       edges: []
@@ -337,16 +463,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jemi_dodge_2_spritesheet_0: -546680133
-      jemi_dodge_2_spritesheet_1: -2031890549
-      jemi_dodge_2_spritesheet_2: 998194772
-      jemi_dodge_2_spritesheet_3: -1129649441
-      jemi_dodge_2_spritesheet_4: -1637202184
-      jemi_dodge_2_spritesheet_5: 145349310
-      jemi_dodge_2_spritesheet_6: 1382702081
-      jemi_dodge_2_spritesheet_7: 355359137
-      jemi_dodge_2_spritesheet_8: -1472337291
-      jemi_dodge_2_spritesheet_9: 1861161001
+      jemi_dodge_1_spritesheet_outlinet_0: 705798854
+      jemi_dodge_1_spritesheet_outlinet_1: 1141017762
+      jemi_dodge_1_spritesheet_outlinet_10: -8371358
+      jemi_dodge_1_spritesheet_outlinet_11: 1019388719
+      jemi_dodge_1_spritesheet_outlinet_12: -1098961138
+      jemi_dodge_1_spritesheet_outlinet_13: 1112189762
+      jemi_dodge_1_spritesheet_outlinet_14: -963971876
+      jemi_dodge_1_spritesheet_outlinet_15: 777433615
+      jemi_dodge_1_spritesheet_outlinet_2: -371463837
+      jemi_dodge_1_spritesheet_outlinet_3: 953002021
+      jemi_dodge_1_spritesheet_outlinet_4: -1590588915
+      jemi_dodge_1_spritesheet_outlinet_5: 1947318146
+      jemi_dodge_1_spritesheet_outlinet_6: 1554001235
+      jemi_dodge_1_spritesheet_outlinet_7: -805553852
+      jemi_dodge_1_spritesheet_outlinet_8: 1812655722
+      jemi_dodge_1_spritesheet_outlinet_9: -1528474058
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

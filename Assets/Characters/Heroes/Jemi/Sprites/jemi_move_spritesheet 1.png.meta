@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e3a0d46944294aab9a521c759a2fe64
+guid: 36a6a8c121705db4ba1430367aa14bca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,23 +113,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vaishak_idles_0
+      name: jemi_move_spritesheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693bc647eb8f0d4488208b83eac56828
-      internalID: 760555686
+      spriteID: f6b4e0eab45c82d4099e3b46aa7ab1c4
+      internalID: -1209662638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vaishak_idles_1
+      name: jemi_move_spritesheet 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -164,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45136dce4a1e7b645a1e7def82f07489
-      internalID: -94847319
+      spriteID: 005da2e4e0ad85e41901fbfe3ff84006
+      internalID: 823127944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vaishak_idles_2
+      name: jemi_move_spritesheet 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -185,8 +173,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33d8e3b50e9c7394090e506b28a164f2
-      internalID: -1355954467
+      spriteID: a287bde47eb1f71479cf0236e6cd4428
+      internalID: -915574416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_move_spritesheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b00bdab78929f14ab1d69af6f279695
+      internalID: 2102560472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_move_spritesheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6142e225aecda2498f66a525e61b3e7
+      internalID: -806972145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jemi_move_spritesheet 1_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1df529a296f0684fb0b37c64f6e1f2d
+      internalID: 1337378302
       vertices: []
       indices: 
       edges: []
@@ -202,9 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vaishak_idles_0: 760555686
-      vaishak_idles_1: -94847319
-      vaishak_idles_2: -1355954467
+      jemi_move_spritesheet 1_0: -1209662638
+      jemi_move_spritesheet 1_1: 823127944
+      jemi_move_spritesheet 1_2: -915574416
+      jemi_move_spritesheet 1_3: 2102560472
+      jemi_move_spritesheet 1_4: -806972145
+      jemi_move_spritesheet 1_5: 1337378302
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

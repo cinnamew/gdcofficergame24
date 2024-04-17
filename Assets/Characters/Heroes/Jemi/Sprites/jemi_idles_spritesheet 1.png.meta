@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e3a0d46944294aab9a521c759a2fe64
+guid: e1b6f9c2c2f2f9646a148c6094a9849c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,23 +113,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vaishak_idles_0
+      name: jemi_idles_spritesheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693bc647eb8f0d4488208b83eac56828
-      internalID: 760555686
+      spriteID: 82071cd818a0a3c4d9ff8f105b9a5768
+      internalID: 1250442109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vaishak_idles_1
+      name: jemi_idles_spritesheet 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -164,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45136dce4a1e7b645a1e7def82f07489
-      internalID: -94847319
+      spriteID: c55bc1dc66da2fa49b5ba726725b0727
+      internalID: -950594024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vaishak_idles_2
+      name: jemi_idles_spritesheet 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -185,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33d8e3b50e9c7394090e506b28a164f2
-      internalID: -1355954467
+      spriteID: 3b977071cd01d45449fc7983083cdb23
+      internalID: -146334945
       vertices: []
       indices: 
       edges: []
@@ -202,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vaishak_idles_0: 760555686
-      vaishak_idles_1: -94847319
-      vaishak_idles_2: -1355954467
+      jemi_idles_spritesheet 1_0: 1250442109
+      jemi_idles_spritesheet 1_1: -950594024
+      jemi_idles_spritesheet 1_2: -146334945
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
