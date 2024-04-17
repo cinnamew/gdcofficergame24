@@ -417,14 +417,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrailName: 
+  m_TrailName: Dodge
   m_CurrentTrailPreset: {fileID: 11400000, guid: b267638f7d1b7ca41bd6977b96b8348e, type: 2}
   m_TrailParent: {fileID: 0}
   m_SpriteToDuplicate: {fileID: 0}
   m_Layer: 0
   m_ZMoveStep: 0.0001
   m_ZMoveMax: 0.9999
-  m_HideTrailOnDisabled: 1
+  m_HideTrailOnDisabled: 0
   m_TrailActivationCondition: 1
   m_TrailDeactivationCondition: 0
   m_StartIfUnderVelocity: 0
