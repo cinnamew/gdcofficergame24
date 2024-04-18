@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f; // Configurable movement speed
     [SerializeField] private bool enableAim = true;
     [SerializeField] private float noMoveRange = 0.1f;
+    [SerializeField] private string targetTag;
     public Vector2 aimPoint;
     private bool inFormation = false;
 
@@ -24,9 +25,8 @@ public class EnemyAI : MonoBehaviour
         //Set aimPoint 
     }
 
-    GameObject GetHighestPriorityTarget()
+    public GameObject GetHighestPriorityTarget()
     {
-        string targetTag = gameObject.GetComponent<GenericHitbox>().targetTag; //Finds the target tag this object is looking for
         GameObject[] targets = GameObject.FindGameObjectsWithTag(targetTag);
         GameObject highestPriorityTarget = null;
         int highestPriority = int.MinValue;
