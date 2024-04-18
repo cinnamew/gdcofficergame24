@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7749691109120816999}
   - component: {fileID: 8246803990311969523}
   - component: {fileID: 2552767133805560778}
+  - component: {fileID: 5998025383258240406}
+  - component: {fileID: 1333955623916328719}
   m_Layer: 6
   m_Name: Honey-Melon-icon
   m_TagString: Enemy
@@ -97,7 +99,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -146,3 +148,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965ccab3785eb194ca43904831c0e853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!114 &5998025383258240406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179419701901646515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c150bfdda955de649a25002cf1f04f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  moveSpeed: 5
+  enableAim: 1
+  noMoveRange: 0.1
+  targetTag: Player
+  aimPoint: {x: 0, y: 0}
+--- !u!114 &1333955623916328719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179419701901646515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b6bd859825ea64a96a30d28c7e1b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  attackCooldown: 1.5
+  targetTag: Player

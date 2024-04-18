@@ -8,11 +8,10 @@ public class EnemySpawner : MonoBehaviour
     public float maxSpawnInterval = 15f; // Maximum time between spawns
     public float ringRadius = 5f; // Radius of the ring
     public int numEnemiesInRing = 8; // Number of enemies in the ring
-    private Vector2 playerPos;
+    [SerializeField] private Transform playerTransform;
 
     private void Start()
     {
-        playerPos = (GameObject.Find("Player")).transform.position;
         StartCoroutine(SpawnEnemiesRoutine());
     }
 
@@ -34,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < numEnemiesInRing; i++)
         {
             float angle = i * angleStep * Mathf.Deg2Rad;
-            Vector3 spawnPosition = playerPos + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * ringRadius;
+            Vector3 spawnPosition = (Vector2)(playerTransform.position) + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * ringRadius;
 
             Instantiate(randomEnemyPrefab, spawnPosition, Quaternion.identity);
         }
