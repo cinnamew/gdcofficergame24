@@ -16,8 +16,6 @@ public class AimpointSpriteManager : MonoBehaviour
     public BoolTimer isDodging;
     float flipBufferAngle;
     public float rotationAngle;
-    public float rotationPointXShift; //change security later
-    public float rotationPointYShift;
     void Start()
     {
         rotationPoint = GameObject.FindGameObjectWithTag("PlayerAimRotationPoint").GetComponent<Transform>();
@@ -25,12 +23,9 @@ public class AimpointSpriteManager : MonoBehaviour
         characterSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         orderFlipRightThreshold = 30;
         orderFlipLeftThreshold = 165;
-        flipBufferAngle = 10;
+        flipBufferAngle = 20;
         flipBufferDistance = 0.001f; 
         orderBufferDistance = 0.00f;
-        rotationPointXShift = 0;
-        rotationPointYShift = 0;
-        rotationPoint.localPosition = new Vector2(rotationPointXShift, rotationPointYShift);
         
     }
     void Update()
@@ -87,11 +82,9 @@ public class AimpointSpriteManager : MonoBehaviour
             if (AimPointIsOnRightSide() && !IsWithinFlipBuffer() && thisSprite.flipY) { //if on right and is flipped
                 thisSprite.flipY = false; //then unflip
                 characterSprite.flipX = false;
-                rotationPoint.localPosition = new Vector2(rotationPointXShift, 0);
             } else if (!AimPointIsOnRightSide() && !IsWithinFlipBuffer() && !thisSprite.flipY) { //if on left and not already flipped
                 thisSprite.flipY = true;
                 characterSprite.flipX = true;
-                rotationPoint.localPosition = new Vector2(rotationPointXShift, 0);
             }
         } else {
         }
