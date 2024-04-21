@@ -5,7 +5,7 @@ using UnityEngine;
 public class AimpointSpriteManager : MonoBehaviour
 {
     //this script also handles the flipping of the player character
-    SpriteRenderer characterSprite;
+    SpriteRenderer charaSprite;
     Transform rotationPoint;
     SpriteRenderer thisSprite;
     public float orderFlipRightThreshold;
@@ -20,7 +20,7 @@ public class AimpointSpriteManager : MonoBehaviour
     {
         rotationPoint = GameObject.FindGameObjectWithTag("PlayerAimRotationPoint").GetComponent<Transform>();
         thisSprite = GetComponent<SpriteRenderer>();
-        characterSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+        charaSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         orderFlipRightThreshold = 30;
         orderFlipLeftThreshold = 165;
         flipBufferAngle = 20;
@@ -81,10 +81,12 @@ public class AimpointSpriteManager : MonoBehaviour
             //to turn right
             if (AimPointIsOnRightSide() && !IsWithinFlipBuffer() && thisSprite.flipY) { //if on right and is flipped
                 thisSprite.flipY = false; //then unflip
-                characterSprite.flipX = false;
+                charaSprite.flipX = false;
+                Debug.Log("Flipping to the right");
             } else if (!AimPointIsOnRightSide() && !IsWithinFlipBuffer() && !thisSprite.flipY) { //if on left and not already flipped
                 thisSprite.flipY = true;
-                characterSprite.flipX = true;
+                charaSprite.flipX = true;
+                Debug.Log("Flipping to the left");
             }
         } else {
         }
@@ -92,8 +94,10 @@ public class AimpointSpriteManager : MonoBehaviour
 
     public void FlipAfterDodge() {
         if (!IsWithinFlipBuffer()) {
-            if ((AimPointIsOnRightSide() && characterSprite.flipX) || (!AimPointIsOnRightSide() && !characterSprite.flipX)) {
-                characterSprite.flipX = !characterSprite.flipX;
+            //the bane of all clones...
+            if ((AimPointIsOnRightSide() && charaSprite.flipX) || (!AimPointIsOnRightSide() && !charaSprite.flipX)) {
+                charaSprite.flipX = !charaSprite.flipX;
+                Debug.Log("flipping after dodge");
             }
         }
     }
@@ -115,6 +119,6 @@ public class AimpointSpriteManager : MonoBehaviour
     }
 
     public SpriteRenderer GetCharSprite() {
-        return characterSprite;
+        return charaSprite;
     }
 }
