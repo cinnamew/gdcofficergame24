@@ -39,7 +39,7 @@ public class AimpointSpriteManager : MonoBehaviour
             HidePointerSprite();
         }
         if (!isDodging) {
-            FlipAfterDodge();
+            //FlipAfterDodge(); //clone issue
         }
         rotationAngle = rotationPoint.eulerAngles.z;
     }
