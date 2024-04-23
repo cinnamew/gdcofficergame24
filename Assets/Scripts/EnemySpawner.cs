@@ -9,10 +9,14 @@ public class EnemySpawner : MonoBehaviour
     public float ringRadius = 5f; // Radius of the ring
     public int numEnemiesInRing = 8; // Number of enemies in the ring
     [SerializeField] private Transform playerTransform;
+    private Vector2[] spawnPoints;
+    private Vector2[] endPoints;
 
     private void Start()
     {
+        LoadSpawnAndEndPoints("Formation1");
         StartCoroutine(SpawnEnemiesRoutine());
+        StartCoroutine(FormationSpawnRoutine());
     }
 
     private IEnumerator SpawnEnemiesRoutine()
@@ -21,6 +25,23 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval));
             SpawnRingOfEnemies();
+        }
+    }
+
+    private IEnumerator FormationSpawnRoutine()
+    {
+        GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+        GameObject[] enemies = new GameObject[spawnPoints.Length];
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            GameObject enemy = Instantiate(randomEnemyPrefab, spawnPoints[i], Quaternion.identity);
+            enemy.GetComponent<EnemyAI>().SetEndPoint(endPoints[i]);
+            enemies[i] = enemy;
+            yield return new WaitForSeconds(0.1f); // Optional yield to control spawn rate
+        }
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            enemies[i].GetComponent<EnemyAI>().SetEnableAim(true);
         }
     }
 
@@ -37,5 +58,37 @@ public class EnemySpawner : MonoBehaviour
 
             Instantiate(randomEnemyPrefab, spawnPosition, Quaternion.identity);
         }
+    }
+    private void LoadSpawnAndEndPoints(string formationName)
+    {
+        
+        Transform formation = transform.Find(formationName);
+        if (formation != null)
+        {
+            spawnPoints = GetChildPositionsByPrefix(formation, "Spawn");
+            endPoints = GetChildPositionsByPrefix(formation, "End");
+        }
+        else
+        {
+            Debug.LogError(formationName + " object not found!");
+        }
+    }
+
+    private Vector2[] GetChildPositionsByPrefix(Transform parent, string prefix)
+    {
+        Vector2[] positions = new Vector2[parent.childCount];
+        int count = 0;
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            Transform child = parent.GetChild(i);
+            if (child.name.StartsWith(prefix))
+            {
+                positions[count] = child.position;
+                count++;
+            }
+        }
+        System.Array.Resize(ref positions, count);
+
+        return positions;
     }
 }

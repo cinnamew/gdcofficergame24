@@ -19,10 +19,14 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void GoStraightFormation(float distance, Vector2 dir){
-        inFormation = true; //Set to false so formation can happen
-        aimPoint = (Vector2)(transform.position)+dir*distance;
-        //Set aimPoint 
+    public void SetEndPoint(Vector2 point){
+        inFormation = true;
+        aimPoint = point;
+        enableAim = false;
+    }
+
+    public void SetEnableAim(bool aim){
+        enableAim = aim;
     }
 
     public GameObject GetHighestPriorityTarget()
@@ -74,6 +78,10 @@ public class EnemyAI : MonoBehaviour
             rb.velocity = direction * moveSpeed;
             if (distance < noMoveRange){
                 rb.velocity = Vector2.zero;
+                if (inFormation)
+                {
+                    Destroy(gameObject); //Need to add particle effects here
+                }
             }
         }
     }
