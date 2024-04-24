@@ -18,6 +18,9 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damageVal) {
         health -= damageVal;
         Debug.Log("Took " + damageVal + " damage"); //Temporary before healthbar implementation
+        if (health <= 0){
+            Destroy(gameObject);
+        }
     }
     public void HealHealth(int healVal) {
         health += healVal;

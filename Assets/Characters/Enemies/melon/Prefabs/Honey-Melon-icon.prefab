@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 10
-  moveSpeed: 5
+  moveSpeed: 3
   enableAim: 1
   noMoveRange: 0.1
   targetTag: Player
