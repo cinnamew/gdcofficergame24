@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelXPManager : MonoBehaviour
 {
     public int xp = 0;
+    private int maxEXP = 15;
+    private int level = 1;
     public int currency = 0;
 
     // Start is called before the first frame update
@@ -31,6 +33,15 @@ public class LevelXPManager : MonoBehaviour
     public void updateXP(int amt)
     {
         xp += amt;
+        updateLevel();
+    }
+
+    private void updateLevel()
+    {
+        if (xp >= maxEXP){
+            level += 1;
+            maxEXP = maxEXP * 2;
+        }
     }
 
     public void updateCurrency(int amt)

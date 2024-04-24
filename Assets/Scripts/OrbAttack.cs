@@ -6,8 +6,9 @@ public class OrbAttack : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject rotateObject;
-    [SerializeField] private float rotationSpeed = 30f; 
-    [SerializeField] private Transform[] Orbs;
+    [SerializeField] private float rotationSpeed = 400f; 
+    [SerializeField] private GameObject[] Orbs;
+    private int numOrbs = 1;
 
     void FixedUpdate()
     {
@@ -15,7 +16,16 @@ public class OrbAttack : MonoBehaviour
         objTransform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
         for (int i = 0; i < Orbs.Length; i++)
         {
-            Orbs[i].Rotate(Vector3.forward, -rotationSpeed * Time.deltaTime);
+            Orbs[i].transform.Rotate(Vector3.forward, -rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    public void upgradeOrbs(){
+        if (numOrbs < Orbs.Length)
+        {
+            Orbs[numOrbs].SetActive(true);
+            rotationSpeed -= 50f;
+            numOrbs += 1;
         }
     }
 }

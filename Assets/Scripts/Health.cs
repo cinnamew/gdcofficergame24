@@ -52,6 +52,12 @@ public class Health : MonoBehaviour
                 }
             }
             //play death animation (if applicable)
+            if (gameObject.tag == "Enemy"){
+                LevelXPManager levelXPManager = (GameObject.FindGameObjectWithTag("Player")).GetComponent<LevelXPManager>(); // need to change this; this is really bad spaggheti code
+                levelXPManager.updateXP(7);
+                Debug.Log("Upgraded Orb");
+            }
+            Destroy(gameObject); //show death particle system
         }
     }
     public void HealHealth(int healVal) {

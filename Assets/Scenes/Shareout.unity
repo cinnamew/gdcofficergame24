@@ -349,7 +349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &101294168
 Transform:
   m_ObjectHideFlags: 0
@@ -643,12 +643,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateObject: {fileID: 289457798}
-  rotationSpeed: 250
+  rotationSpeed: 400
   Orbs:
-  - {fileID: 1001584891}
-  - {fileID: 2109974533}
-  - {fileID: 334391322}
-  - {fileID: 101294168}
+  - {fileID: 1001584890}
+  - {fileID: 2109974532}
+  - {fileID: 334391321}
+  - {fileID: 101294167}
 --- !u!114 &166815903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,7 +1450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &334391322
 Transform:
   m_ObjectHideFlags: 0
@@ -29359,7 +29359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2109974533
 Transform:
   m_ObjectHideFlags: 0
