@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,14 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     [SerializeField] Slider slider;
     int health;
+    [SerializeField] ParticleSystem deathSmoke;
+    Vector3 victimVector3;
+    AnimController animController;
     
     void Start()
     {
+        victimVector3 = GetComponent<Vector3>();
+        animController = GetComponent<AnimController>();
         health = maxHealth;
         if (slider != null)
         {
@@ -22,6 +28,9 @@ public class Health : MonoBehaviour
         }
     }
 
+    public int GetHealth() {
+        return health;
+    }
     public void TakeDamage(int damageVal) {
         health -= damageVal;
         Debug.Log("Took " + damageVal + " damage"); //Temporary before healthbar implementation
@@ -31,7 +40,18 @@ public class Health : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject); //show death particle system
+            // Instantiate(deathSmoke, victimVector3, Quaternion.identity);
+            // deathSmoke.transform.SetParent(null, true);
+            // deathSmoke.Play();
+            //Destroy(gameObject); //show death particle system
+            //play particle effects
+            if (animController != null) {
+                animController.isAlive = false;
+                if (animController.AnimHasEnded()) {
+                    Destroy(gameObject);
+                }
+            }
+            //play death animation (if applicable)
         }
     }
     public void HealHealth(int healVal) {

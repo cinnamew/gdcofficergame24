@@ -330,6 +330,9 @@ GameObject:
   - component: {fileID: 9055727400259126590}
   - component: {fileID: 3730413436052584017}
   - component: {fileID: 3257482214679516248}
+  - component: {fileID: 1712416080695737248}
+  - component: {fileID: 5075972758587025765}
+  - component: {fileID: 5322775486260631031}
   m_Layer: 0
   m_Name: Jemi
   m_TagString: Player
@@ -500,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eeaa1bafc0d9c42a5cbeeff7768c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 0
 --- !u!114 &3730413436052584017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,3 +550,54 @@ MonoBehaviour:
   m_SortingLayerID: 0
   m_OrderInSortingLayer: 0
   m_DisabledElementsInTrail: []
+--- !u!114 &1712416080695737248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797997060451683447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39fc379af7975a4484a41aade19ecab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimPoint: {x: 0, y: 0}
+  aimPriority: 0
+  enableAim: 0
+--- !u!114 &5075972758587025765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797997060451683447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d661c300182054fb8c7898a85ec6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAttack: 1
+  hitboxes:
+  - {fileID: 1524954245724222825, guid: 5c96539be79a0944381e739741686d4d, type: 3}
+  isProjectile: 1
+  minProjectileCooldown: 1
+  lifeSpan: 2
+  projectilePrefab: {fileID: 17756766921772526, guid: 5c96539be79a0944381e739741686d4d, type: 3}
+  projectileSpeed: 1
+  projectileSpawnpoint: {fileID: 2076138178879587017}
+--- !u!114 &5322775486260631031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797997060451683447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965ccab3785eb194ca43904831c0e853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  slider: {fileID: 0}
+  deathSmoke: {fileID: 3990577281291942588, guid: ddca73616125e9b47af51af6f797dd42, type: 3}

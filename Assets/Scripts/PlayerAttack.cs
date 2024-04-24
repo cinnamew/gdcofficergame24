@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed;
     [SerializeField] private Transform projectileSpawnpoint;
-    private bool isAttacking; //toggle attacks; might be good if there's like a character like Diva in Overwatch
+    private bool isAttacking = true; //toggle attacks; might be good if there's like a character like Diva in Overwatch
     private float timeAttacking; //same reason
     private float timeOfLastAttack; //for manual attacks
     private Vector2 aimDir;
@@ -26,8 +26,9 @@ public class PlayerAttack : MonoBehaviour
                 timeAttacking += Time.deltaTime;
                 if (isProjectile)
                 {
-                    if(timeAttacking % minProjectileCooldown > -0.05f && timeAttacking % minProjectileCooldown < -0.05f) //if it's due time to shoot your shot
+                    if(timeAttacking % minProjectileCooldown > -0.05f && timeAttacking % minProjectileCooldown < 0.05f) //if it's due time to shoot your shot
                     {
+                        Debug.Log("hiqweuiouqwe");
                         StartCoroutine(afterBirthDeathIsInevitable());
                     }
                 }

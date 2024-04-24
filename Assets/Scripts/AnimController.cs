@@ -5,6 +5,7 @@ public class AnimController : MonoBehaviour
     Animator pAnimator;
     Rigidbody2D playerRb;
     string currentAnimState;
+    Health health;
 
     //anim names
     public const string MOVE = "Move";
@@ -12,7 +13,9 @@ public class AnimController : MonoBehaviour
     public const string BACKMOVE = "BackwardsMove";
 
     public const string DODGE_PREFIX = "Dodge_";
+    public const string DIE = "Death_0";
 
+    public bool isAlive = true;
     Transform prevPos;
     Transform newPos;
     AimpointSpriteManager aimpointRef;
@@ -22,6 +25,7 @@ public class AnimController : MonoBehaviour
 
     void Start()
     {
+        health = GetComponent<Health>();
         pAnimator = GetComponent<Animator>();
         aimpointRef = GameObject.FindGameObjectWithTag("AimPointer").GetComponent<AimpointSpriteManager>();
         if (hasDodgeAnims) {
@@ -33,6 +37,7 @@ public class AnimController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!hasDodgeAnims || (hasDodgeAnims && !moveScript.isDodging)) { //if not dodging
             if (IsIntentionallyMoving()) {
                 if (IsMovingForward())  {
@@ -43,6 +48,11 @@ public class AnimController : MonoBehaviour
             } else {
                 SetAnimState(IDLE);
             }
+        
+            // BrutallyDie();
+            // if (AnimHasEnded()) {
+            //     //destroy
+            // }
         }
     }
 
@@ -95,6 +105,20 @@ public class AnimController : MonoBehaviour
         //Debug.Log("Your random frame is "+ Random.Range(0, numOfAnims));
         return animPrefix + Random.Range(0, numOfAnims); //starts from 0 btw
         //applied to dodges and parries (think of Pizza Tower taunts)
+    }
+
+    public void BrutallyDie() {
+        SetAnimState(DIE);
+        aimpointRef.HidePointerSprite();
+    }
+
+    public bool AnimHasEnded()
+    {
+        return pAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1;
+    }
+    public bool IsDying() //deal with later
+    {
+        return pAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Death") && AnimHasEnded();
     }
 }
 

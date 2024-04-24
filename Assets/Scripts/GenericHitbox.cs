@@ -52,7 +52,9 @@ public class GenericHitbox : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         //Debug.Log(triggerList.Count);
         GetComponent<BoxCollider2D>().enabled = true;
-        GetComponentInParent<Rigidbody2D>().WakeUp(); //https://forum.unity.com/threads/reenabling-disabled-gameobject-does-not-call-ontriggerenter.765551/ last comment reccomends this as a fix
+        Rigidbody2D rb2d = GetComponentInParent<Rigidbody2D>();
+        if(rb2d == null) rb2d = GetComponent<Rigidbody2D>();
+        if(rb2d != null) rb2d.WakeUp();//https://forum.unity.com/threads/reenabling-disabled-gameobject-does-not-call-ontriggerenter.765551/ last comment reccomends this as a fix
         //edge case: If the hitbox does not move, refreshing does not work.
         currCooldown = refreshEvery;
     }

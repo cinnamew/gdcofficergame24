@@ -14,17 +14,20 @@ public class PlayerAiming : MonoBehaviour
     Vector3 rotation;
     float rotZ;
     SpriteRenderer aimPointerSpriteRenderer;
+    private PlayerAttack playerAttack;
     //ok
     private void Start() {
         playerCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         aimPointerSpriteRenderer = GameObject.FindGameObjectWithTag("AimPointer").GetComponent<SpriteRenderer>();
         playerPos = GetPlayerV2();
+        playerAttack = GetComponentInParent<PlayerAttack>();
     } 
     private void Update() {
         mousePos = playerCam.ScreenToWorldPoint(Input.mousePosition);
         mouseDistanceFromPlayer = Vector2.Distance(mousePos, GetPlayerV2());
         RotateAimpoint();
         ManageSpriteOrder();
+        playerAttack.setAimDir(mousePos-playerPos);
     }
     Vector2 GetPlayerV2() {
         return GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;
