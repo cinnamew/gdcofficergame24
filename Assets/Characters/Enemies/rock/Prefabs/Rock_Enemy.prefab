@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  slider: {fileID: 0}
 --- !u!114 &6781805041707836656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,11 +164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 10
-  moveSpeed: 5
+  moveSpeed: 3
   enableAim: 1
   noMoveRange: 0.1
   targetTag: Player
   aimPoint: {x: 0, y: 0}
+  canFlipSprites: 0
 --- !u!114 &2279844081175234153
 MonoBehaviour:
   m_ObjectHideFlags: 0

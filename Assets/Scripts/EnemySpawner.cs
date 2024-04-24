@@ -24,11 +24,23 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval));
+            transform.position = playerTransform.position;
             SpawnRingOfEnemies();
         }
     }
 
     private IEnumerator FormationSpawnRoutine()
+    {
+        while (true)
+        {
+            transform.position = playerTransform.position;
+            SpawnFormationOfEnemies();
+            yield return new WaitForSeconds(Random.Range(minSpawnInterval*3, maxSpawnInterval*3));
+        }
+        
+    }
+
+    private void SpawnFormationOfEnemies()
     {
         GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
         GameObject[] enemies = new GameObject[spawnPoints.Length];
@@ -37,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemy = Instantiate(randomEnemyPrefab, spawnPoints[i], Quaternion.identity);
             enemy.GetComponent<EnemyAI>().SetEndPoint(endPoints[i]);
             enemies[i] = enemy;
-            yield return new WaitForSeconds(0.1f); // Optional yield to control spawn rate
+            //yield return new WaitForSeconds(0.1f); // Optional yield to control spawn rate
         }
         for (int i = 0; i < spawnPoints.Length; i++)
         {
@@ -54,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < numEnemiesInRing; i++)
         {
             float angle = i * angleStep * Mathf.Deg2Rad;
-            Vector3 spawnPosition = (Vector2)(playerTransform.position) + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * ringRadius;
+            Vector2 spawnPosition = (Vector2)(transform.position) + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * ringRadius;
 
             Instantiate(randomEnemyPrefab, spawnPosition, Quaternion.identity);
         }

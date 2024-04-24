@@ -28,12 +28,12 @@ public class LevelXPManager : MonoBehaviour
         }
     }
 
-    void updateXP(int amt)
+    public void updateXP(int amt)
     {
         xp += amt;
     }
 
-    void updateCurrency(int amt)
+    public void updateCurrency(int amt)
     {
         currency += amt;
     }
