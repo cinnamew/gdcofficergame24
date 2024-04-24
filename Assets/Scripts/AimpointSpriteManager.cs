@@ -16,6 +16,7 @@ public class AimpointSpriteManager : MonoBehaviour
     public BoolTimer isDodging;
     float flipBufferAngle;
     public float rotationAngle;
+    bool hasAlreadyFlippedAfterDodge = false;
     void Start()
     {
         rotationPoint = GameObject.FindGameObjectWithTag("PlayerAimRotationPoint").GetComponent<Transform>();
@@ -32,14 +33,20 @@ public class AimpointSpriteManager : MonoBehaviour
     {
         SwitchSortingOrder();
         FlipUpdate();
+        if (isDodging == true) {
+            hasAlreadyFlippedAfterDodge = false;
+        } else {
+            hasAlreadyFlippedAfterDodge = true;
+        }
+        
         if (!thisSprite.enabled && !pointerIsHidden) {
             ShowPointerSprite();
             
         } else if (thisSprite.enabled && pointerIsHidden) {
             HidePointerSprite();
         }
-        if (!isDodging) {
-            //FlipAfterDodge(); //clone issue
+        if (!isDodging && hasAlreadyFlippedAfterDodge) {
+            FlipAfterDodge(); //clone issue
         }
         rotationAngle = rotationPoint.eulerAngles.z;
     }
