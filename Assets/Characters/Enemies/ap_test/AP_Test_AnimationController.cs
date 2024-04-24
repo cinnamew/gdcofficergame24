@@ -9,6 +9,7 @@ public class AP_Test_AnimationController : MonoBehaviour
     string curState;
     public const string FORWARD = "ap_test_bounce_forward";
     public const string BACKWARD = "ap_test_bounce_backward";
+    public bool canMirrorSprites = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +21,14 @@ public class AP_Test_AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb.velocity.x > 0)
-        {
-            ChangeAnimationState(FORWARD);
-        }else if(rb.velocity.x < 0)
-        {
-            ChangeAnimationState(BACKWARD);
+        if (canMirrorSprites) {
+            if(rb.velocity.x > 0)
+            {
+                ChangeAnimationState(FORWARD);
+            }else if(rb.velocity.x < 0)
+            {
+                ChangeAnimationState(BACKWARD);
+            }
         }
     }
     void ChangeAnimationState(string newState)

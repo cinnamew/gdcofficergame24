@@ -14,6 +14,8 @@ public class EnemyAI : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public bool canFlipSprites = false; //OVERRIDE OVVERRIDE PLEAZSSSSE OERRIDE
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -69,10 +71,13 @@ public class EnemyAI : MonoBehaviour
                 CheckAimPriority();
 
             Vector2 direction = (aimPoint - (Vector2)transform.position).normalized;
-            if (direction.x > 0){
-                transform.rotation = Quaternion.Euler(0f, Mathf.Sign(direction.x) * 180f, 0f);
-            } else {
-                transform.rotation = Quaternion.Euler(0f, Mathf.Sign(direction.x) * 0f, 0f);
+            //found the mirror culprit\
+            if (canFlipSprites) {
+                if (direction.x > 0){
+                    transform.rotation = Quaternion.Euler(0f, Mathf.Sign(direction.x) * 180f, 0f);
+                } else {
+                    transform.rotation = Quaternion.Euler(0f, Mathf.Sign(direction.x) * 0f, 0f);
+                }
             }
             float distance = ((aimPoint - (Vector2)transform.position)).magnitude;
             rb.velocity = direction * moveSpeed;
