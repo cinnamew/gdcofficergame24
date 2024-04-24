@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
         health -= damageVal;
         Debug.Log("Took " + damageVal + " damage"); //Temporary before healthbar implementation
         if (health <= 0){
-            Destroy(gameObject);
+            Destroy(gameObject); //show death particle system
         }
     }
     public void HealHealth(int healVal) {
