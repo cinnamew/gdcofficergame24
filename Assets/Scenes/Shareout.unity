@@ -2932,6 +2932,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 53183421}
+  - {fileID: 7645367831771932765, guid: 73d68d4f7351946bc8d216430d325e21, type: 3}
+  - {fileID: 4844861573551302320, guid: 0c10b9cbb6a3a49819d984fc89067ef1, type: 3}
+  - {fileID: 2845372806888111918, guid: 5137ea9e091854be1a4b4e35196edab4, type: 3}
+  - {fileID: 5386434109361949653, guid: f76b2aee1b8f540018fe9ec87b40418e, type: 3}
   minSpawnInterval: 10
   maxSpawnInterval: 15
   ringRadius: 5
