@@ -706,7 +706,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 0
-  currency: 0
 --- !u!1 &170578915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,6 +3776,9 @@ MonoBehaviour:
   - {fileID: 4844861573551302320, guid: 0c10b9cbb6a3a49819d984fc89067ef1, type: 3}
   - {fileID: 2845372806888111918, guid: 5137ea9e091854be1a4b4e35196edab4, type: 3}
   - {fileID: 5386434109361949653, guid: f76b2aee1b8f540018fe9ec87b40418e, type: 3}
+  - {fileID: 5493537871260361680, guid: 15336373046004dadbb485f406f3718c, type: 3}
+  - {fileID: 1566828352302712409, guid: c7c22a22d11cd44af90f7938da36e8e8, type: 3}
+  - {fileID: 9000495641018112860, guid: 86eecf1bd9fa546c1a6543b4cf385758, type: 3}
   minSpawnInterval: 10
   maxSpawnInterval: 15
   ringRadius: 5
