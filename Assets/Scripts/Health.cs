@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     
     void Start()
     {
-        victimVector3 = GetComponent<Vector3>();
+        //victimVector3 = GetComponent<Vector3>(); commented out bc it was causing an error
         animController = GetComponent<AnimController>();
         health = maxHealth;
         if (slider != null)
