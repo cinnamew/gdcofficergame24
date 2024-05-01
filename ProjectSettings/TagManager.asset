@@ -10,6 +10,7 @@ TagManager:
   - PlayerAimRotationPoint
   - PlayerWeapon
   - manager
+  - xp
   layers:
   - Default
   - TransparentFX
