@@ -6453,6 +6453,8 @@ GameObject:
   - component: {fileID: 1305753475}
   - component: {fileID: 1305753474}
   - component: {fileID: 1305753477}
+  - component: {fileID: 1305753478}
+  - component: {fileID: 1305753479}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6495,7 +6497,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 2.984375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6561,6 +6563,64 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1305753478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305753473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8c96e2cdc154e848a3d9fe62464d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraTargets:
+  - TargetTransform: {fileID: 166815901}
+    TargetInfluenceH: 1
+    TargetInfluenceV: 1
+    TargetOffset: {x: 0, y: 0}
+  CenterTargetOnStart: 0
+  Axis: 0
+  UpdateType: 0
+  FollowHorizontal: 1
+  HorizontalFollowSmoothness: 0.15
+  FollowVertical: 1
+  VerticalFollowSmoothness: 0.15
+  OffsetX: 0
+  OffsetY: 0
+  IsRelativeOffset: 1
+  ZoomWithFOV: 0
+  IgnoreTimeScale: 0
+  CurrentZoomTriggerID: 0
+  IsCameraPositionLeftBounded: 0
+  IsCameraPositionRightBounded: 0
+  IsCameraPositionTopBounded: 0
+  IsCameraPositionBottomBounded: 0
+  GameCamera: {fileID: 1305753475}
+--- !u!114 &1305753479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305753473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17577239430844efcbdda516df8c1f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pc2D: {fileID: 1305753478}
+  _serializedAxis: 0
+  PixelsPerUnit: 8
+  ViewportAutoScale: 3
+  TargetViewportSizeInPixels: {x: 80, y: 50}
+  _zoom: 1
+  SnapMovementToGrid: 0
+  SnapCameraToGrid: 1
+  DrawGrid: 0
+  GridColor: {r: 1, g: 0, b: 0, a: 0.1}
+  GridDensity: 0
 --- !u!1 &1313334745
 GameObject:
   m_ObjectHideFlags: 0
@@ -26257,7 +26317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1354978561
 Transform:
   m_ObjectHideFlags: 0
@@ -27453,10 +27513,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5164619645457241601, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
-      propertyPath: defaultMoveSpeed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8947234952924380627, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
       propertyPath: slider
       value: 
