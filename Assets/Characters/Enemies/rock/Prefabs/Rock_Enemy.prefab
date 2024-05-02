@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   slider: {fileID: 0}
+  deathSmoke: {fileID: 0}
 --- !u!114 &6781805041707836656
 MonoBehaviour:
   m_ObjectHideFlags: 0
