@@ -3779,6 +3779,7 @@ MonoBehaviour:
   - {fileID: 5493537871260361680, guid: 15336373046004dadbb485f406f3718c, type: 3}
   - {fileID: 1566828352302712409, guid: c7c22a22d11cd44af90f7938da36e8e8, type: 3}
   - {fileID: 9000495641018112860, guid: 86eecf1bd9fa546c1a6543b4cf385758, type: 3}
+  - {fileID: 6786419532890984048, guid: ae3d545fc7d404469ba78b638dc51358, type: 3}
   minSpawnInterval: 10
   maxSpawnInterval: 15
   ringRadius: 5
