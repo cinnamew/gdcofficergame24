@@ -14,11 +14,14 @@ public class PlayerAiming : MonoBehaviour
     Vector3 rotation;
     float rotZ;
     SpriteRenderer aimPointerSpriteRenderer;
+    AimpointSpriteManager aimSprite;
     private PlayerAttack playerAttack;
+    public bool playerRotatesWithAimpoint = false;
     //ok
     private void Start() {
         playerCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         aimPointerSpriteRenderer = GameObject.FindGameObjectWithTag("AimPointer").GetComponent<SpriteRenderer>();
+        aimSprite = aimPointerSpriteRenderer.gameObject.GetComponent<AimpointSpriteManager>();
         playerPos = GetPlayerV2();
         playerAttack = GetComponentInParent<PlayerAttack>();
     } 
@@ -37,6 +40,10 @@ public class PlayerAiming : MonoBehaviour
         rotation = (Vector3)mousePos - transform.position;
         rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg; //DUMB
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        if (playerRotatesWithAimpoint && !aimSprite.isDodging)
+        {
+            transform.parent.rotation = Quaternion.Euler(0, 0, rotZ);
+        }
     }
 
     void ManageSpriteOrder() {

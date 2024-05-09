@@ -17,6 +17,7 @@ public class AimpointSpriteManager : MonoBehaviour
     float flipBufferAngle;
     public float rotationAngle;
     bool hasAlreadyFlippedAfterDodge = false;
+    public bool playerFlips = true;
     void Start()
     {
         rotationPoint = GameObject.FindGameObjectWithTag("PlayerAimRotationPoint").GetComponent<Transform>();
@@ -88,11 +89,11 @@ public class AimpointSpriteManager : MonoBehaviour
             //to turn right
             if (AimPointIsOnRightSide() && !IsWithinFlipBuffer() && thisSprite.flipY) { //if on right and is flipped
                 thisSprite.flipY = false; //then unflip
-                charaSprite.flipX = false;
+                if (playerFlips) charaSprite.flipX = false;
                 Debug.Log("Flipping to the right");
             } else if (!AimPointIsOnRightSide() && !IsWithinFlipBuffer() && !thisSprite.flipY) { //if on left and not already flipped
                 thisSprite.flipY = true;
-                charaSprite.flipX = true;
+                if(playerFlips) charaSprite.flipX = true;
                 Debug.Log("Flipping to the left");
             }
         } else {
@@ -103,8 +104,11 @@ public class AimpointSpriteManager : MonoBehaviour
         if (!IsWithinFlipBuffer()) {
             //the bane of all clones...
             if ((AimPointIsOnRightSide() && charaSprite.flipX) || (!AimPointIsOnRightSide() && !charaSprite.flipX)) {
-                charaSprite.flipX = !charaSprite.flipX;
-                Debug.Log("flipping after dodge");
+                if (playerFlips)
+                {
+                    charaSprite.flipX = !charaSprite.flipX;
+                    Debug.Log("flipping player after dodge");
+                }
             }
         }
     }
