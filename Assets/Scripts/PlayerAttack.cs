@@ -26,8 +26,9 @@ public class PlayerAttack : MonoBehaviour
                 timeAttacking += Time.deltaTime;
                 if (isProjectile)
                 {
-                    if(timeAttacking % minProjectileCooldown > -0.05f && timeAttacking % minProjectileCooldown < 0.05f) //if it's due time to shoot your shot
+                    if(Time.time - timeOfLastAttack >= minProjectileCooldown) //if it's due time to shoot your shot
                     {
+                        timeOfLastAttack = Time.time;
                         Debug.Log("hiqweuiouqwe");
                         StartCoroutine(afterBirthDeathIsInevitable());
                     }
