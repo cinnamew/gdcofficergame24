@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a1b8189d8593646f8850905634519f6d
+guid: 4188d9959063e402dac5332f3f9f5a92
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,76 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stab_V1_spritesheet_0
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 1536
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bb1cd8d619624a0eadfcfa90b77dcb6
-      internalID: 1284898679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stab_V1_spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 1536
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 477185f335c934f6fa34c48713440205
-      internalID: -506028763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stab_V1_spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 1536
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 193761819be4a49deae9fdfff8dab753
-      internalID: 1496763389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stab_V1_spritesheet_3
+      name: faye_circle_atack_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1024
-        width: 512
-        height: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +131,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be576b4b23c544449a687127aea4845
-      internalID: -1675761240
+      spriteID: 00ee410b5e64c468dacd690f26910804
+      internalID: 1114908030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stab_V1_spritesheet_4
+      name: faye_circle_atack_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023bf367c3d4f492a9ad40984e154532
+      internalID: 1575628570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: faye_circle_atack_2
       rect:
         serializedVersion: 2
         x: 512
-        y: 1024
-        width: 512
-        height: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +173,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f13a3a27c4ade43ddbb53515a49a7ab1
-      internalID: -46144164
+      spriteID: eea0cda4c444540928835df73727364b
+      internalID: -741483357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stab_V1_spritesheet_5
+      name: faye_circle_atack_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a509cf385354bc3b94931680946858
+      internalID: 1448664733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: faye_circle_atack_4
       rect:
         serializedVersion: 2
         x: 1024
-        y: 1024
-        width: 512
-        height: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +215,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78bee8d1ddf8041868023f4821e3f3c9
-      internalID: -683046982
+      spriteID: 8958e6aaea0914a98826c0d9ab6ff5b8
+      internalID: 656650788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stab_V1_spritesheet_6
+      name: faye_circle_atack_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a19179ebea5444cb84bd85a98411226
+      internalID: -91865391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: faye_circle_atack_6
       rect:
         serializedVersion: 2
         x: 1536
-        y: 1024
-        width: 512
-        height: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,50 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4017d5f95f5ef4373a3d66fc88e4116b
-      internalID: -1430094434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stab_V1_spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9482fc5845caf42fdb653552982a5799
-      internalID: 1656691993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stab_V1_spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7593690af4a754f8ebd50e9ae2517946
-      internalID: -2145505844
+      spriteID: 502b97ab32b754e6b85dcefd160e0caf
+      internalID: -782506276
       vertices: []
       indices: 
       edges: []
@@ -316,15 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Stab_V1_spritesheet_0: 1284898679
-      Stab_V1_spritesheet_1: -506028763
-      Stab_V1_spritesheet_2: 1496763389
-      Stab_V1_spritesheet_3: -1675761240
-      Stab_V1_spritesheet_4: -46144164
-      Stab_V1_spritesheet_5: -683046982
-      Stab_V1_spritesheet_6: -1430094434
-      Stab_V1_spritesheet_7: 1656691993
-      Stab_V1_spritesheet_8: -2145505844
+      faye_circle_atack_0: 1114908030
+      faye_circle_atack_1: 1575628570
+      faye_circle_atack_2: -741483357
+      faye_circle_atack_3: 1448664733
+      faye_circle_atack_4: 656650788
+      faye_circle_atack_5: -91865391
+      faye_circle_atack_6: -782506276
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
