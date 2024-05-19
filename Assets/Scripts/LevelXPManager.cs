@@ -1,11 +1,19 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class LevelXPManager : MonoBehaviour
 {
     public int xp = 0;
     private int xpForLevelUp = 79;
     private int level = 1;
+    [SerializeField] Slider slider;
+    [SerializeField] TMP_Text levelText;
+    void Start()
+    {
+        UpdateSlider();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,12 +42,27 @@ public class LevelXPManager : MonoBehaviour
     
     public void updateXP(int xpGained) 
     {
-        Debug.Log("XP Gained: " + xpGained);
         xp += xpGained;
         if (xp >= xpForLevelUp)
         {
-            xpForLevelUp = Convert.ToInt32(4 * Math.Pow(level+1, 2.1)) - Convert.ToInt32(Math.Pow(4 * level, 2.1));
-            level++;
+            LevelUp();
+        }
+        UpdateSlider();
+    }
+
+    private void LevelUp(){
+        xp -= xpForLevelUp;
+        xpForLevelUp = Convert.ToInt32(Math.Pow(4*level+4, 2.1)) - Convert.ToInt32(Math.Pow(4*level, 2.1));
+        level++;
+        if (levelText != null){
+            levelText.SetText("Level " + level);
+        }
+    }
+    private void UpdateSlider(){
+        if (slider != null)
+        {
+            slider.maxValue = xpForLevelUp;
+            slider.value = xp;
         }
     }
 }
