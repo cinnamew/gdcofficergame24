@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] Slider slider;
     int health;
     [SerializeField] ParticleSystem deathSmoke;
+    [SerializeField] GameObject[] XPOrbs;
     Vector3 victimVector3;
     AnimController animController;
     
@@ -53,8 +54,8 @@ public class Health : MonoBehaviour
             }
             //play death animation (if applicable)
             if (gameObject.tag == "Enemy"){
-                LevelXPManager levelXPManager = (GameObject.FindGameObjectWithTag("Player")).GetComponent<LevelXPManager>(); // need to change this; this is really bad spaggheti code
-                levelXPManager.updateXP(7);
+                GameObject randomXPOrb = XPOrbs[Random.Range(0, XPOrbs.Length)];
+                Instantiate(randomXPOrb, transform.position, Quaternion.identity);
                 Debug.Log("Upgraded Orb");
             }
             Destroy(gameObject); //show death particle system

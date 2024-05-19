@@ -14,31 +14,27 @@ public class LevelXPManager : MonoBehaviour
             System.Random r = new System.Random();
             switch (other.gameObject.GetComponent<SpriteRenderer>().sprite.name)
             {
-                case "xpBlue":
+                case "XP_0":
                     updateXP(r.Next(1, 11)); // (inclusive, exclusive)
                     break;   
-                case "xpGreen":
+                case "XP_1":
                     updateXP(r.Next(11, 20)); // (inclusive, exclusive)
                     break;
-                case "xpYellow":
+                case "XP_2":
                     updateXP(r.Next(20, 50)); // (inclusive, exclusive)
                     break;
-                case "xpOrange":
+                case "XP_3":
                     updateXP(r.Next(50, 100)); // (inclusive, exclusive)
-                    break;
-                case "xpPurple":
-                    updateXP(r.Next(100, 200)); // (inclusive, exclusive)
-                    break;
-                case "xpRed":
-                    updateXP(r.Next(200, 400)); // (inclusive, exclusive)
                     break;
 
             }
+            Destroy(other.gameObject);
         }
     }
     
     public void updateXP(int xpGained) 
     {
+        Debug.Log("XP Gained: " + xpGained);
         xp += xpGained;
         if (xp >= xpForLevelUp)
         {
