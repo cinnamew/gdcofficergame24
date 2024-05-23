@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject[] XPOrbs;
     Vector3 victimVector3;
     AnimController animController;
+    [SerializeField] GameObject dmgIndicator;
     
     void Start()
     {
@@ -38,6 +40,15 @@ public class Health : MonoBehaviour
         if (slider != null)
         {
             slider.value = health;
+        }
+        if(gameObject.tag == "Enemy") //assuming we don't want dmg indicator numbers on the player bc there is alr a health bar
+        {
+            if(dmgIndicator != null)
+            {
+                GameObject i = Instantiate(dmgIndicator, transform.position, Quaternion.identity);
+                i.transform.parent = null;
+                i.GetComponent<TMP_Text>().text = "" + damageVal;
+            }
         }
         if (health <= 0)
         {
