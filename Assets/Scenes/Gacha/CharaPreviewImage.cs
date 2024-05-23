@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharaPreviewImage : MonoBehaviour
 {
+    [SerializeField] List<GachaCharacter> charas = new List<GachaCharacter>();
     [SerializeField] List<Image> charaImages = new List<Image>();
     int currImage = 0;
     bool changeImage = true;
     private Image oldImage;
     private Image newImage;
 
+    [SerializeField] TMP_Text oldText;
+    [SerializeField] TMP_Text newText;
+
     void Start() {
         newImage = charaImages[currImage];
         currImage++;
         //if(oldImage.color == null) print("ur mom");
         StartCoroutine(Hi());
+        oldText.text = charas[currImage].getName();
     }
 
 
@@ -23,6 +29,7 @@ public class CharaPreviewImage : MonoBehaviour
         while(changeImage) {
             if(currImage >= charaImages.Count) currImage = 0;
             //change image
+            newText.text = charas[currImage].getName();
             oldImage = newImage;
             newImage = charaImages[currImage];
             currImage++;
@@ -37,7 +44,9 @@ public class CharaPreviewImage : MonoBehaviour
         for (float i = 0; i <= 1; i += Time.deltaTime)
             {
                 newImage.color = new Color(1, 1, 1, i);
+                newText.color = new Color(1, 1, 1, i);
                 oldImage.color = new Color(1, 1, 1, 1 - i);
+                oldText.color = new Color(1, 1, 1, 1 - i);
 
                 if(changeImage) yield return null;
             }
