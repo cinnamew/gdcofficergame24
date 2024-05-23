@@ -18,6 +18,7 @@ public class CharaPreviewImage : MonoBehaviour
         StartCoroutine(Hi());
     }
 
+
     IEnumerator Hi() {
         while(changeImage) {
             if(currImage >= charaImages.Count) currImage = 0;
@@ -42,17 +43,32 @@ public class CharaPreviewImage : MonoBehaviour
             }
     }
 
+    public void nextOrPrevImage(bool next) {
+        if(next) {
+            currImage++;
+            if(currImage >= charaImages.Count) currImage = 0;
+            changeToImage(currImage);
+        }else {
+            currImage--;
+            if(currImage < 0) currImage = charaImages.Count - 1;
+            changeToImage(currImage);
+        }
+    }
+
     public void changeToImage(int a) {
         changeImage = false;
         newImage.color = new Color(1, 1, 1, 0);
         oldImage.color = new Color(1, 1, 1, 0);
 
         charaImages[a].color = new Color(1, 1, 1, 1);
+        oldImage = newImage;
+        newImage = charaImages[a];
 
         //dumb.sprite = charaImages[a];
     }
 
     public void startImageChange() {
+        //if(changeImage) return;
         changeImage = true;
         StartCoroutine(Hi());
     }
