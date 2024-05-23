@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 
 public class LevelXPManager : MonoBehaviour
@@ -10,9 +12,16 @@ public class LevelXPManager : MonoBehaviour
     private int level = 1;
     [SerializeField] Slider slider;
     [SerializeField] TMP_Text levelText;
+    [SerializeField] List<UpgradeItem> exclusiveUpgrades;
+    private UIManager uiManager;
     void Start()
     {
         UpdateSlider();
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+    }
+
+    public List<UpgradeItem> GetExclusiveUpgrades(){
+        return exclusiveUpgrades;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -57,6 +66,8 @@ public class LevelXPManager : MonoBehaviour
         if (levelText != null){
             levelText.SetText("Level " + level);
         }
+        uiManager.ShowLevelMenu();
+        Time.timeScale = 0;
     }
     private void UpdateSlider(){
         if (slider != null)
