@@ -328,6 +328,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41ff5419869d7c45b5f88227dce8249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charas:
+  - {fileID: 885864987}
+  - {fileID: 1286997716}
+  - {fileID: 260735474}
+  - {fileID: 611070013}
+  - {fileID: 73692834}
+  - {fileID: 1992404535}
+  - {fileID: 1270947645}
+  - {fileID: 170307687}
   charaImages:
   - {fileID: 885864985}
   - {fileID: 1286997714}
@@ -428,6 +437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8ae3bb7b8eb497e8fee1aaa9740a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Jemi
 --- !u!1 &81734725
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8ae3bb7b8eb497e8fee1aaa9740a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Vaishak
 --- !u!1 &191717234
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8ae3bb7b8eb497e8fee1aaa9740a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Lydia
 --- !u!1 &385107298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8ae3bb7b8eb497e8fee1aaa9740a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Laurier
 --- !u!1 &615946920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8ae3bb7b8eb497e8fee1aaa9740a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Jolie
 --- !u!1 &918036961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +1963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8ae3bb7b8eb497e8fee1aaa9740a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Winfred
 --- !u!1 &1286997712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,6 +2054,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8ae3bb7b8eb497e8fee1aaa9740a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Faye
 --- !u!1 &1338261076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,3 +2671,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8ae3bb7b8eb497e8fee1aaa9740a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Rohan

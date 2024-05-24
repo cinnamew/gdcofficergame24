@@ -29,6 +29,7 @@ public class CharaPreviewImage : MonoBehaviour
         while(changeImage) {
             if(currImage >= charaImages.Count) currImage = 0;
             //change image
+            oldText.text = newText.text;
             newText.text = charas[currImage].getName();
             oldImage = newImage;
             newImage = charaImages[currImage];
