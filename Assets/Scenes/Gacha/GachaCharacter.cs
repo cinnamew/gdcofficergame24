@@ -7,6 +7,11 @@ public class GachaCharacter : MonoBehaviour
 {
     [SerializeField] Image image;
     [SerializeField] string name;
+
+    [SerializeField] string bio;
+    [SerializeField] int hp;
+    [SerializeField] float attack;
+    [SerializeField] float crit;
     
     // Start is called before the first frame update
     void Start()
