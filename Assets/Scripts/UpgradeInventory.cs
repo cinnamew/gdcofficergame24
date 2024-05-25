@@ -32,4 +32,12 @@ public class UpgradeInventory : MonoBehaviour
         }
         return false;
     }
+    public UpgradeItem GetItemWithName(string name){
+        for (int i = 0; i < upgradeItems.Count; i++){
+            if (upgradeItems[i].itemName == name){
+                return upgradeItems[i];
+            }
+        }
+        return null;
+    }
 }

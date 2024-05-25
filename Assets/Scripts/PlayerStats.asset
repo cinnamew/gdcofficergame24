@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d66fe3374518c498a96d090ecd330a, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
+  MaxHp: 0
+  Atk: 0
+  Spd: 0
+  Crt: 0
+  Pur: 0
+  Haste: 0

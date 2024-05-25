@@ -31,16 +31,16 @@ public class LevelXPManager : MonoBehaviour
             System.Random r = new System.Random();
             switch (other.gameObject.GetComponent<SpriteRenderer>().sprite.name)
             {
-                case "XP_0":
+                case "xp_0":
                     updateXP(r.Next(1, 11)); // (inclusive, exclusive)
                     break;   
-                case "XP_1":
+                case "xp_1":
                     updateXP(r.Next(11, 20)); // (inclusive, exclusive)
                     break;
-                case "XP_2":
+                case "xp_2":
                     updateXP(r.Next(20, 50)); // (inclusive, exclusive)
                     break;
-                case "XP_3":
+                case "xp_3":
                     updateXP(r.Next(50, 100)); // (inclusive, exclusive)
                     break;
 

@@ -607,6 +607,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileSpeed: 0
   projectileSpawnpoint: {fileID: 0}
+  rotateProjectileToAimDir: 1
 --- !u!114 &166815914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84955,6 +84956,14 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 605670294}
+    - target: {fileID: 8947234952924380627, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
+      propertyPath: maxHealth
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947234952924380627, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e9b07409983a384c8fa71e46039c325, type: 2}
     - target: {fileID: 9129131272932307200, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
       propertyPath: m_Name
       value: Jolie (P)

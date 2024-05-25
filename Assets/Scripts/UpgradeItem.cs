@@ -15,6 +15,7 @@ public class UpgradeItem : ScriptableObject
     public float PurBuff;
     public float HasteBuff;
     public bool BuffIsTemporary;
+    public float BuffTime;
 
     public enum Type{
         Stat,
@@ -31,5 +32,23 @@ public class UpgradeItem : ScriptableObject
     public virtual void Upgrade() {
         //do stuff
         currentUpgradeLvl++;
+    }
+
+    public void ApplyBuffs(PlayerStats playerStats){ //should probably not include this as just a param
+        playerStats.MaxHp += MaxHpBuff;
+        playerStats.Atk += AtkBuff;
+        playerStats.Spd += SpdBuff;
+        playerStats.Crt += CrtBuff;
+        playerStats.Pur += PurBuff;
+        playerStats.Haste += HasteBuff;
+    }
+
+    public void UnapplyBuffs(PlayerStats playerStats){
+        playerStats.MaxHp -= MaxHpBuff;
+        playerStats.Atk -= AtkBuff;
+        playerStats.Spd -= SpdBuff;
+        playerStats.Crt -= CrtBuff;
+        playerStats.Pur -= PurBuff;
+        playerStats.Haste -= HasteBuff;
     }
 }

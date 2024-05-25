@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
   m_Name: Time Crunch
   m_EditorClassIdentifier: 
-  currentUpgradeLvl: 1
+  currentUpgradeLvl: 2
   maxUpgradeLvl: 3
   itemName: Time Crunch
   description: 'increase spd, haste, and atk/crit '
   icon: {fileID: 0}
+  MaxHpBuff: 0
+  AtkBuff: 20
+  SpdBuff: 20
+  CrtBuff: 20
+  PurBuff: 0
+  HasteBuff: 20
+  BuffIsTemporary: 1
+  BuffTime: 3
+  type: 0

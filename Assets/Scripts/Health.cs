@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
     AnimController animController;
     [SerializeField] GameObject dmgIndicator;
     [SerializeField] PlayerStats playerStats;
+    private UpgradeInventory upgradeInventory;
     
     void Start()
     {
@@ -30,14 +31,15 @@ public class Health : MonoBehaviour
             slider.maxValue = maxHealth;
             slider.value = health;
         }
+        upgradeInventory = gameObject.GetComponent<UpgradeInventory>();
     }
 
     public int GetHealth() {
         return health;
     }
     public void TakeDamage(int damageVal) {
-        if (gameObject.tag == "Player" && health > 20 && health - damageVal < 20 && gameObject.GetComponent<UpgradeInventory>().HasItemWithName("")){
-
+        if (gameObject.tag == "Player" && health > (int)(0.2*maxHealth) && health - damageVal < (int)(0.2*maxHealth) && upgradeInventory.HasItemWithName("Time Crunch")){ //change this to be dependent on max health
+            StartCoroutine(TimeCrunch());
         }
         health -= damageVal;
         Debug.Log("Took " + damageVal + " damage"); //Temporary before healthbar implementation
@@ -76,6 +78,14 @@ public class Health : MonoBehaviour
             }
             Destroy(gameObject); //show death particle system DONT DESTROY PLAYER
         }
+    }
+
+    IEnumerator TimeCrunch(){
+        
+        UpgradeItem timeCrunch = upgradeInventory.GetItemWithName("Time Crunch");
+        timeCrunch.ApplyBuffs(playerStats);
+        yield return new WaitForSeconds(timeCrunch.BuffTime);
+        timeCrunch.UnapplyBuffs(playerStats);
     }
     public void HealHealth(int healVal) {
         health += healVal;
