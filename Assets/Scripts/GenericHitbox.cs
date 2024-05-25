@@ -10,7 +10,7 @@ public class GenericHitbox : MonoBehaviour
     [SerializeField] bool autoAttack;
     private Vector2 knockbackVector;
     [SerializeField]private float refreshEvery;
-    [SerializeField] private PlayerStats playerStats;
+    public StatsManager statsManager;
     private float currCooldown;
     public bool isEnabled = true;
 
@@ -31,21 +31,29 @@ public class GenericHitbox : MonoBehaviour
     }
 
     void OnHit(Collider2D target) {
-        int damageDealt = DetermineDamage(target);
+        int damageDealt = DetermineDamage();
         DealDamage(target, damageDealt);
         DealKnockback(target);
         ApplyStatusEffects(target);
     }
     
-    int DetermineDamage(Collider2D target){
+    int DetermineDamage(){
         float dmg = 1.0f*damage;
-        if (target.tag.Equals("Enemy") && playerStats != null){
-            if (Random.Range(0f, 100f) < playerStats.Crt){
+        if (statsManager != null){
+            if (Random.Range(0f, 100f) < statsManager.Crt){
                 dmg = dmg * 1.5f;
+                Debug.Log("CRIT ATTACK");
             }
-            dmg = dmg * playerStats.Atk/100f; //this is really ugly spaghetti code im sorry rohan :(
+            dmg = dmg * statsManager.Atk/100f; //this is really ugly spaghetti code im sorry rohan :(
         }
         return (int)(dmg);
+    }
+
+    float DetermineCooldown(){
+        if (statsManager != null){
+            return refreshEvery/(1+statsManager.Haste/100f);
+        }
+        return refreshEvery;
     }
     void DealDamage(Collider2D target, int damageVal) {
         target.GetComponent<Health>().TakeDamage(damageVal);
@@ -68,7 +76,7 @@ public class GenericHitbox : MonoBehaviour
         if(rb2d == null) rb2d = GetComponent<Rigidbody2D>();
         if(rb2d != null) rb2d.WakeUp();//https://forum.unity.com/threads/reenabling-disabled-gameobject-does-not-call-ontriggerenter.765551/ last comment reccomends this as a fix
         //edge case: If the hitbox does not move, refreshing does not work.
-        currCooldown = refreshEvery;
+        currCooldown = DetermineCooldown();
     }
 
     public void EnableHitbox()
@@ -77,7 +85,7 @@ public class GenericHitbox : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponentInParent<Rigidbody2D>().WakeUp(); //https://forum.unity.com/threads/reenabling-disabled-gameobject-does-not-call-ontriggerenter.765551/ last comment reccomends this as a fix
         //edge case: If the hitbox does not move, refreshing does not work.
-        currCooldown = refreshEvery;
+        currCooldown = DetermineCooldown();
     }
 
     public void DisableHitbox()
