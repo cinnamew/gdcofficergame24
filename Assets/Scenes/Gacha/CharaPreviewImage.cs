@@ -21,7 +21,7 @@ public class CharaPreviewImage : MonoBehaviour
         currImage++;
         //if(oldImage.color == null) print("ur mom");
         StartCoroutine(Hi());
-        oldText.text = charas[currImage].getName();
+        oldText.text = charas[0].getName();
     }
 
 
@@ -30,6 +30,7 @@ public class CharaPreviewImage : MonoBehaviour
             if(currImage >= charaImages.Count) currImage = 0;
             //change image
             oldText.text = newText.text;
+            //print(newText.text);
             newText.text = charas[currImage].getName();
             oldImage = newImage;
             newImage = charaImages[currImage];
@@ -69,7 +70,10 @@ public class CharaPreviewImage : MonoBehaviour
         changeImage = false;
         newImage.color = new Color(1, 1, 1, 0);
         oldImage.color = new Color(1, 1, 1, 0);
-
+        oldText.color = new Color(1,1,1,1);
+        newText.color = new Color(1,1,1,0);
+        
+        oldText.text = charas[a].getName();
         charaImages[a].color = new Color(1, 1, 1, 1);
         oldImage = newImage;
         newImage = charaImages[a];
