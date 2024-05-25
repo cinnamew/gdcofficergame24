@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9217585822902271144}
   - component: {fileID: 8254586172167224906}
   - component: {fileID: 7967540911649258896}
+  - component: {fileID: 916191371}
   m_Layer: 0
   m_Name: Hair
   m_TagString: Untagged
@@ -153,3 +154,23 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &916191371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7709561240856740911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40253bf8c703549d6a9774233da171ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childProjectile: {fileID: 2409284386091106524, guid: e9cc8a6a88c614fc28c39a170911ce16, type: 3}
+  sprites:
+  - {fileID: -1673764689, guid: 4844e68f9fbf54562905837f36fc8163, type: 3}
+  - {fileID: 165919302, guid: 4844e68f9fbf54562905837f36fc8163, type: 3}
+  - {fileID: 42904645, guid: 4844e68f9fbf54562905837f36fc8163, type: 3}
+  timeBeforeSplitting: 1.5
+  speed: 8
+  duration: 1
