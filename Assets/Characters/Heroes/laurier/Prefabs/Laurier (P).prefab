@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6047872352329124735}
   - component: {fileID: 2127709527117559824}
   - component: {fileID: 8071353238227301067}
+  - component: {fileID: 1341690691}
   m_Layer: 3
   m_Name: Laurier (P)
   m_TagString: Player
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eeaa1bafc0d9c42a5cbeeff7768c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
 --- !u!114 &2127709527117559824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +234,28 @@ MonoBehaviour:
   m_SortingLayerID: 0
   m_OrderInSortingLayer: 0
   m_DisabledElementsInTrail: []
+--- !u!114 &1341690691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9094083009861583414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d661c300182054fb8c7898a85ec6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAttack: 1
+  hitboxes:
+  - {fileID: 4717559792473240004, guid: 2cb30e0983e0f474d92b23701d1a8f2c, type: 3}
+  isProjectile: 1
+  minProjectileCooldown: 1
+  lifeSpan: 2
+  projectilePrefab: {fileID: 6083958214820268355, guid: 2cb30e0983e0f474d92b23701d1a8f2c, type: 3}
+  projectileSpeed: 5
+  projectileSpawnpoint: {fileID: 9094083010778955781}
+  rotateProjectileToAimDir: 1
 --- !u!1 &9094083010778955786
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderFlipRightThreshold: 0
   rotationAngle: 0
+  playerFlips: 1
 --- !u!95 &1643006846538843813
 Animator:
   serializedVersion: 5
@@ -401,6 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseDistanceFromPlayer: 0
+  playerRotatesWithAimpoint: 0
 --- !u!95 &3996179237827412098
 Animator:
   serializedVersion: 5

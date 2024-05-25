@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8320183352028843458}
   - component: {fileID: 7267981297765980299}
   - component: {fileID: 9213069283570610668}
+  - component: {fileID: 2070675253}
   m_Layer: 3
   m_Name: Arnav (P)
   m_TagString: Player
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eeaa1bafc0d9c42a5cbeeff7768c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
 --- !u!114 &2230173682754291481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +264,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  slider: {fileID: 0}
+  deathSmoke: {fileID: 0}
+  XPOrbs: []
+  dmgIndicator: {fileID: 0}
+  playerStats: {fileID: 0}
+--- !u!114 &2070675253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025393956351376703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d661c300182054fb8c7898a85ec6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAttack: 1
+  hitboxes:
+  - {fileID: 9217585822902271144, guid: 900bcc04a03ba415598eded2d21108cf, type: 3}
+  isProjectile: 1
+  minProjectileCooldown: 1
+  lifeSpan: 2
+  projectilePrefab: {fileID: 7709561240856740911, guid: 900bcc04a03ba415598eded2d21108cf, type: 3}
+  projectileSpeed: 5
+  projectileSpawnpoint: {fileID: 9025393957614780172}
+  rotateProjectileToAimDir: 1
 --- !u!1 &9025393957480513985
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseDistanceFromPlayer: 0
+  playerRotatesWithAimpoint: 0
 --- !u!95 &3747356030947721099
 Animator:
   serializedVersion: 5
@@ -444,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderFlipRightThreshold: 0
   rotationAngle: 0
+  playerFlips: 1
 --- !u!95 &1565332550124796332
 Animator:
   serializedVersion: 5

@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderFlipRightThreshold: 0
   rotationAngle: 0
+  playerFlips: 1
 --- !u!95 &4075495765449361636
 Animator:
   serializedVersion: 5
@@ -279,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseDistanceFromPlayer: 0
+  playerRotatesWithAimpoint: 0
 --- !u!95 &1817048602928926403
 Animator:
   serializedVersion: 5
@@ -525,7 +527,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5797997060451683447}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
   m_Name: 
@@ -584,8 +586,9 @@ MonoBehaviour:
   minProjectileCooldown: 1
   lifeSpan: 2
   projectilePrefab: {fileID: 17756766921772526, guid: 5c96539be79a0944381e739741686d4d, type: 3}
-  projectileSpeed: 1
+  projectileSpeed: 5
   projectileSpawnpoint: {fileID: 2076138178879587017}
+  rotateProjectileToAimDir: 1
 --- !u!114 &5322775486260631031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,3 +604,6 @@ MonoBehaviour:
   maxHealth: 100
   slider: {fileID: 0}
   deathSmoke: {fileID: 3990577281291942588, guid: ddca73616125e9b47af51af6f797dd42, type: 3}
+  XPOrbs: []
+  dmgIndicator: {fileID: 0}
+  playerStats: {fileID: 0}
