@@ -16,6 +16,8 @@ public class CharaPreviewImage : MonoBehaviour
     [SerializeField] TMP_Text oldText;
     [SerializeField] TMP_Text newText;
 
+    [SerializeField] PauseCharas pauseButton;
+
     void Start() {
         newImage = charaImages[currImage];
         currImage++;
@@ -64,6 +66,7 @@ public class CharaPreviewImage : MonoBehaviour
             if(currImage < 0) currImage = charaImages.Count - 1;
             changeToImage(currImage);
         }
+        pauseButton.SwitchToPlay();
     }
 
     public void changeToImage(int a) {
