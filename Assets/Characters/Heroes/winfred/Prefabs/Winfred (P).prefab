@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7541533035278621220}
   - component: {fileID: 2792679272615143755}
   - component: {fileID: 5423889260612723600}
+  - component: {fileID: 1421242046}
   m_Layer: 3
   m_Name: Winfred (P)
   m_TagString: Player
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eeaa1bafc0d9c42a5cbeeff7768c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
 --- !u!114 &2792679272615143755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +234,28 @@ MonoBehaviour:
   m_SortingLayerID: 0
   m_OrderInSortingLayer: 0
   m_DisabledElementsInTrail: []
+--- !u!114 &1421242046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004097159716082541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d661c300182054fb8c7898a85ec6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAttack: 1
+  hitboxes:
+  - {fileID: 3510352132849559909, guid: 6efbe9d14d3994a889d6b181c2e2ce3e, type: 3}
+  isProjectile: 1
+  minProjectileCooldown: 1
+  lifeSpan: 2
+  projectilePrefab: {fileID: 3510352132849559931, guid: 6efbe9d14d3994a889d6b181c2e2ce3e, type: 3}
+  projectileSpeed: 5
+  projectileSpawnpoint: {fileID: 5004097161113702750}
+  rotateProjectileToAimDir: 1
 --- !u!1 &5004097160711090067
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseDistanceFromPlayer: 0
+  playerRotatesWithAimpoint: 0
 --- !u!95 &879314985889731033
 Animator:
   serializedVersion: 5
@@ -414,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderFlipRightThreshold: 0
   rotationAngle: 0
+  playerFlips: 1
 --- !u!95 &3281876799548004350
 Animator:
   serializedVersion: 5

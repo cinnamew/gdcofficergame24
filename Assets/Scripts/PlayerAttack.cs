@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed;
     [SerializeField] private Transform projectileSpawnpoint;
+    [SerializeField] bool rotateProjectileToAimDir = true;
     private bool isAttacking = true; //toggle attacks; might be good if there's like a character like Diva in Overwatch
     private float timeAttacking; //same reason
     private float timeOfLastAttack; //for manual attacks
@@ -24,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
             if (isAttacking)
             {
                 timeAttacking += Time.deltaTime;
-                if (isProjectile)
+                /*if (isProjectile)
                 {
                     if(Time.time - timeOfLastAttack >= minProjectileCooldown) //if it's due time to shoot your shot
                     {
@@ -32,6 +33,12 @@ public class PlayerAttack : MonoBehaviour
                         Debug.Log("hiqweuiouqwe");
                         StartCoroutine(afterBirthDeathIsInevitable());
                     }
+                }*/
+                if(Time.time - timeOfLastAttack >= minProjectileCooldown && projectilePrefab != null) //if it's due time to shoot your shot
+                {
+                    timeOfLastAttack = Time.time;
+                    //Debug.Log("hiqweuiouqwe");
+                    StartCoroutine(afterBirthDeathIsInevitable());
                 }
                 foreach (GenericHitbox h in hitboxes)
                 {
@@ -79,7 +86,24 @@ public class PlayerAttack : MonoBehaviour
         projectile.transform.position = projectileSpawnpoint.position;
         Debug.Log("aim dir: " + aimDir);
         Debug.Log("aim dir: " + aimDir.normalized);
-        projectile.GetComponent<Rigidbody2D>().velocity = aimDir.normalized * projectileSpeed; //go crazy with this if you wish to make a trapezoidal tornado attack
+        if (rotateProjectileToAimDir)
+        {
+            float angle = Mathf.Atan(aimDir.y / aimDir.x) * (180 / Mathf.PI);
+            if (aimDir.x < 0)
+            {
+                angle += 180;
+            }
+            projectile.transform.eulerAngles = new Vector3(0, 0, angle);
+        }
+        if (isProjectile)
+        {
+            projectile.GetComponent<Rigidbody2D>().velocity = aimDir.normalized * projectileSpeed; //go crazy with this if you wish to make a trapezoidal tornado attack
+
+        }
+        else
+        {
+            projectile.transform.parent = transform;
+        }
         yield return new WaitForSeconds(lifeSpan);
         projectile.GetComponent<GenericHitbox>().RemoveHitbox();
     }

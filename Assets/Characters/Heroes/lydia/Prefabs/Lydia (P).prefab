@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 9178560989568596295}
   - component: {fileID: 7551120686252829710}
   - component: {fileID: 8344206428344141161}
+  - component: {fileID: 419036396}
   m_Layer: 3
   m_Name: Lydia (P)
   m_TagString: Player
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eeaa1bafc0d9c42a5cbeeff7768c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
 --- !u!114 &1361456100444779420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +264,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  slider: {fileID: 0}
+  deathSmoke: {fileID: 0}
+  XPOrbs: []
+  dmgIndicator: {fileID: 0}
+  playerStats: {fileID: 0}
+--- !u!114 &419036396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167090759123978682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d661c300182054fb8c7898a85ec6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAttack: 1
+  hitboxes:
+  - {fileID: 917388750331807660, guid: a348178c4d4f24c0ab65925b32e00d40, type: 3}
+  isProjectile: 1
+  minProjectileCooldown: 1
+  lifeSpan: 0.49
+  projectilePrefab: {fileID: 5462678591758381, guid: a348178c4d4f24c0ab65925b32e00d40, type: 3}
+  projectileSpeed: 20
+  projectileSpawnpoint: {fileID: 8167090759462800265}
+  rotateProjectileToAimDir: 1
 --- !u!1 &8167090759462800262
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderFlipRightThreshold: 0
   rotationAngle: 0
+  playerFlips: 1
 --- !u!95 &1850657921339837737
 Animator:
   serializedVersion: 5
@@ -431,6 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseDistanceFromPlayer: 0
+  playerRotatesWithAimpoint: 0
 --- !u!95 &4041626959979760398
 Animator:
   serializedVersion: 5
