@@ -30,7 +30,7 @@ public class PlayerAiming : MonoBehaviour
         mouseDistanceFromPlayer = Vector2.Distance(mousePos, GetPlayerV2());
         RotateAimpoint();
         ManageSpriteOrder();
-        //playerAttack.setAimDir(mousePos-playerPos);
+        playerAttack.setAimDir(mousePos-playerPos);
     }
     Vector2 GetPlayerV2() {
         return GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;

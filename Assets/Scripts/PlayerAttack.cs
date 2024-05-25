@@ -77,6 +77,8 @@ public class PlayerAttack : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab);
         projectile.transform.position = projectileSpawnpoint.position;
+        Debug.Log("aim dir: " + aimDir);
+        Debug.Log("aim dir: " + aimDir.normalized);
         projectile.GetComponent<Rigidbody2D>().velocity = aimDir.normalized * projectileSpeed; //go crazy with this if you wish to make a trapezoidal tornado attack
         yield return new WaitForSeconds(lifeSpan);
         projectile.GetComponent<GenericHitbox>().RemoveHitbox();
