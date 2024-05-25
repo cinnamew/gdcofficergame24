@@ -641,6 +641,7 @@ MonoBehaviour:
   xp: 78
   slider: {fileID: 1362203778}
   levelText: {fileID: 733344956}
+  exclusiveUpgrades: []
 --- !u!1 &170578915
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +842,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2ef931312449146952cea3ccfa5e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelPanel: {fileID: 846266353}
+  icons: []
+  itemNames: []
+  itemDescriptions: []
+  generalUpgrades: []
 --- !u!1 &230420738
 GameObject:
   m_ObjectHideFlags: 0

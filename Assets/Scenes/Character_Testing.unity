@@ -6180,7 +6180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9025393956351376703, guid: 0903c881989b4a34d9cfd14b4d1ea91d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0903c881989b4a34d9cfd14b4d1ea91d, type: 3}
@@ -6191,6 +6191,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5075972758587025765, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
+      propertyPath: projectileSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5797997060451683441, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6241,7 +6245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797997060451683447, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
