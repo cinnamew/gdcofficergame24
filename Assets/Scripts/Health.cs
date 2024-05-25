@@ -59,11 +59,9 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-            // Instantiate(deathSmoke, victimVector3, Quaternion.identity);
-            // deathSmoke.transform.SetParent(null, true);
-            // deathSmoke.Play();
-            //Destroy(gameObject); //show death particle system
-            //play particle effects
+            ParticleSystem deathVFX = Instantiate(deathSmoke, transform.position, Quaternion.identity);
+            deathVFX.Play();
+            
             if (animController != null) {
                 animController.isAlive = false;
                 if (animController.AnimHasEnded()) {
@@ -76,7 +74,10 @@ public class Health : MonoBehaviour
                 Instantiate(randomXPOrb, transform.position, Quaternion.identity);
                 Debug.Log("Upgraded Orb");
             }
-            Destroy(gameObject); //show death particle system DONT DESTROY PLAYER
+            gameObject.SetActive(false);
+            Destroy(gameObject, 0.5f); //DONT DESTROY PLAYER
+            Destroy(deathVFX.gameObject, 0.5f);
+            
         }
     }
 

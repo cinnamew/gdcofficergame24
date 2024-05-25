@@ -557,6 +557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jolie (P)
       objectReference: {fileID: 0}
+    - target: {fileID: 9129131272932307200, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9129131272932307205, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -656,6 +660,7 @@ MonoBehaviour:
   xp: 78
   slider: {fileID: 0}
   levelText: {fileID: 0}
+  exclusiveUpgrades: []
 --- !u!114 &599399493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,6 +705,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileSpeed: 0
   projectileSpawnpoint: {fileID: 0}
+  rotateProjectileToAimDir: 1
 --- !u!114 &599399495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,6 +1687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 966417249, guid: ae3d545fc7d404469ba78b638dc51358, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4140908029105628750, guid: ae3d545fc7d404469ba78b638dc51358, type: 3}
       propertyPath: m_RootOrder
       value: 13
