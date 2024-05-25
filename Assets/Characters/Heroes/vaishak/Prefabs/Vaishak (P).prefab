@@ -562,8 +562,8 @@ MonoBehaviour:
   hitboxes:
   - {fileID: 1009686459804026135, guid: 2372afa02eafc47ef8840f7dadf0f370, type: 3}
   isProjectile: 1
-  minProjectileCooldown: 1
-  lifeSpan: 2
+  minProjectileCooldown: 2
+  lifeSpan: 6
   projectilePrefab: {fileID: 1009686459804026141, guid: 2372afa02eafc47ef8840f7dadf0f370, type: 3}
   projectileSpeed: 5
   projectileSpawnpoint: {fileID: 5931340264699387398}

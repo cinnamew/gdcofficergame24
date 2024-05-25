@@ -248,11 +248,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoAttack: 1
   hitboxes:
-  - {fileID: 4717559792473240004, guid: 2cb30e0983e0f474d92b23701d1a8f2c, type: 3}
+  - {fileID: 3372903116499253205, guid: b92b81877cc994d869cfe47f2463880b, type: 3}
   isProjectile: 1
   minProjectileCooldown: 1
   lifeSpan: 2
-  projectilePrefab: {fileID: 6083958214820268355, guid: 2cb30e0983e0f474d92b23701d1a8f2c, type: 3}
+  projectilePrefab: {fileID: 4312295472335687506, guid: b92b81877cc994d869cfe47f2463880b, type: 3}
   projectileSpeed: 5
   projectileSpawnpoint: {fileID: 9094083010778955781}
   rotateProjectileToAimDir: 1
