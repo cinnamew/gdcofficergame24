@@ -84,8 +84,6 @@ public class PlayerAttack : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab);
         projectile.transform.position = projectileSpawnpoint.position;
-        Debug.Log("aim dir: " + aimDir);
-        Debug.Log("aim dir: " + aimDir.normalized);
         if (rotateProjectileToAimDir)
         {
             float angle = Mathf.Atan(aimDir.y / aimDir.x) * (180 / Mathf.PI);

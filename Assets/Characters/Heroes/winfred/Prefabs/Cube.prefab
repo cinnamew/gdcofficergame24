@@ -139,6 +139,7 @@ MonoBehaviour:
   knockbackDuration: 0
   autoAttack: 1
   refreshEvery: 1
+  playerStats: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!61 &3510352132849559910
