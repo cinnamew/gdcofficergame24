@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text[] itemDescriptions;
     [SerializeField] List<UpgradeItem> generalUpgrades;
     private List<UpgradeItem> exclusiveUpgrades;
+    private List<UpgradeItem> upgrades = new List<UpgradeItem>();
     private const int upgradesPerLevel = 4;
     private GameObject player;
     private List<UpgradeItem> upgradeItems; 
@@ -24,6 +25,9 @@ public class UIManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         Debug.Log("apsoidjfasijdfjaspofjasoipdfj" + player);
         exclusiveUpgrades = player.GetComponent<LevelXPManager>().GetExclusiveUpgrades(); 
+        upgrades.AddRange(exclusiveUpgrades);
+        upgrades.AddRange(generalUpgrades);
+
     }
 
     // Update is called once per frame
@@ -40,19 +44,17 @@ public class UIManager : MonoBehaviour
 
     public void SelectOption(int option){
         player.GetComponent<UpgradeInventory>().AddItem(upgradeItems[option]);
+        upgrades.Remove(upgradeItems[option]);
         levelPanel.SetActive(false);
         Time.timeScale = 1;
     }
 
     private List<UpgradeItem> PickRandomUpgrades(){
+        List<UpgradeItem> temp = new List<UpgradeItem>();
+        temp.AddRange(upgrades);
         List<UpgradeItem> randomItems = new List<UpgradeItem>();
         for (int i = 0; i < upgradesPerLevel; i++){
-            int randomIndex = Random.Range(0, exclusiveUpgrades.Count + generalUpgrades.Count);
-            if (randomIndex < exclusiveUpgrades.Count){
-                randomItems.Add(exclusiveUpgrades[randomIndex]);
-            } else {
-                randomItems.Add(generalUpgrades[randomIndex - exclusiveUpgrades.Count]);
-            }
+            randomItems.Add(upgrades[Random.Range(0, upgrades.Count)]);
             //if (player.GetComponent<UpgradeInventory>().HasItem(randomItems))
         }
         return randomItems;

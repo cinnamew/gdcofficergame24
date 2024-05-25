@@ -30,6 +30,7 @@ public class PlayerAiming : MonoBehaviour
         mouseDistanceFromPlayer = Vector2.Distance(mousePos, GetPlayerV2());
         RotateAimpoint();
         ManageSpriteOrder();
+        playerPos = GetPlayerV2();
         playerAttack.setAimDir(mousePos-playerPos);
     }
     Vector2 GetPlayerV2() {

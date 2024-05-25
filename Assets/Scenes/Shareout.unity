@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3b890e5ffe2dd4593d842a8d15ff77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xp: 0
+  xp: 78
   slider: {fileID: 1362203778}
   levelText: {fileID: 733344956}
   exclusiveUpgrades:
