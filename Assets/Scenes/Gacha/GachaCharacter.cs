@@ -12,6 +12,8 @@ public class GachaCharacter : MonoBehaviour
     [SerializeField] int hp;
     [SerializeField] float attack;
     [SerializeField] float crit;
+
+    [SerializeField] int level = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,20 @@ public class GachaCharacter : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public string getStats() {
+        string temp = "";
+        if(level == 0) {
+            temp = "HP: ?\nATK: ?\nCRT: ?\n";
+        }else {
+            temp = "HP: " + hp + " -> ?" + "\nATK: " + attack + " -> ?" + "\nCRT: " + crit + " -> ?";
+        }
+        return temp;
+    }
+
+    public string getBio() {
+        return bio;
     }
 
     public string getName() {
