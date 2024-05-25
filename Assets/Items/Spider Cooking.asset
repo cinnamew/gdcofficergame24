@@ -10,5 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
-  m_Name: New Upgrade Item
+  m_Name: Spider Cooking
   m_EditorClassIdentifier: 
+  currentUpgradeLvl: 0
+  maxUpgradeLvl: 0
+  itemName: Spider Cooking
+  description: Testing
+  icon: {fileID: 0}

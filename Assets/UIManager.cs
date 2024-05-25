@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        Debug.Log("apsoidjfasijdfjaspofjasoipdfj" + player);
         exclusiveUpgrades = player.GetComponent<LevelXPManager>().GetExclusiveUpgrades(); 
     }
 
@@ -39,6 +40,7 @@ public class UIManager : MonoBehaviour
 
     public void SelectOption(int option){
         player.GetComponent<UpgradeInventory>().AddItem(upgradeItems[option]);
+        levelPanel.SetActive(false);
         Time.timeScale = 1;
     }
 
