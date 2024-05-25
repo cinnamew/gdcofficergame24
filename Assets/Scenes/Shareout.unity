@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3b890e5ffe2dd4593d842a8d15ff77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xp: 78
+  xp: 0
   slider: {fileID: 1362203778}
   levelText: {fileID: 733344956}
   exclusiveUpgrades:
@@ -84958,7 +84958,7 @@ PrefabInstance:
       objectReference: {fileID: 605670294}
     - target: {fileID: 8947234952924380627, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
       propertyPath: maxHealth
-      value: 21
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8947234952924380627, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
       propertyPath: playerStats

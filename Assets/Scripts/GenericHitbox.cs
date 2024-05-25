@@ -10,6 +10,7 @@ public class GenericHitbox : MonoBehaviour
     [SerializeField] bool autoAttack;
     private Vector2 knockbackVector;
     [SerializeField]private float refreshEvery;
+    [SerializeField] private PlayerStats playerStats;
     private float currCooldown;
     public bool isEnabled = true;
 
@@ -30,11 +31,22 @@ public class GenericHitbox : MonoBehaviour
     }
 
     void OnHit(Collider2D target) {
-        DealDamage(target, damage);
+        int damageDealt = DetermineDamage(target);
+        DealDamage(target, damageDealt);
         DealKnockback(target);
         ApplyStatusEffects(target);
     }
     
+    int DetermineDamage(Collider2D target){
+        float dmg = 1.0f*damage;
+        if (target.tag.Equals("Enemy") && playerStats != null){
+            if (Random.Range(0f, 100f) < playerStats.Crt){
+                dmg = dmg * 1.5f;
+            }
+            dmg = dmg * playerStats.Atk/100f; //this is really ugly spaghetti code im sorry rohan :(
+        }
+        return (int)(dmg);
+    }
     void DealDamage(Collider2D target, int damageVal) {
         target.GetComponent<Health>().TakeDamage(damageVal);
     }

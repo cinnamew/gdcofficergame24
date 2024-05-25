@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
     {
         //victimVector3 = GetComponent<Vector3>(); commented out bc it was causing an error
         animController = GetComponent<AnimController>();
+        maxHealth = playerStats.MaxHp;
         health = maxHealth;
         if (slider != null)
         {
@@ -34,8 +35,16 @@ public class Health : MonoBehaviour
         upgradeInventory = gameObject.GetComponent<UpgradeInventory>();
     }
 
+
     public int GetHealth() {
         return health;
+    }
+
+    void Update(){
+        if (gameObject.tag == "Player" && slider != null){
+            maxHealth = playerStats.MaxHp;
+            slider.maxValue = maxHealth;
+        }
     }
     public void TakeDamage(int damageVal) {
         if (gameObject.tag == "Player" && health > (int)(0.2*maxHealth) && health - damageVal < (int)(0.2*maxHealth) && upgradeInventory.HasItemWithName("Time Crunch")){ //change this to be dependent on max health
