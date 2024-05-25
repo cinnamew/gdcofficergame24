@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     Vector3 victimVector3;
     AnimController animController;
     [SerializeField] GameObject dmgIndicator;
+    [SerializeField] PlayerStats playerStats;
     
     void Start()
     {
@@ -35,6 +36,9 @@ public class Health : MonoBehaviour
         return health;
     }
     public void TakeDamage(int damageVal) {
+        if (gameObject.tag == "Player" && health > 20 && health - damageVal < 20 && gameObject.GetComponent<UpgradeInventory>().HasItemWithName("")){
+
+        }
         health -= damageVal;
         Debug.Log("Took " + damageVal + " damage"); //Temporary before healthbar implementation
         if (slider != null)
@@ -50,6 +54,7 @@ public class Health : MonoBehaviour
                 i.GetComponent<TMP_Text>().text = "" + damageVal;
             }
         }
+
         if (health <= 0)
         {
             // Instantiate(deathSmoke, victimVector3, Quaternion.identity);
@@ -69,7 +74,7 @@ public class Health : MonoBehaviour
                 Instantiate(randomXPOrb, transform.position, Quaternion.identity);
                 Debug.Log("Upgraded Orb");
             }
-            Destroy(gameObject); //show death particle system
+            Destroy(gameObject); //show death particle system DONT DESTROY PLAYER
         }
     }
     public void HealHealth(int healVal) {

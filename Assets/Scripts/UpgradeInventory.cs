@@ -12,7 +12,7 @@ public class UpgradeInventory : MonoBehaviour
         upgradeItems.Add(item);
     }
 
-    // Remove item from the inventory
+    // Remove item from the inventory (most likely wont be used)
     public void RemoveItem(UpgradeItem item)
     {
         upgradeItems.Remove(item);
@@ -22,5 +22,14 @@ public class UpgradeInventory : MonoBehaviour
     public bool HasItem(UpgradeItem item)
     {
         return upgradeItems.Contains(item);
+    }
+
+    public bool HasItemWithName(string name){
+        for (int i = 0; i < upgradeItems.Count; i++){
+            if (upgradeItems[i].itemName == name){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     private List<UpgradeItem> upgrades = new List<UpgradeItem>();
     private const int upgradesPerLevel = 4;
     private GameObject player;
+    public List<UpgradeItem> temp;
     private List<UpgradeItem> upgradeItems; 
 
     
@@ -27,7 +28,9 @@ public class UIManager : MonoBehaviour
         exclusiveUpgrades = player.GetComponent<LevelXPManager>().GetExclusiveUpgrades(); 
         upgrades.AddRange(exclusiveUpgrades);
         upgrades.AddRange(generalUpgrades);
-
+        for (int i = 0; i < upgrades.Count; i++){
+            upgrades[i].Reset();
+        }
     }
 
     // Update is called once per frame
@@ -44,17 +47,25 @@ public class UIManager : MonoBehaviour
 
     public void SelectOption(int option){
         player.GetComponent<UpgradeInventory>().AddItem(upgradeItems[option]);
-        upgrades.Remove(upgradeItems[option]);
+        if (upgradeItems[option].currentUpgradeLvl >= upgradeItems[option].maxUpgradeLvl){
+            upgrades.Remove(upgradeItems[option]);
+        } else {
+            upgradeItems[option].Upgrade();
+        }
         levelPanel.SetActive(false);
         Time.timeScale = 1;
     }
 
     private List<UpgradeItem> PickRandomUpgrades(){
-        List<UpgradeItem> temp = new List<UpgradeItem>();
+        temp = new List<UpgradeItem>();
         temp.AddRange(upgrades);
         List<UpgradeItem> randomItems = new List<UpgradeItem>();
         for (int i = 0; i < upgradesPerLevel; i++){
-            randomItems.Add(upgrades[Random.Range(0, upgrades.Count)]);
+            int randomIndex = Random.Range(0, temp.Count);
+            randomItems.Add(temp[randomIndex]);
+            Debug.Log(temp[randomIndex]);
+            Debug.Log(temp);
+            temp.RemoveAt(randomIndex);
             //if (player.GetComponent<UpgradeInventory>().HasItem(randomItems))
         }
         return randomItems;
@@ -65,9 +76,9 @@ public class UIManager : MonoBehaviour
             UpgradeItem currentItem = upgradeItems[i];
             icons[i].GetComponent<Image>().sprite = currentItem.icon;
             if (currentItem.currentUpgradeLvl > 1){
-                itemNames[i].SetText(currentItem.itemName);
-            } else {
                 itemNames[i].SetText(currentItem.itemName + " LVL" + currentItem.currentUpgradeLvl);
+            } else {
+                itemNames[i].SetText(currentItem.itemName);
             }
             itemDescriptions[i].SetText(currentItem.description);
         }

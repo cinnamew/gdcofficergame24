@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
   m_Name: Social Anxiety
   m_EditorClassIdentifier: 
-  currentUpgradeLvl: 3
+  currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Social Anxiety
   description: every x seconds, spear swings in a circle
