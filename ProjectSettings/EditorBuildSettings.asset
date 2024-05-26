@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/ChooseCharacterAndStage.unity
     guid: 70552357b8d654b05bba467a22e1a6a1
   - enabled: 1
-    path: Assets/Scenes/Stages/SpriteTesting.unity
-    guid: 094b6001cb195324cacf3d0bedbd9830
+    path: Assets/Scenes/Gacha/Gacha.unity
+    guid: ded1471e10eadf042bb956d7e451f572
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage 1.unity
+    guid: 1e819fc4356b15c40abf35b04a92febc
   m_configObjects: {}
