@@ -586,7 +586,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   image: {fileID: 0}
   name: Jemi
-  bio: gunner with the op crit rate
+  bio: lethal gunner with the op crit rate
   hp: 0
   attack: 0
   crit: 0
@@ -1214,8 +1214,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.723, y: -166.6584}
-  m_SizeDelta: {x: 831.23, y: 192.391}
+  m_AnchoredPosition: {x: -13.723, y: -199.74432}
+  m_SizeDelta: {x: 831.23, y: 126.2192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329142161
 MonoBehaviour:
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LOVES HEARTS, YOU, AND THE COLOR PINK. has infinite love and hearts!
+  m_text: LOVES HEARTS, YOU, AND THE COLOR PINK!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1163b780d68964c0ca58d258470c35bd, type: 2}
   m_sharedMaterial: {fileID: -1119974797696787814, guid: 1163b780d68964c0ca58d258470c35bd, type: 2}
@@ -1425,8 +1425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.7225, y: 60.92251}
-  m_SizeDelta: {x: 831.23, y: 239.1946}
+  m_AnchoredPosition: {x: -13.7225, y: 29.018}
+  m_SizeDelta: {x: 831.23, y: 303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &404320066
 MonoBehaviour:
@@ -1716,8 +1716,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.7225, y: 60.92251}
-  m_SizeDelta: {x: 831.23, y: 239.1946}
+  m_AnchoredPosition: {x: -13.7225, y: 29.018198}
+  m_SizeDelta: {x: 831.23, y: 303.0032}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570302017
 MonoBehaviour:
@@ -1739,11 +1739,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HP: 5 -> ?
+  m_text: 'HP: 75 -> ?
 
     ATK: 2 -> ?
 
-    CRT: 0.1 -> ?'
+    CRT: 0.1 -> ?
+
+    SPD: 3 -> ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1163b780d68964c0ca58d258470c35bd, type: 2}
   m_sharedMaterial: {fileID: -1119974797696787814, guid: 1163b780d68964c0ca58d258470c35bd, type: 2}
@@ -1849,6 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f41ca5ddf3f1ab49898356456b21e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coins: 0
 --- !u!4 &594549492
 Transform:
   m_ObjectHideFlags: 0
@@ -2272,7 +2275,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   image: {fileID: 0}
   name: Jolie
-  bio: LOVES HEARTS, YOU, AND THE COLOR PINK. has infinite love and hearts!
+  bio: LOVES HEARTS, YOU, AND THE COLOR PINK!
   hp: 5
   attack: 2
   crit: 0.1
@@ -2679,6 +2682,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: beb56219edf6743af8359d42ec809d5d, type: 3}
   pulledChara: {fileID: 918036961}
   thingToHide: {fileID: 128771626}
+  coinsText: {fileID: 0}
 --- !u!1 &1270947641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2868,7 +2872,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   image: {fileID: 0}
   name: Faye
-  bio: i love this girl. faye carry! common faye w!
+  bio: YOUR Favorite girl. everyone's favorite girl.
   hp: 0
   attack: 0
   crit: 0
@@ -3622,8 +3626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.723, y: -166.6584}
-  m_SizeDelta: {x: 831.23, y: 192.391}
+  m_AnchoredPosition: {x: -13.723, y: -199.7443}
+  m_SizeDelta: {x: 831.23, y: 126.2192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906475215
 MonoBehaviour:
@@ -3645,7 +3649,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LOVES HEARTS, YOU, AND THE COLOR PINK. COMICALLY BAD AT AIMING.
+  m_text: LOVES HEARTS, YOU, AND THE COLOR PINK.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1163b780d68964c0ca58d258470c35bd, type: 2}
   m_sharedMaterial: {fileID: -1119974797696787814, guid: 1163b780d68964c0ca58d258470c35bd, type: 2}

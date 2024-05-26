@@ -7,7 +7,8 @@ public class Manager : MonoBehaviour
 {
     
     [SerializeField] private int coins;
-    private List<string> charactersUnlocked = new List<string>();
+    [SerializeField] private Dictionary<string, int> charactersUnlocked = new Dictionary<string, int>(); //everything is lowercase
+    //private List<string> charactersUnlocked = new List<string>();
     
     // Start is called before the first frame update
     void Start()
@@ -43,10 +44,20 @@ public class Manager : MonoBehaviour
         PlayerPrefs.SetInt("coins", coins);
     }
 
-    public void unlockCharacter(string s) {
-        if(charactersUnlocked.Contains(s)) return;
-        charactersUnlocked.Add(s);
+    public void addCharacter(string s) {
+        s = s.ToLower();
+        if(charactersUnlocked.ContainsKey(s)) {
+            charactersUnlocked[s] = charactersUnlocked[s] + 1;
+        }
+        else charactersUnlocked[s] = 1;
     }
+
+    public int hasCharacter(string s) {
+        s = s.ToLower();
+        if(charactersUnlocked.ContainsKey(s)) return charactersUnlocked[s];
+        return 0;
+    }
+
     public void goToPreviousMenu()
     {
         SceneManager.LoadScene(1); //scene name: ChooseCharacterAndStage
