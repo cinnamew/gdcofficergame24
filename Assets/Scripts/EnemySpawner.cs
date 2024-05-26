@@ -9,16 +9,46 @@ public class EnemySpawner : MonoBehaviour
     public float ringRadius = 5f; // Radius of the ring
     public int numEnemiesInRing = 8; // Number of enemies in the ring
     [SerializeField] private Transform playerTransform;
-    private Vector2[] spawnPoints;
-    private Vector2[] endPoints;
+    [SerializeField] private LayerMask WallLayer;
 
     private void Start()
     {
-        LoadSpawnAndEndPoints("Formation1");
         StartCoroutine(SpawnEnemiesRoutine());
         StartCoroutine(FormationSpawnRoutine());
     }
 
+    
+    private void SpawnStage1()
+    {
+        GameObject[] generalEnemies = {enemyPrefabs[0], enemyPrefabs[1]};
+        StartCoroutine(SpawnEnemiesGeneral(generalEnemies, 8, 20f, 20f));
+
+    }
+
+    private IEnumerator SpawnEnemyFlocks(GameObject[] enemies,  int numWaves, float cooldown){
+        for (int i = 0; i < numWaves; i++){
+            GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemies.Length)];
+            SpawnFormationOfEnemies("FlockFormation", randomEnemyPrefab);
+            yield return new WaitForSeconds(cooldown);
+        }
+    }
+
+    private IEnumerator SpawnEnemiesGeneral(GameObject[] enemies, int numWaves, float cooldown, float range){
+        for (int i = 0; i < numWaves; i++){
+            int numSpawns = (int)(8*Mathf.Log(i + 1) + 15);
+            int enemyIndex = Mathf.Min((int)(enemies.Length*i/(numWaves)), enemies.Length - 1);
+            for (int j = 0; j < numSpawns; j++){
+                Vector2 spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * range;
+                Collider2D collider = Physics2D.OverlapCircle(spawnPosition, 0.5f, WallLayer);
+                while (collider != null){
+                    spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * range;
+                    collider = Physics2D.OverlapCircle(spawnPosition, 0.5f, WallLayer);
+                }
+                Instantiate(enemies[enemyIndex], spawnPosition, Quaternion.identity);
+            }
+            yield return new WaitForSeconds(cooldown);
+        }
+    }
     private IEnumerator SpawnEnemiesRoutine()
     {
         while (true)
@@ -34,19 +64,21 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             transform.position = playerTransform.position;
-            SpawnFormationOfEnemies();
+            GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+            SpawnFormationOfEnemies("Formation1", randomEnemyPrefab);
             yield return new WaitForSeconds(Random.Range(minSpawnInterval*3, maxSpawnInterval*3));
         }
         
     }
 
-    private void SpawnFormationOfEnemies()
+    private void SpawnFormationOfEnemies(string formationName, GameObject spawnedEnemy)
     {
-        GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+        Vector2[] spawnPoints = FindSpawnPoints(formationName);
+        Vector2[] endPoints = FindEndPoints(formationName);
         GameObject[] enemies = new GameObject[spawnPoints.Length];
         for (int i = 0; i < spawnPoints.Length; i++)
         {
-            GameObject enemy = Instantiate(randomEnemyPrefab, spawnPoints[i], Quaternion.identity);
+            GameObject enemy = Instantiate(spawnedEnemy, spawnPoints[i], Quaternion.identity);
             enemy.GetComponent<EnemyAI>().SetEndPoint(endPoints[i]);
             enemies[i] = enemy;
             //yield return new WaitForSeconds(0.1f); // Optional yield to control spawn rate
@@ -71,19 +103,15 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(randomEnemyPrefab, spawnPosition, Quaternion.identity);
         }
     }
-    private void LoadSpawnAndEndPoints(string formationName)
-    {
-        
+
+    private Vector2[] FindSpawnPoints(string formationName){
         Transform formation = transform.Find(formationName);
-        if (formation != null)
-        {
-            spawnPoints = GetChildPositionsByPrefix(formation, "Spawn");
-            endPoints = GetChildPositionsByPrefix(formation, "End");
-        }
-        else
-        {
-            Debug.LogError(formationName + " object not found!");
-        }
+        return GetChildPositionsByPrefix(formation, "Spawn");
+    }
+
+    private Vector2[] FindEndPoints(string formationName){
+        Transform formation = transform.Find(formationName);
+        return GetChildPositionsByPrefix(formation, "End");
     }
 
     private Vector2[] GetChildPositionsByPrefix(Transform parent, string prefix)

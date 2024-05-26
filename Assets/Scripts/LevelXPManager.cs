@@ -25,7 +25,6 @@ public class LevelXPManager : MonoBehaviour
     }
     
     public void Upgrade(UpgradeItem upgradeItem){
-        Debug.Log("UGPIJPPIAJFPAJIFPAJIOPFJIOPFAJOPIFJOIPFJAPFJAPOFJAOIPFJJFIAOPJ");
         if (upgradeItem.IsWeapon){
             switch (gameObject.name)
             {
