@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     
-    private int coins;
+    [SerializeField] private int coins;
     private List<string> charactersUnlocked = new List<string>();
     
     // Start is called before the first frame update
