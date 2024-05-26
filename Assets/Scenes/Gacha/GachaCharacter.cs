@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GachaCharacter : MonoBehaviour
 {
+    [SerializeField] Manager manager;
     [SerializeField] Image image;
     [SerializeField] string name;
 
