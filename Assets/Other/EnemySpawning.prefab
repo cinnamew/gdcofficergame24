@@ -2785,6 +2785,9 @@ MonoBehaviour:
   ringRadius: 5
   numEnemiesInRing: 8
   playerTransform: {fileID: 0}
+  WallLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!212 &3134334565640960346
 SpriteRenderer:
   m_ObjectHideFlags: 0
