@@ -10,6 +10,7 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
     [Header("Choose Character (Make sure images are listed in alphabetical order :p)")]
     [SerializeField] List<Sprite> characterImages = new List<Sprite>();
     private List<string> characterNames = new List<string>();
+    [SerializeField] private List<GameObject> charaPrefabs = new List<GameObject>();
     private int curCharaIndex = 3; //jolie
     [SerializeField] Image charaImage;
     [SerializeField] TMP_Text charaName;
@@ -40,13 +41,15 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
         if (curCharaIndex < 0) curCharaIndex = 8;
         charaImage.sprite = characterImages[curCharaIndex];
         charaName.text = characterNames[curCharaIndex];
+        PlayerPrefs.SetString("SelectedCharacter", charaName.text + " (P)");
     }
     public void chooseCharacterRight()
     {
         curCharaIndex++;
         if (curCharaIndex >= 9) curCharaIndex = 0;
-        charaImage.sprite = characterImages[curCharaIndex];
+        charaImage.sprite = characterImages[curCharaIndex]; //probably can make method for this but whatever
         charaName.text = characterNames[curCharaIndex];
+        PlayerPrefs.SetString("SelectedCharacter", charaName.text + " (P)");
     }
     public void chooseStageLeft()
     {
