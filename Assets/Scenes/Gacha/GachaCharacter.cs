@@ -13,6 +13,7 @@ public class GachaCharacter : MonoBehaviour
     [SerializeField] int hp;
     [SerializeField] float attack;
     [SerializeField] float crit;
+    [SerializeField] int spd;
 
     [SerializeField] int level = 0;
     
@@ -31,9 +32,9 @@ public class GachaCharacter : MonoBehaviour
     public string getStats() {
         string temp = "";
         if(level == 0) {
-            temp = "HP: ?\nATK: ?\nCRT: ?\n";
+            temp = "HP: ?\nATK: ?\nCRT: ?\nSPD: ?";
         }else {
-            temp = "HP: " + hp + " -> ?" + "\nATK: " + attack + " -> ?" + "\nCRT: " + crit + " -> ?";
+            temp = "HP: " + hp + " -> ?" + "\nATK: " + attack + " -> ?" + "\nCRT: " + crit + " -> ?" + "\nSPD: " + spd + " -> ?";
         }
         return temp;
     }

@@ -8,10 +8,12 @@ public class CharaPreviewImage : MonoBehaviour
 {
     [SerializeField] List<GachaCharacter> charas = new List<GachaCharacter>();
     [SerializeField] List<Image> charaImages = new List<Image>();
-    int currImage = 0;
+    [SerializeField] int currImage = 0;
     bool changeImage = true;
     private Image oldImage;
     private Image newImage;
+
+    private bool ductTape = false;  //if we are waiting for next coroutine
 
     [SerializeField] TMP_Text oldText;
     [SerializeField] TMP_Text newText;
@@ -25,17 +27,33 @@ public class CharaPreviewImage : MonoBehaviour
     void Start() {
         newImage = charaImages[currImage];
         currImage++;
-        //if(oldImage.color == null) print("ur mom");
+        //if(oldImage.color == null) print("ur mom");   //when did i add this??? did i even add this??? this is not a me sentence
         StartCoroutine(Hi());
         oldText.text = charas[0].getName();
         oldStats.text = charas[0].getStats();
         oldBio.text = charas[0].getBio();
+        //print(currImage);
     }
 
+    public void Reset() {
+        for(int i = 0; i < charaImages.Count; i++) {
+            Image temp = charaImages[i];
+            if(i == currImage) temp.color = new Color(1,1,1,1);
+            else temp.color = new Color(1,1,1,0);
+        }
+    }
+
+    public void StartHi() {
+        changeImage = true;
+        StartCoroutine(Hi());
+    }
 
     IEnumerator Hi() {
+        ductTape = false;
         while(changeImage) {
             if(currImage >= charaImages.Count) currImage = 0;
+            //print("current image: " + currImage);
+
             //change image
             oldText.text = newText.text;
             newText.text = charas[currImage].getName();
@@ -49,10 +67,16 @@ public class CharaPreviewImage : MonoBehaviour
             oldImage = newImage;
             newImage = charaImages[currImage];
             currImage++;
+            if(!changeImage) {
+                break;
+            }
             StartCoroutine(Bye());
+
+            ductTape = true;
             yield return new WaitForSeconds(3);
         }
-        //yield return null;
+        ductTape = false;
+        yield return null;
     }
 
     IEnumerator Bye() {
@@ -113,11 +137,18 @@ public class CharaPreviewImage : MonoBehaviour
     public void startImageChange() {
         //if(changeImage) return;
         changeImage = true;
-        StartCoroutine(Hi());
+        //StopCoroutine(Hi());
+        if(!ductTape) StartCoroutine(Hi());
+        //print("starting coroutine from FUNCTION");
     }
 
     public void SwitchImageChangeStatus() {
+        //print("swtich image ahcange cstatus");
         changeImage = !changeImage;
         if(changeImage) startImageChange();
+    }
+
+    public bool GetImageChangeStatus() {
+        return changeImage;
     }
 }

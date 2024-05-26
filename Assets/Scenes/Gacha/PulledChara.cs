@@ -7,8 +7,14 @@ public class PulledChara : MonoBehaviour
      [SerializeField] List<GameObject> showAfterDone = new List<GameObject>();
      [SerializeField] List<GameObject> hideAfterDone = new List<GameObject>();
 
+     [SerializeField] CharaPreviewImage charaPreviews;
+
     public void WaitForMouseClick() {
         StartCoroutine(Dense());
+    }
+
+    void OnEnable() {
+        if(charaPreviews.GetImageChangeStatus()) charaPreviews.Reset();
     }
     
     public void HideObjects() {
@@ -29,6 +35,7 @@ public class PulledChara : MonoBehaviour
 
                  foreach(GameObject g in showAfterDone) {
                     g.SetActive(true);
+                    if(charaPreviews != null) charaPreviews.StartHi();
                 }
             }
             yield return null;

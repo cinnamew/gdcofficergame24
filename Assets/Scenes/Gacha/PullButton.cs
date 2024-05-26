@@ -12,7 +12,7 @@ public class PullButton : MonoBehaviour
     private Manager manager;
 
 
-    private int[] pullWeights = {50, 35, 15};
+    //private int[] pullWeights = {50, 35, 15};
     private Button button;
     //public int rand;
     public GameObject pulledChara;
@@ -44,13 +44,13 @@ public class PullButton : MonoBehaviour
 
         //print(coins);
 
-        //if (coins < 20) {
-        //    print("not enough coins!");
-        //    return;
-        //}
+        if (coins < 20) {
+            print("not enough coins!");
+            return;
+        }
         
         if(thingToHide != null) thingToHide.SetActive(false);
-
+        
 
             Character hot = allCharas[Random.Range(0,allCharas.Count)];  //the chara u pulled
             
@@ -65,8 +65,6 @@ public class PullButton : MonoBehaviour
             GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>().addToCoins(-20);
         coinsText.text = manager.getCoins() + "";
     }
-
-    
 
 }
 
