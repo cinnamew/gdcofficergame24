@@ -11,6 +11,7 @@ public class GenericHitbox : MonoBehaviour
     private Vector2 knockbackVector;
     [SerializeField]private float refreshEvery;
     public StatsManager statsManager;
+    public GameObject player;
     private float currCooldown;
     public bool isEnabled = true;
 

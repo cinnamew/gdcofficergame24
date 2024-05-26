@@ -7,5 +7,6 @@ public class HeroHitbox : GenericHitbox
     private void Awake() {
         targetTag = "Enemy";
         statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
+        player = Component.FindObjectOfType<LevelXPManager>().gameObject;
     }
 }

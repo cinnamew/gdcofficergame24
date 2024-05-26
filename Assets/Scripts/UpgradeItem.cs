@@ -17,15 +17,13 @@ public class UpgradeItem : ScriptableObject
     public bool BuffIsTemporary;
     public float BuffTime;
 
-    public enum Type{
-        Stat,
-        Weapon,
-        Skill
-    }
-    public Type type;
+    public bool IsWeapon;
     //UPGRADES
     //Weapon: size/area, damage, hit rate, knockback, number of projectiles    
 
+    void Start(){
+        Reset();
+    }
     public virtual void Reset(){
         currentUpgradeLvl = 1;
     }

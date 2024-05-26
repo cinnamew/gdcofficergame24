@@ -14,15 +14,20 @@ public class PlayerMovement : MonoBehaviour
     public BoolTimer canMove;
     public BoolTimer isInvincible;
     public BoolTimer isDodging;
+    private StatsManager statsManager;
     
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         stats = (PlayerStats)ScriptableObject.CreateInstance(typeof(PlayerStats));
         dodgeScript = GetComponent<PlayerDodge>();
         moveSpeed = defaultMoveSpeed;
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
     }
 
     private void Update() {
+        if (statsManager != null){
+            moveSpeed = defaultMoveSpeed*(statsManager.Spd/100f);
+        }
         if (!isOnSlipperySurface) {
             moveDirection.x = Input.GetAxisRaw("Horizontal");
             moveDirection.y = Input.GetAxisRaw("Vertical");

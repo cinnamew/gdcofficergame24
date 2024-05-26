@@ -13,15 +13,30 @@ public class LevelXPManager : MonoBehaviour
     [SerializeField] Slider slider;
     [SerializeField] TMP_Text levelText;
     [SerializeField] List<UpgradeItem> exclusiveUpgrades;
-    private UIManager uiManager;
+    private StageUIManager uiManager;
     void Start()
     {
         UpdateSlider();
-        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        uiManager = GameObject.Find("Canvas").GetComponent<StageUIManager>();
     }
 
     public List<UpgradeItem> GetExclusiveUpgrades(){
         return exclusiveUpgrades;
+    }
+    
+    public void Upgrade(UpgradeItem upgradeItem){
+        Debug.Log("UGPIJPPIAJFPAJIFPAJIOPFJIOPFAJOPIFJOIPFJAPFJAPOFJAOIPFJJFIAOPJ");
+        if (upgradeItem.IsWeapon){
+            switch (gameObject.name)
+            {
+                case "Jolie":
+                    gameObject.GetComponent<OrbAttack>().upgradeOrbs();
+                    break;
+                case "Jemi":
+                    gameObject.GetComponent<OrbAttack>().upgradeOrbs();
+                    break;
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,16 +46,16 @@ public class LevelXPManager : MonoBehaviour
             System.Random r = new System.Random();
             switch (other.gameObject.GetComponent<SpriteRenderer>().sprite.name)
             {
-                case "xp_0":
+                case "xp_with_borders_0":
                     updateXP(r.Next(1, 11)); // (inclusive, exclusive)
                     break;   
-                case "xp_1":
+                case "xp_with_borders_1":
                     updateXP(r.Next(11, 20)); // (inclusive, exclusive)
                     break;
-                case "xp_2":
+                case "xp_with_borders_2":
                     updateXP(r.Next(20, 50)); // (inclusive, exclusive)
                     break;
-                case "xp_3":
+                case "xp_with_borders_3":
                     updateXP(r.Next(50, 100)); // (inclusive, exclusive)
                     break;
 

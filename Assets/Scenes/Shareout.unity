@@ -626,6 +626,7 @@ MonoBehaviour:
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
+  player: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!114 &166815915
@@ -647,6 +648,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 96cf19d8c48eed54d85c1782f645f18d, type: 2}
   - {fileID: 11400000, guid: db6e6b142f4d3b2498bc4a4d358a8988, type: 2}
   - {fileID: 11400000, guid: 7d7066073c4e91e45baa56d155c4b52c, type: 2}
+  - {fileID: 11400000, guid: 4cac615d9d4c4e546ac387fbd724103a, type: 2}
 --- !u!114 &166815926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,6 +1044,7 @@ MonoBehaviour:
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
+  player: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!50 &258000687
@@ -5442,6 +5445,7 @@ MonoBehaviour:
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
+  player: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!50 &1001584895
@@ -84077,6 +84081,7 @@ MonoBehaviour:
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
+  player: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!50 &1362923735
@@ -85254,6 +85259,7 @@ MonoBehaviour:
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
+  player: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!50 &1761065197

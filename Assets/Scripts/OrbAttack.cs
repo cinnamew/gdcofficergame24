@@ -21,6 +21,7 @@ public class OrbAttack : MonoBehaviour
     }
 
     public void upgradeOrbs(){
+        Debug.Log("APOIJFPJSDFJOSJFOJSOPDFJSJFJSPOFJSPOFJIP ORBBB");
         if (numOrbs < Orbs.Length)
         {
             Orbs[numOrbs].SetActive(true);

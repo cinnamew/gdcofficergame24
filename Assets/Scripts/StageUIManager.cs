@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UIManager : MonoBehaviour
+public class StageUIManager : MonoBehaviour
 {
     //Sorry for the ungodly amount of serialized field rohan :(
     [SerializeField] GameObject levelPanel;
@@ -52,6 +52,7 @@ public class UIManager : MonoBehaviour
         } else {
             upgradeItems[option].Upgrade();
         }
+        player.GetComponent<LevelXPManager>().Upgrade(upgradeItems[option]);
         levelPanel.SetActive(false);
         Time.timeScale = 1;
     }
@@ -63,8 +64,6 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < upgradesPerLevel; i++){
             int randomIndex = Random.Range(0, temp.Count);
             randomItems.Add(temp[randomIndex]);
-            Debug.Log(temp[randomIndex]);
-            Debug.Log(temp);
             temp.RemoveAt(randomIndex);
             //if (player.GetComponent<UpgradeInventory>().HasItem(randomItems))
         }
