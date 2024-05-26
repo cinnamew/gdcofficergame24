@@ -105,6 +105,8 @@ MonoBehaviour:
   knockbackDuration: 0
   autoAttack: 1
   refreshEvery: 1
+  statsManager: {fileID: 0}
+  player: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!61 &8254586172167224906
@@ -163,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7709561240856740911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40253bf8c703549d6a9774233da171ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 52613399cead04fbe819b1b6054aea73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   childProjectile: {fileID: 2409284386091106524, guid: e9cc8a6a88c614fc28c39a170911ce16, type: 3}
