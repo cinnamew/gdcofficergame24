@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -46,5 +46,9 @@ public class Manager : MonoBehaviour
     public void unlockCharacter(string s) {
         if(charactersUnlocked.Contains(s)) return;
         charactersUnlocked.Add(s);
+    }
+    public void goToPreviousMenu()
+    {
+        SceneManager.LoadScene(1); //scene name: ChooseCharacterAndStage
     }
 }
