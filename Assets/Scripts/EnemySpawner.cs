@@ -13,8 +13,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnEnemiesRoutine());
-        StartCoroutine(FormationSpawnRoutine());
+        SpawnStage1();
+        // StartCoroutine(SpawnEnemiesRoutine());
+        // StartCoroutine(FormationSpawnRoutine());
     }
 
     
@@ -22,14 +23,17 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject[] generalEnemies = {enemyPrefabs[0], enemyPrefabs[1]};
         StartCoroutine(SpawnEnemiesGeneral(generalEnemies, 8, 20f, 20f));
+        GameObject[] flockEnemies = {enemyPrefabs[2]};
+        StartCoroutine(SpawnEnemyFlocks(generalEnemies, 4, 30f));
 
     }
 
     private IEnumerator SpawnEnemyFlocks(GameObject[] enemies,  int numWaves, float cooldown){
         for (int i = 0; i < numWaves; i++){
-            GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemies.Length)];
-            SpawnFormationOfEnemies("FlockFormation", randomEnemyPrefab);
             yield return new WaitForSeconds(cooldown);
+            transform.position = playerTransform.position;
+            GameObject randomEnemyPrefab = enemies[Random.Range(0, enemies.Length)];
+            SpawnFormationOfEnemies("FlockFormation" + Random.Range(1, 3), randomEnemyPrefab, 7f);
         }
     }
 
@@ -86,6 +90,26 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             enemies[i].GetComponent<EnemyAI>().SetEnableAim(true);
+            enemies[i].GetComponent<EnemyAI>().SetEnableAim(true);
+        }
+    }
+
+    private void SpawnFormationOfEnemies(string formationName, GameObject spawnedEnemy, float speed)
+    {
+        Vector2[] spawnPoints = FindSpawnPoints(formationName);
+        Vector2[] endPoints = FindEndPoints(formationName);
+        GameObject[] enemies = new GameObject[spawnPoints.Length];
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            GameObject enemy = Instantiate(spawnedEnemy, spawnPoints[i], Quaternion.identity);
+            enemy.GetComponent<EnemyAI>().SetEndPoint(endPoints[i]);
+            enemies[i] = enemy;
+            //yield return new WaitForSeconds(0.1f); // Optional yield to control spawn rate
+        }
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            enemies[i].GetComponent<EnemyAI>().SetEnableAim(true);
+            enemies[i].GetComponent<EnemyAI>().SetMoveSpeed(speed);
         }
     }
 
@@ -106,6 +130,7 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector2[] FindSpawnPoints(string formationName){
         Transform formation = transform.Find(formationName);
+        Debug.Log(formationName + "     PSDIJFPOSJIFOPJSDIOFJSDOIPFJSIOFJIOSJFPOISDFPOJPFDS");
         return GetChildPositionsByPrefix(formation, "Spawn");
     }
 
