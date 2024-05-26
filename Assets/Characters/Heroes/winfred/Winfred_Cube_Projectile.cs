@@ -8,25 +8,23 @@ public class Winfred_Cube_Projectile : MonoBehaviour
     Vector2 dir;
     ParticleSystem ps;
 
-    Vector2 startingPosition;
+    private float startAngle;
     private float theta; //in radians
     private float speed;
-    private float startAngle; //in radians
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ps = GetComponentInChildren<ParticleSystem>();
 
-        startingPosition = transform.position;
         speed = rb.velocity.magnitude;
         startAngle = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
-
-        theta = -Mathf.PI / 8;
+        theta = startAngle - Mathf.PI/8;
+        rb.velocity = speed * new Vector2(Mathf.Cos(theta), Mathf.Sin(theta)).normalized;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         dir = rb.velocity.normalized;
         if(dir.x != 0 || dir.y != 0)
@@ -41,12 +39,11 @@ public class Winfred_Cube_Projectile : MonoBehaviour
             ps.gameObject.transform.eulerAngles = new Vector3(0, 0, angle-90);
         }
 
-        Vector2 r = (Vector2)transform.position - startingPosition;
-        theta += Time.deltaTime;
-        
+        theta += Time.deltaTime / 2;
+
         float x = theta;
-        float dx = Mathf.Sin(x) * (-Mathf.Cos(4*x)) - 4 * Mathf.Sin(4*x) * Mathf.Cos(x);
-        float dy = Mathf.Cos(x) * Mathf.Cos(4 * x) - 4 * Mathf.Sin(x) * (Mathf.Sin(4 * x));
+        float dx = Mathf.Sin(x) * (-Mathf.Cos(4 * (x-startAngle))) - 4 * Mathf.Sin(4 * (x-startAngle)) * Mathf.Cos(x);
+        float dy = Mathf.Cos(x) * Mathf.Cos(4 * (x-startAngle)) - 4 * Mathf.Sin(x) * (Mathf.Sin(4 * (x-startAngle)));
         rb.velocity = speed * new Vector2(dx, dy).normalized;
     }
 }
