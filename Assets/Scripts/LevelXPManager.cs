@@ -29,7 +29,7 @@ public class LevelXPManager : MonoBehaviour
         if (upgradeItem.IsWeapon){
             switch (gameObject.name)
             {
-                case "Jolie":
+                case "Jolie (P)":
                     gameObject.GetComponent<OrbAttack>().upgradeOrbs();
                     break;
                 case "Jemi":
