@@ -15,6 +15,10 @@ public class CharaPreviewImage : MonoBehaviour
 
     [SerializeField] TMP_Text oldText;
     [SerializeField] TMP_Text newText;
+    [SerializeField] TMP_Text oldStats;
+    [SerializeField] TMP_Text newStats;
+    [SerializeField] TMP_Text oldBio;
+    [SerializeField] TMP_Text newBio;
 
     [SerializeField] PauseCharas pauseButton;
 
@@ -24,6 +28,8 @@ public class CharaPreviewImage : MonoBehaviour
         //if(oldImage.color == null) print("ur mom");
         StartCoroutine(Hi());
         oldText.text = charas[0].getName();
+        oldStats.text = charas[0].getStats();
+        oldBio.text = charas[0].getBio();
     }
 
 
@@ -32,8 +38,14 @@ public class CharaPreviewImage : MonoBehaviour
             if(currImage >= charaImages.Count) currImage = 0;
             //change image
             oldText.text = newText.text;
-            //print(newText.text);
             newText.text = charas[currImage].getName();
+
+            oldStats.text = newStats.text;
+            newStats.text = charas[currImage].getStats();
+            
+            oldBio.text = newBio.text;
+            newBio.text = charas[currImage].getBio();
+
             oldImage = newImage;
             newImage = charaImages[currImage];
             currImage++;
@@ -51,6 +63,11 @@ public class CharaPreviewImage : MonoBehaviour
                 newText.color = new Color(1, 1, 1, i);
                 oldImage.color = new Color(1, 1, 1, 1 - i);
                 oldText.color = new Color(1, 1, 1, 1 - i);
+
+                oldStats.color = new Color(0,0,0,1-i);
+                newStats.color = new Color(0,0,0,i);
+                oldBio.color = new Color(0,0,0,1-i);
+                newBio.color = new Color(0,0,0,i);
 
                 if(changeImage) yield return null;
             }

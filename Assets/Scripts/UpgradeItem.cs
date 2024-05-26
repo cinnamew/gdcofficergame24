@@ -34,21 +34,21 @@ public class UpgradeItem : ScriptableObject
         currentUpgradeLvl++;
     }
 
-    public void ApplyBuffs(PlayerStats playerStats){ //should probably not include this as just a param
-        playerStats.MaxHp += MaxHpBuff;
-        playerStats.Atk += AtkBuff;
-        playerStats.Spd += SpdBuff;
-        playerStats.Crt += CrtBuff;
-        playerStats.Pur += PurBuff;
-        playerStats.Haste += HasteBuff;
+    public void ApplyBuffs(StatsManager statsManager){ //should probably not include this as just a param
+        statsManager.MaxHp += MaxHpBuff;
+        statsManager.Atk += AtkBuff;
+        statsManager.Spd += SpdBuff;
+        statsManager.Crt += CrtBuff;
+        statsManager.Pur += PurBuff;
+        statsManager.Haste += HasteBuff;
     }
 
-    public void UnapplyBuffs(PlayerStats playerStats){
-        playerStats.MaxHp -= MaxHpBuff;
-        playerStats.Atk -= AtkBuff;
-        playerStats.Spd -= SpdBuff;
-        playerStats.Crt -= CrtBuff;
-        playerStats.Pur -= PurBuff;
-        playerStats.Haste -= HasteBuff;
+    public void UnapplyBuffs(StatsManager statsManager){
+        statsManager.MaxHp -= MaxHpBuff;
+        statsManager.Atk -= AtkBuff;
+        statsManager.Spd -= SpdBuff;
+        statsManager.Crt -= CrtBuff;
+        statsManager.Pur -= PurBuff;
+        statsManager.Haste -= HasteBuff;
     }
 }

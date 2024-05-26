@@ -18,14 +18,17 @@ public class Health : MonoBehaviour
     Vector3 victimVector3;
     AnimController animController;
     [SerializeField] GameObject dmgIndicator;
-    [SerializeField] PlayerStats playerStats;
+    private StatsManager statsManager;
     private UpgradeInventory upgradeInventory;
     
     void Start()
     {
         //victimVector3 = GetComponent<Vector3>(); commented out bc it was causing an error
         animController = GetComponent<AnimController>();
-        maxHealth = playerStats.MaxHp;
+        if (gameObject.tag == "Player"){
+            statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
+            maxHealth = statsManager.MaxHp;
+        }
         health = maxHealth;
         if (slider != null)
         {
@@ -42,7 +45,7 @@ public class Health : MonoBehaviour
 
     void Update(){
         if (gameObject.tag == "Player" && slider != null){
-            maxHealth = playerStats.MaxHp;
+            maxHealth = statsManager.MaxHp;
             slider.maxValue = maxHealth;
         }
     }
@@ -93,9 +96,9 @@ public class Health : MonoBehaviour
     IEnumerator TimeCrunch(){
         
         UpgradeItem timeCrunch = upgradeInventory.GetItemWithName("Time Crunch");
-        timeCrunch.ApplyBuffs(playerStats);
+        timeCrunch.ApplyBuffs(statsManager);
         yield return new WaitForSeconds(timeCrunch.BuffTime);
-        timeCrunch.UnapplyBuffs(playerStats);
+        timeCrunch.UnapplyBuffs(statsManager);
     }
     public void HealHealth(int healVal) {
         health += healVal;

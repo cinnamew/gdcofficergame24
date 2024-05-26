@@ -625,6 +625,7 @@ MonoBehaviour:
   knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
+  statsManager: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!114 &166815915
@@ -1040,6 +1041,7 @@ MonoBehaviour:
   knockbackDuration: 0.5
   autoAttack: 1
   refreshEvery: 0.3
+  statsManager: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!50 &258000687
@@ -4992,6 +4994,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916641384}
   m_CullTransparentMesh: 1
+--- !u!1 &920698675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920698677}
+  - component: {fileID: 920698676}
+  m_Layer: 0
+  m_Name: StatsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &920698676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920698675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf9c785ba0077f48a0b740bcdbe9337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: 8e9b07409983a384c8fa71e46039c325, type: 2}
+--- !u!4 &920698677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920698675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5375056, y: -0.9362589, z: 1.3859794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &937487550
 GameObject:
   m_ObjectHideFlags: 0
@@ -5394,6 +5441,7 @@ MonoBehaviour:
   knockbackDuration: 0.5
   autoAttack: 1
   refreshEvery: 0.3
+  statsManager: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!50 &1001584895
@@ -84028,6 +84076,7 @@ MonoBehaviour:
   knockbackDuration: 0.5
   autoAttack: 1
   refreshEvery: 0.3
+  statsManager: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!50 &1362923735
@@ -85204,6 +85253,7 @@ MonoBehaviour:
   knockbackDuration: 0.5
   autoAttack: 1
   refreshEvery: 0.3
+  statsManager: {fileID: 0}
   isEnabled: 1
   targetTag: 
 --- !u!50 &1761065197
