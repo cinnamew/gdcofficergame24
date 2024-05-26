@@ -92,11 +92,20 @@ public class CharaPreviewImage : MonoBehaviour
         oldImage.color = new Color(1, 1, 1, 0);
         oldText.color = new Color(1,1,1,1);
         newText.color = new Color(1,1,1,0);
+
+        oldBio.color = new Color(0,0,0,0);
+        newBio.color = new Color(0,0,0,1);
+        oldStats.color = new Color(0,0,0,0);
+        newStats.color = new Color(0,0,0,1);
         
         oldText.text = charas[a].getName();
         charaImages[a].color = new Color(1, 1, 1, 1);
         oldImage = newImage;
         newImage = charaImages[a];
+        oldBio = newBio;
+        oldStats = newStats;
+        newStats.text = charas[currImage].getStats();
+        newBio.text = charas[currImage].getBio();
 
         //dumb.sprite = charaImages[a];
     }
