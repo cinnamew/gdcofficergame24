@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class StageUIManager : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class StageUIManager : MonoBehaviour
     private const int upgradesPerLevel = 4;
     private GameObject player;
     public List<UpgradeItem> temp;
-    private List<UpgradeItem> upgradeItems; 
-
+    private List<UpgradeItem> upgradeItems;
+    [SerializeField] GameObject pauseMenu;
     
     // Start is called before the first frame update
     void Start()
@@ -82,6 +83,21 @@ public class StageUIManager : MonoBehaviour
             itemDescriptions[i].SetText(currentItem.description);
         }
     }
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
 
+    }
+    public void ClosePauseMenu()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+    public void goToMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0); //scene name: StartScreen
+    }
 
 }

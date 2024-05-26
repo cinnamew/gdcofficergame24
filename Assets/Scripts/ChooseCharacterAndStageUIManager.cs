@@ -61,4 +61,8 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
         //tell the next scene to get the chosen stage and character
         SceneManager.LoadScene(3); //scene name: Stage 1
     }
+    public void goBackToStartMenu()
+    {
+        SceneManager.LoadScene(0); //scene name: StartScreen
+    }
 }
