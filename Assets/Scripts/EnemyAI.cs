@@ -27,6 +27,10 @@ public class EnemyAI : MonoBehaviour
         enableAim = false;
     }
 
+    public void SetMoveSpeed(float speed){
+        moveSpeed = speed; 
+    }
+
     public void SetEnableAim(bool aim){
         enableAim = aim;
     }

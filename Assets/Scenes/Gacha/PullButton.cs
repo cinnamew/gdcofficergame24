@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PullButton : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PullButton : MonoBehaviour
 
     [SerializeField] GameObject thingToHide;
 
+    [SerializeField] TMP_Text coinsText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,8 @@ public class PullButton : MonoBehaviour
         this.GetComponent<Image>().alphaHitTestMinimumThreshold = alphaThreshold;
         //button = GetComponent<Button>();
         //button.onClick.AddListener(Pull);
+
+        coinsText.text = manager.getCoins() + "";
 
     }
 
@@ -58,7 +63,7 @@ public class PullButton : MonoBehaviour
             pulledChara.GetComponent<PulledChara>().WaitForMouseClick();
 
             GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>().addToCoins(-20);
-        
+        coinsText.text = manager.getCoins() + "";
     }
 
     
