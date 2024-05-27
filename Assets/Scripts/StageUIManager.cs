@@ -58,7 +58,8 @@ public class StageUIManager : Singleton<StageUIManager>
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            Pause();
+            if(Time.timeScale != 0) Pause();
+            else Resume();
         }
     }
 
