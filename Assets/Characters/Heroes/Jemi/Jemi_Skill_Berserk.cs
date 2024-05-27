@@ -38,16 +38,16 @@ public class Jemi_Skill_Berserk : MonoBehaviour
 
     private void bulletRain()
     {
-        Vector3 topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
-        Vector3 offset = new Vector3(0, 0, 0);
-        float pixelDistanceBetween = Camera.main.pixelWidth / (numProjectilesToSpawn - 1);
+        Vector3 topLeft = new Vector3(0, 1, 0);
+        Vector3 changeInViewportDistance = new Vector3(1.0f / (numProjectilesToSpawn - 1), 0, 0);
         for (int i = 0; i < numProjectilesToSpawn; i++)
         {
-            GameObject proj = Instantiate(projectile, topLeft + offset, Quaternion.identity);
+            Vector3 pos = Camera.main.ViewportToWorldPoint(topLeft + i * changeInViewportDistance);
+            pos = new Vector3(pos.x, pos.y, 0);
+            GameObject proj = Instantiate(projectile, pos, Quaternion.identity);
             proj.GetComponent<HeroHitbox>().setDamage(projectileDmg);
             proj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
             Destroy(proj, lifeSpan);
-            offset.x += pixelDistanceBetween;
         }
     }
     public void setProjectileDamage(int d)
@@ -58,7 +58,7 @@ public class Jemi_Skill_Berserk : MonoBehaviour
     {
         numProjectilesToSpawn = n;
     }
-    public void setBaseCooldown(float cd)
+    public void setCooldown(float cd)
     {
         baseProjectileCooldown = cd;
     }
