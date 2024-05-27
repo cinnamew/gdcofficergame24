@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PulledChara : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PulledChara : MonoBehaviour
      [SerializeField] List<GameObject> hideAfterDone = new List<GameObject>();
 
      [SerializeField] CharaPreviewImage charaPreviews;
+     [SerializeField] TMP_Text nameText;
+     [SerializeField] TMP_Text xText;
 
     public void WaitForMouseClick() {
         StartCoroutine(Dense());
