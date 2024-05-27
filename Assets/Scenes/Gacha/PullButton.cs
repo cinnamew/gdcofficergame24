@@ -21,6 +21,8 @@ public class PullButton : MonoBehaviour
 
     [SerializeField] TMP_Text coinsText;
 
+    //[SerializeField] MelonLogger logger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,8 @@ public class PullButton : MonoBehaviour
         //print(coins);
 
         if (coins < 20) {
-            print("not enough coins!");
+            //print("not enough coins!");
+            MelonLogger.Log("Not enough coins!", LogType.Error);
             return;
         }
         
