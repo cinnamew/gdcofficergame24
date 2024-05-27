@@ -909,10 +909,11 @@ MonoBehaviour:
   generalUpgrades:
   - {fileID: 11400000, guid: d7c108c3d41f2f14faba94ca1648686d, type: 2}
   temp: []
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 246522013}
   healthSlider: {fileID: 605670294}
   xpSlider: {fileID: 1362203778}
   levelText: {fileID: 733344956}
+  pauseButton: {fileID: 1517812724}
 --- !u!1 &230420738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,7 +3152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.49803922, g: 0.6039216, b: 0.44705883, a: 1}
   m_FlipX: 0
@@ -4355,7 +4356,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.49803922, g: 0.6039216, b: 0.44705883, a: 1}
   m_FlipX: 0
@@ -5816,6 +5817,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 8e9b07409983a384c8fa71e46039c325, type: 2}
+  MaxHp: 0
+  Atk: 0
+  Spd: 0
+  Crt: 0
+  Pur: 0
+  Haste: 0
 --- !u!4 &920698677
 Transform:
   m_ObjectHideFlags: 0
@@ -7738,7 +7745,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.4975454, g: 0.6037736, b: 0.44713423, a: 1}
   m_FlipX: 0
@@ -85001,7 +85008,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.49803922, g: 0.6039216, b: 0.44705883, a: 1}
   m_FlipX: 0

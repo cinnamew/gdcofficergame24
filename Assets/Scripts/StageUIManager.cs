@@ -23,6 +23,7 @@ public class StageUIManager : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider xpSlider;
     [SerializeField] private TMP_Text levelText;
+    [SerializeField] GameObject pauseButton;
     
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,7 @@ public class StageUIManager : MonoBehaviour
 
     public void ShowLevelMenu(){
         levelPanel.SetActive(true);
+        pauseButton.SetActive(false);
         upgradeItems = PickRandomUpgrades();
         DisplayUI();
     }
@@ -74,6 +76,7 @@ public class StageUIManager : MonoBehaviour
             player.GetComponent<SkillManager>().Upgrade(upgradeItems[option]);
         }
         levelPanel.SetActive(false);
+        pauseButton.SetActive(true);
         Time.timeScale = 1;
     }
 
