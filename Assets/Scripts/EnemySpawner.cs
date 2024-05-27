@@ -58,11 +58,6 @@ public class EnemySpawner : MonoBehaviour
             int enemyIndex = Mathf.Min((int)(enemies.Length*i/(numWaves)), enemies.Length - 1);
             for (int j = 0; j < numSpawns; j++){
                 Vector2 spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * range;
-                Collider2D collider = Physics2D.OverlapCircle(spawnPosition, 0.5f, WallLayer); //need to make it so that they can go through walls but player cant??
-                while (collider != null){
-                    spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * range;
-                    collider = Physics2D.OverlapCircle(spawnPosition, 0.5f, WallLayer);
-                }
                 Instantiate(enemies[enemyIndex], spawnPosition, Quaternion.identity);
             }
             yield return new WaitForSeconds(cooldown);
