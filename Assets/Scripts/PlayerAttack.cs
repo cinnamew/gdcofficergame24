@@ -46,11 +46,11 @@ public class PlayerAttack : MonoBehaviour
                         StartCoroutine(afterBirthDeathIsInevitable());
                     }
                 }*/
-                if(Time.time - timeOfLastAttack >= minProjectileCooldown && isProjectile) //if it's due time to shoot your shot
+                if(Time.time - timeOfLastAttack >= minProjectileCooldown) //if it's due time to shoot your shot
                 {
                     timeOfLastAttack = Time.time;
                     //Debug.Log("hiqweuiouqwe");
-                    if(projectilesPerShot != 1)
+                    if(projectilesPerShot != 1 && isProjectile)
                     {
                         float increment = spreadAngle / (projectilesPerShot - 1);
                         float startingAngle = -spreadAngle / 2;
@@ -118,6 +118,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator afterBirthDeathIsInevitable(float offsetAngle) //handles projectiles
     {
         GameObject projectile = Instantiate(projectilePrefab);
+        Debug.Log("made projectile");
         projectile.transform.position = projectileSpawnpoint.position;
         if (rotateProjectileToAimDir)
         {
@@ -135,6 +136,7 @@ public class PlayerAttack : MonoBehaviour
         }
         else
         {
+            Debug.Log("melee parent");
             projectile.transform.parent = transform;
         }
         yield return new WaitForSeconds(lifeSpan);
