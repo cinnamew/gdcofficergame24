@@ -15,7 +15,7 @@ public class PlayerAiming : MonoBehaviour
     float rotZ;
     SpriteRenderer aimPointerSpriteRenderer;
     AimpointSpriteManager aimSprite;
-    private PlayerAttack playerAttack;
+    private PlayerAttack[] playerAttacks;
     public bool playerRotatesWithAimpoint = false;
     //ok
     private void Start() {
@@ -23,7 +23,7 @@ public class PlayerAiming : MonoBehaviour
         aimPointerSpriteRenderer = GameObject.FindGameObjectWithTag("AimPointer").GetComponent<SpriteRenderer>();
         aimSprite = aimPointerSpriteRenderer.gameObject.GetComponent<AimpointSpriteManager>();
         playerPos = GetPlayerV2();
-        playerAttack = GetComponentInParent<PlayerAttack>();
+        playerAttacks = GetComponentsInParent<PlayerAttack>();
     } 
     private void Update() {
         mousePos = playerCam.ScreenToWorldPoint(Input.mousePosition);
@@ -31,7 +31,9 @@ public class PlayerAiming : MonoBehaviour
         RotateAimpoint();
         ManageSpriteOrder();
         playerPos = GetPlayerV2();
-        playerAttack.setAimDir(mousePos-playerPos);
+        for (int i = 0; i < playerAttacks.Length; i++){
+            playerAttacks[i].setAimDir(mousePos-playerPos);
+        }
     }
     Vector2 GetPlayerV2() {
         return GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;
