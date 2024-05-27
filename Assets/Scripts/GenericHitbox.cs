@@ -126,4 +126,12 @@ public class GenericHitbox : MonoBehaviour
             if (currCooldown <= 0) RefreshHitbox();
         }
     }
+    public void setDamage(int newVal)
+    {
+        damage = newVal;
+    }
+    public void setRefreshEvery(float newVal)
+    {
+        refreshEvery = newVal;
+    }
 }

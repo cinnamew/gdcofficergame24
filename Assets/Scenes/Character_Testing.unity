@@ -5356,6 +5356,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 8e9b07409983a384c8fa71e46039c325, type: 2}
+  MaxHp: 0
+  Atk: 0
+  Spd: 0
+  Crt: 0
+  Pur: 0
+  Haste: 0
 --- !u!4 &1234461159
 Transform:
   m_ObjectHideFlags: 0
@@ -5425,10 +5431,6 @@ PrefabInstance:
     - target: {fileID: 9025393956351376703, guid: 0903c881989b4a34d9cfd14b4d1ea91d, type: 3}
       propertyPath: m_Name
       value: Arnav (P)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025393956351376703, guid: 0903c881989b4a34d9cfd14b4d1ea91d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0903c881989b4a34d9cfd14b4d1ea91d, type: 3}
