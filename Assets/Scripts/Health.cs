@@ -20,6 +20,9 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject dmgIndicator;
     private StatsManager statsManager;
     private UpgradeInventory upgradeInventory;
+    private bool debuggingHell;
+    private bool enemiesToLovers;
+    private bool empathy;
     
     void Start()
     {
@@ -91,6 +94,22 @@ public class Health : MonoBehaviour
             Destroy(gameObject, 0.5f); //DONT DESTROY PLAYER
             Destroy(deathVFX.gameObject, 0.5f);
             
+        }
+    }
+
+    public void ConditionalHeal()
+    {
+        if (empathy)
+        {
+            
+        }
+        if (debuggingHell)
+        {
+            
+        }
+        if (enemiesToLovers)
+        {
+
         }
     }
 

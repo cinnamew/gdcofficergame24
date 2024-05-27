@@ -6022,6 +6022,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5075972758587025765, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
+      propertyPath: spreadAngle
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075972758587025765, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
+      propertyPath: projectilesPerShot
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5797997060451683441, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6133,7 +6141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004097159716082541, guid: c4d71679b00bdd3479ae4d83647bc4df, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d71679b00bdd3479ae4d83647bc4df, type: 3}
@@ -6411,7 +6419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8831843088474068427, guid: 562ab4da02ca641e29c5f5bec60c91f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8831843088474068429, guid: 562ab4da02ca641e29c5f5bec60c91f4, type: 3}
       propertyPath: m_RootOrder
