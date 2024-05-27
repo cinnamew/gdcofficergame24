@@ -32,12 +32,12 @@ public class CharaPreviewImage : MonoBehaviour
         newImage = charaImages[currImage];
         currImage++;
         //if(oldImage.color == null) print("ur mom");   //when did i add this??? did i even add this??? this is not a me sentence
-        StartCoroutine(Hi());
         oldText.text = charas[0].getName();
         oldStats.text = charas[0].getStats();
         oldBio.text = charas[0].getBio();
         manager = GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>();
         oldNum.text = "x" + manager.hasCharacter(charas[0].getName());
+        StartCoroutine(Hi());
         //print(currImage);
     }
 
@@ -63,6 +63,7 @@ public class CharaPreviewImage : MonoBehaviour
             //change image
             oldText.text = newText.text;
             newText.text = charas[currImage].getName();
+            print("CAROUSEL old text: " + oldText.text + " || currImage: " + currImage);
 
             oldStats.text = newStats.text;
             newStats.text = charas[currImage].getStats();
@@ -101,6 +102,8 @@ public class CharaPreviewImage : MonoBehaviour
                 newStats.color = new Color(0,0,0,i);
                 oldBio.color = new Color(0,0,0,1-i);
                 newBio.color = new Color(0,0,0,i);
+                oldNum.color = new Color(0,0,0,1-i);
+                newNum.color = new Color(0,0,0,i);
 
                 if(changeImage) yield return null;
             }
@@ -108,7 +111,9 @@ public class CharaPreviewImage : MonoBehaviour
 
     public void nextOrPrevImage(bool next) {
         if(next) {
-            currImage++;
+            if(!ductTape) {
+                currImage++;
+            }else ductTape = false;
             if(currImage >= charaImages.Count) currImage = 0;
             changeToImage(currImage);
         }else {
@@ -130,17 +135,21 @@ public class CharaPreviewImage : MonoBehaviour
         newBio.color = new Color(0,0,0,1);
         oldStats.color = new Color(0,0,0,0);
         newStats.color = new Color(0,0,0,1);
+        oldNum.color = new Color(0,0,0,0);
+        newNum.color = new Color(0,0,0,1);
         
         oldText.text = charas[a].getName();
         charaImages[a].color = new Color(1, 1, 1, 1);
         oldImage = newImage;
         newImage = charaImages[a];
-        oldBio = newBio;
-        oldStats = newStats;
+        oldBio.text = newBio.text;
+        oldStats.text = newStats.text;
         newStats.text = charas[currImage].getStats();
         newBio.text = charas[currImage].getBio();
+        oldNum.text = newNum.text;
+        newNum.text = "x" + manager.hasCharacter(charas[currImage].getName());
 
-        //dumb.sprite = charaImages[a];
+        print("old text: " + oldText.text + " || currImage: " + currImage);
     }
 
     public void startImageChange() {
@@ -154,7 +163,11 @@ public class CharaPreviewImage : MonoBehaviour
     public void SwitchImageChangeStatus() {
         //print("swtich image ahcange cstatus");
         changeImage = !changeImage;
-        if(changeImage) startImageChange();
+        if(changeImage) {
+            currImage++;
+            newText.text = charas[currImage].getName();
+            startImageChange();
+        }
     }
 
     public bool GetImageChangeStatus() {

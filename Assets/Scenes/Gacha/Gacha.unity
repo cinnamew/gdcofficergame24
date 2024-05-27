@@ -2128,6 +2128,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 40
+  charaNames:
+  - arnav
+  - jolie
+  - vaishak
+  - lydia
+  - faye
+  - winfred
+  - rohan
+  - laurier
+  - jemi
 --- !u!4 &594549492
 Transform:
   m_ObjectHideFlags: 0
@@ -3650,7 +3660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x0
+  m_text: x4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 08e040da321544aa988e4ada0a42ebc5, type: 2}
   m_sharedMaterial: {fileID: -944491128316779951, guid: 08e040da321544aa988e4ada0a42ebc5, type: 2}
@@ -3853,7 +3863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Faye
+  m_text: Jolie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d5bd5e9257b4ee7b7e44bce3bb4dfa, type: 2}
   m_sharedMaterial: {fileID: 7985535392738559632, guid: f4d5bd5e9257b4ee7b7e44bce3bb4dfa, type: 2}
