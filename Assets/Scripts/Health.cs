@@ -121,7 +121,7 @@ public class Health : MonoBehaviour
         timeCrunch.UnapplyBuffs(statsManager);
     }
     public void HealHealth(int healVal) {
-        health += healVal;
+        health = Mathf.Min(health + healVal, maxHealth);
         if (slider != null)
         {
             slider.value = health;

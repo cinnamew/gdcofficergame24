@@ -27,6 +27,9 @@ public class UpgradeItem : ScriptableObject
     }
     public virtual void Reset(){
         currentUpgradeLvl = 1;
+        if (IsWeapon){
+            currentUpgradeLvl = 2;
+        }
     }
     public virtual void Upgrade() {
         //do stuff

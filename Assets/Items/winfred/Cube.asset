@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
   m_Name: Cube
   m_EditorClassIdentifier: 
-  currentUpgradeLvl: 1
-  maxUpgradeLvl: 0
+  currentUpgradeLvl: 2
+  maxUpgradeLvl: 4
   itemName: 
   description: 
   icon: {fileID: 0}
@@ -25,5 +25,5 @@ MonoBehaviour:
   HasteBuff: 0
   BuffIsTemporary: 0
   BuffTime: 0
-  IsWeapon: 0
+  IsWeapon: 1
   IsSkill: 0
