@@ -13,8 +13,6 @@ public class CharaPreviewImage : MonoBehaviour
     private Image oldImage;
     private Image newImage;
 
-    private bool ductTape = false;  //if we are waiting for next coroutine
-
     [SerializeField] TMP_Text oldText;
     [SerializeField] TMP_Text newText;
     [SerializeField] TMP_Text oldStats;
@@ -27,43 +25,30 @@ public class CharaPreviewImage : MonoBehaviour
     private Manager manager;
 
     [SerializeField] PauseCharas pauseButton;
+    private Coroutine myLovelyEnumerator;
 
-    void Start() {
+    void OnEnable() {
         newImage = charaImages[currImage];
-        currImage++;
         //if(oldImage.color == null) print("ur mom");   //when did i add this??? did i even add this??? this is not a me sentence
-        oldText.text = charas[0].getName();
-        oldStats.text = charas[0].getStats();
-        oldBio.text = charas[0].getBio();
-        manager = GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>();
-        oldNum.text = "x" + manager.hasCharacter(charas[0].getName());
-        StartCoroutine(Hi());
-        //print(currImage);
-    }
-
-    public void Reset() {
-        for(int i = 0; i < charaImages.Count; i++) {
-            Image temp = charaImages[i];
-            if(i == currImage) temp.color = new Color(1,1,1,1);
-            else temp.color = new Color(1,1,1,0);
-        }
-    }
-
-    public void StartHi() {
-        changeImage = true;
-        StartCoroutine(Hi());
+        oldText.text = charas[currImage].getName();
+        oldStats.text = charas[currImage].getStats();
+        oldBio.text = charas[currImage].getBio();
+        manager = FindObjectOfType<Manager>();
+        oldNum.text = "x" + manager.hasCharacter(charas[currImage].getName());
+        myLovelyEnumerator = StartCoroutine(Hi());
     }
 
     IEnumerator Hi() {
-        ductTape = false;
-        while(changeImage) {
-            if(currImage >= charaImages.Count) currImage = 0;
+        while (changeImage) {
+            currImage++;
+            if (currImage >= charaImages.Count) currImage = 0;
+            
             //print("current image: " + currImage);
 
             //change image
             oldText.text = newText.text;
             newText.text = charas[currImage].getName();
-            print("CAROUSEL old text: " + oldText.text + " || currImage: " + currImage);
+            //print("CAROUSEL old text: " + oldText.text + " || currImage: " + currImage);
 
             oldStats.text = newStats.text;
             newStats.text = charas[currImage].getStats();
@@ -76,22 +61,8 @@ public class CharaPreviewImage : MonoBehaviour
 
             oldImage = newImage;
             newImage = charaImages[currImage];
-            currImage++;
-            if(!changeImage) {
-                break;
-            }
-            StartCoroutine(Bye());
-
-            ductTape = true;
-            yield return new WaitForSeconds(3);
-        }
-        ductTape = false;
-        yield return null;
-    }
-
-    IEnumerator Bye() {
-        //print("fading");
-        for (float i = 0; i <= 1; i += Time.deltaTime)
+            
+            for (float i = 0; i <= 1; i += Time.deltaTime)
             {
                 newImage.color = new Color(1, 1, 1, i);
                 newText.color = new Color(1, 1, 1, i);
@@ -105,27 +76,49 @@ public class CharaPreviewImage : MonoBehaviour
                 oldNum.color = new Color(0,0,0,1-i);
                 newNum.color = new Color(0,0,0,i);
 
-                if(changeImage) yield return null;
+                if (changeImage) yield return null;
             }
+
+            newImage.color = new Color(1, 1, 1, 1);
+            oldImage.color = new Color(1, 1, 1, 0);
+            oldText.color = new Color(1,1,1,0);
+            newText.color = new Color(1,1,1,1);
+
+            oldBio.color = new Color(0,0,0,0);
+            newBio.color = new Color(0,0,0,1);
+            oldStats.color = new Color(0,0,0,0);
+            newStats.color = new Color(0,0,0,1);
+            oldNum.color = new Color(0,0,0,0);
+            newNum.color = new Color(0,0,0,1);
+
+            float t = 0f;
+            while (t < 3f && changeImage) {
+                t += Time.deltaTime;
+                yield return null;
+            }
+
+            if(!changeImage) {
+                break;
+            }
+        }
+        myLovelyEnumerator = null;
+        yield return null;
     }
 
     public void nextOrPrevImage(bool next) {
         if(next) {
-            if(!ductTape) {
-                currImage++;
-            }else ductTape = false;
+            currImage++;
             if(currImage >= charaImages.Count) currImage = 0;
-            changeToImage(currImage);
         }else {
             currImage--;
             if(currImage < 0) currImage = charaImages.Count - 1;
-            changeToImage(currImage);
         }
+        changeImage = false;
+        changeToImage(currImage);
         pauseButton.SwitchToPlay();
     }
 
     public void changeToImage(int a) {
-        changeImage = false;
         newImage.color = new Color(1, 1, 1, 0);
         oldImage.color = new Color(1, 1, 1, 0);
         oldText.color = new Color(1,1,1,1);
@@ -149,23 +142,20 @@ public class CharaPreviewImage : MonoBehaviour
         oldNum.text = newNum.text;
         newNum.text = "x" + manager.hasCharacter(charas[currImage].getName());
 
-        print("old text: " + oldText.text + " || currImage: " + currImage);
+        //print("old text: " + oldText.text + " || currImage: " + currImage);
     }
 
     public void startImageChange() {
-        //if(changeImage) return;
         changeImage = true;
-        //StopCoroutine(Hi());
-        if(!ductTape) StartCoroutine(Hi());
-        //print("starting coroutine from FUNCTION");
+        if(myLovelyEnumerator == null) myLovelyEnumerator = StartCoroutine(Hi());
     }
 
     public void SwitchImageChangeStatus() {
         //print("swtich image ahcange cstatus");
         changeImage = !changeImage;
         if(changeImage) {
-            currImage++;
-            newText.text = charas[currImage].getName();
+            //currImage++;
+            //newText.text = charas[currImage].getName();
             startImageChange();
         }
     }

@@ -26,3 +26,4 @@ MonoBehaviour:
   BuffIsTemporary: 0
   BuffTime: 0
   IsWeapon: 0
+  IsSkill: 1

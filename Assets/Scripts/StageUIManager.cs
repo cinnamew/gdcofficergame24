@@ -68,7 +68,11 @@ public class StageUIManager : MonoBehaviour
         } else {
             upgradeItems[option].Upgrade();
         }
-        player.GetComponent<LevelXPManager>().Upgrade(upgradeItems[option]);
+        if (upgradeItems[option].IsWeapon){
+            player.GetComponent<WeaponManager>().Upgrade();
+        } else if (upgradeItems[option].IsSkill){
+            player.GetComponent<SkillManager>().Upgrade(upgradeItems[option]);
+        }
         levelPanel.SetActive(false);
         Time.timeScale = 1;
     }

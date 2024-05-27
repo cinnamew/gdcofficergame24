@@ -9,13 +9,13 @@ public class PullButton : MonoBehaviour
     [SerializeField] private List<Character> allCharas;
     private float alphaThreshold = 0.1f;
 
-    private Manager manager;
 
 
     //private int[] pullWeights = {50, 35, 15};
     private Button button;
     //public int rand;
     public GameObject pulledChara;
+    [SerializeField] List<GameObject> showAfterDone = new List<GameObject>();
 
     [SerializeField] GameObject thingToHide;
 
@@ -24,12 +24,11 @@ public class PullButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>();
         this.GetComponent<Image>().alphaHitTestMinimumThreshold = alphaThreshold;
         //button = GetComponent<Button>();
         //button.onClick.AddListener(Pull);
 
-        coinsText.text = manager.getCoins() + "";
+        coinsText.text = Manager.Obj.getCoins() + "";
 
     }
 
@@ -40,7 +39,7 @@ public class PullButton : MonoBehaviour
     }
 
     public void Pull() {
-        int coins = manager.getCoins();
+        int coins = Manager.Obj.getCoins();
 
         //print(coins);
 
@@ -53,17 +52,20 @@ public class PullButton : MonoBehaviour
         
 
             Character hot = allCharas[Random.Range(0,allCharas.Count)];  //the chara u pulled
-            
 
             pulledChara.GetComponent<SpriteRenderer>().sprite = hot.sprite;
             pulledChara.SetActive(true);
+            foreach(GameObject g in showAfterDone) {
+                g.SetActive(true);
+            }
 
             print("u got the lovely " + hot.name);
+            Manager.Obj.addCharacter(hot.name);
 
             pulledChara.GetComponent<PulledChara>().WaitForMouseClick();
 
-            GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>().addToCoins(-20);
-        coinsText.text = manager.getCoins() + "";
+            Manager.Obj.addToCoins(-20);
+        coinsText.text = Manager.Obj.getCoins() + "";
     }
 
 }

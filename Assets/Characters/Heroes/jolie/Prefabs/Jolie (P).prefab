@@ -884,6 +884,8 @@ GameObject:
   - component: {fileID: 3450645011733951292}
   - component: {fileID: -1775699503232433979}
   - component: {fileID: 7846171584381318353}
+  - component: {fileID: 5772453841643937636}
+  - component: {fileID: 4906227280940908828}
   m_Layer: 3
   m_Name: Jolie (P)
   m_TagString: Player
@@ -1211,7 +1213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 0
-  levelText: {fileID: 0}
   exclusiveUpgrades:
   - {fileID: 11400000, guid: 7d7066073c4e91e45baa56d155c4b52c, type: 2}
   - {fileID: 11400000, guid: db6e6b142f4d3b2498bc4a4d358a8988, type: 2}
@@ -1230,3 +1231,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeItems: []
+--- !u!114 &5772453841643937636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129131272932307200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23090d156af418d42b0803e12dbcb5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4906227280940908828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129131272932307200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -17,3 +17,13 @@ MonoBehaviour:
   itemName: Debugging Hell
   description: 'for every enemy defeated, heal x% HP '
   icon: {fileID: 0}
+  MaxHpBuff: 0
+  AtkBuff: 0
+  SpdBuff: 0
+  CrtBuff: 0
+  PurBuff: 0
+  HasteBuff: 0
+  BuffIsTemporary: 0
+  BuffTime: 0
+  IsWeapon: 0
+  IsSkill: 1
