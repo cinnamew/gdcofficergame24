@@ -14,6 +14,7 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
     private int curCharaIndex = 3; //jolie
     [SerializeField] Image charaImage;
     [SerializeField] TMP_Text charaName;
+    [SerializeField] GameObject coverUp;
 
     [Header("Choose Stage (only one stage for now)")]
     private int curStageIndex = 0;
@@ -22,7 +23,7 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
     {
         characterNames.Add("Arnav");
         characterNames.Add("Faye");
-        characterNames.Add("Jemian");
+        characterNames.Add("Jemi");
         characterNames.Add("Jolie");
         characterNames.Add("Laurier");
         characterNames.Add("Lydia");
@@ -45,6 +46,10 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
         charaImage.sprite = characterImages[curCharaIndex];
         charaName.text = characterNames[curCharaIndex];
         PlayerPrefs.SetString("SelectedCharacter", charaName.text + " (P)");
+
+        if(Manager.Obj.hasCharacter(charaName.text) == 0) {
+            coverUp.SetActive(true);
+        }else coverUp.SetActive(false);
     }
     public void chooseCharacterRight()
     {
@@ -53,6 +58,10 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
         charaImage.sprite = characterImages[curCharaIndex]; //probably can make method for this but whatever
         charaName.text = characterNames[curCharaIndex];
         PlayerPrefs.SetString("SelectedCharacter", charaName.text + " (P)");
+
+        if(Manager.Obj.hasCharacter(charaName.text) == 0) {
+            coverUp.SetActive(true);
+        }else coverUp.SetActive(false);
     }
     public void chooseStageLeft()
     {
@@ -65,6 +74,10 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
     public void PlayStage()
     {
         //tell the next scene to get the chosen stage and character
+        if(Manager.Obj.hasCharacter(charaName.text) == 0) {
+            MelonLogger.Log("Character not unlocked!\nGacha for more...", LogType.Error);
+            return;
+        }
         SceneManager.LoadScene(3); //scene name: Stage 1
     }
     public void goBackToStartMenu()
