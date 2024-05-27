@@ -10,6 +10,9 @@ public class SkillManager : MonoBehaviour
     [Header("Faye")]
     private Faye_Skill_SocialAnxiety spearCircle;
 
+    [Header("Jemian")]
+    private Jemi_Skill_Berserk bulletRain;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,7 +87,25 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "Berserk")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                bulletRain = gameObject.GetComponent<Jemi_Skill_Berserk>();
+                bulletRain.unlockedAbility = true;
+                bulletRain.setProjectileDamage(10);
+                bulletRain.setCooldown(10);
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                bulletRain.setProjectileDamage(12);
+                bulletRain.setCooldown(8);
+                bulletRain.setNumProjectiles(9);
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                bulletRain.setProjectileDamage(15);
+                bulletRain.setCooldown(6);
+                bulletRain.setNumProjectiles(15);
+            }
         }
 
         //JOLIE
