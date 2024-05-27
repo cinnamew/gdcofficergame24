@@ -18,6 +18,7 @@ public class UpgradeItem : ScriptableObject
     public float BuffTime;
 
     public bool IsWeapon;
+    public bool IsSkill;
     //UPGRADES
     //Weapon: size/area, damage, hit rate, knockback, number of projectiles    
 

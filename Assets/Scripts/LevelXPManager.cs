@@ -33,6 +33,12 @@ public class LevelXPManager : MonoBehaviour
             } else if (gameObject.name.Contains("Jemi")){
                 gameObject.GetComponent<OrbAttack>().upgradeOrbs();
             }
+        } else{
+            if (gameObject.name.Contains("Jolie")){
+                if (upgradeItem.itemName == "Social Anxiety"){
+                    
+                }
+            }
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs; // Array of enemy prefabs to choose from
+    public GameObject[] bossPrefabs;
     public float minSpawnInterval = 10f; // Minimum time between spawns
     public float maxSpawnInterval = 15f; // Maximum time between spawns
     public float ringRadius = 5f; // Radius of the ring
@@ -26,7 +27,19 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnEnemiesGeneral(generalEnemies, 8, 20f, 20f));
         GameObject[] flockEnemies = {enemyPrefabs[2]};
         StartCoroutine(SpawnEnemyFlocks(generalEnemies, 4, 30f));
+        StartCoroutine(SpawnStage1Bosses());
 
+    }
+    private IEnumerator SpawnStage1Bosses(){
+        yield return new WaitForSeconds(20f);
+        SpawnBoss(bossPrefabs[0]);
+        yield return new WaitForSeconds(30f);
+        SpawnBoss(bossPrefabs[0]);
+    }
+
+    private void SpawnBoss(GameObject boss){
+        Vector2 spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * 10f;
+        Instantiate(boss, spawnPosition, Quaternion.identity);
     }
 
     private IEnumerator SpawnEnemyFlocks(GameObject[] enemies,  int numWaves, float cooldown){
@@ -44,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
             int enemyIndex = Mathf.Min((int)(enemies.Length*i/(numWaves)), enemies.Length - 1);
             for (int j = 0; j < numSpawns; j++){
                 Vector2 spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * range;
-                Collider2D collider = Physics2D.OverlapCircle(spawnPosition, 0.5f, WallLayer);
+                Collider2D collider = Physics2D.OverlapCircle(spawnPosition, 0.5f, WallLayer); //need to make it so that they can go through walls but player cant??
                 while (collider != null){
                     spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * range;
                     collider = Physics2D.OverlapCircle(spawnPosition, 0.5f, WallLayer);
