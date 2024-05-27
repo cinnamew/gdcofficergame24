@@ -67,17 +67,17 @@ public class StageUIManager : MonoBehaviour
 
     public void SelectOption(int option){
         player.GetComponent<UpgradeInventory>().AddItem(upgradeItems[option]);
-        if (upgradeItems[option].maxUpgradeLvl != -1 && upgradeItems[option].currentUpgradeLvl >= upgradeItems[option].maxUpgradeLvl){
-            upgrades.Remove(upgradeItems[option]);
-        } else {
-            upgradeItems[option].Upgrade();
-        }
         if (upgradeItems[option].IsWeapon){
             player.GetComponent<WeaponManager>().Upgrade(upgradeItems[option]);
         } else if (upgradeItems[option].IsSkill){
             player.GetComponent<SkillManager>().Upgrade(upgradeItems[option]);
         } else if (upgradeItems[option].IsStat){
             upgradeItems[option].ApplyBuffs(statsManager);
+        }
+        if (upgradeItems[option].maxUpgradeLvl != -1 && upgradeItems[option].currentUpgradeLvl >= upgradeItems[option].maxUpgradeLvl){
+            upgrades.Remove(upgradeItems[option]);
+        } else {
+            upgradeItems[option].Upgrade();
         }
         levelPanel.SetActive(false);
         pauseButton.SetActive(true);

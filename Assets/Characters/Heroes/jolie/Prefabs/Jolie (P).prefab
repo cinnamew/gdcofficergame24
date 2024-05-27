@@ -947,6 +947,7 @@ GameObject:
   - component: {fileID: 7846171584381318353}
   - component: {fileID: 5772453841643937636}
   - component: {fileID: 4906227280940908828}
+  - component: {fileID: 4512396352783661307}
   m_Layer: 3
   m_Name: Jolie (P)
   m_TagString: Player
@@ -1321,3 +1322,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4512396352783661307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129131272932307200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d661c300182054fb8c7898a85ec6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAttack: 1
+  hitboxes:
+  - {fileID: 4921836229232098330, guid: 185d2af4419811d4f883ce3ea2a5e9c0, type: 3}
+  isProjectile: 1
+  baseProjectileCooldown: 3
+  lifeSpan: 3
+  projectilePrefab: {fileID: 578613318849874961, guid: 185d2af4419811d4f883ce3ea2a5e9c0, type: 3}
+  projectileSpeed: 5
+  projectileSpawnpoint: {fileID: 9129131272559932211}
+  rotateProjectileToAimDir: 1
+  spreadAngle: 0
+  spreadRadius: 0
+  projectilesPerShot: 1
