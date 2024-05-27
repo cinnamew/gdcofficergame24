@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     int health;
     [SerializeField] ParticleSystem deathSmoke;
     [SerializeField] GameObject[] XPOrbs;
+    [SerializeField] GameObject coin;
     Vector3 victimVector3;
     AnimController animController;
     [SerializeField] GameObject dmgIndicator;
@@ -23,9 +24,12 @@ public class Health : MonoBehaviour
     private bool debuggingHell;
     private bool enemiesToLovers;
     private bool empathy;
+
+    [SerializeField] bool isBoss = false;
     
     void Start()
     {
+        //if(Random.Range(0,9) == 5) isBoss = true;
         //victimVector3 = GetComponent<Vector3>(); commented out bc it was causing an error
         animController = GetComponent<AnimController>();
         if (gameObject.tag == "Player"){
@@ -89,6 +93,16 @@ public class Health : MonoBehaviour
                 GameObject randomXPOrb = XPOrbs[Random.Range(0, XPOrbs.Length)];
                 Instantiate(randomXPOrb, transform.position, Quaternion.identity);
                 Debug.Log("Upgraded Orb");
+
+                //coin spawning!
+                if(Random.Range(0,5) == 1) {
+                    Instantiate(coin, transform.position, Quaternion.identity);
+                }
+                if(isBoss) {
+                    for(int i = 0; i < 15; i++) {
+                        Instantiate(coin, new Vector3(transform.position.x + 0.1f * Random.Range(-i, 20), transform.position.y + 0.1f * Random.Range(-i, 20), 1), Quaternion.identity);
+                    }
+                }
             }
             gameObject.SetActive(false);
             Destroy(gameObject, 0.5f); //DONT DESTROY PLAYER

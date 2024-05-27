@@ -15,10 +15,8 @@ public class PauseCharas : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SwitchSceneYaay() {
+        Manager.Obj.goToPreviousMenu();
     }
 
     public void PausePlayChara() {

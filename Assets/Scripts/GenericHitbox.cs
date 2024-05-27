@@ -68,7 +68,7 @@ public class GenericHitbox : MonoBehaviour
 
     [ContextMenu("Reset the Hitbox")]
      public void RefreshHitbox() {
-        Debug.Log("Refreshing the hitbox");
+        //Debug.Log("Refreshing the hitbox");
         triggerList.Clear();
         GetComponent<Collider2D>().enabled = false;
         //Debug.Log(triggerList.Count);

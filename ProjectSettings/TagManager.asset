@@ -12,6 +12,7 @@ TagManager:
   - manager
   - xp
   - Wall
+  - coin
   layers:
   - Default
   - TransparentFX

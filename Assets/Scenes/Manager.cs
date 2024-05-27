@@ -46,6 +46,7 @@ public class Manager : Singleton<Manager>
     public void addToCoins(int a) {
         coins += a;
         PlayerPrefs.SetInt("coins", coins);
+        print("coins: " + coins);
     }
 
     public void addCharacter(string s) {
