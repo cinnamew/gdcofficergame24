@@ -26,7 +26,7 @@ public class Arnav_Skill_Lightning : MonoBehaviour
     private void Update()
     {
         minProjectileCooldown = baseProjectileCooldown / (1 + statsManager.Haste / 100f);
-        if (Time.time - timeOfLastAttack >= minProjectileCooldown) //if it's due time to shoot your shot
+        if (unlockedAbility && Time.time - timeOfLastAttack >= minProjectileCooldown) //if it's due time to shoot your shot
         {
             timeOfLastAttack = Time.time;
             StartCoroutine(lightningCrossBeam());
@@ -48,7 +48,10 @@ public class Arnav_Skill_Lightning : MonoBehaviour
             //shock every enemy that it touches (it's exactly 2:22 am ;-; and im not sure the best way to do enemy status)
         }
         yield return new WaitForSeconds(lifeSpan);
-        lightning.GetComponent<GenericHitbox>().RemoveHitbox();
+        foreach (HeroHitbox h in hitboxes)
+        {
+            h.RemoveHitbox();
+        }
     }
     public float getCooldown()
     {

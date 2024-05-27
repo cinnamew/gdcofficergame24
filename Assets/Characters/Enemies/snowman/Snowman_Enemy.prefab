@@ -150,13 +150,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  slider: {fileID: 0}
   deathSmoke: {fileID: 387920488840649347, guid: 459c3f3c4fe654a32a68de0f3e2fd9ff, type: 3}
   XPOrbs:
   - {fileID: 8863510608423255254, guid: c7c9e2acc34b8bf468c4f6fb6a8622fd, type: 3}
   - {fileID: 5941237413084065096, guid: b5dbe6dc9eae62e4da066a0d1f8385b7, type: 3}
   dmgIndicator: {fileID: 8959692208321900696, guid: e7976da48eb324f09823593ca0576870, type: 3}
-  playerStats: {fileID: 0}
 --- !u!114 &7509072404203041913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 10
-  moveSpeed: 3
+  moveSpeed: 2.5
   enableAim: 1
   noMoveRange: 0.1
   targetTag: Player
