@@ -21,6 +21,10 @@ public class CharaPreviewImage : MonoBehaviour
     [SerializeField] TMP_Text newStats;
     [SerializeField] TMP_Text oldBio;
     [SerializeField] TMP_Text newBio;
+    [SerializeField] TMP_Text oldNum;
+    [SerializeField] TMP_Text newNum;
+
+    private Manager manager;
 
     [SerializeField] PauseCharas pauseButton;
 
@@ -32,6 +36,8 @@ public class CharaPreviewImage : MonoBehaviour
         oldText.text = charas[0].getName();
         oldStats.text = charas[0].getStats();
         oldBio.text = charas[0].getBio();
+        manager = GameObject.FindGameObjectWithTag("manager").gameObject.GetComponent<Manager>();
+        oldNum.text = "x" + manager.hasCharacter(charas[0].getName());
         //print(currImage);
     }
 
@@ -63,6 +69,9 @@ public class CharaPreviewImage : MonoBehaviour
             
             oldBio.text = newBio.text;
             newBio.text = charas[currImage].getBio();
+
+            oldNum.text = newNum.text;
+            newNum.text = "x" + manager.hasCharacter(charas[currImage].getName());
 
             oldImage = newImage;
             newImage = charaImages[currImage];
