@@ -135,16 +135,18 @@ public class CharaPreviewImage : MonoBehaviour
         newBio.color = new Color(0,0,0,1);
         oldStats.color = new Color(0,0,0,0);
         newStats.color = new Color(0,0,0,1);
+        oldNum.color = new Color(0,0,0,0);
+        newNum.color = new Color(0,0,0,1);
         
         oldText.text = charas[a].getName();
         charaImages[a].color = new Color(1, 1, 1, 1);
         oldImage = newImage;
         newImage = charaImages[a];
-        oldBio = newBio;
-        oldStats = newStats;
+        oldBio.text = newBio.text;
+        oldStats.text = newStats.text;
         newStats.text = charas[currImage].getStats();
         newBio.text = charas[currImage].getBio();
-        oldNum = newNum;
+        oldNum.text = newNum.text;
         newNum.text = "x" + manager.hasCharacter(charas[currImage].getName());
 
         print("old text: " + oldText.text + " || currImage: " + currImage);
@@ -161,7 +163,11 @@ public class CharaPreviewImage : MonoBehaviour
     public void SwitchImageChangeStatus() {
         //print("swtich image ahcange cstatus");
         changeImage = !changeImage;
-        if(changeImage) startImageChange();
+        if(changeImage) {
+            currImage++;
+            newText.text = charas[currImage].getName();
+            startImageChange();
+        }
     }
 
     public bool GetImageChangeStatus() {
