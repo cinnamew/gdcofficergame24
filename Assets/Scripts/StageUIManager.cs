@@ -73,6 +73,8 @@ public class StageUIManager : MonoBehaviour
             player.GetComponent<SkillManager>().Upgrade(upgradeItems[option]);
         } else if (upgradeItems[option].IsStat){
             upgradeItems[option].ApplyBuffs(statsManager);
+        } else {
+            player.GetComponent<GeneralUpgradesManager>().Upgrade(upgradeItems[option]);
         }
         if (upgradeItems[option].maxUpgradeLvl != -1 && upgradeItems[option].currentUpgradeLvl >= upgradeItems[option].maxUpgradeLvl){
             upgrades.Remove(upgradeItems[option]);
