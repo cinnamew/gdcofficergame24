@@ -70,6 +70,6 @@ public class MelonLogger : MonoBehaviour
         tempLog.text = message;
         tempLog.color = LogTypeToColor(logType);
         
-        _instance.DoAfter(predicate, () => Destroy(tempLog.gameObject));
+        //_instance.DoAfter(predicate, () => Destroy(tempLog.gameObject));
     }
 }
