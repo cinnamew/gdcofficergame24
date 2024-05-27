@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GachaCharacter : MonoBehaviour
 {
-    [SerializeField] Manager manager;
     [SerializeField] Image image;
     [SerializeField] string name;
 
@@ -14,11 +13,9 @@ public class GachaCharacter : MonoBehaviour
     [SerializeField] float attack;
     [SerializeField] float crit;
     [SerializeField] int spd;
-
-    [SerializeField] int level = 0;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         image = GetComponent<Image>();
     }
@@ -31,7 +28,7 @@ public class GachaCharacter : MonoBehaviour
 
     public string getStats() {
         string temp = "";
-        if(level == 0) {
+        if(Manager.Obj.hasCharacter(name) == 0) {
             temp = "HP: ?\nATK: ?\nCRT: ?\nSPD: ?";
         }else {
             temp = "HP: " + hp + " -> ?" + "\nATK: " + attack + " -> ?" + "\nCRT: " + crit + " -> ?" + "\nSPD: " + spd + " -> ?";

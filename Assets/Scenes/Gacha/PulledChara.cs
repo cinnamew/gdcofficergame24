@@ -14,7 +14,7 @@ public class PulledChara : MonoBehaviour
     }
 
     void OnEnable() {
-        if(charaPreviews.GetImageChangeStatus()) charaPreviews.Reset();
+        //if(charaPreviews.GetImageChangeStatus()) charaPreviews.Reset();
     }
     
     public void HideObjects() {
@@ -35,7 +35,7 @@ public class PulledChara : MonoBehaviour
 
                  foreach(GameObject g in showAfterDone) {
                     g.SetActive(true);
-                    if(charaPreviews != null) charaPreviews.StartHi();
+                    if(charaPreviews != null) charaPreviews.startImageChange();
                 }
             }
             yield return null;
