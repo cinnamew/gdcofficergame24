@@ -89,7 +89,7 @@ public class StageUIManager : MonoBehaviour
         Time.timeScale = 0;
 
     }
-    public void ClosePauseMenu()
+    public void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
@@ -99,5 +99,14 @@ public class StageUIManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(0); //scene name: StartScreen
     }
-
+    public void replayStage()
+    {
+        Time.timeScale = 1; //assuming we pause when stage complete
+        SceneManager.LoadScene(3); //this scene, Stage 1
+    }
+    public void goToCharacterSelect()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
+    }
 }
