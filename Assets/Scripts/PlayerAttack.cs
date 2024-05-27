@@ -7,7 +7,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] bool autoAttack;
     [SerializeField] private GenericHitbox[] hitboxes; //ignore for projectiles because I'm too lazy to do object pooling <3
     [SerializeField] bool isProjectile;
-    [SerializeField] float minProjectileCooldown;
+    private float minProjectileCooldown;
+    [SerializeField] float baseProjectileCooldown;
     [SerializeField] float lifeSpan;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed;
@@ -20,9 +21,17 @@ public class PlayerAttack : MonoBehaviour
     private float timeAttacking; //same reason
     private float timeOfLastAttack; //for manual attacks
     private Vector2 aimDir;
+    private StatsManager statsManager;
+    private void Start(){
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
+    }
 
+    public void SetBaseProjectileCooldown(float cooldown){
+        baseProjectileCooldown = cooldown;
+    }
     private void Update()
     {
+        minProjectileCooldown = baseProjectileCooldown/(1+statsManager.Haste/100f);
         if (autoAttack)
         {
             if (isAttacking)
