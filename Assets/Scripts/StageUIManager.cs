@@ -24,11 +24,13 @@ public class StageUIManager : MonoBehaviour
     [SerializeField] private Slider xpSlider;
     [SerializeField] private TMP_Text levelText;
     [SerializeField] GameObject pauseButton;
+    private StatsManager statsManager;
     
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         Debug.Log("apsoidjfasijdfjaspofjasoipdfj" + player);
         exclusiveUpgrades = player.GetComponent<LevelXPManager>().GetExclusiveUpgrades(); 
         upgrades.AddRange(exclusiveUpgrades);
@@ -65,7 +67,7 @@ public class StageUIManager : MonoBehaviour
 
     public void SelectOption(int option){
         player.GetComponent<UpgradeInventory>().AddItem(upgradeItems[option]);
-        if (upgradeItems[option].currentUpgradeLvl >= upgradeItems[option].maxUpgradeLvl){
+        if (upgradeItems[option].maxUpgradeLvl != -1 && upgradeItems[option].currentUpgradeLvl >= upgradeItems[option].maxUpgradeLvl){
             upgrades.Remove(upgradeItems[option]);
         } else {
             upgradeItems[option].Upgrade();
@@ -74,6 +76,8 @@ public class StageUIManager : MonoBehaviour
             player.GetComponent<WeaponManager>().Upgrade(upgradeItems[option]);
         } else if (upgradeItems[option].IsSkill){
             player.GetComponent<SkillManager>().Upgrade(upgradeItems[option]);
+        } else if (upgradeItems[option].IsStat){
+            upgradeItems[option].ApplyBuffs(statsManager);
         }
         levelPanel.SetActive(false);
         pauseButton.SetActive(true);

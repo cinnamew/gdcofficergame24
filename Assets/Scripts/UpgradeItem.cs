@@ -19,6 +19,7 @@ public class UpgradeItem : ScriptableObject
 
     public bool IsWeapon;
     public bool IsSkill;
+    public bool IsStat;
     //UPGRADES
     //Weapon: size/area, damage, hit rate, knockback, number of projectiles    
 

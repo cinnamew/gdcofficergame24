@@ -250,12 +250,15 @@ MonoBehaviour:
   hitboxes:
   - {fileID: 3510352132849559909, guid: 6efbe9d14d3994a889d6b181c2e2ce3e, type: 3}
   isProjectile: 1
-  minProjectileCooldown: 3
+  baseProjectileCooldown: 0
   lifeSpan: 4
   projectilePrefab: {fileID: 3510352132849559931, guid: 6efbe9d14d3994a889d6b181c2e2ce3e, type: 3}
   projectileSpeed: 8
   projectileSpawnpoint: {fileID: 5004097161113702750}
   rotateProjectileToAimDir: 1
+  spreadAngle: 0
+  spreadRadius: 0
+  projectilesPerShot: 1
 --- !u!1 &5004097160711090067
 GameObject:
   m_ObjectHideFlags: 0
