@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("STARARRRTTAQTATATATT");
         playerTransform = GameObject.FindWithTag("Player").transform;
         SpawnStage1();
         // StartCoroutine(SpawnEnemiesRoutine());

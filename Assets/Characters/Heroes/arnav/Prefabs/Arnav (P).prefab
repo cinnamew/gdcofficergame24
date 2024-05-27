@@ -485,7 +485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9025393956351376697
 Transform:
   m_ObjectHideFlags: 0
@@ -743,7 +743,6 @@ MonoBehaviour:
   hitboxes:
   - {fileID: 9217585822902271144, guid: 900bcc04a03ba415598eded2d21108cf, type: 3}
   isProjectile: 1
-  minProjectileCooldown: 1
   baseProjectileCooldown: 1
   lifeSpan: 2
   projectilePrefab: {fileID: 7709561240856740911, guid: 900bcc04a03ba415598eded2d21108cf, type: 3}

@@ -21,6 +21,7 @@ public class CharacterManager : MonoBehaviour
         if (!string.IsNullOrEmpty(charaString)) 
         {
             GameObject charaObject = getCharaByName(charaString);
+            Debug.Log("NULL??? " + (charaObject == null));
             if (charaObject != null) 
             {
                 GameObject playerInScene = Instantiate(charaObject, spawnPos, Quaternion.identity);
