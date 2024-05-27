@@ -7,6 +7,9 @@ public class SkillManager : MonoBehaviour
     [Header("Arnav")]
     private Arnav_Skill_Lightning lightning;
 
+    [Header("Faye")]
+    private Faye_Skill_SocialAnxiety spearCircle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,6 @@ public class SkillManager : MonoBehaviour
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
-                //first give the player the ability, set up cd and dmg
                 lightning = gameObject.GetComponent<Arnav_Skill_Lightning>();
                 lightning.unlockedAbility = true;
                 lightning.setDamage(30);
@@ -46,13 +48,20 @@ public class SkillManager : MonoBehaviour
         //FAYE
         if (upgrade.itemName == "Social Anxiety"){ //duplicate for other skills
             if (upgrade.currentUpgradeLvl == 1){
-                //stuff here
+                spearCircle = gameObject.GetComponent<Faye_Skill_SocialAnxiety>();
+                spearCircle.unlockedAbility = true;
+                spearCircle.setDamage(30);
+                spearCircle.setCooldown(10);
             }
             if (upgrade.currentUpgradeLvl == 2){
-                //stuff here
+                spearCircle.setDamage(35);
+                spearCircle.setCooldown(8);
+                spearCircle.gameObject.transform.localScale = new Vector2(1.25f, 1.25f);
             }
             if (upgrade.currentUpgradeLvl == 3){
-                //stuff here
+                spearCircle.setDamage(40);
+                spearCircle.setCooldown(6);
+                spearCircle.gameObject.transform.localScale = new Vector2(1.5f, 1.5f);
             }
         }
         else if (upgrade.itemName == "Time Crunch")

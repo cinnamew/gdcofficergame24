@@ -70,9 +70,9 @@ public class GenericHitbox : MonoBehaviour
      public void RefreshHitbox() {
         Debug.Log("Refreshing the hitbox");
         triggerList.Clear();
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         //Debug.Log(triggerList.Count);
-        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
         Rigidbody2D rb2d = GetComponentInParent<Rigidbody2D>();
         if(rb2d == null) rb2d = GetComponent<Rigidbody2D>();
         if(rb2d != null) rb2d.WakeUp();//https://forum.unity.com/threads/reenabling-disabled-gameobject-does-not-call-ontriggerenter.765551/ last comment reccomends this as a fix
@@ -83,7 +83,7 @@ public class GenericHitbox : MonoBehaviour
     public void EnableHitbox()
     {
         isEnabled = true;
-        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
         GetComponentInParent<Rigidbody2D>().WakeUp(); //https://forum.unity.com/threads/reenabling-disabled-gameobject-does-not-call-ontriggerenter.765551/ last comment reccomends this as a fix
         //edge case: If the hitbox does not move, refreshing does not work.
         currCooldown = DetermineCooldown();
@@ -93,7 +93,7 @@ public class GenericHitbox : MonoBehaviour
     {
         isEnabled = false;
         triggerList.Clear();
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
     }
 
     public void RemoveHitbox()
@@ -103,7 +103,7 @@ public class GenericHitbox : MonoBehaviour
 
     // IEnumerator EnableHitBox(float waitTime) { //for debugging
     //     yield return new WaitForSeconds(waitTime);
-    //     GetComponent<BoxCollider2D>().enabled = true;
+    //     GetComponent<Collider2D>().enabled = true;
     // }
 
     void ApplyStatusEffects(Collider2D target) {

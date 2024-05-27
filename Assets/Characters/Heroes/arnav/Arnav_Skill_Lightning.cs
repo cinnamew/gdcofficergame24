@@ -35,7 +35,7 @@ public class Arnav_Skill_Lightning : MonoBehaviour
 
     private IEnumerator lightningCrossBeam() 
     {
-        GameObject lightning = Instantiate(lightningCrossBeam_prefab, transform.position, Quaternion.identity); ;
+        GameObject lightning = Instantiate(lightningCrossBeam_prefab, transform);
         HeroHitbox[] hitboxes = lightning.GetComponentsInChildren<HeroHitbox>();
         Collider2D[] colliders = lightning.GetComponentsInChildren<Collider2D>();
         foreach(HeroHitbox h in hitboxes)
@@ -52,6 +52,7 @@ public class Arnav_Skill_Lightning : MonoBehaviour
         {
             h.RemoveHitbox();
         }
+        Destroy(lightning);
     }
     public float getCooldown()
     {

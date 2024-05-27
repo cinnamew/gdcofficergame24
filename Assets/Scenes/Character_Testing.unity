@@ -5491,10 +5491,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797997060451683447, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
+--- !u!1 &1374922995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5797997060451683447, guid: 7d881552c831e8e408b6504c3fe2caab, type: 3}
+  m_PrefabInstance: {fileID: 1374922994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1374922996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374922995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ab83c53d5914a439755c48e7edf3a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  projectileSpeed: 0
+  projectileLifeSpan: 0
+  numProjectilesToSpawn: 0
 --- !u!1001 &1421242036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5683,10 +5704,6 @@ PrefabInstance:
     - target: {fileID: 5322209796812628895, guid: e5b44642287153140a07f6a63cca25ef, type: 3}
       propertyPath: m_Name
       value: Faye (P)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5322209796812628895, guid: e5b44642287153140a07f6a63cca25ef, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b44642287153140a07f6a63cca25ef, type: 3}
