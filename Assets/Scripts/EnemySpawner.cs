@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        playerTransform = GameObject.FindWithTag("Player").transform;
         SpawnStage1();
         // StartCoroutine(SpawnEnemiesRoutine());
         // StartCoroutine(FormationSpawnRoutine());

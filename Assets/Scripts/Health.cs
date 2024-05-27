@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     //## test
     
     [SerializeField] private int maxHealth = 100;
-    [SerializeField] Slider slider;
+    private Slider slider;
     int health;
     [SerializeField] ParticleSystem deathSmoke;
     [SerializeField] GameObject[] XPOrbs;
@@ -28,6 +28,7 @@ public class Health : MonoBehaviour
         if (gameObject.tag == "Player"){
             statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
             maxHealth = statsManager.MaxHp;
+            slider = GameObject.Find("Canvas").GetComponent<StageUIManager>().GetHealthSlider();
         }
         health = maxHealth;
         if (slider != null)

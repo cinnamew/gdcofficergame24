@@ -882,6 +882,8 @@ GameObject:
   - component: {fileID: 5336594309486991526}
   - component: {fileID: 48020538937743145}
   - component: {fileID: 3450645011733951292}
+  - component: {fileID: -1775699503232433979}
+  - component: {fileID: 7846171584381318353}
   m_Layer: 3
   m_Name: Jolie (P)
   m_TagString: Player
@@ -1127,7 +1129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  slider: {fileID: 0}
   deathSmoke: {fileID: 0}
   XPOrbs: []
   dmgIndicator: {fileID: 0}
@@ -1197,3 +1198,35 @@ MonoBehaviour:
   player: {fileID: 0}
   isEnabled: 1
   targetTag: 
+--- !u!114 &-1775699503232433979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129131272932307200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3b890e5ffe2dd4593d842a8d15ff77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xp: 0
+  levelText: {fileID: 0}
+  exclusiveUpgrades:
+  - {fileID: 11400000, guid: 7d7066073c4e91e45baa56d155c4b52c, type: 2}
+  - {fileID: 11400000, guid: db6e6b142f4d3b2498bc4a4d358a8988, type: 2}
+  - {fileID: 11400000, guid: 96cf19d8c48eed54d85c1782f645f18d, type: 2}
+  - {fileID: 11400000, guid: 4cac615d9d4c4e546ac387fbd724103a, type: 2}
+--- !u!114 &7846171584381318353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129131272932307200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155b4991e2e230742bd9eb804ec46065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeItems: []

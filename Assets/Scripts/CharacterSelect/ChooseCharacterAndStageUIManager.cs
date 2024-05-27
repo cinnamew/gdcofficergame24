@@ -29,6 +29,9 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
         characterNames.Add("Rohan");
         characterNames.Add("Vaishak");
         characterNames.Add("Winfred");
+        charaImage.sprite = characterImages[curCharaIndex]; //Need to test if this works for when playerprefs is empty
+        charaName.text = characterNames[curCharaIndex];
+        PlayerPrefs.SetString("SelectedCharacter", charaName.text + " (P)");
     }
 
     public void Gacha()

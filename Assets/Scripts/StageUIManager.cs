@@ -20,6 +20,9 @@ public class StageUIManager : MonoBehaviour
     public List<UpgradeItem> temp;
     private List<UpgradeItem> upgradeItems;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private Slider xpSlider;
+    [SerializeField] private TMP_Text levelText;
     
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,18 @@ public class StageUIManager : MonoBehaviour
             upgrades[i].Reset();
         }
     }
+
+    public Slider GetHealthSlider(){
+        return healthSlider;
+    }
+
+    public Slider GetXPSlider(){
+        return xpSlider;
+    }
+    public TMP_Text GetLevelText(){
+        return levelText;
+    }
+
 
     // Update is called once per frame
     void Update()

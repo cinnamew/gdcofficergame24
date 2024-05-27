@@ -10,14 +10,16 @@ public class LevelXPManager : MonoBehaviour
     public int xp = 0;
     private int xpForLevelUp = 79;
     private int level = 1;
-    [SerializeField] Slider slider;
-    [SerializeField] TMP_Text levelText;
+    private Slider slider;
+    private TMP_Text levelText;
     [SerializeField] List<UpgradeItem> exclusiveUpgrades;
     private StageUIManager uiManager;
     void Start()
     {
         UpdateSlider();
         uiManager = GameObject.Find("Canvas").GetComponent<StageUIManager>();
+        slider = uiManager.GetXPSlider();
+        levelText = uiManager.GetLevelText();
     }
 
     public List<UpgradeItem> GetExclusiveUpgrades(){
@@ -26,14 +28,10 @@ public class LevelXPManager : MonoBehaviour
     
     public void Upgrade(UpgradeItem upgradeItem){
         if (upgradeItem.IsWeapon){
-            switch (gameObject.name)
-            {
-                case "Jolie (P)":
-                    gameObject.GetComponent<OrbAttack>().upgradeOrbs();
-                    break;
-                case "Jemi":
-                    gameObject.GetComponent<OrbAttack>().upgradeOrbs();
-                    break;
+            if (gameObject.name.Contains("Jolie")){
+                gameObject.GetComponent<OrbAttack>().upgradeOrbs();
+            } else if (gameObject.name.Contains("Jemi")){
+                gameObject.GetComponent<OrbAttack>().upgradeOrbs();
             }
         }
     }
