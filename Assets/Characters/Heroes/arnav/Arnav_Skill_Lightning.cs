@@ -41,7 +41,7 @@ public class Arnav_Skill_Lightning : MonoBehaviour
         foreach(HeroHitbox h in hitboxes)
         {
             h.setDamage(lightningCrossBeam_damage);
-            h.setRefreshEvery(lightningCrossBeam_cooldown);
+            //h.setRefreshEvery(lightningCrossBeam_cooldown); //BROKEN, FIX LATER
         }
         foreach(Collider2D col in colliders)
         {
@@ -54,17 +54,9 @@ public class Arnav_Skill_Lightning : MonoBehaviour
         }
         Destroy(lightning);
     }
-    public float getCooldown()
-    {
-        return lightningCrossBeam_cooldown;
-    }
-    public float getDamage()
-    {
-        return lightningCrossBeam_damage;
-    }
     public void setCooldown(float num)
     {
-        lightningCrossBeam_cooldown = num;
+        baseProjectileCooldown = num;
     }
     public void setDamage(int num)
     {

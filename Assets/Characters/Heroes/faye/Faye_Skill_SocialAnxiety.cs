@@ -38,21 +38,13 @@ public class Faye_Skill_SocialAnxiety : MonoBehaviour
         GameObject spearCircle = Instantiate(spearCircleHit_prefab, transform);
         HeroHitbox hitbox = spearCircle.GetComponent<HeroHitbox>();
         hitbox.setDamage(spearCircleHit_damage);
-        hitbox.setRefreshEvery(spearCircleHit_cooldown); //MIGHT NOT WORK AS INTENDED FIX LATER
+        //hitbox.setRefreshEvery(spearCircleHit_cooldown); //BROKEN, FIX LATER
         yield return new WaitForSeconds(lifeSpan);
         hitbox.RemoveHitbox();
     }
-    public float getCooldown()
-    {
-        return spearCircleHit_cooldown;
-    }
-    public float getDamage()
-    {
-        return spearCircleHit_damage;
-    }
     public void setCooldown(float num)
     {
-        spearCircleHit_cooldown = num;
+        baseProjectileCooldown = num;
     }
     public void setDamage(int num)
     {

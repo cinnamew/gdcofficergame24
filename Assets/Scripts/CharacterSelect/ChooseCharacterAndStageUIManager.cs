@@ -22,7 +22,7 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
     {
         characterNames.Add("Arnav");
         characterNames.Add("Faye");
-        characterNames.Add("Jemian");
+        characterNames.Add("Jemi");
         characterNames.Add("Jolie");
         characterNames.Add("Laurier");
         characterNames.Add("Lydia");
