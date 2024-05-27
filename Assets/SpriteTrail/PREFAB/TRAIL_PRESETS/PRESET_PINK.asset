@@ -16,8 +16,8 @@ MonoBehaviour:
   m_UseOnlyAlpha: 0
   m_TrailColor:
     serializedVersion: 2
-    key0: {r: 1, g: 0.31760997, b: 0.9792737, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 0}
+    key0: {r: 1, g: 0.6179246, b: 0.7928146, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 0.4470588}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -33,8 +33,8 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 65535
-    atime2: 0
+    atime1: 53970
+    atime2: 65535
     atime3: 0
     atime4: 0
     atime5: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
+    m_NumAlphaKeys: 3
   m_TrailElementDurationCondition: 0
   m_TrailMaxLength: 10
   m_TrailDuration: 0.3

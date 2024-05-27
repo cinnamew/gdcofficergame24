@@ -33,6 +33,9 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
         charaImage.sprite = characterImages[curCharaIndex]; //Need to test if this works for when playerprefs is empty
         charaName.text = characterNames[curCharaIndex];
         PlayerPrefs.SetString("SelectedCharacter", charaName.text + " (P)");
+        if(Manager.Obj.hasCharacter(charaName.text) == 0) {
+            coverUp.SetActive(true);
+        }else coverUp.SetActive(false);
     }
 
     public void Gacha()

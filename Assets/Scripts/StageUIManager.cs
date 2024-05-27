@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class StageUIManager : MonoBehaviour
+public class StageUIManager : Singleton<StageUIManager>
 {
     //Sorry for the ungodly amount of serialized field rohan :(
     [SerializeField] GameObject levelPanel;
@@ -24,6 +24,7 @@ public class StageUIManager : MonoBehaviour
     [SerializeField] private Slider xpSlider;
     [SerializeField] private TMP_Text levelText;
     [SerializeField] GameObject pauseButton;
+    [SerializeField] TMP_Text coinsText;
     private StatsManager statsManager;
     
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class StageUIManager : MonoBehaviour
         for (int i = 0; i < upgrades.Count; i++){
             upgrades[i].Reset();
         }
+        coinsText.text = Manager.Obj.getCoins() + "";
     }
 
     public Slider GetHealthSlider(){
@@ -55,7 +57,10 @@ public class StageUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(Time.timeScale != 0) Pause();
+            else Resume();
+        }
     }
 
     public void ShowLevelMenu(){
@@ -115,7 +120,6 @@ public class StageUIManager : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
-
     }
     public void Resume()
     {
@@ -136,5 +140,9 @@ public class StageUIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
+    }
+
+    public void UpdateCoinsText() {
+        coinsText.text = Manager.Obj.getCoins() + "";
     }
 }

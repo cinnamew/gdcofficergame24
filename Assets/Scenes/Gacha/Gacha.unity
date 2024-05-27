@@ -556,7 +556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8e72a0a71dab494f9f2b8dbe5cf2740, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa9c5aaeb8f1a429f86e386a95ae3b20, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1853,11 +1853,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HP: 5 -> ?
+  m_text: 'HP: 75 -> ?
 
     ATK: 2 -> ?
 
-    CRT: 0.1 -> ?'
+    CRT: 0.1 -> ?
+
+    SPD: 3 -> ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1163b780d68964c0ca58d258470c35bd, type: 2}
   m_sharedMaterial: {fileID: -1119974797696787814, guid: 1163b780d68964c0ca58d258470c35bd, type: 2}
@@ -9436,9 +9438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 594549491}
-        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
-        m_MethodName: goToPreviousMenu
+      - m_Target: {fileID: 9847003}
+        m_TargetAssemblyTypeName: PauseCharas, Assembly-CSharp
+        m_MethodName: SwitchSceneYaay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

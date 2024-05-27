@@ -46,7 +46,7 @@ public class PlayerAttack : MonoBehaviour
                         StartCoroutine(afterBirthDeathIsInevitable());
                     }
                 }*/
-                if(Time.time - timeOfLastAttack >= minProjectileCooldown) //if it's due time to shoot your shot
+                if(Time.time - timeOfLastAttack >= minProjectileCooldown && projectilePrefab != null) //if it's due time to shoot your shot
                 {
                     timeOfLastAttack = Time.time;
                     //Debug.Log("hiqweuiouqwe");

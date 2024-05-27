@@ -15,6 +15,10 @@ public class PickUpManager : MonoBehaviour
     {
         if (other.CompareTag("xp")){
             GetComponentInParent<LevelXPManager>().XPCollected(other);
+        }else if(other.CompareTag("coin")) {
+            Manager.Obj.addToCoins(1);
+            Destroy(other.gameObject);
+            StageUIManager.Obj.UpdateCoinsText();
         }
     }
 

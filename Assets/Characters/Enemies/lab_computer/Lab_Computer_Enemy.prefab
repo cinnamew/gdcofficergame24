@@ -154,7 +154,9 @@ MonoBehaviour:
   XPOrbs:
   - {fileID: 8863510608423255254, guid: c7c9e2acc34b8bf468c4f6fb6a8622fd, type: 3}
   - {fileID: 5941237413084065096, guid: b5dbe6dc9eae62e4da066a0d1f8385b7, type: 3}
+  coin: {fileID: 4084610310762548088, guid: 827fa71994fb849688a93634d485456a, type: 3}
   dmgIndicator: {fileID: 8959692208321900696, guid: e7976da48eb324f09823593ca0576870, type: 3}
+  isBoss: 0
 --- !u!114 &5400816593135378773
 MonoBehaviour:
   m_ObjectHideFlags: 0
