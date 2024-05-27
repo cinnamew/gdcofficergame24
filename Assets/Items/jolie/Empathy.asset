@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
+  m_Name: Empathy
+  m_EditorClassIdentifier: 
+  currentUpgradeLvl: 1
+  maxUpgradeLvl: 3
+  itemName: Empathy
+  description: You heal x% of the damage you deal. Additionally, every x seconds,
+    the enemy nearest you takes damage equal to all the HP you lost
+  icon: {fileID: -1891825691, guid: 65ce0e2d98f0741db9a5ddbcf59b3ae8, type: 3}
+  MaxHpBuff: 0
+  AtkBuff: 0
+  SpdBuff: 0
+  CrtBuff: 0
+  PurBuff: 0
+  HasteBuff: 0
+  BuffIsTemporary: 0
+  BuffTime: 0
+  IsWeapon: 0
+  IsSkill: 1

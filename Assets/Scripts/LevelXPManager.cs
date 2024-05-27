@@ -25,18 +25,133 @@ public class LevelXPManager : MonoBehaviour
     public List<UpgradeItem> GetExclusiveUpgrades(){
         return exclusiveUpgrades;
     }
-    
-    public void Upgrade(UpgradeItem upgradeItem){
-        if (upgradeItem.IsWeapon){
-            if (gameObject.name.Contains("Jolie")){
-                gameObject.GetComponent<OrbAttack>().upgradeOrbs();
-            } else if (gameObject.name.Contains("Jemi")){
+
+    public void Upgrade(UpgradeItem upgradeItem)
+    {
+        if (upgradeItem.IsWeapon)
+        {
+            if (gameObject.name.Contains("Jolie"))
+            {
                 gameObject.GetComponent<OrbAttack>().upgradeOrbs();
             }
-        } else{
-            if (gameObject.name.Contains("Jolie")){
-                if (upgradeItem.itemName == "Social Anxiety"){
-                    
+            else if (gameObject.name.Contains("Jemi"))
+            {
+                gameObject.GetComponent<OrbAttack>().upgradeOrbs();
+            }
+        }
+        else
+        {
+            if (gameObject.name.Contains("Arnav"))
+            {
+                if (upgradeItem.itemName == "Band for Band")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Lightning")
+                {
+
+                }
+            }
+            else if (gameObject.name.Contains("Faye"))
+            {
+                if (upgradeItem.itemName == "Social Anxiety")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Time Crunch")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Debugging Hell")
+                {
+
+                }
+            }
+            else if (gameObject.name.Contains("Jemi"))
+            {
+                if (upgradeItem.itemName == "I'll Be Back")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Fair and Balanced")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Berserk")
+                {
+
+                }
+            }
+            else if (gameObject.name.Contains("Jolie"))
+            {
+                if (upgradeItem.itemName == "Heart Attack!")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Empathy")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Enemies to Lovers")
+                {
+
+                }
+            }
+            else if (gameObject.name.Contains("Laurier"))
+            {
+                if (upgradeItem.itemName == "Dealing and Wheeling")
+                {
+
+                }
+                else if (upgradeItem.itemName == "User Fees")
+                {
+
+                }
+            }
+            else if (gameObject.name.Contains("Lydia"))
+            {
+                if (upgradeItem.itemName == "Flurry")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Sharpshooter")
+                {
+
+                }
+            }
+            else if (gameObject.name.Contains("Rohan"))
+            {
+                if (upgradeItem.itemName == "Swift Snipping")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Double Trouble")
+                {
+
+                }
+            }else if (gameObject.name.Contains("Vaishak"))
+            {
+                if (upgradeItem.itemName == "Spin")
+                {
+
+                }
+                else if (upgradeItem.itemName == "Big Hat")
+                {
+
+                }
+            }else if (gameObject.name.Contains("Winfred"))
+            {
+                if (upgradeItem.itemName == "Scrambled")
+                {
+
+                }
+                else if (upgradeItem.itemName == "R U R' U'")
+                {
+
+                }
+                else if (upgradeItem.itemName == "1x1")
+                {
+
                 }
             }
         }
@@ -44,8 +159,7 @@ public class LevelXPManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("xp")) 
-        { 
+        if (other.CompareTag("xp")) { 
             System.Random r = new System.Random();
             switch (other.gameObject.GetComponent<SpriteRenderer>().sprite.name)
             {
