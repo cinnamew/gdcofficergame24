@@ -134,4 +134,8 @@ public class GenericHitbox : MonoBehaviour
     {
         refreshEvery = newVal;
     }
+    public void setKnockbackMagnitude(float newVal)
+    {
+        kbMagnitude = newVal;
+    }
 }
