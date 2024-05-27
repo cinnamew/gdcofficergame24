@@ -25,9 +25,11 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnStage1()
     {
         GameObject[] generalEnemies = {enemyPrefabs[0], enemyPrefabs[1]};
-        StartCoroutine(SpawnEnemiesGeneral(generalEnemies, 8, 20f, 20f));
         GameObject[] flockEnemies = {enemyPrefabs[2]};
+        GameObject[] wallEnemies = {enemyPrefabs[3]};
+        StartCoroutine(SpawnEnemiesGeneral(generalEnemies, 8, 20f, 20f));
         StartCoroutine(SpawnEnemyFlocks(generalEnemies, 4, 30f));
+        StartCoroutine(SpawnEnemyWalls(wallEnemies, 4, 20f));
         StartCoroutine(SpawnStage1Bosses());
 
     }
@@ -52,6 +54,15 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private IEnumerator SpawnEnemyWalls(GameObject[] enemies,  int numWaves, float cooldown)
+    {
+        for (int i = 0; i < numWaves; i++){
+            transform.position = playerTransform.position;
+            GameObject randomEnemyPrefab = enemies[Random.Range(0, enemies.Length)];
+            SpawnFormationOfEnemies("Formation" + Random.Range(1, 3), randomEnemyPrefab);
+            yield return new WaitForSeconds(cooldown);
+        }
+    }
     private IEnumerator SpawnEnemiesGeneral(GameObject[] enemies, int numWaves, float cooldown, float range){
         for (int i = 0; i < numWaves; i++){
             int numSpawns = (int)(8*Mathf.Log(i + 1) + 15);
@@ -73,17 +84,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private IEnumerator FormationSpawnRoutine()
-    {
-        while (true)
-        {
-            transform.position = playerTransform.position;
-            GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-            SpawnFormationOfEnemies("Formation1", randomEnemyPrefab);
-            yield return new WaitForSeconds(Random.Range(minSpawnInterval*3, maxSpawnInterval*3));
-        }
-        
-    }
+    
 
     private void SpawnFormationOfEnemies(string formationName, GameObject spawnedEnemy)
     {

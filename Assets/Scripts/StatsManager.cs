@@ -13,7 +13,7 @@ public class StatsManager : MonoBehaviour
     public float Pur; //short for pickup radius
     public float Haste; //attackTime = round( baseAttackTime/(1 + haste%/100% ) )
     // Start is called before the first frame update
-    private void Start(){
+    private void Awake(){
         UpdateAttributes();
     }
 

@@ -87981,7 +87981,7 @@ PrefabInstance:
     - target: {fileID: 3134334565640960344, guid: 8e78b192ed8db3f43b69c15ba32e0584, type: 3}
       propertyPath: bossPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5493537871260361680, guid: 58c3a3d3da8e0459d8aa5db2f0b6bfd7, type: 3}
     - target: {fileID: 3134334565640960344, guid: 8e78b192ed8db3f43b69c15ba32e0584, type: 3}
       propertyPath: enemyPrefabs.Array.data[0]
       value: 
