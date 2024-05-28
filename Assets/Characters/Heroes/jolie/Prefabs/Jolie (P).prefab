@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b21d2d9bd34c4a42a5fe3db8e24b7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 400
+  rotationSpeed: 200
   visibleTime: 7
   BLBookFormations:
   - {fileID: 8628362255886644205}
