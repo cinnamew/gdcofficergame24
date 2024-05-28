@@ -23,10 +23,17 @@ public class SkillManager : MonoBehaviour
     [Header("Rohan")]
     private Rohan_Skill_DoubleTrouble doubleTrouble;
 
+    [Header("Vaishak")]
+    private Vaishak_Skill_Spin spin;
+
+    [Header("Winfred")]
+    private Winfred_Skill_Scrambled scrambled;
+
     private float enemyCheckCooldown = 10f;
     private float enemyCountRange = 5f;
     private float prevEnemyHeal;
     [SerializeField] private LayerMask enemyLayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -241,7 +248,23 @@ public class SkillManager : MonoBehaviour
         //VAISHAK
         if (upgrade.itemName == "Spin")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                spin = gameObject.GetComponent<Vaishak_Skill_Spin>();
+                spin.unlockedAbility = true;
+                spin.setProjectileDamage(30);
+                spin.setCooldown(6);
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                spin.setProjectileDamage(35);
+                spin.setCooldown(5);
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                spin.setProjectileDamage(40);
+                spin.setCooldown(4);
+            }
         }
         else if (upgrade.itemName == "Big Hat")
         {
@@ -251,7 +274,25 @@ public class SkillManager : MonoBehaviour
         //WINFRED
         if (upgrade.itemName == "Scrambled")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                scrambled = gameObject.GetComponent<Winfred_Skill_Scrambled>();
+                scrambled.unlockedAbility = true;
+                scrambled.setDamage(40);
+                scrambled.setCooldown(10);
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                scrambled.setDamage(45);
+                scrambled.setCooldown(8);
+                //increase size?
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                scrambled.setDamage(50);
+                scrambled.setCooldown(6);
+                //increase size?
+            }
         }
         else if (upgrade.itemName == "R U R' U'")
         {
