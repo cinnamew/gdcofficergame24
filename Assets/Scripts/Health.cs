@@ -21,9 +21,6 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject dmgIndicator;
     private StatsManager statsManager;
     private UpgradeInventory upgradeInventory;
-    private bool debuggingHell;
-    private bool enemiesToLovers;
-    private bool empathy;
 
     [SerializeField] bool isBoss = false;
     
@@ -111,11 +108,17 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void ConditionalHeal()
+    public void ConditionalHeal(int damageDealt, bool killedEnemy)
     {
-        if (empathy)
+        UpgradeItem empathy = upgradeInventory.GetItemWithName("Empathy");
+        UpgradeItem debuggingHell = upgradeInventory.GetItemWithName("Debugging Hell");
+        UpgradeItem enemiesToLovers = upgradeInventory.GetItemWithName("Enemies to Lovers");
+
+        if (empathy != null)
         {
-            
+            Debug.Log("DAMNGEE IS WHAT??? " + damageDealt);
+            Debug.Log("HEALLL WORKED PLEASEEEEEEEEEEEEEEEE " + (int)(damageDealt*0.03f*empathy.currentUpgradeLvl));
+            HealHealth((int)(damageDealt*0.005f*empathy.currentUpgradeLvl));
         }
         if (debuggingHell)
         {

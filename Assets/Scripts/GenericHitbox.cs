@@ -33,6 +33,9 @@ public class GenericHitbox : MonoBehaviour
 
     void OnHit(Collider2D target) {
         int damageDealt = DetermineDamage();
+        if (player != null){
+            player.GetComponent<Health>().ConditionalHeal(damageDealt, target.GetComponent<Health>().GetHealth() - damageDealt <= 0);
+        }
         DealDamage(target, damageDealt);
         DealKnockback(target);
         ApplyStatusEffects(target);

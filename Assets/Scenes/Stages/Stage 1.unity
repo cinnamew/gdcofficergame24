@@ -917,6 +917,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f4d61875c30d21f44af12ef79287a23a, type: 2}
   - {fileID: 11400000, guid: fd1980889fffdbc49a0ec909fa57f134, type: 2}
   - {fileID: 11400000, guid: d7c108c3d41f2f14faba94ca1648686d, type: 2}
+  includeGeneralUpgrades: 1
   temp: []
   pauseMenu: {fileID: 246522013}
   healthSlider: {fileID: 605670294}
@@ -87341,6 +87342,7 @@ MonoBehaviour:
   - rohan
   - laurier
   - jemi
+  playerStats: []
 --- !u!4 &1875862457
 Transform:
   m_ObjectHideFlags: 0

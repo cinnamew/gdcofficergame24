@@ -13,6 +13,7 @@ public class StageUIManager : Singleton<StageUIManager>
     [SerializeField] TMP_Text[] itemNames;
     [SerializeField] TMP_Text[] itemDescriptions;
     [SerializeField] List<UpgradeItem> generalUpgrades;
+    [SerializeField] bool includeGeneralUpgrades = true;
     private List<UpgradeItem> exclusiveUpgrades;
     private List<UpgradeItem> upgrades = new List<UpgradeItem>();
     private const int upgradesPerLevel = 4;
@@ -35,7 +36,9 @@ public class StageUIManager : Singleton<StageUIManager>
         Debug.Log("apsoidjfasijdfjaspofjasoipdfj" + player);
         exclusiveUpgrades = player.GetComponent<LevelXPManager>().GetExclusiveUpgrades(); 
         upgrades.AddRange(exclusiveUpgrades);
-        upgrades.AddRange(generalUpgrades);
+        if (includeGeneralUpgrades){
+            upgrades.AddRange(generalUpgrades);
+        }
         for (int i = 0; i < upgrades.Count; i++){
             upgrades[i].Reset();
         }
