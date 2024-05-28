@@ -909,13 +909,14 @@ MonoBehaviour:
   - {fileID: 158363503}
   - {fileID: 679300713}
   generalUpgrades:
-  - {fileID: 11400000, guid: d7c108c3d41f2f14faba94ca1648686d, type: 2}
+  - {fileID: 11400000, guid: fe6dc7c1b34298c44b21c95c52c361c1, type: 2}
   - {fileID: 11400000, guid: 03c521f246d07954dbd7030d3ab39999, type: 2}
   - {fileID: 11400000, guid: e12c17c2c70e1664e8003d42469bf4d1, type: 2}
   - {fileID: 11400000, guid: 518ea1a1078b7564a95e971731d9b328, type: 2}
   - {fileID: 11400000, guid: 61f7ab243fca75647a1e2de58b728004, type: 2}
   - {fileID: 11400000, guid: f4d61875c30d21f44af12ef79287a23a, type: 2}
   - {fileID: 11400000, guid: fd1980889fffdbc49a0ec909fa57f134, type: 2}
+  - {fileID: 11400000, guid: d7c108c3d41f2f14faba94ca1648686d, type: 2}
   temp: []
   pauseMenu: {fileID: 246522013}
   healthSlider: {fileID: 605670294}
