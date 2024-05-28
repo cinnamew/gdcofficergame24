@@ -23,6 +23,10 @@ public class SkillManager : MonoBehaviour
     [Header("Rohan")]
     private Rohan_Skill_DoubleTrouble doubleTrouble;
 
+    private float enemyCheckCooldown = 10f;
+    private float enemyCountRange = 5f;
+    private float prevEnemyHeal;
+    [SerializeField] private LayerMask enemyLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,17 @@ public class SkillManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update(){
+        if (Time.time - prevEnemyHeal >= enemyCheckCooldown && GetComponent<UpgradeInventory>().HasItemWithName("Enemies to Lovers")){
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, enemyCountRange, enemyLayer);
+            Debug.Log("ENEMIES DETECTED AMOUNT: " + hitColliders.Length);
+            if (Random.Range(0, 100) < hitColliders.Length){
+                GetComponent<Health>().HealToFull();
+                Debug.Log("HEALED TO FULL POGGG");
+            }
+            prevEnemyHeal = Time.time;
+        }
+    }
     
     public void Upgrade(UpgradeItem upgrade){
         //ARNAV
@@ -145,11 +160,17 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "Empathy")
         {
-
         }
         else if (upgrade.itemName == "Enemies to Lovers")
         {
-
+            if (upgrade.currentUpgradeLvl == 2){
+                enemyCheckCooldown = 8f;
+                enemyCountRange = 10f;
+            }
+            if (upgrade.currentUpgradeLvl == 3){
+                enemyCheckCooldown = 5f;
+                enemyCountRange = 15f;
+            }
         }
 
         //LAURIER

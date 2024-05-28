@@ -862,6 +862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 200
   visibleTime: 7
+  hiddenTime: 6
   BLBookFormations:
   - {fileID: 8628362255886644205}
   - {fileID: 8431354436470571850}
@@ -4492,6 +4493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &4512396352783661307
 MonoBehaviour:
   m_ObjectHideFlags: 0

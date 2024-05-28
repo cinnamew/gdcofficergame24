@@ -112,7 +112,6 @@ public class Health : MonoBehaviour
     {
         UpgradeItem empathy = upgradeInventory.GetItemWithName("Empathy");
         UpgradeItem debuggingHell = upgradeInventory.GetItemWithName("Debugging Hell");
-        UpgradeItem enemiesToLovers = upgradeInventory.GetItemWithName("Enemies to Lovers");
 
         if (empathy != null)
         {
@@ -120,13 +119,15 @@ public class Health : MonoBehaviour
             Debug.Log("HEALLL WORKED PLEASEEEEEEEEEEEEEEEE " + (int)(damageDealt*0.03f*empathy.currentUpgradeLvl));
             HealHealth((int)(damageDealt*0.005f*empathy.currentUpgradeLvl));
         }
-        if (debuggingHell)
+        if (debuggingHell != null && killedEnemy)
         {
-            
-        }
-        if (enemiesToLovers)
-        {
-
+            int healAmt = 5;
+            if (debuggingHell.currentUpgradeLvl == 2){
+                healAmt = 7;
+            } else if (debuggingHell.currentUpgradeLvl == 3){
+                healAmt = 9;
+            }
+            HealHealth(healAmt);
         }
     }
 
@@ -139,6 +140,14 @@ public class Health : MonoBehaviour
     }
     public void HealHealth(int healVal) {
         health = Mathf.Min(health + healVal, maxHealth);
+        if (slider != null)
+        {
+            slider.value = health;
+        }
+    }
+
+    public void HealToFull(){
+        health = maxHealth;
         if (slider != null)
         {
             slider.value = health;
