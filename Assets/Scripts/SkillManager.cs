@@ -16,6 +16,14 @@ public class SkillManager : MonoBehaviour
     [Header("Jolie")]
     private PlayerAttack heartAttack;
     private HeroHitbox heartAttackHitbox;
+    private float enemyCheckCooldown = 10f;
+    private float enemyCountRange = 5f;
+    private float prevEnemyHeal;
+    private float enemyDamageRange = 10f;
+    private float enemyDamageCooldown = 10f;
+    private float enemyDamagePercent = 25f;
+    private float prevEnemyDamage;
+    [SerializeField] private LayerMask enemyLayer;
 
     [Header("Lydia")]
     private Lydia_Skill_Flurry flurry;
@@ -23,13 +31,12 @@ public class SkillManager : MonoBehaviour
     [Header("Rohan")]
     private Rohan_Skill_DoubleTrouble doubleTrouble;
 
-    private float enemyCheckCooldown = 10f;
-    private float enemyCountRange = 5f;
-    private float prevEnemyHeal;
-    [SerializeField] private LayerMask enemyLayer;
+    private StatsManager statsManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         
     }
 
@@ -44,6 +51,24 @@ public class SkillManager : MonoBehaviour
             }
             prevEnemyHeal = Time.time;
         }
+        if (Time.time - prevEnemyDamage >= enemyCheckCooldown && GetComponent<UpgradeInventory>().HasItemWithName("Empathy")){
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, enemyDamageRange, enemyLayer);
+            int lowestIndex = 0;
+            for  (int i = 1; i < hitColliders.Length; i++){
+                float distanceToTarget = Vector2.Distance(transform.position, hitColliders[i].gameObject.transform.position);
+                float distanceToTarget2 = Vector2.Distance(transform.position, hitColliders[lowestIndex].gameObject.transform.position);
+                if (distanceToTarget < distanceToTarget2){
+                    lowestIndex = i;
+                }
+            }
+            if (hitColliders.Length > 0){
+                int damageAmt = (int)((statsManager.MaxHp - GetComponent<Health>().GetHealth())*enemyDamagePercent/100f);
+                hitColliders[lowestIndex].gameObject.GetComponent<Health>().TakeDamage(damageAmt);
+                Debug.Log("DAMANGED ENEMY USING EMPATHY BY : " + damageAmt);
+            }
+            prevEnemyDamage = Time.time;
+        }
+
     }
     
     public void Upgrade(UpgradeItem upgrade){
@@ -160,6 +185,14 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "Empathy")
         {
+            if (upgrade.currentUpgradeLvl == 2){
+                enemyDamagePercent = 50f;
+                enemyDamageCooldown = 8f;
+            }
+            if (upgrade.currentUpgradeLvl == 3){
+                enemyDamagePercent = 100f;
+                enemyDamageCooldown = 5f;
+            }
         }
         else if (upgrade.itemName == "Enemies to Lovers")
         {
