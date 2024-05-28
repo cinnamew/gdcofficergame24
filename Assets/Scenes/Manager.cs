@@ -56,6 +56,11 @@ public class Manager : Singleton<Manager>
                 playerStats[i].Atk += lastAtkBoost;
                 playerStats[i].Spd += lastSpdBoost;
                 playerStats[i].Crt += lastCrtBoost; 
+
+                lastHPBoost *= 0.5f;
+                lastAtkBoost *= 0.5f;
+                lastSpdBoost *= 0.5f;
+                lastCrtBoost *= 0.5f;
             }
          }
      }

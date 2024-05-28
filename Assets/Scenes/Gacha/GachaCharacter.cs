@@ -55,6 +55,12 @@ public class GachaCharacter : MonoBehaviour
             temp.Atk += lastAtkBoost;
             temp.Spd += lastSpdBoost;
             temp.Crt += lastCrtBoost; 
+
+            lastHPBoost *= 0.5f;
+            lastAtkBoost *= 0.5f;
+            lastSpdBoost *= 0.5f;
+            lastCrtBoost *= 0.5f;
+
         }
         return temp;
     }
