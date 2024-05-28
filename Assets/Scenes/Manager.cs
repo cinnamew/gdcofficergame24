@@ -10,6 +10,8 @@ public class Manager : Singleton<Manager>
     //private List<string> charactersUnlocked = new List<string>();
 
     [SerializeField] List<string> charaNames = new List<string> {"arnav", "jolie", "vaishak", "lydia", "faye", "winfred", "rohan", "laurier", "jemi"};
+    
+    //these MUST be in the same order!!
     [SerializeField] List<PlayerStats> playerStats;
     [SerializeField] List<PlayerStats> basePlayerStats;
 
@@ -48,11 +50,17 @@ public class Manager : Singleton<Manager>
         for(int i = 0; i < playerStats.Count; i++) {
             int num = hasCharacter(playerStats[i].name);
             if(num == 0) continue;
+            playerStats[i].MaxHp = basePlayerStats[i].MaxHp;
+            playerStats[i].Atk = basePlayerStats[i].Atk;
+            playerStats[i].Spd = basePlayerStats[i].Spd;
+            playerStats[i].Crt = basePlayerStats[i].Crt;
+            playerStats[i].Pur = basePlayerStats[i].Pur;
+
             float lastHPBoost = 0.5f*playerStats[i].MaxHp;
             float lastAtkBoost = 0.5f*playerStats[i].Atk;
             float lastSpdBoost = 0.5f*playerStats[i].Spd;
             float lastCrtBoost = 0.5f*playerStats[i].Crt;
-            for(int j = 0; j < num; j++) {
+            for(int j = 1; j < num; j++) {
                 playerStats[i].MaxHp += (int)lastHPBoost;
                 playerStats[i].Atk += lastAtkBoost;
                 playerStats[i].Spd += lastSpdBoost;
@@ -64,6 +72,14 @@ public class Manager : Singleton<Manager>
                 lastCrtBoost *= 0.5f;
             }
          }
+     }
+
+     public PlayerStats GetBasePlayerStats(string name) {
+        string lName = name.ToLower();
+         for(int i = 0; i < basePlayerStats.Count; i++) {
+             if(lName == basePlayerStats[i].name.ToLower()) return basePlayerStats[i];
+         }
+         return null;
      }
 
     public int getCoins() {
@@ -81,6 +97,7 @@ public class Manager : Singleton<Manager>
         if(charactersUnlocked.ContainsKey(s)) {
             charactersUnlocked[s] = charactersUnlocked[s] + 1;
             PlayerPrefs.SetInt(s, charactersUnlocked[s]);
+            RefreshPlayerStats();
         }
         else {
             charactersUnlocked[s] = 1;

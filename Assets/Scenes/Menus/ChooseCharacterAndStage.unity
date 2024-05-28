@@ -993,6 +993,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3424622fed4c0f4a8a12b579f10c55a, type: 2}
   - {fileID: 11400000, guid: 1e978cc0837d9a7439f31ec2f7c7a600, type: 2}
   - {fileID: 11400000, guid: 8e9b07409983a384c8fa71e46039c325, type: 2}
+  basePlayerStats:
+  - {fileID: 11400000, guid: 020ba825dc02a4a788dd9103d80d2ce1, type: 2}
+  - {fileID: 11400000, guid: d327324f5dd0948658df3a16b7eda6e3, type: 2}
+  - {fileID: 11400000, guid: cf8b87383fc0340b492c92b80fe6cebe, type: 2}
+  - {fileID: 11400000, guid: 37ff0178d8c52438896b70316ccebbd8, type: 2}
+  - {fileID: 11400000, guid: b693c4e49c2b04089a9c17a86039afb4, type: 2}
+  - {fileID: 11400000, guid: 73aaa6ed618c043bfbb6738da76ab227, type: 2}
+  - {fileID: 11400000, guid: 5a492868041c849ea8a3fe225f313aa1, type: 2}
+  - {fileID: 11400000, guid: b833f4636d94e4633b49a24735cde2aa, type: 2}
+  - {fileID: 11400000, guid: e5c65e90e63fe46869c671b19c4d0fa3, type: 2}
 --- !u!4 &623357279
 Transform:
   m_ObjectHideFlags: 0

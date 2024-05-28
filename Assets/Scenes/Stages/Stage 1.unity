@@ -3045,7 +3045,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 812264052}
   m_HandleRect: {fileID: 0}
@@ -85174,7 +85174,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 667508183}
   m_HandleRect: {fileID: 0}
@@ -87336,6 +87336,7 @@ MonoBehaviour:
   - laurier
   - jemi
   playerStats: []
+  basePlayerStats: []
 --- !u!4 &1875862457
 Transform:
   m_ObjectHideFlags: 0
