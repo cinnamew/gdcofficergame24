@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 4603555835766276799}
   - component: {fileID: 4603555835766276804}
   - component: {fileID: 4603555835766276798}
+  - component: {fileID: -4673642089300651437}
   m_Layer: 3
   m_Name: Rohan (P)
   m_TagString: Player
@@ -691,3 +692,18 @@ MonoBehaviour:
   coin: {fileID: 0}
   dmgIndicator: {fileID: 0}
   isBoss: 0
+--- !u!114 &-4673642089300651437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831843088474068427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39fc379af7975a4484a41aade19ecab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimPoint: {x: 0, y: 0}
+  aimPriority: 0
+  enableAim: 1
