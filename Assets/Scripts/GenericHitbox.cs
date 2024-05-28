@@ -130,6 +130,10 @@ public class GenericHitbox : MonoBehaviour
     {
         damage = newVal;
     }
+    public int getDamage()
+    {
+        return damage;
+    }
     public void setRefreshEvery(float newVal)
     {
         refreshEvery = newVal;
