@@ -30,6 +30,7 @@ public class WeaponManager : MonoBehaviour
             if (upgrade.currentUpgradeLvl == 3)
             {
                 gameObject.GetComponent<PlayerAttack>().setProjectileScale(new Vector3(1.2f, 1.2f, 1f));
+            }
             if (upgrade.currentUpgradeLvl == 4)
             {
                 gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(50);

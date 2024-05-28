@@ -34,7 +34,8 @@ public class GenericHitbox : MonoBehaviour
 
     void OnHit(Collider2D target) {
         int damageDealt = DetermineDamage();
-        if (isPellet && statsManager != null && player.GetComponent<UpgradeInventory>().HasItemWithName("Fair and balanced")){
+        if (isPellet && statsManager != null && player.GetComponent<UpgradeInventory>().HasItemWithName("Fair and Balanced")){
+            Debug.Log("PELLLETTT HITT AND GIVEN CRIT PLEASE?????????");
             statsManager.Crt += 1f;
         }
         if (player != null){

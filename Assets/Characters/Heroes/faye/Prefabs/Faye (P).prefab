@@ -365,7 +365,9 @@ MonoBehaviour:
   maxHealth: 100
   deathSmoke: {fileID: 0}
   XPOrbs: []
+  coin: {fileID: 0}
   dmgIndicator: {fileID: 0}
+  isBoss: 0
 --- !u!114 &1617154571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +426,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db6e6b142f4d3b2498bc4a4d358a8988, type: 2}
   - {fileID: 11400000, guid: 7d7066073c4e91e45baa56d155c4b52c, type: 2}
   - {fileID: 11400000, guid: 96cf19d8c48eed54d85c1782f645f18d, type: 2}
+  - {fileID: 11400000, guid: 984bbd52cf787be41be1d3297787df31, type: 2}
   pickUpManager: {fileID: 2008422290}
 --- !u!114 &1966407470
 MonoBehaviour:
@@ -442,6 +445,7 @@ MonoBehaviour:
   knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1
@@ -458,6 +462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1966407472
 MonoBehaviour:
   m_ObjectHideFlags: 0
