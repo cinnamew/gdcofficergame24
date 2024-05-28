@@ -242,6 +242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lydia (P)
       objectReference: {fileID: 0}
+    - target: {fileID: 8167090759123978682, guid: 97ef891bca7db794f91bdf86829f3697, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8167090759123978684, guid: 97ef891bca7db794f91bdf86829f3697, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5700,10 +5704,6 @@ PrefabInstance:
     - target: {fileID: 8831843088474068427, guid: 562ab4da02ca641e29c5f5bec60c91f4, type: 3}
       propertyPath: m_Name
       value: Rohan (P)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8831843088474068427, guid: 562ab4da02ca641e29c5f5bec60c91f4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8831843088474068429, guid: 562ab4da02ca641e29c5f5bec60c91f4, type: 3}
       propertyPath: m_RootOrder
