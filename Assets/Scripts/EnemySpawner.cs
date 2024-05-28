@@ -24,22 +24,31 @@ public class EnemySpawner : MonoBehaviour
     
     private void SpawnStage1()
     {
-        GameObject[] generalEnemies = {enemyPrefabs[0], enemyPrefabs[1]};
-        GameObject[] flockEnemies = {enemyPrefabs[2]};
-        GameObject[] wallEnemies = {enemyPrefabs[3]};
-        StartCoroutine(SpawnEnemiesGeneral(generalEnemies, 8, 20f, 20f));
-        StartCoroutine(SpawnEnemyFlocks(generalEnemies, 4, 30f));
-        StartCoroutine(SpawnEnemyWalls(wallEnemies, 4, 20f));
+        GameObject[] generalEnemies = {enemyPrefabs[1], enemyPrefabs[3], enemyPrefabs[5], enemyPrefabs[4]};
+        GameObject[] flockEnemies = {enemyPrefabs[7],enemyPrefabs[4],enemyPrefabs[2]};
+        GameObject[] wallEnemies = {enemyPrefabs[0]};
+        GameObject[] ringEnemies = {enemyPrefabs[2],enemyPrefabs[6]};
+        StartCoroutine(SpawnEnemiesGeneral(generalEnemies, 16, 20f, 20f));
+        StartCoroutine(SpawnEnemyFlocks(generalEnemies, 16, 20));
+        StartCoroutine(SpawnEnemyWalls(wallEnemies, 12, 30f));
+        StartCoroutine(SpawnEnemyRings(ringEnemies, 12, 25f));
         StartCoroutine(SpawnStage1Bosses());
 
     }
     private IEnumerator SpawnStage1Bosses(){
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(50f);
         SpawnBoss(bossPrefabs[0]);
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(250f);
         SpawnBoss(bossPrefabs[0]);
     }
 
+    private IEnumerator SpawnEnemyRings(GameObject[] enemies, int numWaves, float cooldown){
+        for (int i = 0; i < numWaves; i++){
+            yield return new WaitForSeconds(cooldown);
+            GameObject randomEnemyPrefab = enemies[Random.Range(0, enemies.Length)];
+            SpawnRingOfEnemies(randomEnemyPrefab);
+        }
+    }
     private void SpawnBoss(GameObject boss){
         Vector2 spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * 10f;
         Instantiate(boss, spawnPosition, Quaternion.identity);
@@ -59,7 +68,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < numWaves; i++){
             transform.position = playerTransform.position;
             GameObject randomEnemyPrefab = enemies[Random.Range(0, enemies.Length)];
-            SpawnFormationOfEnemies("Formation" + Random.Range(1, 3), randomEnemyPrefab);
+            SpawnFormationOfEnemies("Formation" + Random.Range(1, 5), randomEnemyPrefab);
             yield return new WaitForSeconds(cooldown);
         }
     }
@@ -72,15 +81,6 @@ public class EnemySpawner : MonoBehaviour
                 Instantiate(enemies[enemyIndex], spawnPosition, Quaternion.identity);
             }
             yield return new WaitForSeconds(cooldown);
-        }
-    }
-    private IEnumerator SpawnEnemiesRoutine()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval));
-            transform.position = playerTransform.position;
-            SpawnRingOfEnemies();
         }
     }
 
@@ -124,18 +124,16 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void SpawnRingOfEnemies()
+    private void SpawnRingOfEnemies(GameObject spawnEnemy)
     {
-        GameObject randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-
         float angleStep = 360f / numEnemiesInRing;
 
         for (int i = 0; i < numEnemiesInRing; i++)
         {
             float angle = i * angleStep * Mathf.Deg2Rad;
-            Vector2 spawnPosition = (Vector2)(transform.position) + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * ringRadius;
+            Vector2 spawnPosition = (Vector2)(playerTransform.position) + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * ringRadius;
 
-            Instantiate(randomEnemyPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(spawnEnemy, spawnPosition, Quaternion.identity);
         }
     }
 
