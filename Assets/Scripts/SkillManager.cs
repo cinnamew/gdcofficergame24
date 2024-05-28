@@ -13,6 +13,10 @@ public class SkillManager : MonoBehaviour
     [Header("Jemian")]
     private Jemi_Skill_Berserk bulletRain;
 
+    [Header("Jolie")]
+    private PlayerAttack heartAttack;
+    private HeroHitbox heartAttackHitbox;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -111,7 +115,27 @@ public class SkillManager : MonoBehaviour
         //JOLIE
         if (upgrade.itemName == "Heart Attack!")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                PlayerAttack[] candidates = GetComponents<PlayerAttack>();
+                if (candidates[0].enabled) heartAttack = candidates[0];
+                else heartAttack = candidates[1];
+                heartAttack.enabled = true;
+                heartAttackHitbox = (HeroHitbox)heartAttack.getHitboxes()[0];
+                //set dmg and cd
+                heartAttackHitbox.setDamage(30); //dmg must be set w a reference to hero hitbox (the hitbox of the projectile)
+                heartAttack.SetBaseProjectileCooldown(8); //cd set w reference to playerattack
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                heartAttackHitbox.setDamage(40);
+                heartAttack.SetBaseProjectileCooldown(6);
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                heartAttackHitbox.setDamage(50);
+                heartAttack.SetBaseProjectileCooldown(4);
+            }
         }
         else if (upgrade.itemName == "Empathy")
         {
