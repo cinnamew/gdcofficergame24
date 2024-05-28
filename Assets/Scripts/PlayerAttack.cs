@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] public float spreadAngle = 0;
     [SerializeField] public float spreadRadius = 0;
     [SerializeField] public int projectilesPerShot = 1;
+    private Vector3 projectileScale = new Vector3(1, 1, 1);
     private bool isAttacking = true; //toggle attacks; might be good if there's like a character like Diva in Overwatch
     private float timeAttacking; //same reason
     private float timeOfLastAttack; //for manual attacks
@@ -118,6 +119,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator afterBirthDeathIsInevitable(float offsetAngle) //handles projectiles
     {
         GameObject projectile = Instantiate(projectilePrefab);
+        projectile.transform.localScale = projectileScale;
         Debug.Log("made projectile");
         projectile.transform.position = projectileSpawnpoint.position;
         if (rotateProjectileToAimDir)
@@ -154,5 +156,9 @@ public class PlayerAttack : MonoBehaviour
     public GenericHitbox[] getHitboxes()
     {
         return hitboxes;
+    }
+    public void setProjectileScale(Vector3 s)
+    {
+        projectileScale = s;
     }
 }
