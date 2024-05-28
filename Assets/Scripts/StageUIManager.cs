@@ -19,14 +19,19 @@ public class StageUIManager : Singleton<StageUIManager>
     private const int upgradesPerLevel = 4;
     private GameObject player;
     public List<UpgradeItem> temp;
+    private List<UpgradeItem> temp2;
+    private List<UpgradeItem> temp3;
     private List<UpgradeItem> upgradeItems;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject stageCompleteMenu;
+    [SerializeField] GameObject deathMenu;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider xpSlider;
     [SerializeField] private TMP_Text levelText;
     [SerializeField] GameObject pauseButton;
     [SerializeField] TMP_Text coinsText;
     private StatsManager statsManager;
+    private bool gameOver = false;
     
     // Start is called before the first frame update
     void Start()
@@ -60,10 +65,22 @@ public class StageUIManager : Singleton<StageUIManager>
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
+        if(Input.GetKeyDown(KeyCode.Escape) && !gameOver) {
             if(Time.timeScale != 0) Pause();
             else Resume();
         }
+    }
+
+    public void EndOfLevelReached(){
+        stageCompleteMenu.SetActive(true);
+        gameOver = true;
+        Time.timeScale = 0;
+    }
+
+    public void Died(){
+        deathMenu.SetActive(true);
+        gameOver = true;
+        Time.timeScale = 0;
     }
 
     public void ShowLevelMenu(){
@@ -96,6 +113,8 @@ public class StageUIManager : Singleton<StageUIManager>
 
     private List<UpgradeItem> PickRandomUpgrades(){
         temp = new List<UpgradeItem>();
+        temp2 = new List<UpgradeItem>();
+        temp3 = new List<UpgradeItem>();
         temp.AddRange(upgrades);
         List<UpgradeItem> randomItems = new List<UpgradeItem>();
         for (int i = 0; i < upgradesPerLevel; i++){
@@ -121,13 +140,17 @@ public class StageUIManager : Singleton<StageUIManager>
     }
     public void Pause()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        if (!gameOver){
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
     public void Resume()
     {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        if (gameOver){
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
     public void goToMainMenu()
     {

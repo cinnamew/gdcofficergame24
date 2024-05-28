@@ -75,6 +75,15 @@ public class Manager : Singleton<Manager>
         print("coins: " + coins);
     }
 
+    public bool decreaseNumCoins(int a) {
+        if (coins - a >= 0){
+            coins -= a;
+            PlayerPrefs.SetInt("coins", coins);
+            print("coins: " + coins);
+            return true;
+        }
+        return false;
+    }
     public void addCharacter(string s) {
         s = s.ToLower();
         if(charactersUnlocked.ContainsKey(s)) {

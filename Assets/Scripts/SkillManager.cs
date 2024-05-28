@@ -27,6 +27,12 @@ public class SkillManager : MonoBehaviour
 
     [Header("Lydia")]
     private Lydia_Skill_Flurry flurry;
+    
+    [Header("Laurier")]
+    private float prevCoinDrain;
+    private float coinDrainCooldown = 5f;
+    private float atkIncrease = 50f;
+    private float prevAtkIncrease = 0f;
 
     [Header("Rohan")]
     private Rohan_Skill_DoubleTrouble doubleTrouble;
@@ -74,6 +80,15 @@ public class SkillManager : MonoBehaviour
                 Debug.Log("DAMANGED ENEMY USING EMPATHY BY : " + damageAmt);
             }
             prevEnemyDamage = Time.time;
+        }
+        if (Time.time - prevCoinDrain >= coinDrainCooldown && GetComponent<UpgradeInventory>().HasItemWithName("User Fees")){
+            bool coinRemoved = Manager.Obj.decreaseNumCoins(1);
+            statsManager.Atk -= prevAtkIncrease;
+            if (coinRemoved){
+                statsManager.Atk += atkIncrease;
+                prevAtkIncrease = atkIncrease;
+            }
+            prevCoinDrain = Time.time;
         }
 
     }
@@ -266,7 +281,16 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "User Fees")
         {
-
+            if (upgrade.currentUpgradeLvl == 1){
+                atkIncrease = 50f;
+                atkIncrease = 10f;
+            }
+            if (upgrade.currentUpgradeLvl == 2){
+                atkIncrease = 100f;
+            }
+            if (upgrade.currentUpgradeLvl == 3){
+                coinDrainCooldown = 10f;
+            }
         }
 
         //LYDIA

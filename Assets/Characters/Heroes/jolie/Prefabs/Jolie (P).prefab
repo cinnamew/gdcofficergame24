@@ -2245,7 +2245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6201195029226658578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.94741035, y: 0.050005436, z: 0.0029818038}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4385,7 +4385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  deathSmoke: {fileID: 0}
+  deathSmoke: {fileID: 3990577281291942588, guid: ddca73616125e9b47af51af6f797dd42, type: 3}
   XPOrbs: []
   coin: {fileID: 0}
   dmgIndicator: {fileID: 0}

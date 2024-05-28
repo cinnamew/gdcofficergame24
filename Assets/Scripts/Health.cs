@@ -100,6 +100,9 @@ public class Health : MonoBehaviour
                         Instantiate(coin, new Vector3(transform.position.x + 0.1f * Random.Range(-i, 20), transform.position.y + 0.1f * Random.Range(-i, 20), 1), Quaternion.identity);
                     }
                 }
+            } else {
+                Debug.Log("DIED SKULL SKULL SKULLL");
+                StageUIManager.Obj.Died();
             }
             gameObject.SetActive(false);
             Destroy(gameObject, 0.5f); //DONT DESTROY PLAYER
