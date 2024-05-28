@@ -118,7 +118,7 @@ public class SkillManager : MonoBehaviour
             if (upgrade.currentUpgradeLvl == 1)
             {
                 PlayerAttack[] candidates = GetComponents<PlayerAttack>();
-                if (candidates[0].enabled) heartAttack = candidates[0];
+                if (!candidates[0].enabled) heartAttack = candidates[0];
                 else heartAttack = candidates[1];
                 heartAttack.enabled = true;
                 heartAttackHitbox = (HeroHitbox)heartAttack.getHitboxes()[0];
