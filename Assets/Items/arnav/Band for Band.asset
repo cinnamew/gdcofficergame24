@@ -15,16 +15,16 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Band for Band
-  description: sets a debuff on every within x range which slows them and if shocked
-    all attacks deal x% more damage
+  description: Temporarily raises attack and crit
   icon: {fileID: -1664080561, guid: cdf5b278b1da44d38b8fc40808cd4136, type: 3}
   MaxHpBuff: 0
-  AtkBuff: 0
+  AtkBuff: 10
   SpdBuff: 0
-  CrtBuff: 0
+  CrtBuff: 5
   PurBuff: 0
   HasteBuff: 0
-  BuffIsTemporary: 0
-  BuffTime: 0
+  BuffIsTemporary: 1
+  BuffTime: 4
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

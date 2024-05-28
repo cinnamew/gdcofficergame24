@@ -81,7 +81,21 @@ public class SkillManager : MonoBehaviour
         //ARNAV
         if (upgrade.itemName == "Band for Band")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                upgrade.AtkBuff = 10;
+                upgrade.CrtBuff = 5;
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                upgrade.AtkBuff = 12;
+                upgrade.CrtBuff = 8;
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                upgrade.AtkBuff = 15;
+                upgrade.CrtBuff = 10;
+            }
         }
         else if (upgrade.itemName == "Lightning")
         {
@@ -125,21 +139,53 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "Time Crunch")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                upgrade.AtkBuff = 20;
+                upgrade.SpdBuff = 20;
+                upgrade.CrtBuff = 20;
+                upgrade.HasteBuff = 20;
+                upgrade.BuffTime = 3;
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                upgrade.BuffTime = 5;
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                upgrade.AtkBuff = 30;
+                upgrade.SpdBuff = 30;
+                upgrade.CrtBuff = 30;
+                upgrade.HasteBuff = 30;
+            }
         }
         else if (upgrade.itemName == "Debugging Hell")
         {
-
+            //upgrades in health script istead
         }
 
         //JEMI
         if (upgrade.itemName == "I'll Be Back")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                upgrade.MaxHpBuff = 10;
+                upgrade.PurBuff = 15;
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                upgrade.MaxHpBuff = 15;
+                upgrade.PurBuff = 20;
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                upgrade.MaxHpBuff = 20;
+                upgrade.PurBuff = 25;
+            }
         }
         else if (upgrade.itemName == "Fair and Balanced")
         {
-
+            //upgrades elsewhere
         }
         else if (upgrade.itemName == "Berserk")
         {
@@ -215,7 +261,7 @@ public class SkillManager : MonoBehaviour
         //LAURIER
         if (upgrade.itemName == "Dealing and Wheeling")
         {
-
+            //upgrades elsewhere
         }
         else if (upgrade.itemName == "User Fees")
         {
@@ -248,7 +294,18 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "Sharpshooter")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                upgrade.CrtBuff = 10;
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                upgrade.CrtBuff = 20;
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                upgrade.CrtBuff = 30;
+            }
         }
 
         //ROHAN
@@ -300,7 +357,21 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "Big Hat")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                upgrade.MaxHpBuff = 10;
+                upgrade.PurBuff = 15;
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                upgrade.MaxHpBuff = 15;
+                upgrade.PurBuff = 20;
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                upgrade.MaxHpBuff = 20;
+                upgrade.PurBuff = 25;
+            }
         }
 
         //WINFRED
@@ -328,7 +399,21 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "R U R' U'")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                upgrade.SpdBuff = 10;
+                upgrade.HasteBuff = 20;
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                upgrade.SpdBuff = 15;
+                upgrade.HasteBuff = 30;
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                upgrade.SpdBuff = 20;
+                upgrade.HasteBuff = 40;
+            }
         }
         else if (upgrade.itemName == "1x1")
         {
