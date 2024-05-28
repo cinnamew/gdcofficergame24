@@ -8,6 +8,7 @@ public class Faye_Skill_SocialAnxiety : MonoBehaviour
     public bool unlockedAbility = false;
     private float spearCircleHit_cooldown;
     private int spearCircleHit_damage;
+    private Vector3 spearCircleHit_scale = new Vector3(1, 1, 1);
 
     private float minProjectileCooldown;
     [SerializeField] float baseProjectileCooldown;
@@ -36,6 +37,7 @@ public class Faye_Skill_SocialAnxiety : MonoBehaviour
     private IEnumerator spearCircleHit()
     {
         GameObject spearCircle = Instantiate(spearCircleHit_prefab, transform);
+        spearCircle.transform.localScale = spearCircleHit_scale;
         HeroHitbox hitbox = spearCircle.GetComponent<HeroHitbox>();
         hitbox.setDamage(spearCircleHit_damage);
         //hitbox.setRefreshEvery(spearCircleHit_cooldown); //BROKEN, FIX LATER
@@ -49,5 +51,9 @@ public class Faye_Skill_SocialAnxiety : MonoBehaviour
     public void setDamage(int num)
     {
         spearCircleHit_damage = num;
+    }
+    public void setSpearCircleScale(Vector3 s)
+    {
+        spearCircleHit_scale = s;
     }
 }

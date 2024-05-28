@@ -37,11 +37,6 @@ public class SkillManager : MonoBehaviour
     [Header("Winfred")]
     private Winfred_Skill_Scrambled scrambled;
 
-    private float enemyCheckCooldown = 10f;
-    private float enemyCountRange = 5f;
-    private float prevEnemyHeal;
-    [SerializeField] private LayerMask enemyLayer;
-
     private StatsManager statsManager;
 
     // Start is called before the first frame update
@@ -120,12 +115,12 @@ public class SkillManager : MonoBehaviour
             if (upgrade.currentUpgradeLvl == 2){
                 spearCircle.setDamage(35);
                 spearCircle.setCooldown(8);
-                spearCircle.gameObject.transform.localScale = new Vector2(1.25f, 1.25f);
+                spearCircle.setSpearCircleScale(new Vector2(1.25f, 1.25f));
             }
             if (upgrade.currentUpgradeLvl == 3){
                 spearCircle.setDamage(40);
                 spearCircle.setCooldown(6);
-                spearCircle.gameObject.transform.localScale = new Vector2(1.5f, 1.5f);
+                spearCircle.setSpearCircleScale(new Vector2(1.5f, 1.5f));
             }
         }
         else if (upgrade.itemName == "Time Crunch")
@@ -322,13 +317,13 @@ public class SkillManager : MonoBehaviour
             {
                 scrambled.setDamage(45);
                 scrambled.setCooldown(8);
-                //increase size?
+                scrambled.setExplosionScale(new Vector3(1.2f, 1.2f, 1f));
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
                 scrambled.setDamage(50);
                 scrambled.setCooldown(6);
-                //increase size?
+                scrambled.setExplosionScale(new Vector3(1.5f, 1.5f, 1f));
             }
         }
         else if (upgrade.itemName == "R U R' U'")

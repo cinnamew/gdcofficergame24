@@ -7,6 +7,7 @@ public class Winfred_Skill_Scrambled : MonoBehaviour
     [SerializeField] GameObject explosion_prefab;
     public bool unlockedAbility = false;
     private int explosion_damage;
+    private Vector3 explosionScale = new Vector3(1, 1, 1);
 
     private float minProjectileCooldown;
     [SerializeField] float baseProjectileCooldown;
@@ -35,6 +36,7 @@ public class Winfred_Skill_Scrambled : MonoBehaviour
     private IEnumerator explosion()
     {
         GameObject explosion = Instantiate(explosion_prefab, transform);
+        explosion.transform.localScale = explosionScale;
         explosion.GetComponent<HeroHitbox>().setDamage(explosion_damage);
         yield return new WaitForSeconds(lifeSpan);
         Destroy(explosion);
@@ -46,5 +48,9 @@ public class Winfred_Skill_Scrambled : MonoBehaviour
     public void setDamage(int num)
     {
         explosion_damage = num;
+    }
+    public void setExplosionScale(Vector3 s)
+    {
+        explosionScale = s;
     }
 }
