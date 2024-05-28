@@ -105,6 +105,7 @@ MonoBehaviour:
   knockbackDuration: 0
   autoAttack: 1
   refreshEvery: 1
+  isPellet: 1
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1
