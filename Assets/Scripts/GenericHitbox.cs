@@ -10,6 +10,7 @@ public class GenericHitbox : MonoBehaviour
     [SerializeField] bool autoAttack;
     private Vector2 knockbackVector;
     [SerializeField]private float refreshEvery;
+    [SerializeField] private bool isPellet = false;
     public StatsManager statsManager;
     public GameObject player;
     private float currCooldown;
@@ -33,6 +34,9 @@ public class GenericHitbox : MonoBehaviour
 
     void OnHit(Collider2D target) {
         int damageDealt = DetermineDamage();
+        if (isPellet && statsManager != null && player.GetComponent<UpgradeInventory>().HasItemWithName("Fair and balanced")){
+            statsManager.Crt += 1f;
+        }
         if (player != null){
             player.GetComponent<Health>().ConditionalHeal(damageDealt, target.GetComponent<Health>().GetHealth() - damageDealt <= 0);
         }
