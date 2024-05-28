@@ -589,10 +589,6 @@ MonoBehaviour:
   image: {fileID: 0}
   name: Jemi
   bio: lethal gunner with the op crit rate
-  hp: 0
-  attack: 0
-  crit: 0
-  spd: 0
 --- !u!1 &81734725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,10 +1075,6 @@ MonoBehaviour:
   image: {fileID: 0}
   name: Vaishak
   bio: he's just a guy
-  hp: 0
-  attack: 0
-  crit: 0
-  spd: 0
 --- !u!1 &175976959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,10 +1437,6 @@ MonoBehaviour:
   image: {fileID: 0}
   name: Lydia
   bio: an amazing artist. her bow (and her looks) could kill
-  hp: 0
-  attack: 0
-  crit: 0
-  spd: 0
 --- !u!1 &295487443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2257,16 @@ MonoBehaviour:
   - rohan
   - laurier
   - jemi
+  playerStats:
+  - {fileID: 11400000, guid: e5da76490ec567246996ec8d04b2d14f, type: 2}
+  - {fileID: 11400000, guid: 492d88e48fdebca4f92a8c157dff8657, type: 2}
+  - {fileID: 11400000, guid: 72e8949b2f8c1374a851d4dd307093ad, type: 2}
+  - {fileID: 11400000, guid: 280474f1ad9f60a419307a2256241f00, type: 2}
+  - {fileID: 11400000, guid: 1bc4f6a80caec424a91584fd6a6e7879, type: 2}
+  - {fileID: 11400000, guid: 73750ed1df5928045bed55c58b37d59c, type: 2}
+  - {fileID: 11400000, guid: c3424622fed4c0f4a8a12b579f10c55a, type: 2}
+  - {fileID: 11400000, guid: 1e978cc0837d9a7439f31ec2f7c7a600, type: 2}
+  - {fileID: 11400000, guid: 8e9b07409983a384c8fa71e46039c325, type: 2}
 --- !u!4 &594549492
 Transform:
   m_ObjectHideFlags: 0
@@ -2376,10 +2374,6 @@ MonoBehaviour:
   image: {fileID: 0}
   name: Laurier
   bio: will con you of your money if you're not careful
-  hp: 0
-  attack: 0
-  crit: 0
-  spd: 0
 --- !u!1 &615946920
 GameObject:
   m_ObjectHideFlags: 0
@@ -7548,10 +7542,6 @@ MonoBehaviour:
   image: {fileID: 0}
   name: Jolie
   bio: LOVES HEARTS, YOU, AND THE COLOR PINK!
-  hp: 5
-  attack: 2
-  crit: 0.1
-  spd: 0
 --- !u!1 &918036961
 GameObject:
   m_ObjectHideFlags: 0
@@ -8060,10 +8050,6 @@ MonoBehaviour:
   image: {fileID: 0}
   name: Winfred
   bio: puts the win in winfred! canonically a rubik's cube
-  hp: 0
-  attack: 0
-  crit: 0
-  spd: 0
 --- !u!1 &1280646780
 GameObject:
   m_ObjectHideFlags: 0
@@ -8291,10 +8277,6 @@ MonoBehaviour:
   image: {fileID: 0}
   name: Faye
   bio: YOUR Favorite girl. everyone's favorite girl.
-  hp: 0
-  attack: 0
-  crit: 0
-  spd: 0
 --- !u!1 &1309486131
 GameObject:
   m_ObjectHideFlags: 0
@@ -8784,10 +8766,6 @@ MonoBehaviour:
   image: {fileID: 1534861079}
   name: Arnav
   bio: what does his hair look like? you'll never know.
-  hp: 0
-  attack: 0
-  crit: 0
-  spd: 0
 --- !u!114 &1534861079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9999,10 +9977,6 @@ MonoBehaviour:
   image: {fileID: 0}
   name: Rohan
   bio: scissors. what else is there to say?
-  hp: 0
-  attack: 0
-  crit: 0
-  spd: 0
 --- !u!1 &2067241480
 GameObject:
   m_ObjectHideFlags: 0

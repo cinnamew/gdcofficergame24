@@ -11,6 +11,7 @@ public class Manager : Singleton<Manager>
 
     [SerializeField] List<string> charaNames = new List<string> {"arnav", "jolie", "vaishak", "lydia", "faye", "winfred", "rohan", "laurier", "jemi"};
     [SerializeField] List<PlayerStats> playerStats;
+    [SerializeField] List<PlayerStats> basePlayerStats;
 
     // Start is called before the first frame update
     void Start()

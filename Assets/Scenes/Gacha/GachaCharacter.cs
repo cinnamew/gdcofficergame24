@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GachaCharacter : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class GachaCharacter : MonoBehaviour
             temp = "HP: ?\nATK: ?\nCRT: ?\nSPD: ?";
         }else {
             TempCharacter yum = nextLevel(Manager.Obj.hasCharacter(name) + 1);
-            temp = "HP: " + playerStats.MaxHp + " -> " + yum.MaxHp + "\nATK: " + playerStats.Atk + " -> " + yum.Atk + "\nCRT: " + playerStats.Crt + " -> " + yum.Crt + "\nSPD: " + playerStats.Spd + " -> " + yum.Spd;
+            temp = "HP: " + Math.Round((Decimal)playerStats.MaxHp, 2) + " -> " + Math.Round((Decimal)yum.MaxHp, 2) + "\nATK: " + Math.Round((Decimal)playerStats.Atk, 2) + " -> " + Math.Round((Decimal)yum.Atk, 2) + "\nCRT: " + Math.Round(playerStats.Crt, 2) + " -> " + Math.Round((Decimal)yum.Crt, 2) + "\nSPD: " + Math.Round((Decimal)playerStats.Spd, 2) + " -> " + Math.Round((Decimal)yum.Spd, 2);
         }
         return temp;
     }

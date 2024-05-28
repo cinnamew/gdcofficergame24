@@ -732,7 +732,7 @@ MonoBehaviour:
   characterImages:
   - {fileID: 21300000, guid: ef5a4f241cd4149da9ab761b26909c26, type: 3}
   - {fileID: 21300000, guid: a058cc75b37c947249f30e7a079eb9c9, type: 3}
-  - {fileID: 21300000, guid: a8e72a0a71dab494f9f2b8dbe5cf2740, type: 3}
+  - {fileID: 21300000, guid: aa9c5aaeb8f1a429f86e386a95ae3b20, type: 3}
   - {fileID: 21300000, guid: 69554552ff3b490489b9ad66419894ff, type: 3}
   - {fileID: 21300000, guid: f21c5be55aa4541f38cb9c6e86cb57d4, type: 3}
   - {fileID: 21300000, guid: b42dbf961102e433c9ca34518bdaaecb, type: 3}
