@@ -6,6 +6,7 @@ public class GeneralUpgradesManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject spiderCooking;
+    [SerializeField] private GameObject blBook;
     void Start()
     {
         
@@ -44,6 +45,13 @@ public class GeneralUpgradesManager : MonoBehaviour
             {
                 spiderCooking.GetComponent<HeroHitbox>().setKnockbackMagnitude(5f);
             }
+        }
+        if (upgrade.itemName == "BL Book"){
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                blBook.SetActive(true);
+            }
+            blBook.GetComponent<BLBookAttack>().upgradeBooks();
         }
     }
 }

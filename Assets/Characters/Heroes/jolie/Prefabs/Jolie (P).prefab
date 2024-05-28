@@ -468,8 +468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  kbMagnitude: 5
-  knockbackDuration: 0.5
+  kbMagnitude: 10
+  knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
@@ -821,13 +821,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6271183982861171593}
+  - component: {fileID: 2120517088357053101}
   m_Layer: 0
   m_Name: BL Books
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6271183982861171593
 Transform:
   m_ObjectHideFlags: 0
@@ -847,6 +848,25 @@ Transform:
   m_Father: {fileID: 674130758123507986}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2120517088357053101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970474507083656419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b21d2d9bd34c4a42a5fe3db8e24b7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 400
+  visibleTime: 7
+  BLBookFormations:
+  - {fileID: 8628362255886644205}
+  - {fileID: 8431354436470571850}
+  - {fileID: 7076412473491846542}
+  - {fileID: 2628071617171875158}
 --- !u!1 &4090504551091394233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,8 +1859,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  kbMagnitude: 5
-  knockbackDuration: 0.5
+  kbMagnitude: 10
+  knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
@@ -2149,8 +2169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  kbMagnitude: 5
-  knockbackDuration: 0.5
+  kbMagnitude: 10
+  knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
@@ -3448,8 +3468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  kbMagnitude: 5
-  knockbackDuration: 0.5
+  kbMagnitude: 10
+  knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
   statsManager: {fileID: 0}
@@ -3687,7 +3707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1787609123337565092
 Transform:
   m_ObjectHideFlags: 0
@@ -4510,3 +4530,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spiderCooking: {fileID: 6201195029226658578}
+  blBook: {fileID: 3970474507083656419}
