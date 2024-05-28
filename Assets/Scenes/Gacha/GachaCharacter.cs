@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GachaCharacter : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GachaCharacter : MonoBehaviour
     //[SerializeField] float crit;
     //[SerializeField] int spd;
     private PlayerStats playerStats;
+    private PlayerStats basePlayerStats;
     
     // Start is called before the first frame update
     void Awake()
@@ -34,23 +36,25 @@ public class GachaCharacter : MonoBehaviour
         if(Manager.Obj.hasCharacter(name) == 0) {
             temp = "HP: ?\nATK: ?\nCRT: ?\nSPD: ?";
         }else {
+            //Manager.Obj.RefreshPlayerStats();
             TempCharacter yum = nextLevel(Manager.Obj.hasCharacter(name) + 1);
-            temp = "HP: " + playerStats.MaxHp + " -> " + yum.MaxHp + "\nATK: " + playerStats.Atk + " -> " + yum.Atk + "\nCRT: " + playerStats.Crt + " -> " + yum.Crt + "\nSPD: " + playerStats.Spd + " -> " + yum.Spd;
+            temp = "HP: " + Math.Round((Decimal)playerStats.MaxHp, 2) + " -> " + Math.Round((Decimal)yum.MaxHp, 2) + "\nATK: " + Math.Round((Decimal)playerStats.Atk, 2) + " -> " + Math.Round((Decimal)yum.Atk, 2) + "\nCRT: " + Math.Round(playerStats.Crt, 2) + " -> " + Math.Round((Decimal)yum.Crt, 2) + "\nSPD: " + Math.Round((Decimal)playerStats.Spd, 2) + " -> " + Math.Round((Decimal)yum.Spd, 2);
         }
         return temp;
     }
 
     public TempCharacter nextLevel(int lvl) {
+        if(basePlayerStats == null) basePlayerStats = Manager.Obj.GetBasePlayerStats(name);
         TempCharacter temp = new TempCharacter();
-        temp.MaxHp = playerStats.MaxHp;
-        temp.Atk = playerStats.Atk;
-        temp.Spd = playerStats.Spd;
-        temp.Crt = playerStats.Crt;
-        float lastHPBoost = 0.5f*temp.MaxHp;
-        float lastAtkBoost = 0.5f*temp.Atk;
-        float lastSpdBoost = 0.5f*temp.Spd;
-        float lastCrtBoost = 0.5f*temp.Crt;
-        for(int j = 0; j < lvl; j++) {
+        temp.MaxHp = basePlayerStats.MaxHp;
+        temp.Atk = basePlayerStats.Atk;
+        temp.Spd = basePlayerStats.Spd;
+        temp.Crt = basePlayerStats.Crt;
+        float lastHPBoost = 0.5f*basePlayerStats.MaxHp;
+        float lastAtkBoost = 0.5f*basePlayerStats.Atk;
+        float lastSpdBoost = 0.5f*basePlayerStats.Spd;
+        float lastCrtBoost = 0.5f*basePlayerStats.Crt;
+        for(int j = 1; j < lvl; j++) {
             temp.MaxHp += (int)lastHPBoost;
             temp.Atk += lastAtkBoost;
             temp.Spd += lastSpdBoost;
