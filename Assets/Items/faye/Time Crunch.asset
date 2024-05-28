@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 2
   maxUpgradeLvl: 3
   itemName: Time Crunch
-  description: 'increase spd, haste, and atk/crit '
+  description: increase spd, haste, atk, and crit temporarily
   icon: {fileID: 317181221, guid: 62868bdc084e84b88b1129ad83aa2426, type: 3}
   MaxHpBuff: 0
   AtkBuff: 20
@@ -27,3 +27,4 @@ MonoBehaviour:
   BuffTime: 3
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

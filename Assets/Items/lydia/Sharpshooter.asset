@@ -20,10 +20,11 @@ MonoBehaviour:
   MaxHpBuff: 0
   AtkBuff: 0
   SpdBuff: 0
-  CrtBuff: 0
+  CrtBuff: 10
   PurBuff: 0
   HasteBuff: 0
   BuffIsTemporary: 0
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

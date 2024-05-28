@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 322952529}
   - component: {fileID: 3565212317422065528}
   - component: {fileID: -6304804439434610944}
+  - component: {fileID: -7790393884751580817}
   m_Layer: 3
   m_Name: Winfred (P)
   m_TagString: Player
@@ -459,6 +460,22 @@ MonoBehaviour:
   aimPoint: {x: 0, y: 0}
   aimPriority: 1
   enableAim: 0
+--- !u!114 &-7790393884751580817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004097159716082541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766c17ebaf3834e9fb9213c1271786d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decoy: {fileID: 5877532292252787000, guid: 03f8e8db0329d41f2bfa2013eb52476f, type: 3}
+  unlockedAbility: 0
+  duration: 2
+  baseAbilityCooldown: 10
 --- !u!1 &5004097160711090067
 GameObject:
   m_ObjectHideFlags: 0

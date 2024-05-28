@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
   m_Name: R U R' U'
   m_EditorClassIdentifier: 
-  currentUpgradeLvl: 1
+  currentUpgradeLvl: 2
   maxUpgradeLvl: 3
   itemName: R U R' U'
-  description: When hit, get a x% chance to dodge it and gain a temporary boost in
-    speed
+  description: Increases speed and haste
   icon: {fileID: 806920945, guid: 457028862914347db9d5601d1dcd30ae, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
-  SpdBuff: 0
+  SpdBuff: 10
   CrtBuff: 0
   PurBuff: 0
-  HasteBuff: 0
+  HasteBuff: 20
   BuffIsTemporary: 0
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

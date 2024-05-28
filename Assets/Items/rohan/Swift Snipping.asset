@@ -20,11 +20,12 @@ MonoBehaviour:
   icon: {fileID: -123663743, guid: bef8654e02a714301ab2cad976c07250, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
-  SpdBuff: 0
+  SpdBuff: 10
   CrtBuff: 0
   PurBuff: 0
-  HasteBuff: 0
+  HasteBuff: 20
   BuffIsTemporary: 0
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

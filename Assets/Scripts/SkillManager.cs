@@ -36,6 +36,7 @@ public class SkillManager : MonoBehaviour
 
     [Header("Winfred")]
     private Winfred_Skill_Scrambled scrambled;
+    private Winfred_Skill_1x1 decoy;
 
     private StatsManager statsManager;
 
@@ -311,7 +312,21 @@ public class SkillManager : MonoBehaviour
         //ROHAN
         if (upgrade.itemName == "Swift Snipping")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                upgrade.SpdBuff = 10;
+                upgrade.HasteBuff = 20;
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                upgrade.SpdBuff = 15;
+                upgrade.HasteBuff = 30;
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                upgrade.SpdBuff = 20;
+                upgrade.HasteBuff = 40;
+            }
         }
         else if (upgrade.itemName == "Double Trouble")
         {
@@ -417,7 +432,23 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "1x1")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                decoy = gameObject.GetComponent<Winfred_Skill_1x1>();
+                decoy.unlockedAbility = true;
+                decoy.setCooldown(10);
+                decoy.setDuration(2);
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                decoy.setCooldown(9);
+                decoy.setDuration(3);
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                decoy.setCooldown(8);
+                decoy.setDuration(4);
+            }
         }
     }
 }
