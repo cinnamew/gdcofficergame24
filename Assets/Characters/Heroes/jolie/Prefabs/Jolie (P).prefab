@@ -4408,7 +4408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  kbMagnitude: 15
+  kbMagnitude: 30
   knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
