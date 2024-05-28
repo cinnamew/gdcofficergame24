@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
-  m_Name: Wand
+  m_Name: Arrows of Truth
   m_EditorClassIdentifier: 
   currentUpgradeLvl: 1
-  maxUpgradeLvl: 0
-  itemName: Red-Tasseled Spear
-  description: is it a wand or a spear? we will never know
-  icon: {fileID: 21300000, guid: 066222cfd066640239ab443c73694376, type: 3}
+  maxUpgradeLvl: 4
+  itemName: Arrows of Truth
+  description: theyre pretty and purple
+  icon: {fileID: 21300000, guid: 84923f083b84c4c56891a16d8516070b, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
   SpdBuff: 0

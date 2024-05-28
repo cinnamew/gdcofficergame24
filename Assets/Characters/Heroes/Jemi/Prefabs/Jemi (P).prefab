@@ -291,6 +291,7 @@ MonoBehaviour:
   knockbackDuration: 0
   autoAttack: 0
   refreshEvery: 0
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1
@@ -661,7 +662,7 @@ MonoBehaviour:
   rotateProjectileToAimDir: 1
   spreadAngle: 80
   spreadRadius: 0
-  projectilesPerShot: 5
+  projectilesPerShot: 3
 --- !u!114 &5322775486260631031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,7 +678,9 @@ MonoBehaviour:
   maxHealth: 100
   deathSmoke: {fileID: 3990577281291942588, guid: ddca73616125e9b47af51af6f797dd42, type: 3}
   XPOrbs: []
+  coin: {fileID: 0}
   dmgIndicator: {fileID: 0}
+  isBoss: 0
 --- !u!114 &1374922996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +717,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a5319878807547d9bbc425bb51ee601, type: 2}
   - {fileID: 11400000, guid: 5083467b0e6eb45afa2bf6025dd2d555, type: 2}
   - {fileID: 11400000, guid: 6897e73cc1f0549de8ee0e6e528aa669, type: 2}
+  - {fileID: 11400000, guid: 3f5b5954baa1740fd9d9b5ba0da65ad0, type: 2}
   pickUpManager: {fileID: 48416428}
 --- !u!114 &1374923013
 MonoBehaviour:
@@ -732,6 +736,7 @@ MonoBehaviour:
   knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1
@@ -773,3 +778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0

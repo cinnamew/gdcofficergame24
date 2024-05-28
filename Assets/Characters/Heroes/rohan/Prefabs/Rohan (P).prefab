@@ -598,6 +598,7 @@ MonoBehaviour:
   knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1
@@ -618,6 +619,7 @@ MonoBehaviour:
   exclusiveUpgrades:
   - {fileID: 11400000, guid: eaeb80aa296c4486ca5c5c9d981331c0, type: 2}
   - {fileID: 11400000, guid: acf5587378f524499a8265dd17c8a66c, type: 2}
+  - {fileID: 11400000, guid: 81785c3fc575845d2907f4eb72cc6f92, type: 2}
   pickUpManager: {fileID: 730998395}
 --- !u!114 &4603555835766276801
 MonoBehaviour:
@@ -656,6 +658,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &4603555835766276804
 MonoBehaviour:
   m_ObjectHideFlags: 0

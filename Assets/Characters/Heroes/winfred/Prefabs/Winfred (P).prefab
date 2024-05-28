@@ -386,6 +386,7 @@ MonoBehaviour:
   knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1
@@ -407,6 +408,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06fdd07f3cb36482fb7d4566728a7aff, type: 2}
   - {fileID: 11400000, guid: 0f3e91a6e98e34809b5b1242f401f103, type: 2}
   - {fileID: 11400000, guid: 392771e376de04c84a20720a0ce45ca1, type: 2}
+  - {fileID: 11400000, guid: 5e109c373e6aa9344aed9a9019a47442, type: 2}
   pickUpManager: {fileID: 1935158420}
 --- !u!114 &322952529
 MonoBehaviour:

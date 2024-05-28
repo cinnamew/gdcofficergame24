@@ -38,7 +38,30 @@ public class WeaponManager : MonoBehaviour
         }
 
         if (gameObject.name.Contains("Jemi")){
-            //Do something
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                GenericHitbox[] hb = gameObject.GetComponent<PlayerAttack>().getHitboxes();
+                foreach(GenericHitbox h in hb)
+                    {
+                        h.setDamage(15); //prev: 10
+                    }
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.75f);
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                    gameObject.GetComponent<PlayerAttack>().projectilesPerShot = 5; //prev: 3
+            if (upgrade.currentUpgradeLvl == 4)
+            {
+                        GenericHitbox[] hb = gameObject.GetComponent<PlayerAttack>().getHitboxes();
+                        foreach (GenericHitbox h in hb)
+                        {
+                            h.setDamage(20); //prev: 15
+                        }
+                        gameObject.GetComponent<PlayerAttack>().projectilesPerShot = 8;
+                    }
         }
 
         if (gameObject.name.Contains("Jolie")){
@@ -46,7 +69,22 @@ public class WeaponManager : MonoBehaviour
         }
 
         if (gameObject.name.Contains("Laurier")){
-            //Do something
+                    if (upgrade.currentUpgradeLvl == 1)
+                    {
+                        gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(40); //prev: 30
+                    }
+                    if (upgrade.currentUpgradeLvl == 2)
+                    {
+                        gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.5f);
+                    }
+                    if (upgrade.currentUpgradeLvl == 3)
+                    {
+                        gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(50); //prev: 40
+                    }
+                    if (upgrade.currentUpgradeLvl == 4)
+                    {
+                        gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.25f);
+                    }
         }
 
         if (gameObject.name.Contains("Lydia")){

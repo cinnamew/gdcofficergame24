@@ -392,6 +392,7 @@ MonoBehaviour:
   knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1
@@ -924,6 +925,7 @@ MonoBehaviour:
   knockbackDuration: 1
   autoAttack: 1
   refreshEvery: 0.3
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1
@@ -944,6 +946,7 @@ MonoBehaviour:
   exclusiveUpgrades:
   - {fileID: 11400000, guid: 44f505c7c84ab42ad8e101ba5a5f213f, type: 2}
   - {fileID: 11400000, guid: 0e0705c5470f148b7ba5ea0b590ca9de, type: 2}
+  - {fileID: 11400000, guid: 637652b181237471983ce31c3055a6fe, type: 2}
   pickUpManager: {fileID: 1095455744}
 --- !u!114 &1582487794
 MonoBehaviour:

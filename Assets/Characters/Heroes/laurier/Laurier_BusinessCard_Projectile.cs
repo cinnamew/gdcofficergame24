@@ -18,11 +18,14 @@ public class Laurier_BusinessCard_Projectile : MonoBehaviour
         GameObject c1 = Instantiate(childProjectile, transform.position, Quaternion.identity);
         c1.transform.eulerAngles = new Vector3(0, 0, angle);
         c1.GetComponent<Rigidbody2D>().velocity = rb.velocity.magnitude * new Vector2(Mathf.Cos(angle* Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+        int dmg = gameObject.GetComponent<HeroHitbox>().getDamage();
+        c1.GetComponent<HeroHitbox>().setDamage(dmg);
         children.Add(c1);
         angle = originalAngle - 120;
         GameObject c2 = Instantiate(childProjectile, transform.position, Quaternion.identity);
         c2.transform.eulerAngles = new Vector3(0, 0, angle);
         c2.GetComponent<Rigidbody2D>().velocity = rb.velocity.magnitude * new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+        c2.GetComponent<HeroHitbox>().setDamage(dmg);
         children.Add(c2);
     }
     private void OnDestroy()
