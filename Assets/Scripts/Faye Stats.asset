@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d66fe3374518c498a96d090ecd330a, type: 3}
   m_Name: Faye Stats
   m_EditorClassIdentifier: 
+  name: Faye
   MaxHp: 100
   Atk: 100
   Spd: 100

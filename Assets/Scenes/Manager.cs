@@ -47,7 +47,16 @@ public class Manager : Singleton<Manager>
         for(int i = 0; i < playerStats.Count; i++) {
             int num = hasCharacter(playerStats[i].name);
             if(num == 0) continue;
-            
+            float lastHPBoost = 0.5f*playerStats[i].MaxHp;
+            float lastAtkBoost = 0.5f*playerStats[i].Atk;
+            float lastSpdBoost = 0.5f*playerStats[i].Spd;
+            float lastCrtBoost = 0.5f*playerStats[i].Crt;
+            for(int j = 0; j < num; j++) {
+                playerStats[i].MaxHp += (int)lastHPBoost;
+                playerStats[i].Atk += lastAtkBoost;
+                playerStats[i].Spd += lastSpdBoost;
+                playerStats[i].Crt += lastCrtBoost; 
+            }
          }
      }
 
