@@ -17,6 +17,9 @@ public class SkillManager : MonoBehaviour
     private PlayerAttack heartAttack;
     private HeroHitbox heartAttackHitbox;
 
+    [Header("Lydia")]
+    private Lydia_Skill_Flurry flurry;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -159,7 +162,26 @@ public class SkillManager : MonoBehaviour
         //LYDIA
         if (upgrade.itemName == "Flurry")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                flurry = GetComponent<Lydia_Skill_Flurry>();
+                flurry.unlockedAbility = true;
+                flurry.setArrowDamage(15);
+                flurry.setNumArrows(5);
+                flurry.setCooldown(8);
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                flurry.setArrowDamage(20);
+                flurry.setNumArrows(10);
+                flurry.setCooldown(7);
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                flurry.setArrowDamage(24);
+                flurry.setNumArrows(16);
+                flurry.setCooldown(6);
+            }
         }
         else if (upgrade.itemName == "Sharpshooter")
         {

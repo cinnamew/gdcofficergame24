@@ -1,5 +1,66 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &773231004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773231007}
+  - component: {fileID: 773231006}
+  - component: {fileID: 773231005}
+  m_Layer: 0
+  m_Name: PickUpRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &773231007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773231004}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8167090759123978684}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &773231006
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773231004}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.75
+--- !u!114 &773231005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773231004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deba9475644af774fad463275f41efb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8167090759123978682
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,6 +81,12 @@ GameObject:
   - component: {fileID: 7551120686252829710}
   - component: {fileID: 8344206428344141161}
   - component: {fileID: 419036396}
+  - component: {fileID: 419036392}
+  - component: {fileID: 419036391}
+  - component: {fileID: 419036390}
+  - component: {fileID: 419036389}
+  - component: {fileID: 419036388}
+  - component: {fileID: 419036387}
   m_Layer: 3
   m_Name: Lydia (P)
   m_TagString: Player
@@ -40,6 +107,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8167090760133866823}
+  - {fileID: 773231007}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -175,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c538917ef05374a955649a197d84ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMoveSpeed: 2
+  defaultMoveSpeed: 4
   moveDirection: {x: 0, y: 0}
 --- !u!114 &6669165062423904499
 MonoBehaviour:
@@ -266,7 +334,9 @@ MonoBehaviour:
   maxHealth: 100
   deathSmoke: {fileID: 0}
   XPOrbs: []
+  coin: {fileID: 0}
   dmgIndicator: {fileID: 0}
+  isBoss: 0
 --- !u!114 &419036396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +362,101 @@ MonoBehaviour:
   spreadAngle: 0
   spreadRadius: 0
   projectilesPerShot: 1
+--- !u!114 &419036392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167090759123978682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff9da519b9ef41d08e97287a305df80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 5462678591758381, guid: a348178c4d4f24c0ab65925b32e00d40, type: 3}
+  arrowSpeed: 20
+  radius: 1
+  arrowDmg: 15
+  numArrowsToSpawn: 5
+  lifeSpan: 0.49
+  unlockedAbility: 0
+  baseAbilityCooldown: 8
+--- !u!114 &419036391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167090759123978682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e83794495648f04ea42f3a19771abe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  kbMagnitude: 15
+  knockbackDuration: 1
+  autoAttack: 1
+  refreshEvery: 0.3
+  statsManager: {fileID: 0}
+  player: {fileID: 0}
+  isEnabled: 1
+  targetTag: 
+--- !u!114 &419036390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167090759123978682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3b890e5ffe2dd4593d842a8d15ff77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xp: 0
+  exclusiveUpgrades:
+  - {fileID: 11400000, guid: 3cf7832a4376f47278273aa06a9b031c, type: 2}
+  - {fileID: 11400000, guid: 678fe208d28c54fc8bd93869f9d289c3, type: 2}
+  pickUpManager: {fileID: 773231005}
+--- !u!114 &419036389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167090759123978682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155b4991e2e230742bd9eb804ec46065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeItems: []
+--- !u!114 &419036388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167090759123978682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23090d156af418d42b0803e12dbcb5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &419036387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167090759123978682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8167090759462800262
 GameObject:
   m_ObjectHideFlags: 0

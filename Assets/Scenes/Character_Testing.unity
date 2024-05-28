@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jolie (P)
       objectReference: {fileID: 0}
+    - target: {fileID: 9129131272932307200, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9129131272932307206, guid: 9c431ef1efe7db6498c6cb330ec2e1cd, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -237,10 +241,6 @@ PrefabInstance:
     - target: {fileID: 8167090759123978682, guid: 97ef891bca7db794f91bdf86829f3697, type: 3}
       propertyPath: m_Name
       value: Lydia (P)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8167090759123978682, guid: 97ef891bca7db794f91bdf86829f3697, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8167090759123978684, guid: 97ef891bca7db794f91bdf86829f3697, type: 3}
       propertyPath: m_RootOrder
