@@ -20,6 +20,9 @@ public class SkillManager : MonoBehaviour
     [Header("Lydia")]
     private Lydia_Skill_Flurry flurry;
 
+    [Header("Rohan")]
+    private Rohan_Skill_DoubleTrouble doubleTrouble;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -195,7 +198,23 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "Double Trouble")
         {
-
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                doubleTrouble = GetComponent<Rohan_Skill_DoubleTrouble>();
+                doubleTrouble.unlockedAbility = true;
+                doubleTrouble.setProjectileDamage(30);
+                doubleTrouble.setCooldown(8);
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                doubleTrouble.setProjectileDamage(35);
+                doubleTrouble.setCooldown(6);
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                doubleTrouble.setProjectileDamage(40);
+                doubleTrouble.setCooldown(4);
+            }
         }
 
         //VAISHAK

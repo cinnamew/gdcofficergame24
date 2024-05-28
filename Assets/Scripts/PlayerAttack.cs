@@ -147,6 +147,10 @@ public class PlayerAttack : MonoBehaviour
     {
         aimDir = dir; //do this from player aiming
     }
+    public Vector2 getAimDir()
+    {
+        return aimDir;
+    }
     public GenericHitbox[] getHitboxes()
     {
         return hitboxes;
