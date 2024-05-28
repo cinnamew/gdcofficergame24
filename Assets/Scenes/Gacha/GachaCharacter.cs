@@ -13,11 +13,13 @@ public class GachaCharacter : MonoBehaviour
     [SerializeField] float attack;
     [SerializeField] float crit;
     [SerializeField] int spd;
+    private PlayerStats playerStats;
     
     // Start is called before the first frame update
     void Awake()
     {
         image = GetComponent<Image>();
+        playerStats = Manager.Obj.GetPlayerStats(name);
     }
 
     // Update is called once per frame

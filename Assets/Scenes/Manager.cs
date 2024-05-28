@@ -10,7 +10,8 @@ public class Manager : Singleton<Manager>
     //private List<string> charactersUnlocked = new List<string>();
 
     [SerializeField] List<string> charaNames = new List<string> {"arnav", "jolie", "vaishak", "lydia", "faye", "winfred", "rohan", "laurier", "jemi"};
-    
+    [SerializeField] List<PlayerStats> playerStats;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +32,24 @@ public class Manager : Singleton<Manager>
                 charactersUnlocked[charaNames[i]] = PlayerPrefs.GetInt(temp);
             }
         }
+        RefreshPlayerStats();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public PlayerStats GetPlayerStats(string name) {
+         string lName = name.ToLower();
+         for(int i = 0; i < playerStats.Count; i++) {
+             if(lName == playerStats[i].name.ToLower()) return playerStats[i];
+         }
+         return null;
+     }
+
+    public void RefreshPlayerStats() {
+        for(int i = 0; i < playerStats.Count; i++) {
+            int num = hasCharacter(playerStats[i].name);
+            if(num == 0) continue;
+            
+         }
+     }
 
     public int getCoins() {
         return coins;
