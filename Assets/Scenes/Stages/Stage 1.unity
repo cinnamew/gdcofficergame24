@@ -5325,6 +5325,16 @@ MonoBehaviour:
   - {fileID: 8831843088474068427, guid: 562ab4da02ca641e29c5f5bec60c91f4, type: 3}
   - {fileID: 5931340266466368565, guid: bbb5af6b49a07974fa8839780d0aee94, type: 3}
   - {fileID: 5004097159716082541, guid: c4d71679b00bdd3479ae4d83647bc4df, type: 3}
+  playerStats:
+  - {fileID: 11400000, guid: e5da76490ec567246996ec8d04b2d14f, type: 2}
+  - {fileID: 11400000, guid: 492d88e48fdebca4f92a8c157dff8657, type: 2}
+  - {fileID: 11400000, guid: 72e8949b2f8c1374a851d4dd307093ad, type: 2}
+  - {fileID: 11400000, guid: 280474f1ad9f60a419307a2256241f00, type: 2}
+  - {fileID: 11400000, guid: 1bc4f6a80caec424a91584fd6a6e7879, type: 2}
+  - {fileID: 11400000, guid: 73750ed1df5928045bed55c58b37d59c, type: 2}
+  - {fileID: 11400000, guid: c3424622fed4c0f4a8a12b579f10c55a, type: 2}
+  - {fileID: 11400000, guid: 1e978cc0837d9a7439f31ec2f7c7a600, type: 2}
+  - {fileID: 11400000, guid: 8e9b07409983a384c8fa71e46039c325, type: 2}
   spawnPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 1305753478}
 --- !u!4 &828934097

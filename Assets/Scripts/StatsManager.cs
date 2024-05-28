@@ -14,7 +14,7 @@ public class StatsManager : Singleton<StatsManager>
     public float Haste; //attackTime = round( baseAttackTime/(1 + haste%/100% ) )
     // Start is called before the first frame update
     private void Awake(){
-        UpdateAttributes();
+        //UpdateAttributes();
     }
 
     public void SetPlayerStats(PlayerStats newStats){

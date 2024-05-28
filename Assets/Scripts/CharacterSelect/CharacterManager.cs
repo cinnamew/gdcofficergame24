@@ -6,8 +6,10 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour
 {
     public GameObject[] charaPrefabs;
+    public PlayerStats[] playerStats;
     public Vector3 spawnPos;
     [SerializeField] private ProCamera2D cam;
+    private StatsManager statsManager;
     
     // Start is called before the first frame update
     void Awake()
@@ -18,12 +20,14 @@ public class CharacterManager : MonoBehaviour
         //if not null instantiate the character at the spawn point
         string charaString = PlayerPrefs.GetString("SelectedCharacter");
         Debug.Log("PLAYER NAME: " + charaString);
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         if (!string.IsNullOrEmpty(charaString)) 
         {
-            GameObject charaObject = getCharaByName(charaString);
-            Debug.Log("NULL??? " + (charaObject == null));
-            if (charaObject != null) 
+            int charaObjectIndex = getCharaByName(charaString);
+            if (charaObjectIndex > -1) 
             {
+                GameObject charaObject = charaPrefabs[charaObjectIndex];
+                statsManager.SetPlayerStats(playerStats[charaObjectIndex]);
                 GameObject playerInScene = Instantiate(charaObject, spawnPos, Quaternion.identity);
                 cam.AddCameraTarget(playerInScene.transform);
             }
@@ -31,13 +35,13 @@ public class CharacterManager : MonoBehaviour
 
     }
 
-    GameObject getCharaByName(string nameAsString) 
+    int getCharaByName(string nameAsString) 
     {
-        foreach (GameObject g in charaPrefabs) 
-        {
-            if (nameAsString == g.name)
-                return g;
+        for (int i = 0; i < charaPrefabs.Length; i++){
+            if (nameAsString == charaPrefabs[i].name){
+                return i;
+            }
         }
-        return null;
+        return -1;
     }
 }
