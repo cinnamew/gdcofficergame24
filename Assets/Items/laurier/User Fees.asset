@@ -18,12 +18,13 @@ MonoBehaviour:
   description: lose x coins per second in turn for a damage boost
   icon: {fileID: -1720183633, guid: 73f35f4dca61d4d9db7569d61b7998f5, type: 3}
   MaxHpBuff: 0
-  AtkBuff: 0
+  AtkBuff: 50
   SpdBuff: 0
   CrtBuff: 0
   PurBuff: 0
   HasteBuff: 0
-  BuffIsTemporary: 0
-  BuffTime: 0
+  BuffIsTemporary: 1
+  BuffTime: 10
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

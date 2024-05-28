@@ -112,6 +112,7 @@ public class Health : MonoBehaviour
     {
         UpgradeItem empathy = upgradeInventory.GetItemWithName("Empathy");
         UpgradeItem debuggingHell = upgradeInventory.GetItemWithName("Debugging Hell");
+        UpgradeItem dealinNWheelin = upgradeInventory.GetItemWithName("Dealing and Wheeling");
 
         if (empathy != null)
         {
@@ -128,6 +129,10 @@ public class Health : MonoBehaviour
                 healAmt = 9;
             }
             HealHealth(healAmt);
+        }
+        if (dealinNWheelin != null){
+            Manager.Obj.addToCoins(dealinNWheelin.currentUpgradeLvl);
+            StageUIManager.Obj.UpdateCoinsText();
         }
     }
 

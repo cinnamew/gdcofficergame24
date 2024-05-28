@@ -280,22 +280,22 @@ public class SkillManager : MonoBehaviour
         //VAISHAK
         if (upgrade.itemName == "Spin")
         {
+            SteelBallAttack steelBallAttack = GetComponent<SteelBallAttack>();
             if (upgrade.currentUpgradeLvl == 1)
             {
-                spin = gameObject.GetComponent<Vaishak_Skill_Spin>();
-                spin.unlockedAbility = true;
-                spin.setProjectileDamage(30);
-                spin.setCooldown(6);
+                steelBallAttack.SetSteelBallActive();
+                steelBallAttack.SetDamage(30);
+                steelBallAttack.SetDegreesTillHidden(360f);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                spin.setProjectileDamage(35);
-                spin.setCooldown(5);
+                steelBallAttack.SetDamage(35);
+                steelBallAttack.SetDegreesTillHidden(720f);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                spin.setProjectileDamage(40);
-                spin.setCooldown(4);
+                steelBallAttack.SetDamage(40);
+                steelBallAttack.SetDegreesTillHidden(1080f);
             }
         }
         else if (upgrade.itemName == "Big Hat")
