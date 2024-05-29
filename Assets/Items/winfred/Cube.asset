@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 2
   maxUpgradeLvl: 4
   itemName: Rubik's Cube
-  description: speedcubing since middle school mmt
+  description: speedcubing since elementary school mmt
   icon: {fileID: 21300000, guid: 213d9ae8b09534d118da295026e64f1c, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0

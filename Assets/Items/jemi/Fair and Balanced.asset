@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fair and Balanced
   m_EditorClassIdentifier: 
   currentUpgradeLvl: 1
-  maxUpgradeLvl: 3
+  maxUpgradeLvl: 1
   itemName: Fair and Balanced
   description: Increases CRT chance every Pellet hit.
   icon: {fileID: -957147149, guid: 7ab68dcc9e6e04061aefc8872ed5ac6c, type: 3}

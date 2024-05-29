@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Scrambled
-  description: Every x seconds have an explosion that stuns enemies
+  description: Every 10 seconds have an explosion that stuns enemies
   icon: {fileID: 1049253556, guid: 457028862914347db9d5601d1dcd30ae, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

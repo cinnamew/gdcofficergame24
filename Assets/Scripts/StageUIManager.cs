@@ -112,9 +112,71 @@ public class StageUIManager : Singleton<StageUIManager>
         } else {
             upgradeItems[option].Upgrade();
         }
+        updateDescription(upgradeItems[option]);
         levelPanel.SetActive(false);
         pauseButton.SetActive(true);
         Time.timeScale = 1;
+    }
+
+    private void updateDescription(UpgradeItem upgradeItem){
+        if (upgradeItem.itemName == "BL Book"){
+            if (upgradeItem.currentUpgradeLvl > 1){
+                upgradeItem.description = "Add 1 additional book.";
+            }
+        }
+        if (upgradeItem.itemName == "Spider Cooking"){
+            if (upgradeItem.currentUpgradeLvl == 2){
+                upgradeItem.description = "Increase area by 30%.";
+            }
+            if (upgradeItem.currentUpgradeLvl == 3){
+                upgradeItem.description = "Increase damage by 30%.";
+            }
+            if (upgradeItem.currentUpgradeLvl == 4){
+                upgradeItem.description = "Increase area by 50%.";
+            }
+            if (upgradeItem.currentUpgradeLvl == 5){
+                upgradeItem.description = "Increase frequency of hits by 20%.";
+            }
+            if (upgradeItem.currentUpgradeLvl == 6){
+                upgradeItem.description = "Increase damage by 60%";
+            }
+            if (upgradeItem.currentUpgradeLvl == 7){
+                upgradeItem.description = "Add small knockback on hit.";
+            }
+        }
+        if (upgradeItem.itemName == "BL Book"){
+            if (upgradeItem.currentUpgradeLvl > 1){
+                upgradeItem.description = "Add 1 additional book.";
+            }
+        }
+        if (upgradeItem.itemName == "Social Anxiety"){
+            if (upgradeItem.currentUpgradeLvl > 1){
+                upgradeItem.description = "Increase damage by 5, increase swing size by 20% and decrease cooldown by 10%";
+            }
+        }
+        if (upgradeItem.itemName == "Debugging Hell"){
+            if (upgradeItem.currentUpgradeLvl > 1){
+                upgradeItem.description = "Increase heal amount by 2%";
+            }
+        }
+        if (upgradeItem.itemName == "Berserk"){
+            if (upgradeItem.currentUpgradeLvl == 2){
+                upgradeItem.description = "Increase damage by 3, decrease cooldown by 20%, and increase number of projectiles by 6.";
+            }
+            if (upgradeItem.currentUpgradeLvl == 3){
+                upgradeItem.description = "Increase damage by 2, decrease cooldown by 20%, and increase number of projectiles by 6.";
+            }
+        }
+        if (upgradeItem.itemName == "Enemies to Lovers"){
+            if (upgradeItem.currentUpgradeLvl > 1){
+                upgradeItem.description = "Increase count range by 5 meters, and decrease cooldown by 20%";
+            }
+        }
+        if (upgradeItem.itemName == "Empathy"){
+            if (upgradeItem.currentUpgradeLvl > 1){
+                upgradeItem.description = "Double enemy damage amount, decrease damage cooldown by 30%, and increase lifesteal by 3%";
+            }
+        }
     }
 
     private List<UpgradeItem> PickRandomUpgrades(){
@@ -145,7 +207,9 @@ public class StageUIManager : Singleton<StageUIManager>
         for (int i = 0; i < icons.Length; i++){
             UpgradeItem currentItem = upgradeItems[i];
             icons[i].GetComponent<Image>().sprite = currentItem.icon;
-            if (currentItem.currentUpgradeLvl > 1){
+            if (currentItem.currentUpgradeLvl == currentItem.maxUpgradeLvl){
+                itemNames[i].SetText(currentItem.itemName + " MAX LVL");
+            } else if (currentItem.currentUpgradeLvl > 1){
                 itemNames[i].SetText(currentItem.itemName + " LVL" + currentItem.currentUpgradeLvl);
             } else {
                 itemNames[i].SetText(currentItem.itemName);

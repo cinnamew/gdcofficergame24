@@ -16,7 +16,7 @@ MonoBehaviour:
   maxUpgradeLvl: -1
   itemName: Speed Upgrade
   description: Upgrade Speed by 6%
-  icon: {fileID: 0}
+  icon: {fileID: -59505508, guid: 2fe30ff6c754a9541a958ce07599b999, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
   SpdBuff: 6

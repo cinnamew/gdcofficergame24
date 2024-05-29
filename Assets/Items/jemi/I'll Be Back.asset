@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: I'll Be Back
-  description: Increases Max HP by x% and pickup range by x%.
+  description: Increases Max HP by 10% and pickup range by 15%.
   icon: {fileID: 2006633629, guid: 7ab68dcc9e6e04061aefc8872ed5ac6c, type: 3}
   MaxHpBuff: 10
   AtkBuff: 0

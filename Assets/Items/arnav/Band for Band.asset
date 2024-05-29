@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Band for Band
-  description: Raises ATK by x% and CRT by x% for x seconds.
+  description: Raises ATK by 10% and CRT by 5% for 4 seconds.
   icon: {fileID: -1664080561, guid: cdf5b278b1da44d38b8fc40808cd4136, type: 3}
   MaxHpBuff: 0
   AtkBuff: 10

@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: User Fees
-  description: Lose 1 coin every x seconds in turn for a x% ATK buff for x seconds.
+  description: Lose 1 coin every 5 seconds in turn for a 50% ATK buff.
   icon: {fileID: -1720183633, guid: 73f35f4dca61d4d9db7569d61b7998f5, type: 3}
   MaxHpBuff: 0
   AtkBuff: 50

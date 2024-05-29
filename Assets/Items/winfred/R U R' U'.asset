@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 2
   maxUpgradeLvl: 3
   itemName: R U R' U'
-  description: Increases speed and haste
+  description: Increases speed by 10% and haste by 20% (b/c its the **** move)
   icon: {fileID: 806920945, guid: 457028862914347db9d5601d1dcd30ae, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0

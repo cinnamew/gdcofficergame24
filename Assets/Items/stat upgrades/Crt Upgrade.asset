@@ -16,7 +16,7 @@ MonoBehaviour:
   maxUpgradeLvl: -1
   itemName: Critical Chance Upgrade
   description: Upgrade Critical Chance by 2%
-  icon: {fileID: 0}
+  icon: {fileID: 671324473, guid: 2fe30ff6c754a9541a958ce07599b999, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
   SpdBuff: 0

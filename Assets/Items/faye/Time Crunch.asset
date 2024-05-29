@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
   m_Name: Time Crunch
   m_EditorClassIdentifier: 
-  currentUpgradeLvl: 2
-  maxUpgradeLvl: 3
+  currentUpgradeLvl: 1
+  maxUpgradeLvl: 1
   itemName: Time Crunch
-  description: Increase SPD by x%, Haste by x%, ATK by x%, and CRT by x% for x seconds.
+  description: When health below 20% Increase SPD by 20%, Haste by 20%, ATK by 20%,
+    and CRT by 20% for 3 seconds.
   icon: {fileID: 317181221, guid: 62868bdc084e84b88b1129ad83aa2426, type: 3}
   MaxHpBuff: 0
   AtkBuff: 20

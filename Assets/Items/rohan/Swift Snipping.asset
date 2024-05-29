@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Swift Snipping
-  description: Increases SPD by x% and Haste by x%.
+  description: Increases SPD by 10% and Haste by 20%.
   icon: {fileID: -123663743, guid: bef8654e02a714301ab2cad976c07250, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0

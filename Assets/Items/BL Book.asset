@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
   m_Name: BL Book
   m_EditorClassIdentifier: 
-  currentUpgradeLvl: 2
+  currentUpgradeLvl: 1
   maxUpgradeLvl: 4
   itemName: BL Book
-  description: Boy lover book
+  description: Repels targets with orbiting BL Books.
   icon: {fileID: 0}
   MaxHpBuff: 0
   AtkBuff: 0

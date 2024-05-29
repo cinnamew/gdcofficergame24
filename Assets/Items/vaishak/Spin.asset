@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Spin
-  description: Steel ball spins around him every x seconds.
+  description: Steel ball spins around him and dissapears after 1 spin for 3 seconds
   icon: {fileID: 484154802, guid: b57dfbda47e2c45969f2b38f3eec2653, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0

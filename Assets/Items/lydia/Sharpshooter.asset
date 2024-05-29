@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Sharpshooter
-  description: Increases CRT rate by x%.
+  description: Increases CRT rate by 10%.
   icon: {fileID: -543482762, guid: 2f317c8e3d4d641139014c89e4f871e7, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
