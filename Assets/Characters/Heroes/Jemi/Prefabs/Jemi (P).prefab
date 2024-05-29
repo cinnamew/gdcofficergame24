@@ -3846,12 +3846,12 @@ MonoBehaviour:
   baseProjectileCooldown: 1
   lifeSpan: 2
   projectilePrefab: {fileID: 17756766921772526, guid: 5c96539be79a0944381e739741686d4d, type: 3}
-  projectileSpeed: 5
+  projectileSpeed: 15
   projectileSpawnpoint: {fileID: 2076138178879587017}
   rotateProjectileToAimDir: 1
-  spreadAngle: 80
+  spreadAngle: 45
   spreadRadius: 0
-  projectilesPerShot: 3
+  projectilesPerShot: 9
 --- !u!114 &5322775486260631031
 MonoBehaviour:
   m_ObjectHideFlags: 0
