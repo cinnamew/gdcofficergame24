@@ -53,17 +53,17 @@ public class PullButton : MonoBehaviour
         
         if(thingToHide != null) thingToHide.SetActive(false);
             Character hot = allCharas[Random.Range(0,allCharas.Count)];  //the chara u pulled
+            Manager.Obj.addCharacter(hot.name);
+            Manager.Obj.RefreshPlayerStats();
 
             pulledChara.GetComponent<SpriteRenderer>().sprite = hot.sprite;
+            pulledChara.GetComponent<PulledChara>().SetName(hot.name);
             pulledChara.SetActive(true);
             foreach(GameObject g in showAfterDone) {
                 g.SetActive(true);
             }
 
-            print("u got the lovely " + hot.name);
-            Manager.Obj.addCharacter(hot.name);
-
-            Manager.Obj.RefreshPlayerStats();
+            //print("u got the lovely " + hot.name);
 
             pulledChara.GetComponent<PulledChara>().WaitForMouseClick();
 
