@@ -21,6 +21,10 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
+    public void setDamage(int newval){
+        damage = newval; 
+    }
+
     void Attack()
     {
         if (target != null)

@@ -23,6 +23,7 @@ public class Health : MonoBehaviour
     private UpgradeInventory upgradeInventory;
 
     [SerializeField] bool isBoss = false;
+    private bool isFinalBoss = false;
     
     void Start()
     {
@@ -43,11 +44,16 @@ public class Health : MonoBehaviour
         upgradeInventory = gameObject.GetComponent<UpgradeInventory>();
     }
 
-
+    public void SetIsFinalBoss(bool newVal){
+        isFinalBoss = newVal;
+    }
+    public void SetMaxHealth(int newVal){
+        maxHealth = newVal;
+        health = maxHealth;
+    }
     public int GetHealth() {
         return health;
     }
-
     void Update(){
         if (gameObject.tag == "Player" && slider != null){
             maxHealth = statsManager.MaxHp;
@@ -106,6 +112,9 @@ public class Health : MonoBehaviour
                     for(int i = 0; i < 15; i++) {
                         Instantiate(coin, new Vector3(transform.position.x + 0.1f * Random.Range(-i, 20), transform.position.y + 0.1f * Random.Range(-i, 20), 1), Quaternion.identity);
                     }
+                }
+                if(isFinalBoss){
+                    StageUIManager.Obj.EndOfLevelReached();
                 }
             } else {
                 Debug.Log("DIED SKULL SKULL SKULLL");

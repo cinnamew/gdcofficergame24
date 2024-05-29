@@ -37,9 +37,16 @@ public class EnemySpawner : MonoBehaviour
     }
     private IEnumerator SpawnStage1Bosses(){
         yield return new WaitForSeconds(50f);
-        SpawnBoss(bossPrefabs[0]);
+        SpawnBoss(bossPrefabs[0], false);
         yield return new WaitForSeconds(250f);
-        SpawnBoss(bossPrefabs[0]);
+        SpawnBoss(bossPrefabs[0], true);
+    }
+
+    private void BuffBoss(GameObject boss){
+        boss.GetComponent<EnemyAttack>().setDamage(100);
+        boss.GetComponent<Boss>().SetShotInterval(3f);
+        boss.GetComponent<Health>().SetIsFinalBoss(true);
+        boss.GetComponent<Health>().SetMaxHealth(10000);
     }
 
     private IEnumerator SpawnEnemyRings(GameObject[] enemies, int numWaves, float cooldown){
@@ -49,9 +56,12 @@ public class EnemySpawner : MonoBehaviour
             SpawnRingOfEnemies(randomEnemyPrefab);
         }
     }
-    private void SpawnBoss(GameObject boss){
+    private void SpawnBoss(GameObject boss, bool buffBoss){
         Vector2 spawnPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * 10f;
-        Instantiate(boss, spawnPosition, Quaternion.identity);
+            GameObject spawnedBoss = Instantiate(boss, spawnPosition, Quaternion.identity);
+        if (buffBoss){     
+            BuffBoss(spawnedBoss);
+        }
     }
 
     private IEnumerator SpawnEnemyFlocks(GameObject[] enemies,  int numWaves, float cooldown){

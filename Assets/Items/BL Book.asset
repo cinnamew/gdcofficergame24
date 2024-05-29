@@ -16,7 +16,7 @@ MonoBehaviour:
   maxUpgradeLvl: 4
   itemName: BL Book
   description: Repels targets with orbiting BL Books.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 53b523d67eaa2d5458f079bba9e3e1fd, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
   SpdBuff: 0

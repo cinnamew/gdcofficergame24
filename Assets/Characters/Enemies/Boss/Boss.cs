@@ -6,13 +6,17 @@ public class Boss : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private GameObject projectile;
-    [SerializeField] private float     shotInterval = 6f;
+    [SerializeField] private float shotInterval = 6f;
 
     private Vector3[] arr = new Vector3[4];
     private float timer;
     private void Start()
     {
         arr[0] = new Vector2(0, 0); arr[1] = new Vector2(1, 0); arr[2] = new Vector2(0, 1); arr[0] = new Vector2(1, 1);
+    }
+
+    public void SetShotInterval(float newVal){
+        shotInterval = newVal;
     }
     void Update()
     {

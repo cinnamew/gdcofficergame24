@@ -112,7 +112,7 @@ public class StageUIManager : Singleton<StageUIManager>
         } else {
             upgradeItems[option].Upgrade();
         }
-        updateDescription(upgradeItems[option]);
+        //updateDescription(upgradeItems[option]);
         levelPanel.SetActive(false);
         pauseButton.SetActive(true);
         Time.timeScale = 1;
