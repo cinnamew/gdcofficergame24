@@ -6,6 +6,7 @@ public class PickUpManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private CircleCollider2D circleCollider2D;
+
     void Start()
     {
         circleCollider2D = GetComponent<CircleCollider2D>();
@@ -19,6 +20,7 @@ public class PickUpManager : MonoBehaviour
             Manager.Obj.addToCoins(1);
             Destroy(other.gameObject);
             StageUIManager.Obj.UpdateCoinsText();
+            AudioPlayer.Obj.playAudioClip(2);
         }
     }
 

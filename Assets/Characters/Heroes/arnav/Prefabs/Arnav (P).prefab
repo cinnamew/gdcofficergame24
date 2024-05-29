@@ -719,6 +719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba9475644af774fad463275f41efb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playFrom: {fileID: 0}
+  coinClip: {fileID: 0}
 --- !u!1 &412183644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,6 +3774,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: bb628b17a6563d44da09bd605338f35f, type: 3}
   - {fileID: 8300000, guid: f302039f6efef294c8227a8fd740da73, type: 3}
+  - {fileID: 8300000, guid: 1997cd5ed63924aaf9de97b2864a59f2, type: 3}
 --- !u!1 &9025393957480513985
 GameObject:
   m_ObjectHideFlags: 0
