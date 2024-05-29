@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
-  m_Name: BL Book
+  m_Name: AP Prep Book
   m_EditorClassIdentifier: 
   currentUpgradeLvl: 1
   maxUpgradeLvl: 4
-  itemName: BL Book
-  description: Repels targets with orbiting BL Books.
-  icon: {fileID: 21300000, guid: 53b523d67eaa2d5458f079bba9e3e1fd, type: 3}
+  itemName: AP Prep Book
+  description: Repels targets with orbiting AP prep books.
+  icon: {fileID: 21300000, guid: 52ddd85a87e7645108ba67c7d55d4f89, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
   SpdBuff: 0
