@@ -3849,7 +3849,7 @@ MonoBehaviour:
   projectileSpeed: 15
   projectileSpawnpoint: {fileID: 2076138178879587017}
   rotateProjectileToAimDir: 1
-  spreadAngle: 45
+  spreadAngle: 30
   spreadRadius: 0
   projectilesPerShot: 9
 --- !u!114 &5322775486260631031
