@@ -322,6 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294107083}
   - component: {fileID: 294107084}
+  - component: {fileID: 3326598782713709350}
   m_Layer: 0
   m_Name: BL Books
   m_TagString: Untagged
@@ -368,6 +369,19 @@ MonoBehaviour:
   - {fileID: 1882101670}
   - {fileID: 1100728205}
   - {fileID: 2003198844}
+--- !u!114 &3326598782713709350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294107082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7ef23dbda424a298e7309256b9b4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rohanTransform: {fileID: 8831843088474068429}
 --- !u!1 &334352083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,6 +1612,7 @@ GameObject:
   - component: {fileID: 857698493}
   - component: {fileID: 857698492}
   - component: {fileID: 857698491}
+  - component: {fileID: 5534368949973925871}
   m_Layer: 3
   m_Name: Spider Cooking
   m_TagString: Untagged
@@ -1731,6 +1746,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5534368949973925871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857698489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7ef23dbda424a298e7309256b9b4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rohanTransform: {fileID: 8831843088474068429}
 --- !u!1 &1029262863
 GameObject:
   m_ObjectHideFlags: 0

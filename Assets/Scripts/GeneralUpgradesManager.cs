@@ -15,7 +15,7 @@ public class GeneralUpgradesManager : MonoBehaviour
     // Update is called once per frame
 
     public void Upgrade(UpgradeItem upgrade){
-        if (upgrade.itemName == "Spider Cooking")
+        if (upgrade.itemName == "Brainrot")
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
@@ -46,7 +46,7 @@ public class GeneralUpgradesManager : MonoBehaviour
                 spiderCooking.GetComponent<HeroHitbox>().setKnockbackMagnitude(5f);
             }
         }
-        if (upgrade.itemName == "BL Book"){
+        if (upgrade.itemName == "AP Prep Book"){
             if (upgrade.currentUpgradeLvl == 1)
             {
                 blBook.SetActive(true);
