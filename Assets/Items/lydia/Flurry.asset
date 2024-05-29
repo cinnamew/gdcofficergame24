@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Flurry
-  description: circle of arrows shot out at a large radius every x seconds
+  description: Shoots out a circle of arrows every x seconds.
   icon: {fileID: -1638348441, guid: 2f317c8e3d4d641139014c89e4f871e7, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0
