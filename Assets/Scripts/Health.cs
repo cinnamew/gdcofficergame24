@@ -66,12 +66,15 @@ public class Health : MonoBehaviour
         }
         if(gameObject.tag == "Enemy") //assuming we don't want dmg indicator numbers on the player bc there is alr a health bar
         {
+            AudioPlayer.Obj.playAudioClip(0, 0.3f);
             if(dmgIndicator != null)
             {
                 GameObject i = Instantiate(dmgIndicator, transform.position, Quaternion.identity);
                 i.transform.parent = null;
                 i.GetComponent<TMP_Text>().text = "" + damageVal;
             }
+        } else {
+            AudioPlayer.Obj.playAudioClip(1, 0.3f);
         }
 
         if (health <= 0)

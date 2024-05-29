@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4278bb499658dec4d96097c5183d06b9, type: 3}
   m_Name: Orb
   m_EditorClassIdentifier: 
-  currentUpgradeLvl: 2
+  currentUpgradeLvl: 4
   maxUpgradeLvl: 4
   itemName: Orb Upgrade
   description: Upgrades orbs (duh)
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c56c58dd78ceb4dc98cd2c577b9c1202, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
   SpdBuff: 0
@@ -26,3 +26,5 @@ MonoBehaviour:
   BuffIsTemporary: 0
   BuffTime: 0
   IsWeapon: 1
+  IsSkill: 0
+  IsStat: 0
