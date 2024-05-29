@@ -3899,8 +3899,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimPoint: {x: 0, y: 0}
-  aimPriority: 0
-  enableAim: 1
+  aimPriority: 1
+  enableAim: 0
 --- !u!114 &4792184362106336871
 MonoBehaviour:
   m_ObjectHideFlags: 0

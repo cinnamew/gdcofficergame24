@@ -91144,6 +91144,7 @@ MonoBehaviour:
   - rohan
   - laurier
   - jemi
+  resetGachaPulls: 0
   playerStats: []
   basePlayerStats: []
 --- !u!4 &1875862457

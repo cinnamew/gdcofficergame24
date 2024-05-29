@@ -226,7 +226,7 @@ public class StageUIManager : Singleton<StageUIManager>
     }
     public void Resume()
     {
-        if (gameOver){
+        if (!gameOver){
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
         }

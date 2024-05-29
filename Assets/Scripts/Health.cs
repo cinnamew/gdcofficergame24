@@ -79,9 +79,13 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-            ParticleSystem deathVFX = Instantiate(deathSmoke, transform.position, Quaternion.identity);
-            deathVFX.Play();
-            
+            if (deathSmoke != null)
+            {
+                ParticleSystem deathVFX = Instantiate(deathSmoke, transform.position, Quaternion.identity);
+                deathVFX.Play();
+                Destroy(deathVFX.gameObject, 0.5f);
+            }
+
             if (animController != null) {
                 animController.isAlive = false;
                 if (animController.AnimHasEnded()) {
@@ -109,7 +113,6 @@ public class Health : MonoBehaviour
             }
             gameObject.SetActive(false);
             Destroy(gameObject, 0.5f); //DONT DESTROY PLAYER
-            Destroy(deathVFX.gameObject, 0.5f);
             
         }
     }
