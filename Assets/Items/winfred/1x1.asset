@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: 1x1
-  description: Every x seconds, deploy a decoy that despawns after 2 seconds
+  description: Every x seconds, deploy a decoy that despawns after x seconds.
   icon: {fileID: 2025765296, guid: 457028862914347db9d5601d1dcd30ae, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

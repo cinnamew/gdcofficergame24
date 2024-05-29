@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Berserk
-  description: (bullet hell thingy here maybe?? Rain of bullets)
+  description: Creates a rain of x bullets.
   icon: {fileID: 860877970, guid: 7ab68dcc9e6e04061aefc8872ed5ac6c, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

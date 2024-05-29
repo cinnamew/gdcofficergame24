@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Debugging Hell
-  description: 'for every enemy defeated, heal x% HP '
+  description: For every enemy defeated, heal x% HP.
   icon: {fileID: -1087675784, guid: 62868bdc084e84b88b1129ad83aa2426, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

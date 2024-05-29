@@ -15,8 +15,8 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Heart Attack!
-  description: shoot a heart that explodes into smaller ones in the direction of
-    your cursor
+  description: Shoot a heart that explodes into smaller ones in the direction of
+    your cursor.
   icon: {fileID: -1609948084, guid: 65ce0e2d98f0741db9a5ddbcf59b3ae8, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

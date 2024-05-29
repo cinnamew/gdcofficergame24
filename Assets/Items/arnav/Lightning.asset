@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Lightning
-  description: send out a cross beam that hits nearby enemies
+  description: Sends out a cross lightning beam that deals damage to nearby enemies.
   icon: {fileID: -531316, guid: cdf5b278b1da44d38b8fc40808cd4136, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   maxUpgradeLvl: 3
   itemName: Empathy
   description: You heal x% of the damage you deal. Additionally, every x seconds,
-    the enemy nearest you takes damage equal to all the HP you lost
+    the enemy nearest you takes damage equal to all the HP you lost.
   icon: {fileID: -1891825691, guid: 65ce0e2d98f0741db9a5ddbcf59b3ae8, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0

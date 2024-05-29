@@ -21,7 +21,7 @@ public class SkillManager : MonoBehaviour
     private float prevEnemyHeal;
     private float enemyDamageRange = 10f;
     private float enemyDamageCooldown = 10f;
-    private float enemyDamagePercent = 25f;
+    private float enemyDamagePercent = 15f;
     private float prevEnemyDamage;
     [SerializeField] private LayerMask enemyLayer;
 
@@ -99,18 +99,18 @@ public class SkillManager : MonoBehaviour
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
-                upgrade.AtkBuff = 10;
-                upgrade.CrtBuff = 5;
+                upgrade.AtkBuff = 8;
+                upgrade.CrtBuff = 4;
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                upgrade.AtkBuff = 12;
-                upgrade.CrtBuff = 8;
+                upgrade.AtkBuff = 10;
+                upgrade.CrtBuff = 6;
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                upgrade.AtkBuff = 15;
-                upgrade.CrtBuff = 10;
+                upgrade.AtkBuff = 12;
+                upgrade.CrtBuff = 8;
             }
         }
         else if (upgrade.itemName == "Lightning")
@@ -124,13 +124,13 @@ public class SkillManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                lightning.setDamage(40);
-                lightning.setCooldown(6);
+                lightning.setDamage(35);
+                lightning.setCooldown(7);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                lightning.setDamage(50);
-                lightning.setCooldown(5);
+                lightning.setDamage(40);
+                lightning.setCooldown(6);
             }
         }
 
@@ -144,23 +144,23 @@ public class SkillManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 2){
                 spearCircle.setDamage(35);
-                spearCircle.setCooldown(8);
-                spearCircle.setSpearCircleScale(new Vector2(1.25f, 1.25f));
+                spearCircle.setCooldown(9);
+                spearCircle.setSpearCircleScale(new Vector2(1.2f, 1.2f));
             }
             if (upgrade.currentUpgradeLvl == 3){
                 spearCircle.setDamage(40);
-                spearCircle.setCooldown(6);
-                spearCircle.setSpearCircleScale(new Vector2(1.5f, 1.5f));
+                spearCircle.setCooldown(8);
+                spearCircle.setSpearCircleScale(new Vector2(1.4f, 1.4f));
             }
         }
         else if (upgrade.itemName == "Time Crunch")
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
-                upgrade.AtkBuff = 20;
-                upgrade.SpdBuff = 20;
-                upgrade.CrtBuff = 20;
-                upgrade.HasteBuff = 20;
+                upgrade.AtkBuff = 10;
+                upgrade.SpdBuff = 10;
+                upgrade.CrtBuff = 10;
+                upgrade.HasteBuff = 10;
                 upgrade.BuffTime = 3;
             }
             if (upgrade.currentUpgradeLvl == 2)
@@ -169,10 +169,10 @@ public class SkillManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                upgrade.AtkBuff = 30;
-                upgrade.SpdBuff = 30;
-                upgrade.CrtBuff = 30;
-                upgrade.HasteBuff = 30;
+                upgrade.AtkBuff = 20;
+                upgrade.SpdBuff = 20;
+                upgrade.CrtBuff = 20;
+                upgrade.HasteBuff = 20;
             }
         }
         else if (upgrade.itemName == "Debugging Hell")
@@ -209,18 +209,18 @@ public class SkillManager : MonoBehaviour
             {
                 bulletRain = gameObject.GetComponent<Jemi_Skill_Berserk>();
                 bulletRain.unlockedAbility = true;
-                bulletRain.setProjectileDamage(10);
+                bulletRain.setProjectileDamage(5);
                 bulletRain.setCooldown(10);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                bulletRain.setProjectileDamage(12);
+                bulletRain.setProjectileDamage(8);
                 bulletRain.setCooldown(8);
                 bulletRain.setNumProjectiles(9);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                bulletRain.setProjectileDamage(15);
+                bulletRain.setProjectileDamage(10);
                 bulletRain.setCooldown(6);
                 bulletRain.setNumProjectiles(15);
             }
@@ -242,23 +242,23 @@ public class SkillManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                heartAttackHitbox.setDamage(40);
-                heartAttack.SetBaseProjectileCooldown(6);
+                heartAttackHitbox.setDamage(35);
+                heartAttack.SetBaseProjectileCooldown(7);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                heartAttackHitbox.setDamage(50);
-                heartAttack.SetBaseProjectileCooldown(4);
+                heartAttackHitbox.setDamage(40);
+                heartAttack.SetBaseProjectileCooldown(6);
             }
         }
         else if (upgrade.itemName == "Empathy")
         {
             if (upgrade.currentUpgradeLvl == 2){
-                enemyDamagePercent = 50f;
+                enemyDamagePercent = 30f;
                 enemyDamageCooldown = 8f;
             }
             if (upgrade.currentUpgradeLvl == 3){
-                enemyDamagePercent = 100f;
+                enemyDamagePercent = 60f;
                 enemyDamageCooldown = 5f;
             }
         }
@@ -283,7 +283,6 @@ public class SkillManager : MonoBehaviour
         {
             if (upgrade.currentUpgradeLvl == 1){
                 atkIncrease = 50f;
-                atkIncrease = 10f;
             }
             if (upgrade.currentUpgradeLvl == 2){
                 atkIncrease = 100f;
@@ -300,19 +299,19 @@ public class SkillManager : MonoBehaviour
             {
                 flurry = GetComponent<Lydia_Skill_Flurry>();
                 flurry.unlockedAbility = true;
-                flurry.setArrowDamage(15);
+                flurry.setArrowDamage(8);
                 flurry.setNumArrows(5);
                 flurry.setCooldown(8);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                flurry.setArrowDamage(20);
+                flurry.setArrowDamage(10);
                 flurry.setNumArrows(10);
                 flurry.setCooldown(7);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                flurry.setArrowDamage(24);
+                flurry.setArrowDamage(12);
                 flurry.setNumArrows(16);
                 flurry.setCooldown(6);
             }
@@ -325,11 +324,11 @@ public class SkillManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                upgrade.CrtBuff = 20;
+                upgrade.CrtBuff = 15;
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                upgrade.CrtBuff = 30;
+                upgrade.CrtBuff = 20;
             }
         }
 
@@ -338,17 +337,17 @@ public class SkillManager : MonoBehaviour
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
-                upgrade.SpdBuff = 10;
+                upgrade.SpdBuff = 5;
                 upgrade.HasteBuff = 20;
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                upgrade.SpdBuff = 15;
+                upgrade.SpdBuff = 10;
                 upgrade.HasteBuff = 30;
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                upgrade.SpdBuff = 20;
+                upgrade.SpdBuff = 15;
                 upgrade.HasteBuff = 40;
             }
         }
@@ -358,18 +357,18 @@ public class SkillManager : MonoBehaviour
             {
                 doubleTrouble = GetComponent<Rohan_Skill_DoubleTrouble>();
                 doubleTrouble.unlockedAbility = true;
-                doubleTrouble.setProjectileDamage(30);
-                doubleTrouble.setCooldown(8);
+                doubleTrouble.setProjectileDamage(25);
+                doubleTrouble.setCooldown(9);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                doubleTrouble.setProjectileDamage(35);
-                doubleTrouble.setCooldown(6);
+                doubleTrouble.setProjectileDamage(30);
+                doubleTrouble.setCooldown(7);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                doubleTrouble.setProjectileDamage(40);
-                doubleTrouble.setCooldown(4);
+                doubleTrouble.setProjectileDamage(35);
+                doubleTrouble.setCooldown(5);
             }
         }
 
@@ -385,12 +384,12 @@ public class SkillManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                steelBallAttack.SetDamage(35);
+                steelBallAttack.SetDamage(33);
                 steelBallAttack.SetDegreesTillHidden(720f);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                steelBallAttack.SetDamage(40);
+                steelBallAttack.SetDamage(36);
                 steelBallAttack.SetDegreesTillHidden(1080f);
             }
         }
@@ -420,37 +419,37 @@ public class SkillManager : MonoBehaviour
             {
                 scrambled = gameObject.GetComponent<Winfred_Skill_Scrambled>();
                 scrambled.unlockedAbility = true;
-                scrambled.setDamage(40);
+                scrambled.setDamage(35);
                 scrambled.setCooldown(10);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                scrambled.setDamage(45);
+                scrambled.setDamage(40);
                 scrambled.setCooldown(8);
                 scrambled.setExplosionScale(new Vector3(1.2f, 1.2f, 1f));
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                scrambled.setDamage(50);
+                scrambled.setDamage(45);
                 scrambled.setCooldown(6);
-                scrambled.setExplosionScale(new Vector3(1.5f, 1.5f, 1f));
+                scrambled.setExplosionScale(new Vector3(1.4f, 1.4f, 1f));
             }
         }
         else if (upgrade.itemName == "R U R' U'")
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
-                upgrade.SpdBuff = 10;
+                upgrade.SpdBuff = 5;
                 upgrade.HasteBuff = 20;
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                upgrade.SpdBuff = 15;
+                upgrade.SpdBuff = 10;
                 upgrade.HasteBuff = 30;
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                upgrade.SpdBuff = 20;
+                upgrade.SpdBuff = 15;
                 upgrade.HasteBuff = 40;
             }
         }

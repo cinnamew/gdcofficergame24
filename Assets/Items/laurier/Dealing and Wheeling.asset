@@ -15,7 +15,7 @@ MonoBehaviour:
   currentUpgradeLvl: 1
   maxUpgradeLvl: 3
   itemName: Dealing and Wheeling
-  description: Killing an enemy gives you x coins
+  description: Killing an enemy gives you x coins.
   icon: {fileID: -672281783, guid: 73f35f4dca61d4d9db7569d61b7998f5, type: 3}
   MaxHpBuff: 0
   AtkBuff: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   BuffTime: 0
   IsWeapon: 0
   IsSkill: 1
+  IsStat: 0
