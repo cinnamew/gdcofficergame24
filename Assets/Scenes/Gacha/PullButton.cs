@@ -21,6 +21,10 @@ public class PullButton : MonoBehaviour
 
     [SerializeField] TMP_Text coinsText;
 
+    [SerializeField] List<AudioClip> successAudios;
+    [SerializeField] AudioClip rejectAudio;
+    [SerializeField] AudioSource playFrom;
+
     //[SerializeField] MelonLogger logger;
 
     // Start is called before the first frame update
@@ -48,9 +52,13 @@ public class PullButton : MonoBehaviour
         if (coins < 100) {
             //print("not enough coins!");
             MelonLogger.Log("Not enough coins!", LogType.Error);
+            playFrom.PlayOneShot(rejectAudio);
             return;
         }
         
+        for(int i = 0; i < successAudios.Count; i++) {
+            playFrom.PlayOneShot(successAudios[i]);
+        }
         if(thingToHide != null) thingToHide.SetActive(false);
             Character hot = allCharas[Random.Range(0,allCharas.Count)];  //the chara u pulled
             Manager.Obj.addCharacter(hot.name);

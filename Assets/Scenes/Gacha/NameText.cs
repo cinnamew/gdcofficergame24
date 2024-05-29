@@ -8,6 +8,8 @@ public class NameText : MonoBehaviour
     [SerializeField] private TMP_Text text;
     [SerializeField] int numSecsToWait;
     [SerializeField] float howMuchMovement = 1;
+    private Vector3 ogPos;
+    private bool firstTime = true;
     
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,13 @@ public class NameText : MonoBehaviour
     }
 
     public void OnEnable() {
+        if(firstTime) {
+            ogPos = transform.position;
+            firstTime = false;
+        }
+        //print("og: " + ogPos + "; transform: " + transform.position);
         text.color = new Color(1, 1, 1, 0);
+        transform.position = ogPos;
         StartCoroutine(Translucence());
     }
 

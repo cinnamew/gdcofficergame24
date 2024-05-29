@@ -7700,6 +7700,7 @@ MonoBehaviour:
   nameText: {fileID: 1280646782}
   xText: {fileID: 175976961}
   name: temp
+  secsToWait: 3
 --- !u!1 &1083818906
 GameObject:
   m_ObjectHideFlags: 0
@@ -8063,30 +8064,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1981474233}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: a5008ed93403448f0be75ae1065916b5, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1981474233}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: c48528eb14cea48c3916d63c292a9a9f, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1162485326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8162,6 +8139,11 @@ MonoBehaviour:
   - {fileID: 1484967513}
   thingToHide: {fileID: 128771626}
   coinsText: {fileID: 1736450}
+  successAudios:
+  - {fileID: 8300000, guid: a5008ed93403448f0be75ae1065916b5, type: 3}
+  - {fileID: 8300000, guid: c48528eb14cea48c3916d63c292a9a9f, type: 3}
+  rejectAudio: {fileID: 8300000, guid: 43cf866e6c82b41418511aa7a83c0598, type: 3}
+  playFrom: {fileID: 1152837556}
 --- !u!1 &1255862864
 GameObject:
   m_ObjectHideFlags: 0
