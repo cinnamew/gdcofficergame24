@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rohan
   MaxHp: 100
-  Atk: 80
-  Spd: 100
+  Atk: 90
+  Spd: 90
   Crt: 8
   Pur: 110
   Haste: 0

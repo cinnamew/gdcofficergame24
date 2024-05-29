@@ -16,6 +16,10 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
     [SerializeField] TMP_Text charaName;
     [SerializeField] GameObject coverUp;
 
+    [SerializeField] AudioClip no;
+    [SerializeField] AudioClip yes;
+    [SerializeField] AudioSource playFrom;
+
     [Header("Choose Stage (only one stage for now)")]
     private int curStageIndex = 0;
 
@@ -79,8 +83,10 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
         //tell the next scene to get the chosen stage and character
         if(Manager.Obj.hasCharacter(charaName.text) == 0) {
             MelonLogger.Log("Character not unlocked!\nGacha for more...", LogType.Error);
+            playFrom.PlayOneShot(no, 1F);
             return;
         }
+        playFrom.PlayOneShot(yes, 1F);
         SceneManager.LoadScene(3); //scene name: Stage 1
     }
     public void goBackToStartMenu()
