@@ -2257,6 +2257,7 @@ MonoBehaviour:
   - rohan
   - laurier
   - jemi
+  resetGachaPulls: 0
   playerStats:
   - {fileID: 11400000, guid: e5da76490ec567246996ec8d04b2d14f, type: 2}
   - {fileID: 11400000, guid: 492d88e48fdebca4f92a8c157dff8657, type: 2}

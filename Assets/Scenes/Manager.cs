@@ -11,15 +11,11 @@ public class Manager : Singleton<Manager>
 
     [SerializeField] List<string> charaNames = new List<string> {"arnav", "jolie", "vaishak", "lydia", "faye", "winfred", "rohan", "laurier", "jemi"};
     
+    [SerializeField] bool resetGachaPulls = false;
+
     //these MUST be in the same order!!
     [SerializeField] List<PlayerStats> playerStats;
     [SerializeField] List<PlayerStats> basePlayerStats;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
 
     protected override void Awake() {
@@ -29,6 +25,7 @@ public class Manager : Singleton<Manager>
         else {
             coins = PlayerPrefs.GetInt("coins");
         }
+        if(resetGachaPulls) ResetPulls();
         for(int i = 0; i < charaNames.Count; i++) {
             string temp = charaNames[i].ToLower();
             if(PlayerPrefs.HasKey(temp)) {
@@ -36,6 +33,12 @@ public class Manager : Singleton<Manager>
             }
         }
         RefreshPlayerStats();
+    }
+
+    public void ResetPulls() {
+        for(int i = 0; i < charaNames.Count; i++) {
+            PlayerPrefs.SetInt(charaNames[i], 0);
+        }
     }
 
     public PlayerStats GetPlayerStats(string name) {
@@ -116,7 +119,7 @@ public class Manager : Singleton<Manager>
 
     public int hasCharacter(string s) {
         s = s.ToLower();
-        if(charactersUnlocked.ContainsKey(s)) return charactersUnlocked[s];
+        if(PlayerPrefs.HasKey(s)) return PlayerPrefs.GetInt(s);
         return 0;
     }
 
