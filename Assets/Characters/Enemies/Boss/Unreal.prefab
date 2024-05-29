@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6404484939844340981}
   - component: {fileID: 1828215995484483180}
   - component: {fileID: -3487058239347218606}
+  - component: {fileID: -443292753132216108}
   m_Layer: 6
   m_Name: Unreal
   m_TagString: Enemy
@@ -206,3 +207,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 4844861573551302320, guid: 0c10b9cbb6a3a49819d984fc89067ef1, type: 3}
   shotInterval: 10
+--- !u!95 &-443292753132216108
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493537871260361680}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5415a960409ae4955b7805dbd147e5f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
