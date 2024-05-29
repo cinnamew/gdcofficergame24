@@ -45,7 +45,7 @@ public class PullButton : MonoBehaviour
 
         //print(coins);
 
-        if (coins < 20) {
+        if (coins < 100) {
             //print("not enough coins!");
             MelonLogger.Log("Not enough coins!", LogType.Error);
             return;
@@ -67,7 +67,7 @@ public class PullButton : MonoBehaviour
 
             pulledChara.GetComponent<PulledChara>().WaitForMouseClick();
 
-            Manager.Obj.addToCoins(-20);
+            Manager.Obj.addToCoins(-100);
         coinsText.text = Manager.Obj.getCoins() + "";
     }
 

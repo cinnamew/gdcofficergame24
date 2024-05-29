@@ -21,7 +21,7 @@ public class Manager : Singleton<Manager>
     protected override void Awake() {
         base.Awake();
         DontDestroyOnLoad(this);
-        if(!PlayerPrefs.HasKey("coins")) coins = 20;
+        if(!PlayerPrefs.HasKey("coins")) coins = 100;
         else {
             coins = PlayerPrefs.GetInt("coins");
         }

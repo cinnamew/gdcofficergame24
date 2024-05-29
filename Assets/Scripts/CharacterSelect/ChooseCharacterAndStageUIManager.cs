@@ -93,4 +93,9 @@ public class ChooseCharacterAndStageUIManager : MonoBehaviour
     {
         SceneManager.LoadScene(0); //scene name: StartScreen
     }
+
+    public void AddCoins(int numCoins) {
+        Manager.Obj.addToCoins(numCoins);
+        MelonLogger.Log("Added " + numCoins + " coins!", LogType.Success);
+    }
 }

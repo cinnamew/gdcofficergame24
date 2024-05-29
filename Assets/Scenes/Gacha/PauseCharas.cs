@@ -33,5 +33,6 @@ public class PauseCharas : MonoBehaviour
     public void SwitchToPlay() {
         play.SetActive(true);
         pause.SetActive(false);
+        playing = true;
     }
 }
