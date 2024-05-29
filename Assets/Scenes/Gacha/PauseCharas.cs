@@ -21,7 +21,8 @@ public class PauseCharas : MonoBehaviour
 
     public void PausePlayChara() {
         charaPreviewImage.GetComponent<CharaPreviewImage>().SwitchImageChangeStatus();
-        playing = !playing;
+        playing = charaPreviewImage.GetComponent<CharaPreviewImage>().GetImageChangeStatus();
+        
         if(playing) {
             pause.SetActive(true);
             play.SetActive(false);
@@ -33,6 +34,6 @@ public class PauseCharas : MonoBehaviour
     public void SwitchToPlay() {
         play.SetActive(true);
         pause.SetActive(false);
-        playing = true;
+        playing = false;
     }
 }
