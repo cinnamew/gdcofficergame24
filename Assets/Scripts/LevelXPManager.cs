@@ -43,15 +43,15 @@ public class LevelXPManager : MonoBehaviour
                 break;   
             case "xp_with_borders_1":
                 updateXP(r.Next(11, 20)); // (inclusive, exclusive)
-                gameObject.GetComponent<Health>().HealHealth(10);
+                gameObject.GetComponent<Health>().HealHealth(5);
                 break;
             case "xp_with_borders_2":
                 updateXP(r.Next(20, 50)); // (inclusive, exclusive)
-                gameObject.GetComponent<Health>().HealHealth(15);
+                gameObject.GetComponent<Health>().HealHealth(7);
                 break;
             case "xp_with_borders_3":
                 updateXP(r.Next(50, 100)); // (inclusive, exclusive)
-                gameObject.GetComponent<Health>().HealHealth(20);
+                gameObject.GetComponent<Health>().HealHealth(10);
                 break;
         }
         Destroy(other.gameObject);

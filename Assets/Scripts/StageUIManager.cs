@@ -93,6 +93,7 @@ public class StageUIManager : Singleton<StageUIManager>
     public void SelectOption(int option){
         player.GetComponent<UpgradeInventory>().AddItem(upgradeItems[option]);
         if (upgradeItems[option].IsWeapon){
+            Debug.Log("PLEASEE FOR THE LLOVE OF ALL THINGS WORKKKK");
             player.GetComponent<WeaponManager>().Upgrade(upgradeItems[option]);
         } else if (upgradeItems[option].IsSkill){
             player.GetComponent<SkillManager>().Upgrade(upgradeItems[option]);
@@ -102,6 +103,11 @@ public class StageUIManager : Singleton<StageUIManager>
             player.GetComponent<GeneralUpgradesManager>().Upgrade(upgradeItems[option]);
         }
         if (upgradeItems[option].maxUpgradeLvl != -1 && upgradeItems[option].currentUpgradeLvl >= upgradeItems[option].maxUpgradeLvl){
+            if (upgradeItems[option].IsSkill || upgradeItems[option].IsWeapon){
+                exclusiveUpgrades.Remove(upgradeItems[option]);
+            } else {
+                generalUpgrades.Remove(upgradeItems[option]);
+            }
             upgrades.Remove(upgradeItems[option]);
         } else {
             upgradeItems[option].Upgrade();
@@ -116,11 +122,20 @@ public class StageUIManager : Singleton<StageUIManager>
         temp2 = new List<UpgradeItem>();
         temp3 = new List<UpgradeItem>();
         temp.AddRange(upgrades);
+        temp2.AddRange(exclusiveUpgrades);
+        temp3.AddRange(generalUpgrades);        
         List<UpgradeItem> randomItems = new List<UpgradeItem>();
         for (int i = 0; i < upgradesPerLevel; i++){
-            int randomIndex = Random.Range(0, temp.Count);
-            randomItems.Add(temp[randomIndex]);
-            temp.RemoveAt(randomIndex);
+            bool isExclusive = Random.Range(0, 2) < 1;
+            if (isExclusive && temp2.Count > 0){
+                int randomIndex = Random.Range(0, temp2.Count);
+                randomItems.Add(temp2[randomIndex]);
+                temp2.RemoveAt(randomIndex);
+            } else {
+                int randomIndex = Random.Range(0, temp3.Count);
+                randomItems.Add(temp3[randomIndex]);
+                temp3.RemoveAt(randomIndex);
+            }
             //if (player.GetComponent<UpgradeInventory>().HasItem(randomItems))
         }
         return randomItems;
