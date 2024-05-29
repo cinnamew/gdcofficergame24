@@ -11218,7 +11218,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.0125
+  orthographic size: 3.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11331,7 +11331,7 @@ MonoBehaviour:
   _serializedAxis: 0
   PixelsPerUnit: 8
   ViewportAutoScale: 3
-  TargetViewportSizeInPixels: {x: 80, y: 50}
+  TargetViewportSizeInPixels: {x: 96, y: 60}
   _zoom: 1
   SnapMovementToGrid: 0
   SnapCameraToGrid: 1

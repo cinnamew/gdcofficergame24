@@ -3593,7 +3593,7 @@ GameObject:
   - component: {fileID: 3622285137229092153}
   - component: {fileID: 4725934562026995269}
   - component: {fileID: 8781250784721542141}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jemi (P)
   m_TagString: Player
   m_Icon: {fileID: 0}
