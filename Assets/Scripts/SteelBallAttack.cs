@@ -37,6 +37,11 @@ public class SteelBallAttack : MonoBehaviour
 
     public void SetSteelBallActive(){
         rotateObject.SetActive(true);
+        for (int i = 0; i < SteelBalls.Length; i++)
+        {
+            SteelBalls[i].SetActive(true);
+        }
+
     }
     public void SetDamage(int newVal){
         for (int i = 0; i < SteelBalls.Length; i++){

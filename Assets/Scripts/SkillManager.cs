@@ -378,6 +378,7 @@ public class SkillManager : MonoBehaviour
             SteelBallAttack steelBallAttack = GetComponent<SteelBallAttack>();
             if (upgrade.currentUpgradeLvl == 1)
             {
+                steelBallAttack.enabled = true;
                 steelBallAttack.SetSteelBallActive();
                 steelBallAttack.SetDamage(30);
                 steelBallAttack.SetDegreesTillHidden(360f);

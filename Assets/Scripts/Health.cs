@@ -128,11 +128,11 @@ public class Health : MonoBehaviour
         }
         if (debuggingHell != null && killedEnemy)
         {
-            int healAmt = 5;
+            int healAmt = 3;
             if (debuggingHell.currentUpgradeLvl == 2){
-                healAmt = 7;
+                healAmt = 5;
             } else if (debuggingHell.currentUpgradeLvl == 3){
-                healAmt = 9;
+                healAmt = 7;
             }
             HealHealth(healAmt);
         }
