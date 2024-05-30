@@ -149,7 +149,7 @@ public class Health : MonoBehaviour
             HealHealth(healAmt);
         }
         if (dealinNWheelin != null){
-            if(Random.Range(0, 9) == 1) Manager.Obj.addToCoins(dealinNWheelin.currentUpgradeLvl);
+            if(Random.Range(0, 99) == 1) Manager.Obj.addToCoins(dealinNWheelin.currentUpgradeLvl);
             StageUIManager.Obj.UpdateCoinsText();
         }
     }
