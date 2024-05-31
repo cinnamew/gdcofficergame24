@@ -30,7 +30,7 @@ public class SkillManager : MonoBehaviour
     
     [Header("Laurier")]
     private float prevCoinDrain;
-    private float coinDrainCooldown = 5f;
+    private float coinDrainCooldown = 3f;
     private float atkIncrease = 50f;
     private float prevAtkIncrease = 0f;
 
@@ -282,13 +282,13 @@ public class SkillManager : MonoBehaviour
         else if (upgrade.itemName == "User Fees")
         {
             if (upgrade.currentUpgradeLvl == 1){
-                atkIncrease = 50f;
+                atkIncrease = 20f;
             }
             if (upgrade.currentUpgradeLvl == 2){
-                atkIncrease = 100f;
+                atkIncrease = 35f;
             }
             if (upgrade.currentUpgradeLvl == 3){
-                coinDrainCooldown = 10f;
+                coinDrainCooldown = 6f;
             }
         }
 

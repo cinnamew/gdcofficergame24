@@ -79,19 +79,19 @@ public class WeaponManager : MonoBehaviour
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
-                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(40); //prev: 30
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(20); //prev: 15
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
-                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.5f);
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(1.4f); //prev: 2
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(50); //prev: 40
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(25); //prev: 20
             }
             if (upgrade.currentUpgradeLvl == 4)
             {
-                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.25f);
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.8f); //prev: 1.5f
             }
         }
 
