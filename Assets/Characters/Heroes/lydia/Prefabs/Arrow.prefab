@@ -121,11 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e83794495648f04ea42f3a19771abe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 25
   kbMagnitude: 0
   knockbackDuration: 0
   autoAttack: 1
   refreshEvery: 1
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1

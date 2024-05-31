@@ -97,17 +97,62 @@ public class WeaponManager : MonoBehaviour
 
         if (gameObject.name.Contains("Lydia"))
         {
-            //Do something
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(30); //prev: 25
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.8f); //prev: 1
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(35); //prev: 30
+            }
+            if (upgrade.currentUpgradeLvl == 4)
+            {
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.6f); //prev: 0.8f
+            }
         }
 
         if (gameObject.name.Contains("Rohan"))
         {
-            //Do something
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                gameObject.GetComponent<PlayerAttack>().setProjectileScale(new Vector3(1.5f, 1.5f, 1f)); 
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(35); //prev: 30
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                gameObject.GetComponent<PlayerAttack>().setProjectileScale(new Vector3(2f, 2f, 1f));
+            }
+            if (upgrade.currentUpgradeLvl == 4)
+            {
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.8f); //prev: 1
+            }
         }
 
         if (gameObject.name.Contains("Vaishak"))
         {
-            //Do something
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(35); //prev: 30
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(1.5f); //prev: 2
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(40); //prev: 35
+            }
+            if (upgrade.currentUpgradeLvl == 4)
+            {
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(1f); //prev: 1
+            }
         }
 
         if (gameObject.name.Contains("Winfred"))

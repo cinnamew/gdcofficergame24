@@ -1186,7 +1186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612901297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2529998, y: 0, z: 0}
+  m_LocalPosition: {x: 0.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3789,8 +3789,8 @@ MonoBehaviour:
   hitboxes:
   - {fileID: 3672792046166839693, guid: 0e251da05e932499ea6c2ac27fb624e0, type: 3}
   isProjectile: 0
-  baseProjectileCooldown: 1
-  lifeSpan: 0.77
+  baseProjectileCooldown: 1.2
+  lifeSpan: 0.76
   projectilePrefab: {fileID: 3672792046166839703, guid: 0e251da05e932499ea6c2ac27fb624e0, type: 3}
   projectileSpeed: 0
   projectileSpawnpoint: {fileID: 612901298}
