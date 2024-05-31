@@ -19,6 +19,7 @@ public class GeneralUpgradesManager : MonoBehaviour
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
+                spiderCooking.GetComponent<HeroHitbox>().setRefreshEvery(1f);
                 spiderCooking.SetActive(true);
             }
             if (upgrade.currentUpgradeLvl == 2)
@@ -35,7 +36,7 @@ public class GeneralUpgradesManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 5)
             {
-                spiderCooking.GetComponent<HeroHitbox>().setRefreshEvery(0.75f*0.8f);
+                spiderCooking.GetComponent<HeroHitbox>().setRefreshEvery(1f*0.8f);
             }
             if (upgrade.currentUpgradeLvl == 6)
             {

@@ -101,16 +101,21 @@ public class SkillManager : MonoBehaviour
             {
                 upgrade.AtkBuff = 8;
                 upgrade.CrtBuff = 4;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.AtkBuff = 10;
                 upgrade.CrtBuff = 6;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.AtkBuff = 12;
                 upgrade.CrtBuff = 8;
+                upgrade.ApplyBuffs(statsManager);
             }
         }
         else if (upgrade.itemName == "Lightning")
@@ -187,16 +192,21 @@ public class SkillManager : MonoBehaviour
             {
                 upgrade.MaxHpBuff = 10;
                 upgrade.PurBuff = 15;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.MaxHpBuff = 15;
                 upgrade.PurBuff = 20;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.MaxHpBuff = 20;
                 upgrade.PurBuff = 25;
+                upgrade.ApplyBuffs(statsManager);
             }
         }
         else if (upgrade.itemName == "Fair and Balanced")
@@ -321,14 +331,19 @@ public class SkillManager : MonoBehaviour
             if (upgrade.currentUpgradeLvl == 1)
             {
                 upgrade.CrtBuff = 10;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.CrtBuff = 15;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.CrtBuff = 20;
+                upgrade.ApplyBuffs(statsManager);
             }
         }
 
@@ -339,16 +354,21 @@ public class SkillManager : MonoBehaviour
             {
                 upgrade.SpdBuff = 5;
                 upgrade.HasteBuff = 20;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.SpdBuff = 10;
                 upgrade.HasteBuff = 30;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.SpdBuff = 15;
                 upgrade.HasteBuff = 40;
+                upgrade.ApplyBuffs(statsManager);
             }
         }
         else if (upgrade.itemName == "Double Trouble")
@@ -400,16 +420,21 @@ public class SkillManager : MonoBehaviour
             {
                 upgrade.MaxHpBuff = 10;
                 upgrade.PurBuff = 15;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.MaxHpBuff = 15;
                 upgrade.PurBuff = 20;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.MaxHpBuff = 20;
                 upgrade.PurBuff = 25;
+                upgrade.ApplyBuffs(statsManager);
             }
         }
 
@@ -442,16 +467,21 @@ public class SkillManager : MonoBehaviour
             {
                 upgrade.SpdBuff = 5;
                 upgrade.HasteBuff = 20;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.SpdBuff = 10;
                 upgrade.HasteBuff = 30;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.SpdBuff = 15;
                 upgrade.HasteBuff = 40;
+                upgrade.ApplyBuffs(statsManager);
             }
         }
         else if (upgrade.itemName == "1x1")

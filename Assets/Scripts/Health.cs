@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] bool isBoss = false;
     private bool isFinalBoss = false;
+    private int numCoinsGained = 0;
     
     void Start()
     {
@@ -148,8 +149,12 @@ public class Health : MonoBehaviour
             }
             HealHealth(healAmt);
         }
-        if (dealinNWheelin != null){
-            if(Random.Range(0, 99) == 1) Manager.Obj.addToCoins(dealinNWheelin.currentUpgradeLvl);
+        if (dealinNWheelin != null && killedEnemy){
+            if(Random.Range(0, 40) == 0){
+                numCoinsGained += dealinNWheelin.currentUpgradeLvl;
+                Debug.Log("TOTAL GAINED FROM LAURIER: " + numCoinsGained);
+                Manager.Obj.addToCoins(dealinNWheelin.currentUpgradeLvl);
+            }
             StageUIManager.Obj.UpdateCoinsText();
         }
     }
