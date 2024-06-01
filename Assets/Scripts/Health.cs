@@ -150,7 +150,7 @@ public class Health : MonoBehaviour
             HealHealth(healAmt);
         }
         if (dealinNWheelin != null && killedEnemy){
-            if(Random.Range(0, 40) == 0){
+            if(Random.Range(0, 39) == 0){
                 numCoinsGained += dealinNWheelin.currentUpgradeLvl;
                 Debug.Log("TOTAL GAINED FROM LAURIER: " + numCoinsGained);
                 Manager.Obj.addToCoins(dealinNWheelin.currentUpgradeLvl);
