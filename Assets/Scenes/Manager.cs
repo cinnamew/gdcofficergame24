@@ -93,6 +93,7 @@ public class Manager : Singleton<Manager>
         coins += a;
         PlayerPrefs.SetInt("coins", coins);
         print("coins: " + coins);
+        PlayerPrefs.Save();
     }
 
     public bool decreaseNumCoins(int a) {
