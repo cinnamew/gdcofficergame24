@@ -878,7 +878,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b42dbf961102e433c9ca34518bdaaecb, type: 3}
   - {fileID: 21300000, guid: 7abded97347844366b747819c1e59272, type: 3}
   - {fileID: 21300000, guid: 23a5d5a7166aa491ca511f318ec6ba94, type: 3}
-  - {fileID: 21300000, guid: fa896d72994034fc1b566a3c4c0b229b, type: 3}
+  - {fileID: 21300000, guid: 3834eb029204440d5a1f7a705c0db789, type: 3}
   charaPrefabs: []
   charaImage: {fileID: 1750456845}
   charaName: {fileID: 1078992017}
