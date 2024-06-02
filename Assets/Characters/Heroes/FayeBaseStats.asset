@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: FayeBaseStats
   m_EditorClassIdentifier: 
   name: Faye
-  MaxHp: 90
-  Atk: 110
-  Spd: 100
+  MaxHp: 100
+  Atk: 100
+  Spd: 90
   Crt: 5
   Pur: 100
   Haste: 0

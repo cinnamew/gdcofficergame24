@@ -16,6 +16,6 @@ MonoBehaviour:
   MaxHp: 100
   Atk: 100
   Spd: 100
-  Crt: 5
+  Crt: 10
   Pur: 100
   Haste: 0

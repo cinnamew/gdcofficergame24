@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Lydia
   MaxHp: 100
-  Atk: 100
-  Spd: 100
+  Atk: 90
+  Spd: 110
   Crt: 5
   Pur: 100
   Haste: 0

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Jemi
   MaxHp: 70
-  Atk: 110
+  Atk: 100
   Spd: 90
-  Crt: 10
+  Crt: 7
   Pur: 100
   Haste: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Vaishak
   MaxHp: 90
-  Atk: 80
+  Atk: 90
   Spd: 130
   Crt: 4
   Pur: 100

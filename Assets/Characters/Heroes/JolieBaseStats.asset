@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Jolie
   MaxHp: 150
-  Atk: 70
+  Atk: 80
   Spd: 100
   Crt: 4
   Pur: 100
