@@ -181,4 +181,8 @@ public class Health : MonoBehaviour
             slider.value = health;
         }
     }
+    public bool IsBoss()
+    {
+        return isBoss;
+    }
 }

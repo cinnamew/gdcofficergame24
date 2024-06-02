@@ -5,7 +5,7 @@ using UnityEngine;
 public class GenericHitbox : MonoBehaviour
 {
     [SerializeField] int damage;
-    private float kbMagnitude = 300f;
+    [SerializeField] private float kbMagnitude = 300f;
     private float knockbackDuration = 0.15f;
     [SerializeField] bool autoAttack;
     private Vector2 knockbackVector;
@@ -44,7 +44,17 @@ public class GenericHitbox : MonoBehaviour
         StartCoroutine(freezeFrame());
 
         DealDamage(target, damageDealt);
-        if(gameObject.GetComponent<PlayerMovement>() == null)DealKnockback(target);
+        if (gameObject.GetComponent<PlayerMovement>() == null)
+        {
+            Health h = target.GetComponent<Health>();
+            Debug.Log("KNOCKBACKKKK??????");
+            Debug.Log(h != null);
+            if(h != null) Debug.Log(!h.IsBoss());
+            if (h != null && !h.IsBoss())
+            {
+                DealKnockback(target);
+            }
+        }
         ApplyStatusEffects(target);
     }
     

@@ -147,8 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  kbMagnitude: 5
-  knockbackDuration: 1
+  kbMagnitude: 100
   autoAttack: 1
   refreshEvery: 5
   isPellet: 0
@@ -303,8 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  kbMagnitude: 5
-  knockbackDuration: 1
+  kbMagnitude: 100
   autoAttack: 1
   refreshEvery: 5
   isPellet: 0
@@ -459,8 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  kbMagnitude: 5
-  knockbackDuration: 1
+  kbMagnitude: 100
   autoAttack: 1
   refreshEvery: 5
   isPellet: 0
@@ -650,8 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  kbMagnitude: 5
-  knockbackDuration: 1
+  kbMagnitude: 100
   autoAttack: 1
   refreshEvery: 5
   isPellet: 0

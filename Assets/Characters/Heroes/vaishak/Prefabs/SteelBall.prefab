@@ -210,8 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  kbMagnitude: 0
-  knockbackDuration: 0
+  kbMagnitude: 200
   autoAttack: 1
   refreshEvery: 1
   isPellet: 0
