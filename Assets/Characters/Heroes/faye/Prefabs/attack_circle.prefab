@@ -137,10 +137,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  kbMagnitude: 15
-  knockbackDuration: 1
+  kbMagnitude: 300
   autoAttack: 1
   refreshEvery: 10
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1

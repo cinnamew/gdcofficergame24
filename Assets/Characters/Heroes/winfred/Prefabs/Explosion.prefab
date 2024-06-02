@@ -4920,10 +4920,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
-  kbMagnitude: 0
-  knockbackDuration: 0
+  kbMagnitude: 400
   autoAttack: 1
   refreshEvery: 0.3
+  isPellet: 0
   statsManager: {fileID: 0}
   player: {fileID: 0}
   isEnabled: 1

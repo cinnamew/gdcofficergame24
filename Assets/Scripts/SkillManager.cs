@@ -170,14 +170,18 @@ public class SkillManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.BuffTime = 5;
+                upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
+                upgrade.UnapplyBuffs(statsManager);
                 upgrade.AtkBuff = 20;
                 upgrade.SpdBuff = 20;
                 upgrade.CrtBuff = 20;
                 upgrade.HasteBuff = 20;
+                upgrade.ApplyBuffs(statsManager);
             }
         }
         else if (upgrade.itemName == "Debugging Hell")
@@ -352,21 +356,21 @@ public class SkillManager : MonoBehaviour
         {
             if (upgrade.currentUpgradeLvl == 1)
             {
-                upgrade.SpdBuff = 5;
+                upgrade.SpdBuff = 10;
                 upgrade.HasteBuff = 20;
                 upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 2)
             {
                 upgrade.UnapplyBuffs(statsManager);
-                upgrade.SpdBuff = 10;
+                upgrade.SpdBuff = 15;
                 upgrade.HasteBuff = 30;
                 upgrade.ApplyBuffs(statsManager);
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
                 upgrade.UnapplyBuffs(statsManager);
-                upgrade.SpdBuff = 15;
+                upgrade.SpdBuff = 20;
                 upgrade.HasteBuff = 40;
                 upgrade.ApplyBuffs(statsManager);
             }

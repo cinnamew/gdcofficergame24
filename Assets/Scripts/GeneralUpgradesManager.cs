@@ -28,7 +28,7 @@ public class GeneralUpgradesManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 3)
             {
-                spiderCooking.GetComponent<HeroHitbox>().setDamage(13);
+                spiderCooking.GetComponent<HeroHitbox>().setDamage(10);
             }
             if (upgrade.currentUpgradeLvl == 4)
             {
@@ -40,11 +40,11 @@ public class GeneralUpgradesManager : MonoBehaviour
             }
             if (upgrade.currentUpgradeLvl == 6)
             {
-                spiderCooking.GetComponent<HeroHitbox>().setDamage(19);
+                spiderCooking.GetComponent<HeroHitbox>().setDamage(15);
             }
             if (upgrade.currentUpgradeLvl == 7)
             {
-                spiderCooking.GetComponent<HeroHitbox>().setKnockbackMagnitude(5f);
+                spiderCooking.GetComponent<HeroHitbox>().setKnockbackMagnitude(25f);
             }
         }
         if (upgrade.itemName == "AP Prep Book"){
