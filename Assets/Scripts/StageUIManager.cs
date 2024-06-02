@@ -91,6 +91,7 @@ public class StageUIManager : Singleton<StageUIManager>
     }
 
     public void SelectOption(int option){
+        Time.timeScale = 0;
         player.GetComponent<UpgradeInventory>().AddItem(upgradeItems[option]);
         if (upgradeItems[option].IsWeapon){
             Debug.Log("PLEASEE FOR THE LLOVE OF ALL THINGS WORKKKK");

@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private string targetTag;
     public Vector2 aimPoint;
     private bool inFormation = false;
+    private bool canMove = true;
 
     private Rigidbody2D rb;
 
@@ -84,7 +85,7 @@ public class EnemyAI : MonoBehaviour
                 }
             }
             float distance = ((aimPoint - (Vector2)transform.position)).magnitude;
-            rb.velocity = direction * moveSpeed;
+            if(canMove) rb.velocity = direction * moveSpeed;
             if (distance < noMoveRange){
                 rb.velocity = Vector2.zero;
                 if (inFormation)
@@ -110,5 +111,10 @@ public class EnemyAI : MonoBehaviour
             // If no target found, stop moving
             rb.velocity = Vector2.zero;
         }
+    }
+
+    public void SetCanMove(bool canMove)
+    {
+        this.canMove = canMove;
     }
 }

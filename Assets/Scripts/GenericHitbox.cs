@@ -5,8 +5,8 @@ using UnityEngine;
 public class GenericHitbox : MonoBehaviour
 {
     [SerializeField] int damage;
-    [SerializeField] float kbMagnitude;
-    [SerializeField] float knockbackDuration;
+    private float kbMagnitude = 300f;
+    private float knockbackDuration = 0.15f;
     [SerializeField] bool autoAttack;
     private Vector2 knockbackVector;
     [SerializeField]private float refreshEvery;
@@ -41,8 +41,10 @@ public class GenericHitbox : MonoBehaviour
         if (player != null){
             player.GetComponent<Health>().ConditionalHeal(damageDealt, target.GetComponent<Health>().GetHealth() - damageDealt <= 0);
         }
+        StartCoroutine(freezeFrame());
+
         DealDamage(target, damageDealt);
-        DealKnockback(target);
+        if(gameObject.GetComponent<PlayerMovement>() == null)DealKnockback(target);
         ApplyStatusEffects(target);
     }
     
@@ -120,10 +122,20 @@ public class GenericHitbox : MonoBehaviour
 
     IEnumerator KnockbackTimer(Collider2D target)
     {
-        EnemyMovement em = target.gameObject.GetComponent<EnemyMovement>();
-        if (em != null) em.SetCanMove(false);
+        SpriteRenderer sr = target.gameObject.GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.color = new Color(255, 0, 0);
+        }
+        EnemyAI ea = target.gameObject.GetComponent<EnemyAI>();
+        if (ea != null) ea.SetCanMove(false);
         yield return new WaitForSeconds(knockbackDuration);
-        if (em != null) em.SetCanMove(true);
+        if (ea != null) ea.SetCanMove(true);
+
+        if (sr != null)
+        {
+            sr.color = new Color(255, 255, 255);
+        }
     }
 
     private void Update()
@@ -149,5 +161,12 @@ public class GenericHitbox : MonoBehaviour
     public void setKnockbackMagnitude(float newVal)
     {
         kbMagnitude = newVal;
+    }
+
+    public IEnumerator freezeFrame()
+    {
+        //Time.timeScale = 0.01f;
+        yield return new WaitForSeconds(0.03f * Time.timeScale);
+        //Time.timeScale = 1;
     }
 }
