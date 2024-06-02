@@ -8331,7 +8331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3834eb029204440d5a1f7a705c0db789, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf20644a45db7425abbe3e5c4aacdec4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8363,7 +8363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   name: Winfred
-  bio: puts the win in winfred! canonically a rubik's cube
+  bio: this 6'2 rubik's cube stays winning! (haha get it)
 --- !u!1 &1280646780
 GameObject:
   m_ObjectHideFlags: 0
