@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: RohanBaseStats
   m_EditorClassIdentifier: 
   name: Rohan
-  MaxHp: 100
+  MaxHp: 90
   Atk: 90
-  Spd: 90
-  Crt: 10
-  Pur: 110
+  Spd: 80
+  Crt: 8
+  Pur: 100
   Haste: 0

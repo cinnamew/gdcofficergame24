@@ -600,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   name: Jemi
-  bio: lethal gunner with the op crit rate
+  bio: will send enemies to h-e-double-hockey-sticks & back
 --- !u!1 &81734725
 GameObject:
   m_ObjectHideFlags: 0
