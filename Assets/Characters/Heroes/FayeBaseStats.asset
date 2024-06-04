@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Faye
   MaxHp: 100
-  Atk: 100
-  Spd: 90
-  Crt: 5
+  Atk: 90
+  Spd: 100
+  Crt: 6
   Pur: 100
   Haste: 0

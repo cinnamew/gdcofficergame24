@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Vaishak
   MaxHp: 90
   Atk: 90
-  Spd: 130
-  Crt: 4
+  Spd: 120
+  Crt: 5
   Pur: 100
   Haste: 0
