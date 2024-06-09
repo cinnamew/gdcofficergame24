@@ -694,6 +694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allSkills:
+  - {fileID: 11400000, guid: acf5587378f524499a8265dd17c8a66c, type: 2}
+  - {fileID: 11400000, guid: eaeb80aa296c4486ca5c5c9d981331c0, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0

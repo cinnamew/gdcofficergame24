@@ -411,6 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  kbMagnitude: 300
   autoAttack: 1
   refreshEvery: 0.3
   isPellet: 0
@@ -473,6 +474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allSkills:
+  - {fileID: 11400000, guid: e048b836e196049ee9641c4ae41836a8, type: 2}
+  - {fileID: 11400000, guid: 22e83f11aa9d9436591203940c61103b, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0

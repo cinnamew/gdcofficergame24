@@ -16,7 +16,23 @@ public class WeaponManager : MonoBehaviour
     {
         if (gameObject.name.Contains("Arnav"))
         {
-            //Do something
+            if (upgrade.currentUpgradeLvl == 1)
+            {
+                //previous value: 30
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(35);
+            }
+            if (upgrade.currentUpgradeLvl == 2)
+            {
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.85f);
+            }
+            if (upgrade.currentUpgradeLvl == 3)
+            {
+                gameObject.GetComponent<PlayerAttack>().getHitboxes()[0].setDamage(40);
+            }
+            if (upgrade.currentUpgradeLvl == 4)
+            {
+                gameObject.GetComponent<PlayerAttack>().SetBaseProjectileCooldown(0.7f);
+            }
         }
 
         if (gameObject.name.Contains("Faye"))

@@ -1362,6 +1362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cb5e039200fd84cb00dae58c7adf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allSkills:
+  - {fileID: 11400000, guid: 94f3e1d8b0c5744b8be3613450940674, type: 2}
+  - {fileID: 11400000, guid: ba112c3ce2ac74f61805b641af92e587, type: 2}
+  - {fileID: 11400000, guid: 141e3db027cb24b6397dcc03ddce8202, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

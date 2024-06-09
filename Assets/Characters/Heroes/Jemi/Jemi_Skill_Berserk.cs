@@ -31,7 +31,6 @@ public class Jemi_Skill_Berserk : MonoBehaviour
         if (unlockedAbility && Time.time - timeOfLastAttack >= minProjectileCooldown) //if it's due time to shoot your shot
         {
             timeOfLastAttack = Time.time;
-            Debug.Log("let it rainnnn");
             bulletRain();
         }
     }
