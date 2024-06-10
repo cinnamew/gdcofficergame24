@@ -296,7 +296,14 @@ public class SkillManager : MonoBehaviour
         }
         else if (upgrade.itemName == "Debugging Hell")
         {
-            //upgrades in health script istead
+            if(upgrade.currentUpgradeLvl == 1)
+            {
+                upgrade.description = "For every enemy defeated, heal 5 HP.";
+            }else if(upgrade.currentUpgradeLvl == 2)
+            {
+                upgrade.description = "For every enemy defeated, heal 7 HP.";
+            }
+            
         }
 
         //JEMI
@@ -417,7 +424,7 @@ public class SkillManager : MonoBehaviour
                 upgrade.description = "Killing an enemy has a 2.5% change to give you 2 coins.";
             }else if(upgrade.currentUpgradeLvl == 2)
             {
-                upgrade.description = "Killing an enemy has a 2.5% change to give you 3 coin.";
+                upgrade.description = "Killing an enemy has a 2.5% change to give you 3 coins.";
             }
         }
         else if (upgrade.itemName == "User Fees")
