@@ -14,38 +14,31 @@ public class GeneralUpgradesManager : MonoBehaviour
 
     // Update is called once per frame
 
-    public void Upgrade(UpgradeItem upgrade){
-        if (upgrade.itemName == "Brainrot")
-        {
-            if (upgrade.currentUpgradeLvl == 1)
-            {
+    //kudos to cog539 on the MelonJam discord
+    public void Upgrade(UpgradeItem upgrade) {
+        switch (upgrade.currentUpgradeLvl) {
+            case 1:
                 spiderCooking.GetComponent<HeroHitbox>().setRefreshEvery(1f);
                 spiderCooking.SetActive(true);
-            }
-            if (upgrade.currentUpgradeLvl == 2)
-            {
+                break;
+            case 2:
                 spiderCooking.transform.localScale *= 1.3f;
-            }
-            if (upgrade.currentUpgradeLvl == 3)
-            {
-                spiderCooking.GetComponent<HeroHitbox>().setDamage(10);
-            }
-            if (upgrade.currentUpgradeLvl == 4)
-            {
+                break;
+            case 3:
+                spiderCooking.GetComponent<HeroHitbox>().setDamage(10); 
+                break;
+            case 4:
                 spiderCooking.transform.localScale *= 1.5f;
-            }
-            if (upgrade.currentUpgradeLvl == 5)
-            {
-                spiderCooking.GetComponent<HeroHitbox>().setRefreshEvery(1f*0.8f);
-            }
-            if (upgrade.currentUpgradeLvl == 6)
-            {
+                break;
+            case 5:
+                spiderCooking.GetComponent<HeroHitbox>().setRefreshEvery(0.8f);
+                break;
+            case 6:
                 spiderCooking.GetComponent<HeroHitbox>().setDamage(15);
-            }
-            if (upgrade.currentUpgradeLvl == 7)
-            {
+                break;
+            case 7:
                 spiderCooking.GetComponent<HeroHitbox>().setKnockbackMagnitude(25f);
-            }
+                break;
         }
         if (upgrade.itemName == "AP Prep Book"){
             if (upgrade.currentUpgradeLvl == 1)
@@ -54,5 +47,7 @@ public class GeneralUpgradesManager : MonoBehaviour
             }
             blBook.GetComponent<BLBookAttack>().upgradeBooks();
         }
+
     }
+
 }
